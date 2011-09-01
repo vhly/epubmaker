@@ -21,7 +21,7 @@ public class EPubFile extends ZipFile {
     /**
      * MIME Type
      */
-    public String mimetype;
+    private String mimetype;
 
     /**
      * Constructor with File path
@@ -31,6 +31,7 @@ public class EPubFile extends ZipFile {
     public EPubFile(String name) throws IOException {
         super(name);
     }
+
     /**
      * Constructor with File path
      * @param file File object
@@ -40,6 +41,7 @@ public class EPubFile extends ZipFile {
     public EPubFile(File file, int mode) throws IOException {
         super(file, mode);
     }
+
     /**
      * Constructor with File path
      * @param file File object
@@ -49,4 +51,6 @@ public class EPubFile extends ZipFile {
     public EPubFile(File file) throws ZipException, IOException {
         super(file);
     }
+
+
 }
