@@ -17,6 +17,12 @@ import java.util.zip.ZipFile;
  * EPub File, .epub file is a zip file actually.
  */
 public class EPubFile extends ZipFile {
+
+    /**
+     * MIME Type
+     */
+    public String mimetype;
+
     /**
      * Constructor with File path
      * @param name File name
