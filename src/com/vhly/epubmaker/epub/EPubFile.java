@@ -52,5 +52,16 @@ public class EPubFile extends ZipFile {
         super(file);
     }
 
+    /**
+     * Get MIME Type<br/>
+     * If no set this field, return default mimetype
+     * @return String
+     */
+    public String getMimetype() {
+        return mimetype;
+    }
 
+    public void setMimetype(String mimetype) {
+        this.mimetype = mimetype;
+    }
 }
