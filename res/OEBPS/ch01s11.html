@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Forwarding Messages</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Forwarding Messages"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-11"/>Forwarding Messages</h1></div></div></div><p>When <a id="objectcpr-IDXTERM-615" class="indexterm"/>an object is sent a message for which it has no method,
+      the runtime system gives it another chance to handle the call before
+      giving up. If the object supports a <code class="literal">-forward</code> <a id="objectcpr-IDXTERM-616" class="indexterm"/>:: method, the runtime calls this method, passing it
+      information about the unhandled call. The return value from the
+      forwarded call is propagated back to the original caller of the
+      method.</p><p>Both <code class="literal">Object</code> and <code class="literal">NSObject</code> provide a <code class="literal">-forward</code>:: method, so all objects you are
+      likely to encounter will behave as described in this section. In each
+      case, the default behavior, implemented by the root class method, is to
+      exit the program when an unhandled call is forwarded. Your classes can
+      override this method to provide alternative behavior; common choices are
+      to absorb the error or to redirect (forward) the unhandled message to
+      another object, which is called a <span class="emphasis"><em>delegate</em></span>
+      <a id="IXT-1-462" class="indexterm"/>.</p><div class="sect2" title="Object Forwarding"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-11.1"/>Object Forwarding</h2></div></div></div><p>The <code class="literal">-forward</code>:: <a id="objectcpr-IDXTERM-618" class="indexterm"/>method takes a selector and a second parameter that
+        stores information about the parameters passed to the original
+        (failed) <a id="objectcpr-IDXTERM-619" class="indexterm"/>method call.</p><p>The method supplied by <a id="IXT-1-463" class="indexterm"/>GNU's <code class="literal">Object</code> sets off
+        the following train of events:</p><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p><code class="literal">-forward</code>:: calls <code class="literal">-doesNotRecognize</code> <a id="IXT-1-464" class="indexterm"/>: on <strong class="userinput"><code>self</code></strong>,
+            passing the selector for the original method call.</p></li><li class="listitem"><p><code class="literal">-doesNotRecognize</code>: in
+            turn calls <code class="literal">-error</code> <a id="IXT-1-465" class="indexterm"/>: passing a format string and the name of the
+            original method call.</p></li><li class="listitem"><p><code class="literal">-error</code>: logs an error
+            message and aborts the program, unless you have overridden this
+            method or installed an alternative error handler. <a class="link" href="ch01s08.html" title="Runtime Errors">Section 1.8</a> discusses this
+            more.</p></li></ol></div><p>If you want to just ignore messages that your class does not
+        handle, you can <a id="IXT-1-466" class="indexterm"/>override <code class="literal">-forward</code>::
+        to return <strong class="userinput"><code>NULL</code></strong>. To implement
+        true forwarding for a class, override the <code class="literal">-forward</code>:: method in the following
+        way:</p><a id="I_1_tt137"/><pre class="programlisting">1 -(retval_t)forward:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em> :(arglist_t)<em class="replaceable"><code>args</code></em> {
+2   <strong class="userinput"><code>if</code></strong> ([<em class="replaceable"><code>myDelegate</code></em> respondsTo:<em class="replaceable"><code>sel</code></em>])
+3     <strong class="userinput"><code>return</code></strong> [<em class="replaceable"><code>myDelegate</code></em> performv:<em class="replaceable"><code>sel</code></em> :<em class="replaceable"><code>args</code></em>]
+4   <strong class="userinput"><code>else</code></strong>
+5     <strong class="userinput"><code>return</code></strong> [<strong class="userinput"><code>super</code></strong> forward:<em class="replaceable"><code>sel</code></em> :<em class="replaceable"><code>args</code></em>];
+6 }</pre><p>Line 2. Check that the delegate actually handles the call. The
+        <code class="literal">-respondsTo</code>: method does not itself
+        take forwarding into account; if the delegate might itself have
+        another delegate, you could skip this test and just execute line
+        3.</p><p>Line 3. Return the result of the forwarded call. Because you
+        pass the parameters straight through, you don't need to know the
+        details of the <code class="literal">arglist_t</code> type.
+        Since <code class="literal">retval_t</code> is defined as a
+        pointer type, you should not forward calls that return floating point
+        numbers, structures, or other incompatible types.</p><p>Line 4. If you want to ignore any messages your delegate doesn't
+        handle, you can skip this line and line 5.</p><p>Line 5. If your parent class may have an alternative way to
+        forward the message, pass the message using the <strong class="userinput"><code>super</code></strong> keyword.</p></div><div class="sect2" title="NSObject Forwarding"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-11.2"/>NSObject Forwarding</h2></div></div></div><p>In <a id="objectcpr-IDXTERM-624" class="indexterm"/> <a id="objectcpr-IDXTERM-625" class="indexterm"/>Cocoa, the <code class="literal">-forward</code>::
+        method is private to <code class="literal">NSObject</code>, so
+        you shouldn't override it. The method sets off the following chain of
+        events:</p><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p><code class="literal">-forward</code>:: calls <code class="literal">-methodSignatureForSelector</code> <a id="IXT-1-467" class="indexterm"/>: on <strong class="userinput"><code>self</code></strong>,
+            passing the selector for the original method call. You will have
+            to override this method to provide an <code class="literal">NSMethodSignature</code> instance describing
+            the signature of the method your forwarder will call.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-26-fm2xml"/>Note</h3><p>If you don't override <code class="literal">-methodSignatureForSelector</code>:, the
+              inherited version will return <strong class="userinput"><code>nil</code></strong>. This will cause later stages of
+              forwarding to raise an exception.</p></div></li><li class="listitem"><p><code class="literal">-forward</code>:: uses the
+            signature returned from the previous call to construct an <code class="literal">NSInvocation</code> <a id="IXT-1-468" class="indexterm"/> instance, and passes that to <a id="IXT-1-469" class="indexterm"/> <code class="literal">-forwardInvocation</code>:.</p></li><li class="listitem"><p>The <code class="literal">-forwardInvocation</code>:
+            method is the one you override to customize forwarding behavior.
+            The version provided by <code class="literal">NSObject</code> simply calls <code class="literal">-doesNotRecognizeSelector</code> <a id="IXT-1-470" class="indexterm"/>:.</p></li><li class="listitem"><p>The <code class="literal">NSObject</code> version of
+            <code class="literal">-doesNotRecognizeSelector</code>:
+            raises an <code class="literal">NSInvalidArgument</code>
+            exception.</p></li><li class="listitem"><p>If your program doesn't handle the exception it will exit
+            with return value 255. <a class="link" href="ch01s08.html" title="Runtime Errors">Section 1.8</a> describes how
+            to handle exceptions.</p></li></ol></div><p>To forward a message you must override two <code class="literal">NSObject</code> methods. If you want to just absorb
+        the message, the process is simple, and different enough from the
+        general case to merit a description here:</p><a id="I_1_tt138"/><pre class="programlisting">1 -(NSMethodSignature*)
+2 methodSignatureForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em> {
+3   <strong class="userinput"><code>return</code></strong> 
+4     [NSObject
+5       instanceMethodSignatureForSelector:
+6         <strong class="userinput"><code>@selector</code></strong>(self)];
+7 }
+8
+9 -(<strong class="userinput"><code>void</code></strong>)forwardInvocation:(NSInvocation*)<em class="replaceable"><code>inv</code></em> { }</pre><p>Line 3. You must return a valid <code class="literal">NSMethodSignature</code> <a id="IXT-1-471" class="indexterm"/> instance, even though the rest of your forwarding code
+        will ignore it. You can be sure this example will succeed, because
+        <code class="literal">NSObject</code> will always be present,
+        with its <code class="literal">-self</code> method.</p><p>Line 9. Override this method to ignore its parameter and do
+        nothing.</p><p>If you want to forward an unhandled method call to another
+        object, you have to attend to more details. Again, you first override
+        <code class="literal">-methodSignatureForSelector</code>: to
+        return an object that encapsulates information about the method's
+        interface:</p><a id="I_1_tt139"/><pre class="programlisting"> 1 -(NSMethodSignature*)
+ 2 methodSignatureForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em> {
+ 3   NSMethodSignature* <em class="replaceable"><code>sig</code></em> =
+ 4     [[<strong class="userinput"><code>self</code></strong> class]
+ 5       instanceMethodSignatureForSelector:<em class="replaceable"><code>sel</code></em>];
+ 6   <strong class="userinput"><code>if</code></strong> (<em class="replaceable"><code>sig</code></em> =  = <strong class="userinput"><code>nil</code></strong>) 
+ 7     <em class="replaceable"><code>sig</code></em> = [<em class="replaceable"><code>myDelegate</code></em> 
+ 8       methodSignatureForSelector:<em class="replaceable"><code>sel</code></em>];
+ 9   <strong class="userinput"><code>if</code></strong> (<em class="replaceable"><code>sig</code></em> =  = <strong class="userinput"><code>nil</code></strong>)
+10     <em class="replaceable"><code>sig</code></em> = [<em class="replaceable"><code>Unused</code></em>
+11      instanceMethodSignatureForSelector:
+12        <strong class="userinput"><code>@selector</code></strong>(<em class="replaceable"><code>unused</code></em>)];
+13   <strong class="userinput"><code>return</code></strong> 
+               <em class="replaceable"><code>sig</code></em>;
+14 }</pre><p>Line 2. When this method is called for the purposes of
+        forwarding, the parameter will be a selector for a method the receiver
+        doesn't handle.</p><p>Line 3. Check to see if your object already handles the method.
+        You do this because this method may be called for reasons other than
+        preparing to forward a call your object doesn't handle. Since calling
+        the method you are overriding will cause an infinite loop, you have to
+        call the class instead.</p><p>Line 6. If your object does not handle the message,
+        <em class="replaceable"><code>sig</code></em> will be <strong class="userinput"><code>nil</code></strong> at this point and you can ask your
+        <a id="IXT-1-472" class="indexterm"/>delegate about the method's signature.</p><p>Line 9. If <em class="replaceable"><code>sig</code></em> is still <strong class="userinput"><code>nil</code></strong> at this point, your delegate is not
+        equipped to handle the forwarded message. (This would certainly be a
+        programming error.) If you return <strong class="userinput"><code>nil</code></strong> your program will crash. Your best
+        recovery strategy is to have a special-purpose class with a single
+        method, unused anywhere in your program. Returning its method
+        signature lets your <code class="literal">-forwardInvocation</code>: method detect that the
+        delegate won't handle it, and instead ignore it.</p><p>Next you override <a id="IXT-1-473" class="indexterm"/> <code class="literal">-forwardInvocation</code>:
+        to redirect the call:</p><a id="I_1_tt140"/><pre class="programlisting">1 -(<strong class="userinput"><code>void</code></strong>)forwardInvocation:(NSInvocation*)<em class="replaceable"><code>inv</code></em> {
+2   <strong class="userinput"><code>if</code></strong> ([<em class="replaceable"><code>myDelegate</code></em> respondsToSelector:
+3                   [<em class="replaceable"><code>inv</code></em> selector]])
+4     [<em class="replaceable"><code>inv</code></em> invokeWithTarget:<em class="replaceable"><code>myDelegate</code></em>];
+5   <strong class="userinput"><code>else</code></strong>
+6     [<strong class="userinput"><code>super</code></strong> forwardInvocation:<em class="replaceable"><code>inv</code></em>];
+7 }</pre><p>Line 1. The parameter contains information about the method
+        call: the selector, parameter values and types, and return
+        type.</p><p>Line 2. Check that the delegate actually handles the
+        call.</p><p>Line 4. If the delegate will handle the call, forward the
+        message.</p><p>Line 5. If you intend to just ignore messages that the delegate
+        won't handle, you don't need this line or line 6.</p><p>Line 6. If your parent class may have an alternative way to
+        forward the message, pass the invocation <a id="IXTR3-613" class="indexterm"/>object <a id="IXTR3-614" class="indexterm"/>to <a id="IXTR3-615" class="indexterm"/>it <a id="IXTR3-616" class="indexterm"/> <a id="IXTR3-617" class="indexterm"/>using the <strong class="userinput"><code>super</code></strong> <a id="IXTR3-618" class="indexterm"/>keyword.</p></div></div></body></html>

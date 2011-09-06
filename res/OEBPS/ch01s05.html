@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Compiler Flags</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Compiler Flags"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-5"/>Compiler Flags</h1></div></div></div><p><a id="IXT-1-215" class="indexterm"/> <a id="IXT-1-216" class="indexterm"/>Compiler flags are options you give to <a id="IXT-1-217" class="indexterm"/> <em class="filename">gcc</em> when it compiles
+      a file or set of files. You may provide these directly on the command
+      line, or your development tools may generate them when they invoke
+      <em class="filename">gcc</em>. This section describes just
+      the flags that are specific to Objective-C.</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">-fconstant-string-class=</code>
+          <em class="replaceable"><code>ClassName</code></em></span></dt><dd><p><a id="IXT-1-218" class="indexterm"/>Tells the compiler to create an instance of
+            <em class="replaceable"><code>ClassName</code></em> for each string literal
+            expressed with the <code class="literal">@</code>"<em class="replaceable"><code>string</code></em>"
+            directive. For the GNU runtime, the default class is <code class="literal">NXConstantString</code>; for Cocoa it is
+            <code class="literal">NSConstantString</code>.</p></dd><dt><span class="term"><code class="literal">-fgnu-runtime</code></span></dt><dd><p><a id="IXT-1-219" class="indexterm"/>Generate code for linking with the standard GNU
+            Objective-C runtime. This is the default option for most
+            <span class="emphasis"><em>gcc</em></span> installations.</p></dd><dt><span class="term"><code class="literal">-fnext-runtime</code></span></dt><dd><p><a id="IXT-1-220" class="indexterm"/>Generate code for linking with the NeXT runtime.
+            This is the default option for <a id="IXT-1-221" class="indexterm"/>Darwin.</p></dd><dt><span class="term"><code class="literal">-gen-decls</code></span></dt><dd><p><a id="IXT-1-222" class="indexterm"/>Write all interface declarations the compiler sees
+            to a file named <span class="emphasis"><em>sourcename.decl</em></span>.</p></dd><dt><span class="term"><code class="literal">-Wno-protocol</code></span></dt><dd><p><a id="IXT-1-223" class="indexterm"/>Do not warn if methods required by a protocol are
+            not implemented in the class adopting it.</p></dd><dt><span class="term"><code class="literal">-Wselector</code></span></dt><dd><p><a id="IXT-1-224" class="indexterm"/>Warn if there are methods with the same name but
+            different signatures.</p></dd></dl></div></div></body></html>

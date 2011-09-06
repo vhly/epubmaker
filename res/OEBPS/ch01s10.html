@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Root Classes</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Root Classes"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-10"/>Root Classes</h1></div></div></div><p>A <a id="objectcpr-IDXTERM-445" class="indexterm"/> <a id="objectcpr-IDXTERM-446" class="indexterm"/>root class is one with no parent class. Objective-C allows
+      multiple root classes, but you are most likely to use one supplied with
+      your compiler.</p><p>All Objective-C distributions provide a root class called <code class="literal">Object</code>. This section describes the <code class="literal">Object</code> supplied with the GNU runtime. The
+      <code class="literal">Object</code> class provided by Darwin is
+      similar, but <a id="IXT-1-316" class="indexterm"/>Darwin users will be more likely to use the <code class="literal">NSObject</code> root class that comes with the
+      <a id="IXT-1-317" class="indexterm"/>Cocoa class library. (The <a id="IXT-1-318" class="indexterm"/>GNUstep library also provides an <code class="literal">NSObject</code> root class almost identical to
+      Cocoa's.) This section describes the fields and methods of both <code class="literal">Object</code> and <code class="literal">NSObject</code>.</p><p>Both classes provide access to Objective-C features like
+      reflection, memory management, and archiving. Most of the classes you
+      write will inherit from one of these classes, so your objects will be
+      able to use these features.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-23-fm2xml"/>Note</h3><p>The runtime goes to some length to make class objects behave the
+        same as regular objects. In particular, they appear to inherit their
+        fields and methods from the root classes, so they share in the
+        properties described in this section.</p></div><div class="sect2" title="Fields"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-10.1"/>Fields</h2></div></div></div><p>Both <code class="literal">Object</code> <a id="IXT-1-319" class="indexterm"/> and <code class="literal">NSObject</code> declare
+        only one field, <code class="literal">isa</code> <a id="IXT-1-320" class="indexterm"/>, whose type is <code class="literal">Class</code>. This field is inherited by all their
+        descendants, which is critical to the operation of inheritance and
+        message dispatch. It points to the class object representing the
+        instance's class. See <a class="link" href="ch01s09.html" title="Runtime Environment">Section
+        1.9</a> earlier in this book.</p></div><div class="sect2" title="Methods"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-10.2"/>Methods</h2></div></div></div><p><a id="IXT-1-321" class="indexterm"/>Root class methods are accessible from any object that
+        derives from the class—usually all regular objects in a program. In
+        addition, root class <a id="IXT-1-322" class="indexterm"/>instance methods can be called on <a id="IXT-1-323" class="indexterm"/>class objects for it and its subclasses—in other words,
+        class objects appear to be instances of their root class. (The runtime
+        arranges for this; see <a class="link" href="ch01s09.html#objectcpr-CHP-1-SECT-9.2" title="Metaclass Objects">Section 1.9.2</a> under <a class="link" href="ch01s09.html" title="Runtime Environment">Section 1.9</a>.)</p><p>Because you can call root class instance methods on class
+        objects, the behavior of some instance methods described here has
+        several distinct, though consistent, cases:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The <a id="IXT-1-324" class="indexterm"/>receiver is a regular object.</p></li><li class="listitem"><p>The receiver is a class object.</p></li><li class="listitem"><p>The receiver is a metaclass object (in the GNU runtime,
+            where metaclass objects are distinguished from class
+            objects).</p></li></ul></div><p>The root class method descriptions point these issues out where
+        useful.</p><p>Some root class methods are meant to be <a id="IXT-1-325" class="indexterm"/>overridden; others should not be. The following sections
+        note where you may or must override a method.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-24-fm2xml"/>Note</h3><p>Many root class methods (e.g., <code class="literal">-respondsTo</code>:) return information about the
+          receiver even when it's an instance of a subclass. This makes it
+          look like they are automatically rewritten in each <a id="IXT-1-326" class="indexterm"/>subclass, or that your classes should override them.
+          In fact, the root class's implementation makes use of runtime
+          reflection to provide the information required.</p></div></div><div class="sect2" title="The Object Class"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-10.3"/>The Object Class</h2></div></div></div><p>This section describes the methods provided by the <a id="objectcpr-IDXTERM-458" class="indexterm"/> <a id="objectcpr-IDXTERM-459" class="indexterm"/>GNU <code class="literal">Object</code> <a id="objectcpr-IDXTERM-460" class="indexterm"/> class. The source code for these methods, available in
+        <span class="emphasis"><em>Object.m</em></span>, gives a valuable view of how the
+        Objective-C runtime works.</p><div class="sect3" title="Creating, copying, and freeing objects"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.1"/>Creating, copying, and freeing objects</h3></div></div></div><p><code class="literal">Object</code> provides the
+          following methods to manage the memory used for <a id="IXT-1-327" class="indexterm"/>objects. You should never use the C functions <code class="literal">malloc( )</code> and <code class="literal">free( )</code> to manage Objective-C objects. The
+          earlier <a class="link" href="ch01s07.html" title="Object Lifecycle">Section 1.7</a>
+          discusses how to use these methods.</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">+(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)new</code></span></dt><dd><p><a id="IXT-1-328" class="indexterm"/>Calls <code class="literal">+alloc</code>
+                on the class, then <code class="literal">-init</code> on
+                the resulting instance, and returns the result.</p></dd><dt><span class="term"><code class="literal">+(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)alloc</code></span></dt><dd><p><a id="IXT-1-329" class="indexterm"/>Allocates, clears, and returns a pointer to
+                memory for a new instance of the receiver. Returns <strong class="userinput"><code>nil</code></strong> on failure.</p></dd><dt><span class="term"><code class="literal">+(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)initialize</code></span></dt><dd><p><a id="IXT-1-330" class="indexterm"/>Returns <strong class="userinput"><code>self</code></strong>. The runtime calls this
+                method before any instances of the receiving class are
+                created. Override to perform class-specific setup.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)init</code></span></dt><dd><p><a id="IXT-1-331" class="indexterm"/>Returns <strong class="userinput"><code>self</code></strong>. This is the designated
+                initializer for <code class="literal">Object</code>.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)copy</code></span></dt><dd><p><a id="IXT-1-332" class="indexterm"/>Calls <code class="literal">-shallowCopy</code> <a id="IXT-1-333" class="indexterm"/>then <code class="literal">-deepen</code>
+                on the resulting instance, and returns the result. In <code class="literal">Object</code> this is the same as <code class="literal">-shallowCopy</code>.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)shallowCopy</code></span></dt><dd><p><a id="IXT-1-334" class="indexterm"/>Returns a copy of the receiver. Fields that are
+                pointers are not traversed, just duplicated in the new
+                copy.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)deepen</code></span></dt><dd><p><a id="IXT-1-335" class="indexterm"/>Returns <strong class="userinput"><code>self</code></strong>. Override to replace all
+                fields that are pointers with new values. Otherwise, <code class="literal">-deepCopy</code> and <code class="literal">-copy</code> won't function
+                correctly.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)deepCopy</code></span></dt><dd><p><a id="IXT-1-336" class="indexterm"/>Calls <code class="literal">-copy</code>
+                and returns the result.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)free</code></span></dt><dd><p><a id="IXT-1-337" class="indexterm"/>Releases <a id="IXT-1-338" class="indexterm"/>the memory occupied by the receiver. Also zeroes
+                the <code class="literal">isa</code> pointer of the
+                object. If the object is sent a message at this stage, an
+                immediate runtime error will occur. (Once the memory has been
+                reused, anything can happen.) Override to release other
+                resources held by the receiver.</p></dd></dl></div></div><div class="sect3" title="Identifying objects and classes"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.2"/>Identifying objects and classes</h3></div></div></div><p>Use <a id="objectcpr-IDXTERM-473" class="indexterm"/> <a id="objectcpr-IDXTERM-474" class="indexterm"/>the following methods to find out about an object's
+          identity, and to compare it with other objects:</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">-(Class)class</code></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-339" class="indexterm"/>If the receiver is a regular object, returns
+                    the class object for the receiver's class.</p></li><li class="listitem"><p>If the receiver is a class object, returns the
+                    receiver.</p></li></ul></div></dd><dt><span class="term"><code class="literal">-(Class)superClass</code></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-340" class="indexterm"/>If the receiver is a regular object, returns
+                    the class object for the parent class of the receiver's
+                    class, or <strong class="userinput"><code>nil</code></strong> if
+                    the receiver's class is a root class.</p></li><li class="listitem"><p>If the receiver is a class object, returns the class
+                    object for the receiver's parent class, or <strong class="userinput"><code>nil</code></strong> if the receiver represents
+                    a root class.</p></li></ul></div></dd><dt><span class="term"><code class="literal">-(MetaClass)metaClass</code></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-341" class="indexterm"/>If the receiver is a regular object, returns
+                    the metaclass object for the metaclass of the receiver's
+                    class.</p></li><li class="listitem"><p>If the receiver is a class object, returns the
+                    metaclass object for the metaclass of the receiver.</p></li></ul></div></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">const</code>
+              </strong></span> <span class="bold"><strong> <code class="literal">char</code> </strong></span> <code class="literal">*)name</code></span></dt><dd><p><a id="IXT-1-342" class="indexterm"/>Returns the name of the receiver's class.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)self</code></span></dt><dd><p><a id="IXT-1-343" class="indexterm"/>Returns the receiver. You can get a class object
+                from the class's name with this method:</p><a id="I_1_tt65"/><pre class="programlisting">Class<em class="replaceable"><code>classobj</code></em> = [<em class="replaceable"><code>MyClass</code></em> self];</pre></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">unsigned</code>
+              </strong></span> <span class="bold"><strong> <code class="literal">int</code> </strong></span> <code class="literal">)hash</code></span></dt><dd><p><a id="IXT-1-344" class="indexterm"/>Returns an integer that can be used to store the
+                object in a hash table. If two objects are equal (as reported
+                by <code class="literal">-isEqual</code>:) they will
+                have the same hash value. However, two unequal objects may
+                also share the same hash value.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isEqual:(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)</code>
+              <em class="replaceable"><code>obj</code></em></span></dt><dd><p><a id="IXT-1-345" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver and
+                <em class="replaceable"><code>obj</code></em> are equal as pointers,
+                otherwise returns <strong class="userinput"><code>NO</code></strong>.
+                Override to implement another relation, such as equality of
+                contents.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">int</code> </strong></span>
+              <code class="literal">)compare:(</code> <span class="bold"><strong> <code class="literal">id</code> </strong></span>
+              <code class="literal">)</code>
+              <em class="replaceable"><code>obj</code></em></span></dt><dd><p><a id="IXT-1-346" class="indexterm"/>Returns one of the following values:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>0, if <code class="literal">[</code>
+                    <strong class="userinput"><code>self</code></strong> <code class="literal">isEqual</code>:<em class="replaceable"><code>obj</code></em>
+                    <code class="literal">]</code> returns <strong class="userinput"><code>YES</code></strong>.</p></li><li class="listitem"><p>-1, if the receiver's value (as a pointer) is less
+                    than that of <em class="replaceable"><code>obj</code></em>.</p></li><li class="listitem"><p>1, if the receiver's value (as a pointer) is greater
+                    than that of <em class="replaceable"><code>obj</code></em>.</p></li></ul></div><p>Override this method if you want to compare your objects
+                in a different <a id="IXTR3-601" class="indexterm"/> <a id="IXTR3-602" class="indexterm"/>way.</p></dd></dl></div></div><div class="sect3" title="Testing object type"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.3"/>Testing object type</h3></div></div></div><p>Objective-C <a id="IXT-1-347" class="indexterm"/> <a id="IXT-1-348" class="indexterm"/>minimizes the differences between regular and class
+          objects, but sometimes it is helpful to know which is which. In
+          addition, the <em class="filename"/> <a id="IXT-1-349" class="indexterm"/>GNU runtime distinguishes between class and metaclass
+          objects. The following methods let you find out from an object what
+          kind it is:</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isInstance</code></span></dt><dd><p><a id="IXT-1-350" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver is a regular
+                object, otherwise <strong class="userinput"><code>NO</code></strong>.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isClass</code></span></dt><dd><p><a id="IXT-1-351" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver is a class
+                object, otherwise <strong class="userinput"><code>NO</code></strong>.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isMetaClass</code></span></dt><dd><p><a id="IXT-1-352" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver is a metaclass
+                object, otherwise <strong class="userinput"><code>NO</code></strong>.</p></dd></dl></div></div><div class="sect3" title="Testing inheritance and conformance"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.4"/>Testing inheritance and conformance</h3></div></div></div><p>Use<a id="IXT-1-353" class="indexterm"/> <a id="IXT-1-354" class="indexterm"/> <a id="IXT-1-355" class="indexterm"/> the following methods to find out an object's place
+          in the inheritance hierarchy:</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isKindOf:(Class)</code>
+              <em class="replaceable"><code>classObj</code></em></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-356" class="indexterm"/>If the receiver is an ordinary object,
+                    returns <strong class="userinput"><code>YES</code></strong> if the
+                    receiver's class is <em class="replaceable"><code>classObj</code></em> or
+                    a descendant of it, <strong class="userinput"><code>NO</code></strong> otherwise.</p></li><li class="listitem"><p>If the receiver is a class object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>classObj</code></em> is the immediate
+                    metaclass of the receiver, <strong class="userinput"><code>NO</code></strong> otherwise.</p></li><li class="listitem"><p>If the receiver is a metaclass, returns <strong class="userinput"><code>NO</code></strong>.</p></li></ul></div></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isKindOfClassNamed: (</code>
+              <span class="bold"><strong> <code class="literal">const</code>
+              </strong></span> <span class="bold"><strong> <code class="literal">char</code> </strong></span> <code class="literal">*)</code>
+              <em class="replaceable"><code>className</code></em></span></dt><dd><p><a id="IXT-1-357" class="indexterm"/>Same as <code class="literal">-isKindOf</code>:, but takes as a parameter
+                the name of a class instead of a class object.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isMemberOf:(Class)</code>
+              <em class="replaceable"><code>classObj</code></em></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-358" class="indexterm"/>If the receiver is an ordinary object,
+                    returns <strong class="userinput"><code>YES</code></strong> if the
+                    receiver's class is <em class="replaceable"><code>classObj</code></em>,
+                    otherwise <strong class="userinput"><code>NO</code></strong>.</p></li><li class="listitem"><p>If the receiver is a class or metaclass object,
+                    returns <strong class="userinput"><code>NO</code></strong>.</p></li></ul></div></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)isMemberOfClassNamed:(</code>
+              <span class="bold"><strong> <code class="literal">const
+              char</code> </strong></span> <code class="literal">*)</code>
+              <em class="replaceable"><code>className</code></em></span></dt><dd><p><a id="IXT-1-359" class="indexterm"/>Same as <code class="literal">-isMemberOf</code>:, but takes as a
+                parameter the name of a class instead of a class
+                object.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)conformsTo:(Protocol*)</code>
+              <em class="replaceable"><code>prot</code></em></span></dt><dd><p><a id="IXT-1-360" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the class of the receiver
+                adopts the protocol directly, or if that class directly or
+                indirectly inherits from another class that does.</p></dd></dl></div></div><div class="sect3" title="Information about methods"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.5"/>Information about methods</h3></div></div></div><p>Use the <a id="IXT-1-361" class="indexterm"/>instance methods listed here to ask regular objects
+          about instance methods, and <a id="IXT-1-362" class="indexterm"/>class objects about class methods.</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">+(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)instancesRespondTo:(</code>
+              <span class="bold"><strong> <code class="literal">SEL</code>
+              </strong></span> <code class="literal">)</code>
+              <em class="replaceable"><code>sel</code></em>;</span></dt><dd><p><a id="IXT-1-363" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if instances of the receiving
+                class respond to the selector <em class="replaceable"><code>sel</code></em>,
+                otherwise <strong class="userinput"><code>NO</code></strong>. Does not
+                take forwarding into account.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">BOOL</code> </strong></span>
+              <code class="literal">)respondsTo:(</code> <span class="bold"><strong> <code class="literal">SEL</code> </strong></span>
+              <code class="literal">)</code>
+              <em class="replaceable"><code>sel</code></em></span></dt><dd><p><a id="IXT-1-364" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver responds to
+                the selector <em class="replaceable"><code>sel</code></em>, otherwise
+                <strong class="userinput"><code>NO</code></strong>. Does not take
+                forwarding into account.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt66"/>+(<strong class="userinput"><code>struct</code></strong> objc_method_description*)
+              descriptionForInstanceMethod:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-365" class="indexterm"/>If instances of the receiving class handle the
+                method specified by <em class="replaceable"><code>sel</code></em>, this
+                method returns a pointer to a description of the method;
+                otherwise it returns a <strong class="userinput"><code>NULL</code></strong> pointer.</p><p>The return type is defined as follows in
+                <span class="emphasis"><em>objc-api.h</em></span>:</p><a id="I_1_tt67"/><pre class="programlisting"><strong class="userinput"><code>struct</code></strong> objc_method_description {
+  <strong class="userinput"><code>SEL</code></strong> name;
+  <strong class="userinput"><code>char</code></strong>* types;
+};</pre><p>The first member of the structure will be of little use
+                since you already have the selector. The second points to a
+                zero-terminated character string. The string takes the form of
+                type specifiers (as returned by the <strong class="userinput"><code>@encode</code></strong> directive) for the return
+                and parameter types, interleaved with numbers describing
+                offsets of the parameters in the stack frame.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt68"/>-(<strong class="userinput"><code>struct</code></strong> objc_method_description*)
+              descriptionForMethod:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-366" class="indexterm"/>If the receiver handles the method specified by
+                <em class="replaceable"><code>sel</code></em>, this method returns a pointer
+                to a description of the method; otherwise it returns a
+                <strong class="userinput"><code>NULL</code></strong> pointer.</p></dd><dt><span class="term"><code class="literal">+(</code> <span class="bold"><strong> <code class="literal">IMP</code> </strong></span>
+              <code class="literal">)instanceMethodFor:(</code>
+              <span class="bold"><strong> <code class="literal">SEL</code>
+              </strong></span> <code class="literal">)</code>
+              <em class="replaceable"><code>sel</code></em></span></dt><dd><p><a id="IXT-1-367" class="indexterm"/>If instances of the receiving class handle the
+                method specified by <em class="replaceable"><code>sel</code></em>, this
+                method returns a pointer to the implementation of the
+                specified method; otherwise a <strong class="userinput"><code>NULL</code></strong> pointer. You can use this to
+                get a pointer to a method you want to call directly. See <a class="link" href="ch01s15.html" title="Optimizing Method Calls">Section 1.15</a> for an
+                example.</p></dd><dt><span class="term"><code class="literal">-(</code> <span class="bold"><strong> <code class="literal">IMP</code> </strong></span>
+              <code class="literal">)methodFor:(</code> <span class="bold"><strong> <code class="literal">SEL</code> </strong></span>
+              <code class="literal">)</code>
+              <em class="replaceable"><code>sel</code></em></span></dt><dd><p><a id="IXT-1-368" class="indexterm"/>If the receiver handles the method specified by
+                <em class="replaceable"><code>sel</code></em>, this method returns a pointer
+                to the method's code; otherwise a <strong class="userinput"><code>NULL</code></strong> pointer.</p></dd></dl></div></div><div class="sect3" title="Sending messages"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.6"/>Sending messages</h3></div></div></div><p>Use the following methods to send <a id="IXT-1-369" class="indexterm"/>messages when you won't know until runtime which
+          message to send:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt69"/>-(<strong class="userinput"><code>id</code></strong>)perform:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-370" class="indexterm"/>Sends to the receiver the message specified by
+                the selector <em class="replaceable"><code>sel</code></em>. Since selectors
+                can be assigned to variables, one part of your code can tell
+                another which message to send.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt70"/>-(<strong class="userinput"><code>id</code></strong>)perform:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              with:(id)<em class="replaceable"><code>obj1</code></em> </code></span></dt><dd><p>The same as <code class="literal">-perform</code>:
+                but also provides the argument <em class="replaceable"><code>obj1</code></em>
+                to the method being called.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt71"/>-(<strong class="userinput"><code>id</code></strong>)perform:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              with:(<strong class="userinput"><code>id</code></strong>)<em class="replaceable"><code>obj1</code></em>
+              with:(<strong class="userinput"><code>id</code></strong>)<em class="replaceable"><code>obj2</code></em>
+              </code></span></dt><dd><p>The same as <code class="literal">-perform</code>:
+                but also provides two arguments to the method being
+                called.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt72"/>-(retval_t)performv:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              :(arglist_t)<em class="replaceable"><code>args</code></em> </code></span></dt><dd><p><a id="IXT-1-371" class="indexterm"/>Like the <code class="literal">-perform</code>: methods, but takes a
+                variable-length parameter list. Call this method inside your
+                class's <code class="literal">-forward</code>:: method
+                to delegate the message to another object.</p><p>The return type is a typedef for <strong class="userinput"><code>void</code></strong> <code class="literal">*</code>. The second parameter describes
+                the parameter types and values. You can treat this as an
+                opaque type; its declaration is in
+                <span class="emphasis"><em>encoding.h</em></span>.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt73"/>-(retval_t)forward:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              :(arglist_t)<em class="replaceable"><code>args</code></em> </code></span></dt><dd><p><a id="IXT-1-372" class="indexterm"/>Invokes <code class="literal">-doesNotRecognize</code>. Override as
+                described in <a class="link" href="ch01s11.html" title="Forwarding Messages">Section
+                1.11</a> to implement message forwarding. The parameter
+                types are the same as for <code class="literal">-performv</code>::.</p></dd></dl></div></div><div class="sect3" title="Posing"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.7"/>Posing</h3></div></div></div><p>The following methods let you change the <a id="IXT-1-373" class="indexterm"/>inheritance hierarchy at runtime:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt74"/>+(<strong class="userinput"><code>id</code></strong>)poseAs:<em class="replaceable"><code>classObj</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-374" class="indexterm"/>Substitutes the receiver for the class
+                represented by <em class="replaceable"><code>classObj</code></em>. The
+                receiver must be a subclass of the class represented by
+                <em class="replaceable"><code>classObj</code></em>. The receiver can't
+                declare any new fields. Call this method before creating any
+                instances of the class represented by
+                <em class="replaceable"><code>classObj</code></em> or sending it any
+                messages.</p><p>This is a way, similar to using categories, to add or
+                override methods to an existing class. In contrast with a
+                category, the posing class can send a message to <strong class="userinput"><code>super</code></strong> <a id="IXT-1-375" class="indexterm"/>, which will execute the method in the class
+                represented by <em class="replaceable"><code>classObj</code></em>.</p></dd><dt><span class="term"><code class="literal">-(Class)transmuteClassTo:(Class)</code>
+              <em class="replaceable"><code>classObj</code></em></span></dt><dd><p><a id="IXT-1-376" class="indexterm"/>Sets the <code class="literal">isa</code>
+                pointer of the receiver to
+                <em class="replaceable"><code>classObj</code></em>, and returns the previous
+                value of the pointer. This effectively converts the receiver
+                to an instance of the class represented by
+                <em class="replaceable"><code>classObj</code></em>. This will only work if
+                the receiver's class is a descendant of the class represented
+                by <em class="replaceable"><code>classObj</code></em>, and instances of the
+                two classes have the same size. If the call fails, it returns
+                <strong class="userinput"><code>nil</code></strong>.</p></dd></dl></div></div><div class="sect3" title="Enforcing intentions"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.8"/>Enforcing intentions</h3></div></div></div><p>Each method in the following list generates a <a id="IXT-1-377" class="indexterm"/>runtime error. In each case, when you call the method,
+          pass in the <code class="literal">_cmd</code> variable, which
+          the runtime sets up to be the selector of the method you are
+          in.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt75"/>-(<strong class="userinput"><code>id</code></strong>)subclassResponsibility:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-378" class="indexterm"/>Call this in a method that you require
+                subclasses to override and implement.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt76"/>-(<strong class="userinput"><code>id</code></strong>)notImplemented:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-379" class="indexterm"/>Call this in a method that you have deliberately
+                left unfinished.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt77"/>-(<strong class="userinput"><code>id</code></strong>)shouldNotImplement:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-380" class="indexterm"/>Call this in a method that you inherit (and
+                override) but that makes no sense for your subclass to
+                support.</p></dd></dl></div></div><div class="sect3" title="Error handling"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.9"/>Error handling</h3></div></div></div><p>The following functions are used for <a id="IXT-1-381" class="indexterm"/>error handling. See <a class="link" href="ch01s08.html" title="Runtime Errors">Section 1.8</a> for more
+          information about their usage.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt78"/>-(<strong class="userinput"><code>id</code></strong>)doesNotRecognize:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-382" class="indexterm"/>Generates a runtime error by invoking the
+                <code class="literal">-error</code> <a id="IXT-1-383" class="indexterm"/>: method on <strong class="userinput"><code>self</code></strong>. The runtime sends this
+                message to an object when the object has failed to respond to,
+                or forward, a message.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt79"/>-(<strong class="userinput"><code>id</code></strong>)error:(<strong class="userinput"><code>const</code></strong> <strong class="userinput"><code>char</code></strong>*)<em class="replaceable"><code>format</code></em>,...</code></span></dt><dd><p><a id="IXT-1-384" class="indexterm"/>Writes an error message to the system log (via
+                the <code class="literal">syslog( )</code> call) and
+                exits the program. The runtime calls this method on <strong class="userinput"><code>self</code></strong> for a variety of error
+                conditions. Override as described in <a class="link" href="ch01s08.html" title="Runtime Errors">Section 1.8</a> to
+                customize error handling for a class.</p></dd></dl></div></div><div class="sect3" title="Archiving"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.3.10"/>Archiving</h3></div></div></div><p>The <a id="IXT-1-385" class="indexterm"/>GNU runtime<a id="IXT-1-386" class="indexterm"/> <a id="IXT-1-387" class="indexterm"/> provides the type <code class="literal">TypedStream</code> <a id="IXT-1-388" class="indexterm"/> for reading and writing objects to and from archives.
+          <a class="link" href="ch01s13.html" title="Archiving Objects">Section 1.13</a>
+          describes this type and its use in saving and restoring objects. The
+          following methods support archiving:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt80"/>-(<strong class="userinput"><code>id</code></strong>)awake</code></span></dt><dd><p><a id="IXT-1-389" class="indexterm"/>Does nothing and returns <strong class="userinput"><code>self</code></strong>. Called by the runtime when
+                an object has been reconstructed. Override to customize
+                behavior when your objects are restored.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt81"/>-(<strong class="userinput"><code>id</code></strong>)write:(TypedStream*)<em class="replaceable"><code>stream</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-390" class="indexterm"/>Writes the receiver to the specified
+                stream.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt82"/>-(<strong class="userinput"><code>id</code></strong>)read:(TypedStream*)<em class="replaceable"><code>stream</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-391" class="indexterm"/>Sets the receiver's fields by reading from the
+                specified stream.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt83"/>+(<strong class="userinput"><code>id</code></strong>)setVersion:(<strong class="userinput"><code>int</code></strong>)<em class="replaceable"><code>version</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-392" class="indexterm"/>Sets the class version number.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt84"/>+(<strong class="userinput"><code>int</code></strong>)version</code></span></dt><dd><p><a id="IXT-1-393" class="indexterm"/>Returns the class's version number, or zero if
+                it has never been set.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt85"/>+(<strong class="userinput"><code>int</code></strong>)streamVersion:(TypedStream*)<em class="replaceable"><code>stream</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-394" class="indexterm"/>Returns the version number of the <a id="IXTR3-603" class="indexterm"/>typed <a id="IXTR3-604" class="indexterm"/> <a id="IXTR3-605" class="indexterm"/>stream.</p></dd></dl></div></div></div><div class="sect2" title="The NSObject Class"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-10.4"/>The NSObject Class</h2></div></div></div><p><code class="literal">NSObject</code> <a id="objectcpr-IDXTERM-536" class="indexterm"/>supports most of the features of <code class="literal">Object</code> and adds others. Often the <code class="literal">NSObject</code> version of a method will have a
+        more specifically typed return value. For example, <code class="literal">-class</code> is declared to return a <code class="literal">Class</code> and not just an <strong class="userinput"><code>id</code></strong>.</p><p>In defining <code class="literal">NSObject</code>,
+        <a id="objectcpr-IDXTERM-537" class="indexterm"/> <a id="objectcpr-IDXTERM-538" class="indexterm"/>Cocoa first declares the <code class="literal">NSObject</code> protocol. (It can be confusing that
+        the class and protocol have the same name; they live in different
+        namespaces.) This allows for other root classes. As long as they
+        implement the <code class="literal">NSObject</code> protocol,
+        they can be used in contexts that depend on the methods that <code class="literal">NSObject</code> implements.</p><p>The <code class="literal">NSObject</code> class implements
+        the <code class="literal">NSObject</code> protocol along with
+        other useful methods that its descendants may want but that are not
+        part of the protocol and are not important for
+        interchangeability.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-25-fm2xml"/>Note</h3><p>Cocoa also declares categories for <code class="literal">NSObject</code>, such as <code class="literal">NSComparisonMethods</code>, <code class="literal">NSURLClient</code>, and others, comprising dozens
+          of additional methods. This handbook discusses a few of these
+          categories (<code class="literal">NSCoding</code>, <code class="literal">NSKeyValueCoding</code>) separately, but omits
+          them from this section.</p></div><p>In the following sections, the methods are grouped by topic, and
+        marked as being part of the <code class="literal">NSObject</code> protocol or class.</p><div class="sect3" title="Creating, copying, and freeing objects"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.1"/>Creating, copying, and freeing objects</h3></div></div></div><p><a class="link" href="ch01s07.html" title="Object Lifecycle">Section 1.7</a>
+          discusses how to use the following methods, which create objects,
+          copy objects, and free the memory used by objects:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt86"/>+(<strong class="userinput"><code>id</code></strong>)alloc</code></span></dt><dd><p><a id="IXT-1-395" class="indexterm"/>Allocates, <a id="IXT-1-396" class="indexterm"/>clears, and returns a pointer to memory for a
+                new instance of the receiver. Memory comes from the default
+                zone. Returns <strong class="userinput"><code>nil</code></strong> on
+                failure. (<code class="literal">NSObject</code>
+                class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt87"/>+(<strong class="userinput"><code>id</code></strong>)allocWithZone:(NSZone*)<em class="replaceable"><code>zone</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-397" class="indexterm"/>Same as <code class="literal">alloc</code>, but uses a specific region of
+                memory. <code class="literal">NSZone</code> <a id="IXT-1-398" class="indexterm"/> is not a class but a C type that you should
+                treat as opaque. You can get the zone of an object with the
+                <a id="IXT-1-399" class="indexterm"/> <code class="literal">-zone</code>
+                method. You may improve cache performance by creating related
+                objects in the same zone. Passing in a <strong class="userinput"><code>nil</code></strong> parameter means memory will be
+                allocated from the default zone. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt88"/>+(<strong class="userinput"><code>void</code></strong>)initialize</code></span></dt><dd><p><a id="IXT-1-400" class="indexterm"/>Sent by the runtime before the class or any of
+                its descendants is sent a message by the program. Each class
+                gets the message exactly once, and superclasses get the
+                message before subclasses. The <code class="literal">NSObject</code> implementation does
+                nothing. Override (first passing the call to <strong class="userinput"><code>super</code></strong>) to perform per-class setup.
+                (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt89"/>-(<strong class="userinput"><code>id</code></strong>)init</code></span></dt><dd><p><a id="IXT-1-401" class="indexterm"/>Returns <strong class="userinput"><code>self</code></strong>. This is the designated
+                initializer for <code class="literal">NSObject</code>.
+                The <a class="link" href="ch01s07.html" title="Object Lifecycle">Section 1.7</a>
+                discusses overriding this method. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt90"/>+(<strong class="userinput"><code>id</code></strong>)new</code></span></dt><dd><p><a id="IXT-1-402" class="indexterm"/>Calls <code class="literal">+alloc</code>,
+                then <code class="literal">-init</code> on the resulting
+                instance, and returns the result. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt91"/>+(<strong class="userinput"><code>id</code></strong>)copyWithZone:(NSZone*)<em class="replaceable"><code>zone</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-403" class="indexterm"/>Returns <a id="IXT-1-404" class="indexterm"/>the receiver since class objects are unique.
+                Ignores the parameter. Don't override. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt92"/>+(<strong class="userinput"><code>id</code></strong>)mutableCopyWithZone:(NSZone*)<em class="replaceable"><code>zone</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-405" class="indexterm"/>Returns the receiver since class objects are
+                unique. Ignores the parameter. Don't override. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt93"/>-(<strong class="userinput"><code>id</code></strong>)copy</code></span></dt><dd><p><a id="IXT-1-406" class="indexterm"/>Calls <code class="literal">-copyWithZone</code> <a id="IXT-1-407" class="indexterm"/>: with a <strong class="userinput"><code>nil</code></strong> zone parameter. <code class="literal">NSObject</code> doesn't implement that
+                method (only the class method of the same name) but many Cocoa
+                classes do. Your class will have to implement <code class="literal">-copyWithZone</code>: in order to use
+                <code class="literal">-copy</code>. The <a class="link" href="ch01s07.html" title="Object Lifecycle">Section 1.7</a> discusses
+                how to do this.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt94"/>-(<strong class="userinput"><code>id</code></strong>)mutableCopy</code></span></dt><dd><p><a id="IXT-1-408" class="indexterm"/>Calls <code class="literal">-mutableCopyWithZone</code>: with a
+                <strong class="userinput"><code>nil</code></strong> zone parameter.
+                <code class="literal">NSObject</code> doesn't implement
+                that method (only the class method of the same name) but many
+                Cocoa classes do. Your class will have to implement <code class="literal">-mutableCopyWithZone</code> in order to use
+                <code class="literal">-mutableCopy</code>. The <a class="link" href="ch01s07.html" title="Object Lifecycle">Section 1.7</a> discusses
+                how to do this. (<code class="literal">NSObject</code>
+                class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt95"/>-(<strong class="userinput"><code>void</code></strong>)dealloc</code></span></dt><dd><p><a id="IXT-1-409" class="indexterm"/>Deallocates <a id="IXT-1-410" class="indexterm"/>the memory used to store the receiver. Override
+                to release any additional resources managed by your object.
+                Don't call <code class="literal">-dealloc</code>
+                directly if you are using retain/release memory management.
+                (See <a class="link" href="ch01s12.html" title="Memory Management">Section
+                1.12</a>.) (<code class="literal">NSObject</code>
+                class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt96"/>+(<strong class="userinput"><code>void</code></strong>)load</code></span></dt><dd><p><a id="IXT-1-411" class="indexterm"/>Called by the runtime when a class or category
+                is set up for use by the runtime. Deprecated in favor of the
+                <code class="literal">+initialize</code> method.
+                (<code class="literal">NSObject</code> class)</p></dd></dl></div></div><div class="sect3" title="Identifying objects and classes"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.2"/>Identifying objects and classes</h3></div></div></div><p>Use <a id="objectcpr-IDXTERM-556" class="indexterm"/> <a id="objectcpr-IDXTERM-557" class="indexterm"/>the following methods to find out about an object's
+          identity, and to compare it with other objects:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt97"/>-(Class)class</code></span></dt><dd><p><a id="IXT-1-412" class="indexterm"/>Returns the class object for the receiver's
+                class. (<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt98"/>-(Class)superclass</code></span></dt><dd><p><a id="IXT-1-413" class="indexterm"/>Returns the class object of the receiver's
+                parent class. (<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt99"/>-(NSString*)description</code></span></dt><dd><p><a id="IXT-1-414" class="indexterm"/>Returns a string describing the state of the
+                receiver. The <code class="literal">NSObject</code>
+                implementation prints the class name and the runtime address
+                of the instance. Override to provide a string the runtime will
+                use when you print an object using the <code class="literal">%@</code> formatting descriptor with
+                <code class="literal">NSLog( )</code>. (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt100"/>-(<strong class="userinput"><code>id</code></strong>)self</code></span></dt><dd><p><a id="IXT-1-415" class="indexterm"/>Returns the receiver. You can get a class object
+                from the class's name with this method:</p><a id="I_1_tt101"/><pre class="programlisting">Class<em class="replaceable"><code>circleClass</code></em> = [<em class="replaceable"><code>Circle</code></em> self];</pre><p>(<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt102"/>-(<strong class="userinput"><code>unsigned</code></strong>)hash</code></span></dt><dd><p><a id="IXT-1-416" class="indexterm"/>Returns an integer that can be used to store the
+                object in a hash table. If two objects are equal (as reported
+                by the <code class="literal">-isEqual</code>: method)
+                they will have the same hash value. However, two unequal
+                objects may also share the same hash value. (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt103"/>-(<strong class="userinput"><code>BOOL</code></strong>)isEqual:(<strong class="userinput"><code>id</code></strong>)object</code></span></dt><dd><p><a id="IXT-1-417" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver and <code class="literal">object</code> are equal as pointers,
+                otherwise returns <strong class="userinput"><code>NO</code></strong>.
+                Override to provide different semantics, such as equality of
+                contents. (<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt104"/>+(Class)class</code></span></dt><dd><p><a id="IXT-1-418" class="indexterm"/>Returns the class object that represents the
+                receiver, not (as you might expect) the metaclass object of
+                the metaclass of the receiver. This means that <code class="literal">[MyClass class]</code> and <code class="literal">[MyClass self]</code> return the same
+                value; the second expression is probably more clear. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt105"/>+(NSString*)description</code></span></dt><dd><p><a id="IXT-1-419" class="indexterm"/>Returns the name of the class. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt106"/>+(<strong class="userinput"><code>void</code></strong>)setVersion:(<strong class="userinput"><code>int</code></strong>) version</code></span></dt><dd><p><a id="IXT-1-420" class="indexterm"/>Sets the class version number. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt107"/>+(<strong class="userinput"><code>int</code></strong>)version</code></span></dt><dd><p><a id="IXT-1-421" class="indexterm"/>Returns the class's version number, or zero if
+                it has never been set. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt108"/>+(Class)superclass</code></span></dt><dd><p><a id="IXT-1-422" class="indexterm"/>Returns the class object representing the
+                receiver's <a id="IXTR3-606" class="indexterm"/> <a id="IXTR3-607" class="indexterm"/>parent class.
+                (<code class="literal">NSObject</code> class)</p></dd></dl></div></div><div class="sect3" title="Testing inheritance and conformance"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.3"/>Testing inheritance and conformance</h3></div></div></div><p>Use <a id="IXT-1-423" class="indexterm"/> <a id="IXT-1-424" class="indexterm"/> <a id="IXT-1-425" class="indexterm"/>the following methods to find out about an object's
+          place in the inheritance hierarchy:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt109"/>+(<strong class="userinput"><code>BOOL</code></strong>)conformsToProtocol:(Protocol*)<em class="replaceable"><code>prot</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-426" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver adopts
+                <em class="replaceable"><code>prot</code></em> directly or inherits directly
+                or indirectly from another class that does. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt110"/>-(<strong class="userinput"><code>BOOL</code></strong>)isKindOfClass:(Class)<em class="replaceable"><code>C</code></em>
+              </code></span></dt><dd><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><a id="IXT-1-427" class="indexterm"/>If the receiver is an ordinary object,
+                    returns <strong class="userinput"><code>YES</code></strong> if the
+                    receiver's class is represented by
+                    <em class="replaceable"><code>C</code></em> or is a descendant of the
+                    class represented by <em class="replaceable"><code>C</code></em>,
+                    <strong class="userinput"><code>NO</code></strong>
+                    otherwise.</p></li><li class="listitem"><p>If the receiver is a class object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>C</code></em> represents <code class="literal">NSObject</code>, <strong class="userinput"><code>NO</code></strong> otherwise. (This is
+                    consistent with the special property that class objects
+                    appear to be instances of the root object class.)</p></li><li class="listitem"><p>If the receiver is a metaclass object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>C</code></em> represents <code class="literal">NSObject</code> or <code class="literal">NSObject</code>'s metaclass, <strong class="userinput"><code>NO</code></strong> otherwise.</p></li></ul></div><p>(<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt111"/>-(<strong class="userinput"><code>BOOL</code></strong>)isMemberOfClass:(Class)
+              <em class="replaceable"><code>C</code></em> </code></span></dt><dd><p><a id="IXT-1-428" class="indexterm"/>Is part of the NSObject protocol, and does one
+                of the following:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>If the receiver is an ordinary object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>C</code></em> represents the receiver's
+                    class, otherwise <strong class="userinput"><code>NO</code></strong>.</p></li><li class="listitem"><p>If the receiver is a class object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>C</code></em> represents the receiver's
+                    metaclass, otherwise <strong class="userinput"><code>NO</code></strong>.</p></li><li class="listitem"><p>If the receiver is a metaclass object, returns
+                    <strong class="userinput"><code>YES</code></strong> if
+                    <em class="replaceable"><code>C</code></em> represents <code class="literal">NSObject</code>'s metaclass, otherwise
+                    <strong class="userinput"><code>NO</code></strong>.</p></li></ul></div><p>(<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt112"/>-(<strong class="userinput"><code>BOOL</code></strong>)conformsToProtocol:(Protocol*)<em class="replaceable"><code>prot</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-429" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the class of the receiver
+                adopts the protocol directly, or directly or indirectly
+                inherits from another class that does. (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt113"/>-(<strong class="userinput"><code>BOOL</code></strong>)isProxy</code></span></dt><dd><p><a id="IXT-1-430" class="indexterm"/>Returns <strong class="userinput"><code>NO</code></strong>. (The <code class="literal">NSProxy</code> class also implements this
+                method, and returns <strong class="userinput"><code>YES</code></strong>.) (<code class="literal">NSObject</code> protocol)</p></dd></dl></div></div><div class="sect3" title="Information about methods"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.4"/>Information about methods</h3></div></div></div><p>Use the <a id="IXT-1-431" class="indexterm"/>instance methods listed here to ask regular objects
+          about instance methods, and class objects about <a id="IXT-1-432" class="indexterm"/>class methods.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt114"/>+(<strong class="userinput"><code>BOOL</code></strong>)instancesRespondToSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-433" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if instances of the receiving
+                class respond to the selector <em class="replaceable"><code>sel</code></em>,
+                otherwise <strong class="userinput"><code>NO</code></strong>. Does not
+                take forwarding into account. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt115"/>+(<strong class="userinput"><code>IMP</code></strong>)instanceMethodForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-434" class="indexterm"/>If instances of the receiving class handle the
+                method specified by <em class="replaceable"><code>sel</code></em>, returns a
+                pointer to the implementation of the specified method. You can
+                use this to get a pointer to a method you want to call
+                directly. <a class="link" href="ch01s15.html" title="Optimizing Method Calls">Section
+                1.15</a> gives an example.</p><p>The Cocoa documentation says that if instances of the
+                receiving class do not handle the specified method, a runtime
+                error occurs. Instead, an apparently valid pointer is
+                returned. You should use code like the following to test for
+                errors:</p><a id="I_1_tt116"/><pre class="programlisting"><strong class="userinput"><code>IMP</code></strong> imp = <strong class="userinput"><code>NULL</code></strong>;
+<strong class="userinput"><code>if</code></strong> ([<em class="replaceable"><code>ClassName</code></em> instancesRespondToSelector:<em class="replaceable"><code>sel</code></em>])
+  <em class="replaceable"><code>imp</code></em> = [<em class="replaceable"><code>ClassName</code></em>
+         instanceMethodForSelector:<em class="replaceable"><code>sel</code></em>];</pre><p>After executing these instructions,
+                <em class="replaceable"><code>imp</code></em> will still be <strong class="userinput"><code>NULL</code></strong> if the class's instances do
+                not handle the method specified by
+                <em class="replaceable"><code>sel</code></em>. (NSObject class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt117"/>+(NSMethodSignature*)
+              instanceMethodSignatureForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-435" class="indexterm"/>If instances of the receiving class handle the
+                method specified by <em class="replaceable"><code>sel</code></em>, returns a
+                description of the method's signature for the specified
+                method; otherwise returns <strong class="userinput"><code>nil</code></strong>. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt118"/>-(<strong class="userinput"><code>IMP</code></strong>)methodForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-436" class="indexterm"/>If the receiver handles the method specified by
+                <em class="replaceable"><code>sel</code></em>, this method returns a pointer
+                to the method's code. You can use this to get a pointer to a
+                method you want to call directly. <a class="link" href="ch01s15.html" title="Optimizing Method Calls">Section 1.15</a> gives an
+                example.</p><p>The Cocoa documentation says that if the receiver does
+                not handle the specified method, a runtime error occurs.
+                Instead, an apparently-valid pointer is returned. You should
+                use code like the following to test for errors:</p><a id="I_1_tt119"/><pre class="programlisting"><strong class="userinput"><code>IMP</code></strong> 
+                           <em class="replaceable"><code>imp</code></em> = <strong class="userinput"><code>NULL</code></strong>;
+<strong class="userinput"><code>if </code></strong>([<em class="replaceable"><code>obj</code></em> respondsToSelector:<em class="replaceable"><code>sel</code></em>])
+  <em class="replaceable"><code>imp</code></em> = [<em class="replaceable"><code>obj</code></em> methodForSelector:<em class="replaceable"><code>sel</code></em>];</pre><p>After executing these instructions,
+                <em class="replaceable"><code>imp</code></em> will still be <strong class="userinput"><code>NULL</code></strong> if the receiver does not
+                handle the method specified by <em class="replaceable"><code>sel</code></em>.
+                (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt120"/>-(NSMethodSignature*)methodSignatureForSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-437" class="indexterm"/>If the receiver handles the method specified by
+                <em class="replaceable"><code>sel</code></em>, this method returns a
+                description of the method; otherwise it returns <strong class="userinput"><code>nil</code></strong>. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt121"/>-(<strong class="userinput"><code>BOOL</code></strong>)respondsToSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-438" class="indexterm"/>Returns <strong class="userinput"><code>YES</code></strong> if the receiver responds to
+                the selector sel; otherwise <strong class="userinput"><code>NO</code></strong>. Does not take forwarding into
+                account. (<code class="literal">NSObject</code>
+                protocol)</p></dd></dl></div></div><div class="sect3" title="Sending messages"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.5"/>Sending messages</h3></div></div></div><p>Use <a id="IXT-1-439" class="indexterm"/>the following methods to send messages when you won't
+          know until runtime which message to send:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt122"/>-(<strong class="userinput"><code>id</code></strong>)performSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-440" class="indexterm"/>Sends to the receiver the message specified by
+                the selector <em class="replaceable"><code>sel</code></em>. Since selectors
+                can be assigned to variables, one part of your code can tell
+                another which message to send.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt123"/>-(<strong class="userinput"><code>id</code></strong>)performSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              withObject:(<strong class="userinput"><code>id</code></strong>)<em class="replaceable"><code>obj1</code></em>
+              </code></span></dt><dd><p>The same as <code class="literal">-performSelector</code>:, but also provides
+                the argument <em class="replaceable"><code>obj1</code></em> to the method
+                being called.</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt124"/>-(<strong class="userinput"><code>id</code></strong>)performSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              withObject:(<strong class="userinput"><code>id</code></strong>)
+              <em class="replaceable"><code>obj1</code></em> withObject:(<strong class="userinput"><code>id</code></strong>)<em class="replaceable"><code>obj2</code></em>
+              </code></span></dt><dd><p>The same as <code class="literal">-performSelector</code>:, but also provides
+                two arguments to the method being called. If you need to pass
+                more than two parameters, construct an <code class="literal">NSInvocation</code> instance. <a class="link" href="ch01s11.html" title="Forwarding Messages">Section 1.11</a> gives an
+                example. (<code class="literal">NSObject</code>
+                protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt125"/>-(<strong class="userinput"><code>void</code></strong>)forwardInvocation:(NSInvocation*)<em class="replaceable"><code>inv</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-441" class="indexterm"/>Invokes <code class="literal">-doesNotRecognizeSelector:</code>. <a class="link" href="ch01s11.html" title="Forwarding Messages">Section 1.11</a>
+                describes how to override this to implement message
+                forwarding. (<code class="literal">NSObject</code>
+                class)</p></dd></dl></div></div><div class="sect3" title="Posing"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.6"/>Posing</h3></div></div></div><p>This method lets you modify the <a id="IXT-1-442" class="indexterm"/>inheritance hierarchy at runtime:</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt126"/>+(<strong class="userinput"><code>void</code></strong>)poseAsClass:(Class)<em class="replaceable"><code>classObj</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-443" class="indexterm"/>Substitutes the receiver for the class
+                represented by <em class="replaceable"><code>classObj</code></em>. The
+                receiver must be a subclass of the class represented by
+                <em class="replaceable"><code>classObj</code></em>. The receiver can't
+                declare any new fields. You should call this method before
+                creating any instances of the class represented by
+                <em class="replaceable"><code>classObj</code></em> or sending it any
+                messages.</p><p>This is a way, similar to using categories, to add or
+                override methods to an existing class. In contrast with a
+                category, the posing class can send a message to <strong class="userinput"><code>super</code></strong> <a id="IXT-1-444" class="indexterm"/> and execute the method in the class represented
+                by <em class="replaceable"><code>classObj</code></em>. (<code class="literal">NSObject</code> class)</p></dd></dl></div></div><div class="sect3" title="Error handling"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.7"/>Error handling</h3></div></div></div><p>The <a id="IXT-1-445" class="indexterm"/>following functions are used for error handling. See
+          <a class="link" href="ch01s08.html" title="Runtime Errors">Section 1.8</a> for more
+          information about their usage.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt127"/>-(<strong class="userinput"><code>void</code></strong>)doesNotRecognizeSelector:(<strong class="userinput"><code>SEL</code></strong>)<em class="replaceable"><code>sel</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-446" class="indexterm"/>Raises an <code class="literal">NSInvalidArgument</code> <a id="IXT-1-447" class="indexterm"/> exception. The runtime sends this message to an
+                object when the object has failed to respond to or forward a
+                message.</p><p>You can "un-implement" a method as follows:</p><a id="I_1_tt128"/><pre class="programlisting">-(<strong class="userinput"><code>void</code></strong>) <em class="replaceable"><code>methodName</code></em> {
+  [self doesNotRecognizeSelector: _cmd];
+}</pre><p>The class implementing this code will now behave as if
+                it had no <em class="replaceable"><code>methodName</code></em>.</p><p>You could also make an object handle any message without
+                failing by overriding <code class="literal">-doesNotRecognizeSelector</code>:, but you
+                should override <code class="literal">-forwardInvocation</code>: instead.
+                (<code class="literal">NSObject</code> class)</p></dd></dl></div></div><div class="sect3" title="Archiving"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.8"/>Archiving</h3></div></div></div><p>These <a id="IXT-1-448" class="indexterm"/> <a id="IXT-1-449" class="indexterm"/>are peripheral methods that support saving objects to
+          disk and restoring them. <a class="link" href="ch01s13.html" title="Archiving Objects">Section 1.13</a> provides more
+          information on this topic.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt129"/>-(<strong class="userinput"><code>id</code></strong>)awakeAfterUsingCoder:(NSCoder*)<em class="replaceable"><code>coder</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-450" class="indexterm"/>Returns the receiver. Called by <code class="literal">NSCoder</code> when it has decoded the
+                receiver. Override this to return some other object. You are
+                responsible for releasing the receiver if you return a
+                different object. (<code class="literal">NSObject</code>
+                class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt130"/>-(Class)classForCoder</code></span></dt><dd><p><a id="IXT-1-451" class="indexterm"/>Returns the receiver's class. Override to
+                substitute another class during archiving. Called by <code class="literal">NSCoder</code>. (<code class="literal">NSObject</code> class)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt131"/>-(<strong class="userinput"><code>id</code></strong>)replacementObjectForCoder:(NSCoder*)<em class="replaceable"><code>coder</code></em>
+              </code></span></dt><dd><p><a id="IXT-1-452" class="indexterm"/>Returns <strong class="userinput"><code>self</code></strong>. Override to substitute
+                another object for the receiver during archiving. Called by
+                <code class="literal">NSCoder</code>. (<code class="literal">NSObject</code> class)</p></dd></dl></div></div><div class="sect3" title="Reference counting"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-10.4.9"/>Reference counting</h3></div></div></div><p>These methods support <a id="IXT-1-453" class="indexterm"/>reference counting or return information about an
+          object's allocation. See <a class="link" href="ch01s12.html" title="Memory Management">Section 1.12</a> for more
+          information.</p><div class="variablelist"><dl><dt><span class="term"><code class="code"><a id="I_1_tt132"/>-(<strong class="userinput"><code>id</code></strong>)retain</code></span></dt><dd><p><a id="IXT-1-454" class="indexterm"/>Increments the receiver's reference count and
+                returns the receiver. (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt133"/>-(<strong class="userinput"><code>unsigned</code></strong>)retainCount</code></span></dt><dd><p><a id="IXT-1-455" class="indexterm"/>Returns the receiver's reference count.
+                (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt134"/>-(<strong class="userinput"><code>oneway</code></strong> <strong class="userinput"><code>void</code></strong>)release</code></span></dt><dd><p><a id="IXT-1-456" class="indexterm"/>Decrements <a id="IXT-1-457" class="indexterm"/>the receiver's reference count, and sends it the
+                <code class="literal">-dealloc</code> message if the
+                count reaches zero. The <strong class="userinput"><code>oneway</code></strong> keyword specifies that the
+                caller can send the message asynchronously. (See <a class="link" href="ch01s06.html" title="Remote Messaging">Section 1.6</a>.)
+                (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt135"/>-(<strong class="userinput"><code>id</code></strong>)autorelease</code></span></dt><dd><p><a id="IXT-1-458" class="indexterm"/>Adds the receiver to the current autorelease
+                pool. Returns the receiver. (<code class="literal">NSObject</code> protocol)</p></dd><dt><span class="term"><code class="code"><a id="I_1_tt136"/>-(NSZone*)zone</code></span></dt><dd><p><a id="IXT-1-459" class="indexterm"/>Returns the memory zone in which the receiver
+                was allocated. <code class="literal">NSZone</code>
+                <a id="IXT-1-460" class="indexterm"/> is not a class but a C type that you should
+                treat as opaque. You can use the value returned by this method
+                as a parameter to <code class="literal">-copyWithZone</code> <a id="IXT-1-461" class="indexterm"/>: or <code class="literal">-allocWithZone</code>:. Cocoa creates a
+                default zone when a program starts up, and normally you will
+                allocate objects from this zone. You may be able to improve
+                cache behavior by creating related objects in the same zone.
+                See the Cocoa documentation <a id="IXTR3-608" class="indexterm"/>for <code class="literal">NSCreateZone( )</code> <a id="IXTR3-609" class="indexterm"/> <a id="IXTR3-610" class="indexterm"/>and <a id="IXTR3-611" class="indexterm"/> <a id="IXTR3-612" class="indexterm"/>related
+                functions. (<code class="literal">NSObject</code>
+                protocol)</p></dd></dl></div></div></div></div></body></html>

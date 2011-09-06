@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>Andrew M. Duncan</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-hash</key>
+		<string>9EE1DD6169127BF50BB12E951259239F</string>
+		<key>cover-image-path</key>
+		<string>OEBPS/httpatomoreillycomsourceoreillyimages882156.jpg</string>
+		<key>package-file-hash</key>
+		<string>D4D71FBB3B81BD5972C07A597D510B1C</string>
+		<key>publisher-unique-id</key>
+		<string>urn:isbn:9780596103934</string>
+		<key>unique-id</key>
+		<integer>1573521448125130150</integer>
+	</dict>
+	<key>genre</key>
+	<string>COMPUTERS / Operating Systems / Macintosh</string>
+	<key>itemName</key>
+	<string>Objective-C Pocket Reference</string>
+	<key>playlistName</key>
+	<string>Objective-C Pocket Reference</string>
+	<key>releaseDate</key>
+	<string>2009-02-09</string>
+	<key>sort-artist</key>
+	<string>Andrew M. Duncan</string>
+	<key>sort-artist-status</key>
+	<integer>3</integer>
+</dict>
+</plist>

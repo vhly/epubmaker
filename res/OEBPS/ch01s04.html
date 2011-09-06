@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Compiler and Preprocessor Directives</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Compiler and Preprocessor Directives"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-4"/>Compiler and Preprocessor Directives</h1></div></div></div><p><a id="objectcpr-IDXTERM-227" class="indexterm"/> <a id="objectcpr-IDXTERM-228" class="indexterm"/> <a id="objectcpr-IDXTERM-229" class="indexterm"/>Compiler and preprocessor directives are special terms in
+      your program that tell the compiler to perform some Objective-C-specific
+      action. All compiler directives start with the character <code class="literal">@</code>, and preprocessor directives start with
+      <code class="literal">#</code>.</p><div class="sect2" title="Class Declarations and Definitions"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-4.1"/>Class Declarations and Definitions</h2></div></div></div><p>The <a id="IXT-1-186" class="indexterm"/> <a id="IXT-1-187" class="indexterm"/>following compiler directives are used to begin or
+        conclude the declaration and definition of Objective-C classes,
+        categories, and protocols:</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong> <code class="literal">@interface</code> </strong></span></span></dt><dd><p><a id="IXT-1-188" class="indexterm"/>Begins the declaration of a class's or category's
+              fields and methods.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@protocol</code> </strong></span></span></dt><dd><p><strong class="userinput"><code/></strong> <a id="IXT-1-189" class="indexterm"/>Begins the declaration of a protocol's
+              methods.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@implementation</code> </strong></span></span></dt><dd><p><a id="IXT-1-190" class="indexterm"/>Begins the definition of a class's methods.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@end</code> </strong></span></span></dt><dd><p><a id="IXT-1-191" class="indexterm"/>Ends the declaration or definition of a class's,
+              category's, or protocol's methods.</p></dd></dl></div><p>The use of these compiler directives is described in detail
+        under <a class="link" href="ch01s03.html" title="Elements of the Language">Section 1.3</a>, and
+        especially in the subsections <a class="link" href="ch01s03.html#objectcpr-CHP-1-SECT-3.2" title="Classes">Section 1.3.2</a>, <a class="link" href="ch01s03.html#objectcpr-CHP-1-SECT-3.6" title="Categories">Section 1.3.6</a>, and <a class="link" href="ch01s03.html#objectcpr-CHP-1-SECT-3.7" title="Protocols">Section 1.3.7</a>.</p></div><div class="sect2" title="Forward Declarations"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-4.2"/>Forward Declarations</h2></div></div></div><p>The following compiler directives generate <a id="IXT-1-192" class="indexterm"/>forward declarations, informing the compiler that a type
+        exists:</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong> <code class="literal">@class</code> </strong></span>
+            <em class="replaceable"><code>ClassName</code></em></span></dt><dd><p><a id="IXT-1-193" class="indexterm"/>Forward declaration of a class.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@protocol</code> </strong></span>
+            <em class="replaceable"><code>ProtocolName</code></em></span></dt><dd><p><strong class="userinput"><code/></strong> <a id="IXT-1-194" class="indexterm"/>Forward declaration of a protocol.</p></dd></dl></div><p>Use forward declarations when an interface uses variables
+        (fields or method parameters or return types) of a given type. Rather
+        than import the header file for that type, you can simply forward
+        reference it. For example:</p><a id="I_1_tt39"/><pre class="programlisting"><strong class="userinput"><code>@class</code></strong> 
+               <em class="replaceable"><code>Point</code></em>;
+<strong class="userinput"><code>@interface</code></strong> 
+               <em class="replaceable"><code>Circle</code></em> : <em class="replaceable"><code>Graphic</code></em> {
+  <em class="replaceable"><code>Point</code></em>* <em class="replaceable"><code>center</code></em>;
+  // etc.
+}
+<strong class="userinput"><code>@end</code></strong></pre><p>This is sufficient because the declaration of
+        <em class="replaceable"><code>Circle</code></em> does not use any details of
+        <em class="replaceable"><code>Point</code></em>. You could import the header for
+        <em class="replaceable"><code>Point</code></em>, but this makes any other class that
+        imports <span class="emphasis"><em>Circle.h</em></span> appear dependent also on
+        <span class="emphasis"><em>Point.h</em></span>, and can cause unnecessary (and slow)
+        recompiling in large projects.</p></div><div class="sect2" title="Expanding Directives"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-4.3"/>Expanding Directives</h2></div></div></div><p><a id="IXT-1-195" class="indexterm"/>Expanding complier directives look like functions, but
+        they are really instructions to the compiler, which expands them as
+        described in the following list:</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong> <code class="literal">@encode</code> </strong></span> <code class="literal">(</code> <em class="replaceable"><code>typeName</code></em>
+            <code class="literal">)</code></span></dt><dd><p><a id="objectcpr-IDXTERM-240" class="indexterm"/>Takes a type specification and evaluates to the C
+              string used by the runtime to succinctly describe that
+              type.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@defs</code> </strong></span> <code class="literal">(</code> <em class="replaceable"><code>className</code></em>
+            <code class="literal">)</code></span></dt><dd><p><a id="IXT-1-196" class="indexterm"/>Takes the name of an Objective-C class and
+              evaluates to a sequence of type declarations that duplicate the
+              field declarations of the class. This directive can appear only
+              in a C structure declaration.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@protocol</code> </strong></span> <code class="literal">(</code>
+            <em class="replaceable"><code>ProtocolName</code></em> <code class="literal">)</code></span></dt><dd><p><a id="IXT-1-197" class="indexterm"/>Evaluates to a pointer to an instance of the
+              <code class="literal">Protocol</code> class. You need this
+              because you can't get a protocol class instance by using the
+              protocol name directly, as you can with a class object.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">@selector</code> </strong></span> <code class="literal">(</code> <em class="replaceable"><code>MethodName</code></em>
+            <code class="literal">)</code></span></dt><dd><p><a id="IXT-1-198" class="indexterm"/>Evaluates to a <strong class="userinput"><code>SEL</code></strong> representing the specified
+              method.</p></dd><dt><span class="term"><code class="literal">@</code>"<em class="replaceable"><code>string</code></em>"</span></dt><dd><p><a id="IXT-1-199" class="indexterm"/>A shorthand for creating a string literal that's
+              an instance of a user-defined string class. Use this when you
+              need a string object constant.</p></dd></dl></div><p>The directives <strong class="userinput"><code>@encode</code></strong>,
+        <strong class="userinput"><code>@defs</code></strong>, and <code class="literal">@</code>"<em class="replaceable"><code>string</code></em>" deserve
+        some additional explanation.</p><div class="sect3" title="Using @encode"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-4.3.1"/>Using @encode</h3></div></div></div><p>The following example shows how <strong class="userinput"><code>@encode</code></strong> can be used to get the string
+          that the Objective-C runtime uses to describe a type:</p><a id="I_1_tt40"/><pre class="programlisting"><strong class="userinput"><code>char</code></strong>* <em class="replaceable"><code>itype</code></em> = <strong class="userinput"><code>@encode</code></strong>(<strong class="userinput"><code>int</code></strong>);</pre><p>The result of this statement will be to define
+          <em class="replaceable"><code>itype</code></em> as the one-character string
+          <code class="literal">"i"</code>, which is the runtime
+          representation of an <strong class="userinput"><code>int</code></strong>
+          type.</p><p>The <strong class="userinput"><code>@encode</code></strong> directive
+          can take any C or Objective-C type. The runtime uses the mapping
+          between types and strings to encode the signatures of methods and
+          associate them with selectors. You can use <strong class="userinput"><code>@encode</code></strong> to implement your own object
+          storage and retrieval, or other tasks that need to describe the
+          types of values.</p><p><a class="link" href="ch01s04.html#objectcpr-CHP-1-TABLE-1" title="Table 1-1. Types and their encodings">Table 1-1</a> shows
+          the <a id="IXT-1-200" class="indexterm"/>results of applying <strong class="userinput"><code>@encode</code></strong> to C and Objective-C
+          types.</p><div class="table"><a id="objectcpr-CHP-1-TABLE-1"/><p class="title">Table 1-1. Types and their encodings</p><div class="table-contents"><table summary="Types and their encodings" style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col/><col/></colgroup><thead><tr><th style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>Type</p></th><th style="border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>@encode</code></strong>
+                  <span class="bold"><strong>(</strong></span>type<span class="bold"><strong>)</strong></span> </p></th></tr></thead><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>char</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">c</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>int</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">i</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>short</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">s</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>long</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">l</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>long
+                  long</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">q</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>unsigned
+                  char</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">C</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>unsigned
+                  int</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">I</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>unsigned
+                  short</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">S</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>unsigned
+                  long</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">L</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>unsigned long
+                  long</code></strong> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">Q</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>float</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">f</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>double</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">d</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>void</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">v</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>char</code></strong>
+                  <code class="literal">*</code> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">*</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>An object pointer</p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">@</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <code class="literal">Class</code>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">#</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>SEL</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p>:</p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>An array of <em class="replaceable"><code>N</code></em>
+                  elements of <em class="replaceable"><code>type</code></em> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <em class="replaceable"><code>[Ntype]</code></em>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A structure called name with elements
+                  <em class="replaceable"><code>t</code></em> <sub>1</sub>,
+                  <em class="replaceable"><code>t</code></em> <sub>2</sub>, etc.
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <em class="replaceable"><code>{name=t</code></em>
+                  <sub>1</sub> <em class="replaceable"><code>t</code></em>
+                  <sub>2</sub> <em class="replaceable"><code>...}</code></em>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A union</p></td><td style="border-bottom: 0.5pt solid ; "><p> <em class="replaceable"><code>(type,...)</code></em>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A bit field of size
+                  <em class="replaceable"><code>N</code></em> </p></td><td style="border-bottom: 0.5pt solid ; "><p> <em class="replaceable"><code>bN</code></em> </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>A pointer to <em class="replaceable"><code>type</code></em>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <em class="replaceable"><code>^type</code></em>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; "><p>Unknown type</p></td><td style=""><p> <em class="replaceable"><code>?</code></em> </p></td></tr></tbody></table></div></div><p>The <a id="IXT-1-201" class="indexterm"/>runtime system also uses encodings for type
+          qualifiers, shown in <a class="link" href="ch01s04.html#objectcpr-CHP-1-TABLE-2" title="Table 1-2. Type qualifiers and their encodings">Table
+          1-2</a>, and you may encounter them in its representation of
+          method signatures. However, you can't get those encodings with the
+          <strong class="userinput"><code>@encode</code></strong> directive.</p><div class="table"><a id="objectcpr-CHP-1-TABLE-2"/><p class="title">Table 1-2. Type qualifiers and their encodings</p><div class="table-contents"><table summary="Type qualifiers and their encodings" style="border-collapse: collapse;border-top: 0.5pt solid ; border-bottom: 0.5pt solid ; border-left: 0.5pt solid ; border-right: 0.5pt solid ; "><colgroup><col/><col/></colgroup><thead><tr><th style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p>Qualifier</p></th><th style="border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>@encode</code></strong>
+                  <span class="bold"><strong>(</strong></span>qualifier<span class="bold"><strong>)</strong></span> </p></th></tr></thead><tbody><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>const</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">r</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>in</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">n</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>inout</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">N</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>out</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">o</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>bycopy</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">O</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; border-bottom: 0.5pt solid ; "><p> <strong class="userinput"><code>byref</code></strong>
+                  </p></td><td style="border-bottom: 0.5pt solid ; "><p> <code class="literal">R</code>
+                  </p></td></tr><tr><td style="border-right: 0.5pt solid ; "><p> <strong class="userinput"><code>oneway</code></strong>
+                  </p></td><td style=""><p> <code class="literal">V</code>
+                  <a id="IXTR3-557" class="indexterm"/>
+                  </p></td></tr></tbody></table></div></div></div><div class="sect3" title="Using @defs"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-4.3.2"/>Using @defs</h3></div></div></div><p>The <a id="IXT-1-202" class="indexterm"/>following example shows how <strong class="userinput"><code>@defs</code></strong> can be used to create a C
+          structure with fields that match the fields in a class. In this
+          example, both the order and type of the fields of
+          <em class="replaceable"><code>MyStruct</code></em> will match those in
+          <em class="replaceable"><code>MyClass</code></em>:</p><a id="I_1_tt41"/><pre class="programlisting"><strong class="userinput"><code>@interface</code></strong> 
+                  <em class="replaceable"><code>MyClass</code></em> : Object {
+  <strong class="userinput"><code>int</code></strong> 
+                  <em class="replaceable"><code>i</code></em>;
+}
+<strong class="userinput"><code>@end</code></strong>
+                  <strong class="userinput"><code>   </code></strong>
+                  <strong class="userinput"><code>typedef</code></strong> 
+                  <strong class="userinput"><code>struct</code></strong> {
+  <strong class="userinput"><code>@defs</code></strong>(<em class="replaceable"><code>MyClass</code></em>)
+} <em class="replaceable"><code>MyStruct</code></em>;</pre><p>The typedef in this example is seen by the compiler as:</p><a id="I_1_tt42"/><pre class="programlisting"><strong class="userinput"><code>typedef</code></strong> 
+                  <strong class="userinput"><code>struct</code></strong> {
+  <strong class="userinput"><code>id</code></strong> isa;
+  <strong class="userinput"><code>int</code></strong> 
+                  <em class="replaceable"><code>i</code></em>;
+} <em class="replaceable"><code>MyStruct</code></em>;</pre><p>Having a structure that corresponds to a class lets you bypass
+          the normal access restrictions on an Objective-C instance. In the
+          following example, an instance of <em class="replaceable"><code>MyClass</code></em>
+          is cast to an instance of <em class="replaceable"><code>MyStruct</code></em>. Once
+          that's done, the protected field <em class="replaceable"><code>i</code></em> can be
+          accessed with impunity:</p><a id="I_1_tt43"/><pre class="programlisting"><em class="replaceable"><code>MyClass</code></em>* <em class="replaceable"><code>c</code></em> = [<em class="replaceable"><code>MyClass</code></em> new];
+<em class="replaceable"><code>MyStruct</code></em>* <em class="replaceable"><code>s</code></em> = (<em class="replaceable"><code>MyStruct</code></em>*)<em class="replaceable"><code>c</code></em>;
+<em class="replaceable"><code>s</code></em>-&gt;<em class="replaceable"><code>i</code></em> = 42;</pre><p>Obviously this is a facility you should use with
+          restraint.</p></div><div class="sect3" title="Using @&quot;string&quot;"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-4.3.3"/>Using @"string"</h3></div></div></div><p>The <code class="literal">@</code> <a id="IXT-1-203" class="indexterm"/>"<em class="replaceable"><code>string</code></em>" directive creates
+          the Objective-C version of a string literal: one that you can pass
+          to a method expecting a string object, or use to initialize or
+          compare with another string object.</p><p>When you create a string with <code class="literal">@</code>"<em class="replaceable"><code>string</code></em>", you
+          get an instance of a class defined by the compiler option <code class="literal">-fconstant-string-class</code> <a id="IXT-1-204" class="indexterm"/>. The instance is static: its contents are stored in
+          your program's file, and the instance is created at runtime and kept
+          around for the duration of program execution. You can't change its
+          value, because it appears as an expression in your program, not as a
+          variable</p><p>In the GNU runtime, the <a id="IXT-1-205" class="indexterm"/>default string class is <code class="literal">NXConstantString</code> <a id="IXT-1-206" class="indexterm"/>; for Darwin it is the <a id="IXT-1-207" class="indexterm"/>Cocoa <a id="IXTR3-558" class="indexterm"/>
+          <a id="IXTR3-559" class="indexterm"/> <a id="IXTR3-560" class="indexterm"/>class <code class="literal">NSConstantString</code> <a id="IXT-1-208" class="indexterm"/>.</p></div></div><div class="sect2" title="Preprocessor Symbols"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-4.4"/>Preprocessor Symbols</h2></div></div></div><p><a id="IXT-1-209" class="indexterm"/> <a id="IXT-1-210" class="indexterm"/> <a id="IXT-1-211" class="indexterm"/>Objective-C adds one preprocessor directive and defines
+        one symbol to the preprocessor before compiling:</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong> <code class="literal">#import</code> </strong></span>
+            <em class="replaceable"><code>fileName</code></em></span></dt><dd><p>Using <strong class="userinput"><code>#import</code></strong>
+              <a id="IXT-1-212" class="indexterm"/> has the same effect as the C directive <strong class="userinput"><code>#include</code></strong>, but will only include the
+              file once.</p></dd><dt><span class="term"><code class="literal">_ _OBJC_ _</code></span></dt><dd><p><a id="IXT-1-213" class="indexterm"/>When <span class="emphasis"><em>gcc</em></span> <a id="IXT-1-214" class="indexterm"/> is compiling an Objective-C file, it defines this
+              symbol for the preprocessor. If your code must compile as plain
+              C as well as Objective-C, you can test to see if this symbol is
+              defined:</p><a id="I_1_tt44"/><pre class="programlisting"><strong class="userinput"><code>#ifdef</code></strong> _ _OBJC_ _
+  // Objective-C code here
+<strong class="userinput"><code>#endif</code></strong></pre></dd></dl></div></div></div></body></html>

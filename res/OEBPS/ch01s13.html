@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Archiving Objects</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Archiving Objects"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-13"/>Archiving Objects</h1></div></div></div><p>Saving and restoring <a id="objectcpr-IDXTERM-673" class="indexterm"/> <a id="objectcpr-IDXTERM-674" class="indexterm"/> <a id="objectcpr-IDXTERM-675" class="indexterm"/> <a id="objectcpr-IDXTERM-676" class="indexterm"/>objects is made easier by Objective-C's facilities for
+      <span class="emphasis"><em>reflection</em></span> <a id="IXT-1-492" class="indexterm"/>—inspecting at runtime the structure of instances and
+      classes. Objects can be pre-designed at build-time, encoded, and saved
+      as resources for reconstruction at runtime. The runtime state of objects
+      can similarly be saved and restored in documents or other files. An
+      object's values are stored along with type information necessary to
+      restore a fully functioning instance.</p><div class="sect2" title="Archiving Descendants of Object"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-13.1"/>Archiving Descendants of Object</h2></div></div></div><p>To <a id="objectcpr-IDXTERM-678" class="indexterm"/>save and restore descendants of <code class="literal">Object</code>, you can use its methods <code class="literal">-write</code> <a id="IXT-1-493" class="indexterm"/>: and <code class="literal">-read</code>
+        <a id="IXT-1-494" class="indexterm"/>:, along with some functions provided by the runtime and
+        a helper class called <code class="literal">TypedStream</code>
+        <a id="objectcpr-IDXTERM-681" class="indexterm"/>.</p><p>For example, suppose your class declares an interface like
+        this:</p><a id="I_1_tt142"/><pre class="programlisting"><strong class="userinput"><code>@interface</code></strong> 
+               <em class="replaceable"><code>MyClass</code></em> : Object {
+  <em class="replaceable"><code>AnotherClass</code></em>* <em class="replaceable"><code>obj</code></em>;
+  <strong class="userinput"><code>int</code></strong> 
+               <em class="replaceable"><code>i</code></em>;
+}
+...
+<strong class="userinput"><code>@end</code></strong></pre><p>To add the fields that <em class="replaceable"><code>MyClass</code></em>
+        declares to a stream that will be written to an archive, implement the
+        following method:</p><a id="I_1_tt143"/><pre class="programlisting">1 -(<strong class="userinput"><code>id</code></strong>)write:(TypedStream*)<em class="replaceable"><code>stream</code></em> { 
+2   [<strong class="userinput"><code>super</code></strong> write:<em class="replaceable"><code>stream</code></em>];
+3   objc_write_types(<em class="replaceable"><code>stream</code></em>, "@i", <em class="replaceable"><code>obj</code></em>, &amp;<em class="replaceable"><code>i</code></em>);
+4   <strong class="userinput"><code>return</code></strong> 
+               <strong class="userinput"><code>self</code></strong>;
+5 }</pre><p>Line 1. Override the root class method <code class="literal">-write</code>:.</p><p>Line 2. Call the parent class method to write the fields
+        declared in the parent.</p><p>Line 3. Call the runtime function <code class="literal">objc_write_types( )</code> <a id="IXT-1-495" class="indexterm"/>. The second parameter is a concatenation of descriptors
+        for the types of fields you are writing. These are one-character
+        strings, the same as those used by the <strong class="userinput"><code>@encode</code></strong> directive. They are listed in
+        <span class="emphasis"><em>objc-api.h</em></span>.</p><p>To read the fields of <em class="replaceable"><code>MyClass</code></em> from a
+        stream that has been read from an archive, implement the following
+        method:</p><a id="I_1_tt144"/><pre class="programlisting">1 -(<strong class="userinput"><code>id</code></strong>)read:(TypedStream*)<em class="replaceable"><code>stream</code></em> {
+2   [<strong class="userinput"><code>super</code></strong> read:<em class="replaceable"><code>stream</code></em>];
+3   objc_read_types(stream, "@i", <em class="replaceable"><code>obj</code></em>, &amp;<em class="replaceable"><code>i</code></em>);
+4   <strong class="userinput"><code>return</code></strong> 
+               <strong class="userinput"><code>self</code></strong>;
+5 }</pre><p>Line 1. Override the root class method <code class="literal">-read</code>:.</p><p>Line 2. Call the parent class method to read the fields declared
+        in the parent.</p><p>Line 3. Call the runtime function <code class="literal">objc_read_types( )</code> <a id="IXT-1-496" class="indexterm"/>. The second parameter is a concatenation of descriptors
+        for the types of the fields you are reading. These are one-character
+        strings, the same as those used by the <strong class="userinput"><code>@encode</code></strong> directive, and declared in
+        <span class="emphasis"><em>objc-api.h</em></span>.</p><p>Line 4. Return the instance once it's been read.</p><p>To use these methods, you create an instance of <code class="literal">TypedStream</code> and pass it to your object's
+        <code class="literal">-read</code>: and <code class="literal">-write</code>: methods. For example, this code will
+        save an object to a file on disk:</p><a id="I_1_tt145"/><pre class="programlisting">1<em class="replaceable"><code>MyClass</code></em>* <em class="replaceable"><code>obj</code></em> = [<em class="replaceable"><code>MyClass</code></em> new];
+2 TypedStream* <em class="replaceable"><code>stream</code></em> = 
+3   objc_open_typed_stream_for_file("<em class="replaceable"><code>storage</code></em>",
+4     OBJC_WRITEONLY);
+5 [<em class="replaceable"><code>obj</code></em> write:<em class="replaceable"><code>stream</code></em>];
+6 objc_close_typed_stream(<em class="replaceable"><code>stream</code></em>);</pre><p>Line 1. Create the object in whatever way you choose.</p><p>Line 2. Create a <code class="literal">TypedStream</code>
+        instance.</p><p>Line 3. Call the runtime function <code class="literal">open_typed_stream_for_file( )</code> <a id="IXT-1-497" class="indexterm"/>. The first parameter is a filename.</p><p>Line 4. Here the second parameter to the <code class="literal">objc_open_typed_stream_for_file</code> <a id="IXT-1-498" class="indexterm"/> method specifies that you will be writing to a
+        file.</p><p>Line 5. Pass the stream to the object's <code class="literal">-write</code>: method. The object's declared and
+        inherited fields are written to a file.</p><p>Line 6. Close the stream.</p><p>To retrieve the saved object, you can use the following
+        code:</p><a id="I_1_tt146"/><pre class="programlisting">1 TypedStream*<em class="replaceable"><code>stream</code></em> = 
+2   objc_open_typed_stream_for_file("<em class="replaceable"><code>storage</code></em>",
+3     OBJC_READONLY);
+4 <em class="replaceable"><code>MyClass</code></em>* <em class="replaceable"><code>obj</code></em> = [[<em class="replaceable"><code>MyClass</code></em> alloc] read:<em class="replaceable"><code>stream</code></em>]; 
+5 objc_close_typed_stream(<em class="replaceable"><code>stream</code></em>);</pre><p>Line 1. Create a <code class="literal">TypedStream</code>
+        instance.</p><p>Line 2. Call the runtime function <code class="literal">open_typed_stream_for_file( )</code>. The first
+        parameter is a filename.</p><p>Line 3. Here the second parameter to the <code class="literal">objc_open_typed_stream_for_file</code> method
+        specifies that you will be reading from a file.</p><p>Line 4. Allocate space for your object, then set its fields by
+        passing the stream to the object's <code class="literal">-read</code>: method.</p><p>Line 5. Close the stream.</p><p>The GNU runtime provides more functions for managing object
+        storage and retrieval. See the documentation for your distribution for
+        <a id="IXTR3-627" class="indexterm"/>more <a id="IXTR3-628" class="indexterm"/>information.</p></div><div class="sect2" title="Archiving Descendants of NSObject"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-13.2"/>Archiving Descendants of NSObject</h2></div></div></div><p>The <a id="objectcpr-IDXTERM-688" class="indexterm"/>Cocoa <a id="objectcpr-IDXTERM-689" class="indexterm"/>framework uses the term "coding" for the process of
+        translating objects to a saveable form. Cocoa declares an <code class="literal">NSCoding</code> <a id="objectcpr-IDXTERM-690" class="indexterm"/> protocol, and provides an <code class="literal">NSCoder</code> <a id="objectcpr-IDXTERM-691" class="indexterm"/> class that saves and restores objects that implement
+        the protocol. <code class="literal">NSObject</code> does not
+        itself implement <code class="literal">NSCoding</code>; to use
+        archiving, you must implement the <code class="literal">NSCoding</code> protocol in your classes.</p><p>The <code class="literal">NSCoding</code> protocol
+        consists of two methods: <code class="literal">initWithCoder</code> <a id="IXT-1-499" class="indexterm"/>: and <code class="literal">encodeWithCoder</code>
+        <a id="objectcpr-IDXTERM-693" class="indexterm"/>:. These exhibit the same structure as initializers: you
+        first send the same message to <strong class="userinput"><code>super</code></strong>, then proceed to encode or decode
+        the fields of your object, following the same order in each method.
+        Your objects don't have to pay any more attention than that to the
+        details of constructing or interpreting an object's stored
+        form.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-29-fm2xml"/>Note</h3><p>If <code class="literal">-initWithCoder</code>: were
+          named <code class="literal">-decodeWithCoder</code>: its
+          relation to <code class="literal">-encodeWithCoder</code>:
+          would be more clear. But <code class="literal">-initWithCoder</code>: is an initializer and
+          follows the Objective-C convention by starting with <code class="literal">init</code>.</p></div><p>For example, suppose your class declares an interface like
+        this:</p><a id="I_1_tt147"/><pre class="programlisting"><strong class="userinput"><code>@interface</code></strong> 
+               <em class="replaceable"><code>MyClass</code></em> : NSObject {
+  <em class="replaceable"><code>AnotherClass</code></em>* <em class="replaceable"><code>obj</code></em>;
+  <strong class="userinput"><code>int</code></strong> 
+               <em class="replaceable"><code>i</code></em>;
+}
+...
+<strong class="userinput"><code>@end</code></strong></pre><p>To save the fields of <em class="replaceable"><code>MyClass</code></em>,
+        implement the following method:</p><a id="I_1_tt148"/><pre class="programlisting">1 -(<strong class="userinput"><code>void</code></strong>)encodeWithCoder:(NSCoder*)<em class="replaceable"><code>coder</code></em> {
+2   // [<strong class="userinput"><code>super</code></strong> encodeWithCoder:<em class="replaceable"><code>coder</code></em>];
+3   [<em class="replaceable"><code>coder</code></em> encodeObject:<em class="replaceable"><code>obj</code></em>];
+4   [<em class="replaceable"><code>coder</code></em> encodeValueOfObjCType:<strong class="userinput"><code>@encode</code></strong>(<strong class="userinput"><code>int</code></strong>)
+5                             at:&amp;<em class="replaceable"><code>i</code></em>];
+6  }</pre><p>Line 1. Declare the method as specified by the <code class="literal">NSCoding</code> protocol. Cocoa's archiving methods
+        will pass in the coder object to your encode method.</p><p>Line 2. Call <strong class="userinput"><code>super</code></strong>
+        <a id="IXT-1-500" class="indexterm"/> only if the parent class also implements the <code class="literal">NSCoding</code> protocol. In this example, the
+        parent class is <code class="literal">NSObject</code>, which
+        doesn't implement the protocol, so this line of code is commented
+        out.</p><p>Line 3. If the field is an Objective-C object, pass it to the
+        coder using the <code class="literal">-encodeObject</code>:
+        method.</p><p>Line 4. If the field is a C type, use the <code class="literal">-encodeValueOfObjCType</code> <a id="IXT-1-501" class="indexterm"/> method shown here. The <strong class="userinput"><code>@encode</code></strong> directive constructs a string
+        describing the structure of the specified type, which tells the coder
+        how to process the value. The coder stores the string along with the
+        value to facilitate decoding.</p><p>Line 5. Instead of directly passing the value you want to store,
+        you pass its address.</p><p>To read the fields of <em class="replaceable"><code>MyClass</code></em>,
+        implement the following method:</p><a id="I_1_tt149"/><pre class="programlisting"> 1 -(<strong class="userinput"><code>void</code></strong>)initWithCoder:(NSCoder*)<em class="replaceable"><code>coder</code></em> {
+ 2   <strong class="userinput"><code>if</code></strong> (<strong class="userinput"><code>self</code></strong> = [<strong class="userinput"><code>super</code></strong> initWithCoder:<em class="replaceable"><code>coder</code></em>] {
+ 3     <strong class="userinput"><code>int</code></strong> 
+               <em class="replaceable"><code>version</code></em> = 
+ 4<strong class="userinput"><code>       </code></strong>[<em class="replaceable"><code>coder</code></em> versionForClassName:@"<em class="replaceable"><code>MyClass</code></em>"];
+ 5     // Check version here.
+ 6     <em class="replaceable"><code>obj</code></em> = [[<em class="replaceable"><code>coder</code></em> decodeObject] retain];
+ 7     [<em class="replaceable"><code>coder</code></em> decodeValueOfObjCType:<strong class="userinput"><code>@encode</code></strong>(<strong class="userinput"><code>int</code></strong>)
+ 8                               at:&amp;<em class="replaceable"><code>i</code></em>];
+ 9   }
+10 }</pre><p>Line 1. Declare the method to conform to the <code class="literal">NSCoding</code> protocol. Cocoa's archiving methods
+        will pass in the coder object to your decoding method.</p><p>Line 2. Call <strong class="userinput"><code>super</code></strong> only
+        if the parent class also implements the <code class="literal">NSCoding</code> protocol. If the parent class does
+        not implement the <code class="literal">NSCoding</code>
+        protocol, call its designated initializer instead. In either case,
+        assign the result to <strong class="userinput"><code>self</code></strong>
+        because the parent class may return a different object than
+        itself.</p><p>Lines 3, 4. Get the class's version number, which the coder
+        automatically stores with the object information.</p><p>Line 5. Depending on the version number, you may have to vary
+        the implementation of the rest of the method.</p><p>Line 6. To retrieve an Objective-C object, call the coder's
+        <code class="literal">-decodeObject</code> <a id="IXT-1-502" class="indexterm"/> method. You must decode objects in the same order you
+        encoded them in the <code class="literal">-encodeWithCoder</code> <a id="IXTR3-629" class="indexterm"/>: method.</p><p>When you get a value from <code class="literal">-decodeObject</code>, you should call <code class="literal">-retain</code> on it. The <code class="literal">NSCoder</code> will also be retaining the value
+        until it is no longer needed by that class, at which time <code class="literal">NSCoder</code> will release it.</p><p>Line 7. To retrieve a field that is a C type, use the form shown
+        here. The <strong class="userinput"><code>@encode</code></strong> directive
+        constructs a string telling the coder about the structure of the value
+        it will be decoding.</p><p>Line 8. You must pass the address of the value you are
+        restoring.</p><p>To use the archiving framework, the data you save and restore
+        needs to have a <span class="emphasis"><em>root object</em></span> <a id="IXT-1-503" class="indexterm"/>. This isn't the same as a root class, but means an
+        object from which all other objects are reachable through pointers. If
+        you implement the <code class="literal">NSCoding</code> protocol
+        as described here, the coding process will traverse all the
+        connections and encode or decode all the data.</p><p>You set the encoding or decoding process off by calling class
+        methods of <code class="literal">NSArchiver</code> <a id="IXT-1-504" class="indexterm"/> and <code class="literal">NSUnarchiver</code>
+        <a id="IXT-1-505" class="indexterm"/>. For example, to encode data starting with object
+        <em class="replaceable"><code>rootObj</code></em>:</p><a id="I_1_tt150"/><pre class="programlisting">NSData*<em class="replaceable"><code>encoded</code></em> = 
+  [NSArchiver archivedDataWithRootObject:<em class="replaceable"><code>rootObj</code></em>];</pre><p>To decode data back into a root object:</p><a id="I_1_tt151"/><pre class="programlisting"><em class="replaceable"><code>rootObj</code></em> = 
+  [NSUnarchiver unarchiveObjectWithData:<em class="replaceable"><code>encoded</code></em>];</pre><p>The <code class="literal">archiver</code> objects create
+        the <code class="literal">NSCoder</code> <a id="IXTR3-630" class="indexterm"/> object and pass it to
+        the <code class="literal">NSCoding</code> protocol methods of
+        your objects.</p><p>There are many ways you can use the archiving framework, but the
+        most common is to save and restore data using an <code class="literal">NSDocument</code> <a id="IXT-1-506" class="indexterm"/> subclass. This class provides several methods for
+        saving and restoring data through a root object. Most commonly, you
+        will override <code class="literal">-dataRepresentationOfType</code> <a id="IXT-1-507" class="indexterm"/>: and <code class="literal">-loadDataRepresentation:ofType</code> <a id="IXT-1-508" class="indexterm"/>: to call the archiver and unarchiver methods. See your
+        Cocoa documentation for more information on <a id="IXTR3-631" class="indexterm"/>saving <a id="IXTR3-632" class="indexterm"/>and <a id="IXTR3-633" class="indexterm"/>restoring <a id="IXTR3-634" class="indexterm"/> <a id="IXTR3-635" class="indexterm"/> <a id="IXTR3-636" class="indexterm"/> <a id="IXTR3-637" class="indexterm"/>documents.</p></div></div></body></html>

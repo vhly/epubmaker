@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Memory Management</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Memory Management"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-12"/>Memory Management</h1></div></div></div><p>The <a id="objectcpr-IDXTERM-639" class="indexterm"/>liveness of an object—whether or not it is referenced by
+      other objects currently in use—is inherently a global property. This
+      means that keeping track of object usage tempts you to breach the
+      encapsulation and modularity of your program. There are several
+      approaches you can use with Objective-C to help manage object
+      lifecycles:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Manual memory management, using the free functions provided by
+          the Objective-C runtime</p></li><li class="listitem"><p>Semi-automatic memory management, using root class
+          reference-counting methods</p></li><li class="listitem"><p>Automatic memory management, using third-party garbage
+          collector tools</p></li></ul></div><p>The programming tools and libraries you use may constrain you
+      toward or away from some strategies. For example, the Cocoa class
+      library uses reference counting; if your code uses Cocoa objects it will
+      have to be written to manage those objects with reference counting, even
+      if your own objects use a different mechanism.</p><div class="sect2" title="Manual Memory Management"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-12.1"/>Manual Memory Management</h2></div></div></div><p>You <a id="IXT-1-474" class="indexterm"/>can explicitly <a id="IXT-1-475" class="indexterm"/>release the memory held by an object by calling its
+        <code class="literal">-free</code> <a id="IXT-1-476" class="indexterm"/> method (if it inherits from <code class="literal">Object</code>) or its <code class="literal">-dealloc</code> <a id="IXT-1-477" class="indexterm"/> method (if it inherits from <code class="literal">NSObject</code>). It will be your responsibility to
+        ensure that your program no longer needs the object.</p><p>In <a id="IXT-1-478" class="indexterm"/>classes you write, the deallocation method should
+        release any objects managed by the receiver, as well as any other
+        kinds of resources (such as network sockets) the receiver holds. As
+        with deciding to deallocate the receiver itself, it is your
+        responsibility to ensure that your program no longer needs the objects
+        the receiver will release. This is difficult enough that automatic
+        management systems are becoming more prevalent.</p></div><div class="sect2" title="Reference Counting"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-12.2"/>Reference Counting</h2></div></div></div><p>The <a id="objectcpr-IDXTERM-645" class="indexterm"/>Cocoa <a id="objectcpr-IDXTERM-646" class="indexterm"/> <a id="objectcpr-IDXTERM-647" class="indexterm"/> <a id="objectcpr-IDXTERM-648" class="indexterm"/>framework supports <span class="emphasis"><em>reference
+        counting</em></span>: a technique that associates with an object a
+        count that describes how many references there are to the object in
+        other code. When this count is positive, the object is in use; when
+        the count reaches zero the object can be discarded and its memory
+        reclaimed.</p><p>The count doesn't specify the users of the object. When an
+        object has a reference count of one it means <span class="emphasis"><em>some</em></span>
+        other code uses it. If you release one object from memory but forget
+        that it was maintaining a counted reference to another object, the
+        runtime will never notice a discrepancy. For reference counting to be
+        effective you must observe some conventions or design patterns when
+        using its methods. This section gives guidelines for using the
+        reference counting methods.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-27-fm2xml"/>Note</h3><p>The techniques described in this section apply to objects that
+          are used in a single thread. If you share objects between multiple
+          threads you will have to take more care in retaining and releasing
+          objects, and possibly create per-thread autorelease pools.
+          Multithreaded memory management is a complex topic outside the scope
+          of this handbook.</p></div><div class="sect3" title="Maintaining an object's reference count"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.1"/>Maintaining an object's reference count</h3></div></div></div><p>Cocoa provides four root class methods, <code class="literal">-retain</code> <a id="objectcpr-IDXTERM-649" class="indexterm"/>, <code class="literal">-release</code>
+          <a id="objectcpr-IDXTERM-650" class="indexterm"/>, <code class="literal">-autorelease</code>
+          <a id="objectcpr-IDXTERM-651" class="indexterm"/>, and <code class="literal">-retainCount</code>
+          <a id="IXT-1-479" class="indexterm"/>, for using reference counting. (They are documented
+          in <a class="link" href="ch01s10.html" title="Root Classes">Section 1.10</a>.) You
+          don't have to override the methods, just inherit from <code class="literal">NSObject</code> and use them.</p><p>An object's reference count changes in the following
+          ways:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>When an object is created, it starts out with a reference
+              count of one.</p></li><li class="listitem"><p>When an object receives a <code class="literal">-retain</code> message, its reference count
+              is incremented by one. Call this method on an object to indicate
+              that your code is using the object.</p></li><li class="listitem"><p>When an object receives an <code class="literal">-autorelease</code> message, the runtime
+              schedules a <code class="literal">-release</code> message
+              to be sent when the current call stack exits. Call this method
+              in the following situations:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>To specify early in a method that an object may be
+                  released after the method exits, while ensuring that it will
+                  remain valid throughout the method's execution. This would
+                  be difficult to arrange manually if your method may raise an
+                  exception or has several exit points.</p></li><li class="listitem"><p>To return an object to a caller and ensure that it
+                  will not be released between the exit of a method and the
+                  resumption of the calling method (between which there may be
+                  many intervening scopes).</p></li></ul></div></li><li class="listitem"><p>When an object receives a <code class="literal">-release</code> message, its reference count
+              is decremented by one. Call this method to indicate that your
+              code is done using the object.</p></li><li class="listitem"><p>The <code class="literal">-release</code> method
+              also tests the reference count's value. If it is zero, the
+              method sends the object a <code class="literal">-dealloc</code> <a id="IXT-1-480" class="indexterm"/> message. You don't call <code class="literal">-dealloc</code> yourself.</p></li></ul></div><p>These rules lead to the following rule of thumb:</p><div class="blockquote"><blockquote class="blockquote"><p><span class="emphasis"><em>The sum of the count of release and autorelease
+            messages sent by your code to an object over its full lifetime
+            should be one more than the number of retain
+            messages</em></span>.</p></blockquote></div><p>(The releases outnumber the retains because an object's
+          reference count starts at one, not zero.)</p><p>Using reference counting correctly calls for coordination when
+          passing objects as parameters between scopes or threads. You need to
+          know when the methods are called for you implicitly, and when to
+          call them yourself. The following sections describe some of the most
+          common situations and how to handle them.</p></div><div class="sect3" title="Creating a new object"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.2"/>Creating a new object</h3></div></div></div><p>When <a id="IXT-1-481" class="indexterm"/>you create the object yourself, by using an <code class="literal">+alloc, -copy</code> <a id="IXT-1-482" class="indexterm"/>, or <code class="literal">-mutableCopy</code>
+          method, you've already implicitly called <code class="literal">-retain</code>. The question then is when to
+          release the object. Following are some common alternatives:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>You are immediately giving the object up (passing it back
+              to a caller) and never getting it back again. Call <code class="literal">-autorelease</code> before returning
+              it.</p></li><li class="listitem"><p>You are storing it in a field or global. Call <code class="literal">-release</code> in the owning object's
+              <code class="literal">-dealloc</code> method.</p></li></ul></div></div><div class="sect3" title="Receiving an object from another scope"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.3"/>Receiving an object from another scope</h3></div></div></div><p>You get an object as a parameter in a method, or from a class
+          method whose name starts with the class name. In both cases, some
+          other code is the owner, and may call <code class="literal">-release</code> based on criteria hidden from
+          you. How you manage the object's reference depends on how you use
+          it:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>You use the object only locally and do not expect it to
+              become invalid. This will be the case with objects that aren't
+              shared, for example new strings you get from <code class="literal">NSString</code>'s method <code class="literal">+stringWithString</code>:. You don't need to
+              retain or release it.</p></li><li class="listitem"><p>You use the object locally, but some calls you make may
+              indirectly cause it to be released. (For example, the owner of
+              the object may replace it with a new object.) Call <code class="literal">-retain</code> and then <code class="literal">-autorelease</code> on the object before
+              using it.</p></li><li class="listitem"><p>You are storing it in a field or global. See the upcoming
+              section <a class="link" href="ch01s12.html#objectcpr-CHP-1-SECT-12.2.5" title="Replacing an already-stored object">Section
+              1.12.2.5</a>.</p></li></ul></div></div><div class="sect3" title="Returning an already-stored object"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.4"/>Returning an already-stored object</h3></div></div></div><p>You are <a id="IXT-1-483" class="indexterm"/>returning a value you didn't just create, for example,
+          in a method that returns a field (a "getter"). In this case, you
+          have the following choices for returning the object:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>If speed is critical and you know that there is only one
+              autorelease pool in your thread, you can return the value
+              directly.</p></li><li class="listitem"><p>A more generally safe approach is to call <code class="literal">-retain</code> and then <code class="literal">-autorelease</code> on the field, and then
+              return it. This prevents the object from being released as a
+              side-effect of code that executes after the getter exits but
+              before the caller has a chance to retain it.</p></li></ul></div></div><div class="sect3" title="Replacing an already-stored object"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.5"/>Replacing an already-stored object</h3></div></div></div><p>You <a id="IXT-1-484" class="indexterm"/>are provided with a new object to replace an existing
+          one, for example, in a method that sets a field (a "setter"). There
+          are a few equally safe solutions:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Call <code class="literal">-autorelease</code> on
+              the existing object, then retain the provided one, and assign
+              the retained or copied value to the field.</p></li><li class="listitem"><p>Compare the provided object with the existing one. If they
+              are equal (as pointers) do nothing. Otherwise release the
+              existing object, retain the provided one, and assign it to the
+              field.</p></li><li class="listitem"><p>Call <code class="literal">-retain</code> on the
+              provided object, <code class="literal">-release</code> on
+              the existing one, then assign the retained or copied value to
+              the field.</p></li></ul></div><p>For example, to use the third approach for a setter for a
+          field named <em class="replaceable"><code>ownedObj</code></em>, your setter will
+          look like:</p><a id="I_1_tt141"/><pre class="programlisting">-(<strong class="userinput"><code>void</code></strong>)<em class="replaceable"><code>setOwnedObj</code></em>:(<strong class="userinput"><code>id</code></strong>)<em class="replaceable"><code>newObj</code></em> {
+  [<em class="replaceable"><code>newObj</code></em> retain];
+  [<em class="replaceable"><code>ownedObj</code></em> release];
+  <em class="replaceable"><code>ownedObj</code></em> = <em class="replaceable"><code>newObj</code></em>;
+}</pre><p>Don't call <code class="literal">-copy</code> instead of
+          <code class="literal">-retain</code> in a setter. It is safe
+          as far as memory usage goes, but prevents your caller from sharing
+          the value; by contrast, when you use <code class="literal">-retain</code> <a id="IXTR3-619" class="indexterm"/> a caller can copy the
+          new object explicitly and pass the copy to the setter.</p></div><div class="sect3" title="Deallocating an object"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.6"/>Deallocating an object</h3></div></div></div><p>When <a id="IXT-1-485" class="indexterm"/>a call to <code class="literal">-release</code>
+          sets your object's reference count to zero, the <code class="literal">-release</code> method will also call the
+          object's <code class="literal">-dealloc</code> <a id="IXT-1-486" class="indexterm"/> method. In that method, you should release all other
+          objects (e.g., fields) and resources that your object is retaining.
+          If other code that shares those objects is retaining them (as it
+          should), this will be safe.</p><p>You can make your <code class="literal">-dealloc</code>
+          method safer in the face of outside code that may have bugs by
+          calling <code class="literal">-autorelease</code> on your
+          retained objects. This leaves the autoreleased objects still
+          available until the current call stack finishes. However, it is
+          probably a design mistake if code remaining in the call stack
+          depends on these objects, and using <code class="literal">-autorelease</code> may just hide this rather
+          than solve it.</p></div><div class="sect3" title="Retain cycles"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-12.2.7"/>Retain cycles</h3></div></div></div><p>Reference counting can break down when there is a closed loop
+          in the graph of object references. In this case a group of mutually
+          referent objects may be garbage (i.e., unreachable from your
+          program) but with positive reference counts. You don't have to avoid
+          such structures, but make sure that you only apply the counting in
+          one direction. When two objects refer to each other, decide which is
+          the "owner" and let it retain the other <a id="IXTR3-620" class="indexterm"/> <a id="IXTR3-621" class="indexterm"/> <a id="IXTR3-622" class="indexterm"/>object, <a id="IXTR3-623" class="indexterm"/>but <a id="IXTR3-624" class="indexterm"/>not <a id="IXTR3-625" class="indexterm"/>vice versa.</p></div></div><div class="sect2" title="Garbage Collection"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-12.3"/>Garbage Collection</h2></div></div></div><p><a id="IXT-1-487" class="indexterm"/> <a id="IXT-1-488" class="indexterm"/>Garbage collection is a memory management technique that
+        fully automates the release and reuse of object memory. A garbage
+        collector keeps track of which objects are reachable from running
+        code; unreachable objects (those with no references, direct or
+        indirect) are released.</p><p>The <em class="filename">gcc</em> <a id="IXT-1-489" class="indexterm"/> compiler emits code that can be linked with the
+        <a id="IXT-1-490" class="indexterm"/>Boehm garbage collector (an open source garbage
+        collector for C-based languages). This library augments the standard C
+        function <code class="literal">malloc( )</code> <a id="IXT-1-491" class="indexterm"/> with code that sets up tracking information for object
+        pointers, and replaces the function <code class="literal">free(
+        )</code> with an empty body. The garbage collector runs
+        concurrently in your program, releasing objects only when they are no
+        longer reachable by executing code. The Boehm garbage collector will
+        even correctly deal with cycles of mutually-referring but unreachable
+        objects.</p><p>To use the garbage collector, you download and compile it as a
+        library for your platform, and link it with your Objective-C program.
+        You can get the code, and instructions on how to install it,
+        <a id="IXTR3-626" class="indexterm"/>at <a class="ulink" href="http://www.hpl.hp.com/personal/Hans_Boehm/gc/">http://www.hpl.hp.com/personal/Hans_Boehm/gc/</a>.</p><div class="note" title="Note"><h3 class="title"><a id="ch01-28-fm2xml"/>Note</h3><p>Garbage collection and reference counting can't run in the
+          same program. The Cocoa library is built around the retain/release
+          reference counting design, so you can't use a garbage collector in
+          Cocoa-based programs.</p></div></div></div></body></html>

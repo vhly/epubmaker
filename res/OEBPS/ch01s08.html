@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Runtime Errors</title><link rel="stylesheet" href="core.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"/></head><body><div class="sect1" title="Runtime Errors"><div class="titlepage"><div><div><h1 class="title"><a id="objectcpr-CHP-1-SECT-8"/>Runtime Errors</h1></div></div></div><p><a id="IXT-1-279" class="indexterm"/> <a id="IXT-1-280" class="indexterm"/>Runtime <a id="objectcpr-IDXTERM-376" class="indexterm"/>errors include program errors like unhandled method calls
+      or messages sent to released objects, and hardware errors like division
+      by zero. The <code class="literal">Object</code> root class
+      provides simple error-handling capability; the Cocoa framework
+      implements exception raising and handling.</p><div class="sect2" title="Object Error Handling"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-8.1"/>Object Error Handling</h2></div></div></div><p>When <a id="objectcpr-IDXTERM-377" class="indexterm"/> <a id="objectcpr-IDXTERM-378" class="indexterm"/> <a id="objectcpr-IDXTERM-379" class="indexterm"/>an error occurs, the runtime sets in motion the
+        following sequence of events:</p><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>The runtime calls the <code class="literal">-error</code> <a id="IXT-1-281" class="indexterm"/>: method on the object whose method generated the
+            error. You can override this method to customize error handling
+            for a particular class.</p></li><li class="listitem"><p>The <code class="literal">-error</code>: method
+            prepares information about the receiver and passes it to the
+            runtime C function <code class="literal">objc_verror(
+            )</code> <a id="IXT-1-282" class="indexterm"/>.</p></li><li class="listitem"><p>The <code class="literal">objc_verror( )</code>
+            function calls the runtime error handler function if there is one;
+            otherwise it writes an error message to <code class="literal">stderr</code>. You can provide a handler
+            function to customize error handling for all classes.</p></li><li class="listitem"><p>If the error handler exists (because you've provided one)
+            and it returns <strong class="userinput"><code>YES</code></strong>,
+            execution continues; otherwise the program calls the C function
+            <code class="literal">abort( )</code> and exits.</p></li></ol></div><p>The <em class="filename"/> <a id="IXT-1-283" class="indexterm"/>GNU runtime provides a function to set your own error
+        handler function:</p><a id="I_1_tt57"/><pre class="programlisting">objc_error_handler objc_set_error_handler(objc_error_handler<em class="replaceable"><code>f</code></em>)</pre><p>Calling this function sets a new error handler and returns the
+        previous one. The default error handler is a <strong class="userinput"><code>NULL</code></strong> pointer. The required signature of an
+        error handler is declared (in <span class="emphasis"><em>objc-api.h</em></span>)
+        as:</p><a id="I_1_tt58"/><pre class="programlisting"><strong class="userinput"><code>typedef</code></strong> 
+               <strong class="userinput"><code>BOOL</code></strong> (*objc_error_handler)
+<strong class="userinput"><code>  </code></strong>(<strong class="userinput"><code>id </code></strong>receiver, 
+   <strong class="userinput"><code>int </code></strong>errCode, 
+<strong class="userinput"><code>   const</code></strong> 
+               <strong class="userinput"><code>char</code></strong>* format, 
+<strong class="userinput"><code>   </code></strong>va_list args);</pre><p>Here are descriptions of the parameters your error handler will
+        get:</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">receiver</code></span></dt><dd><p>The object in whose method the error occurred.</p></dd><dt><span class="term"><code class="literal">errCode</code></span></dt><dd><p>One of a set of integers declared in the header file
+              <span class="emphasis"><em>objc-api.h</em></span> along with <code class="literal">objc_error_handler</code> <a id="IXT-1-284" class="indexterm"/>.</p></dd><dt><span class="term"><code class="literal">format</code></span></dt><dd><p>A <code class="literal">printf</code>-style C
+              string, for printing an error message.</p></dd><dt><span class="term"><code class="literal">args</code></span></dt><dd><p>A variable-length list of values for the format string.
+              You can print the error message using the format and argument
+              list and the C function <code class="literal">vprintf(
+              )</code> <a id="IXT-1-285" class="indexterm"/>.</p></dd></dl></div><p>Use the first two parameters to decide how to handle the error,
+        and the second two to print a <a id="IXTR3-584" class="indexterm"/> <a id="IXTR3-585" class="indexterm"/> <a id="IXTR3-586" class="indexterm"/>message.</p></div><div class="sect2" title="Exceptions in Cocoa"><div class="titlepage"><div><div><h2 class="title"><a id="objectcpr-CHP-1-SECT-8.2"/>Exceptions in Cocoa</h2></div></div></div><p>The <a id="objectcpr-IDXTERM-388" class="indexterm"/> <a id="objectcpr-IDXTERM-389" class="indexterm"/> <a id="objectcpr-IDXTERM-390" class="indexterm"/> <a id="objectcpr-IDXTERM-391" class="indexterm"/>Cocoa framework contains an <code class="literal">NSObject</code> class that provides similar
+        error-handling to the GNU <code class="literal">Object</code>.
+        However, Cocoa also provides a more elaborate exception mechanism for
+        handling errors.</p><p>An exception is a runtime event that diverts a program from its
+        normal flow of control. In the extreme case, the program will exit
+        immediately. More generally, control may jump across several stack
+        frames, bypassing permanently the remaining code in nested method
+        calls. (Cocoa uses the C <code class="literal">setjmp( )</code>
+        and <code class="literal">longjmp( )</code> calls to implement
+        this.) The Objective-C runtime or your code may <a id="objectcpr-IDXTERM-392" class="indexterm"/>generate ("raise") exceptions to signal an event that
+        must be handled in a special way.</p><p>Cocoa's exception handling partitions your code into three
+        types:</p><div class="variablelist"><dl><dt><span class="term">Try blocks</span></dt><dd><p>A <a id="objectcpr-IDXTERM-393" class="indexterm"/>block of code whose exceptions (if raised) will be
+              sent to the immediately following handler section. Always
+              precedes a handler. (The term "try" is borrowed from C++, even
+              though Objective-C doesn't use it as a keyword.)</p></dd><dt><span class="term">Handlers</span></dt><dd><p>A <a id="objectcpr-IDXTERM-394" class="indexterm"/>block of code executed if an exception is raised.
+              A handler always follows a try block.</p></dd><dt><span class="term">Ordinary code</span></dt><dd><p>Any code that is not in a try block or handler.</p></dd></dl></div><p>These kinds of code play the following roles when an exception
+        is raised:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>If execution is in a try block, control jumps to the
+            subsequent handler.</p></li><li class="listitem"><p>If execution is in ordinary code (or a handler), the
+            following sequence occurs:</p><div class="orderedlist"><ol class="orderedlist"><li class="listitem"><p>One stack frame is popped from the runtime call
+                stack.</p></li><li class="listitem"><p>Control returns immediately to the routine that called
+                the just-exited routine.</p></li></ol></div></li></ul></div><p>This process repeats from the first bullet point until either
+        control is inside a handler or the entire call stack is popped.</p><p>The result is that a handler will handle exceptions raised
+        directly in its preceding during block, and may handle those generated
+        indirectly (through any level of routine calls), if there are no
+        handlers closer to the source of the exception. If there are no
+        explicit handlers in the current call chain, the uncaught exception
+        handler will be called.</p><div class="sect3" title="Keywords for handling exceptions"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-8.2.1"/>Keywords for handling exceptions</h3></div></div></div><p>The Cocoa framework provides some definitions, variables, and
+          functions to simplify exception creation, propagation, and
+          handling:</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong> <code class="literal">NS_DURING</code> </strong></span></span></dt><dd><p><a id="IXT-1-286" class="indexterm"/>Starts a try block: a region of code that may
+                generate exceptions. You don't have to test the result of each
+                operation to see if an exception occurred: if one does,
+                control will jump to the handling section.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">NS_HANDLER</code> </strong></span></span></dt><dd><p><a id="IXT-1-287" class="indexterm"/>Starts an exception handling section that
+                corresponds to the preceding try block. In this section, the
+                variable <code class="literal">localException</code>
+                will exist and be set to the exception raised.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">NS_ENDHANDLER</code> </strong></span></span></dt><dd><p><a id="IXT-1-288" class="indexterm"/>Ends the exception handling section.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">NS_VOIDRETURN</code> </strong></span></span></dt><dd><p><a id="IXT-1-289" class="indexterm"/>Exits a method without returning a value. Use
+                this macro when you need to exit a method from within a try
+                block. Do not use the <strong class="userinput"><code>return</code></strong> keyword inside of a try
+                block.</p></dd><dt><span class="term"><span class="bold"><strong> <code class="literal">NS_VALUERETURN</code> </strong></span> <code class="literal">(</code> <em class="replaceable"><code>value</code></em>
+              <code class="literal">)</code></span></dt><dd><p><a id="IXT-1-290" class="indexterm"/>The same as <strong class="userinput"><code>NS_VOIDRETURN</code></strong>, but used to return
+                a value.</p></dd></dl></div><div class="note" title="Note"><h3 class="title"><a id="ch01-20-fm2xml"/>Note</h3><p>If you leave the method using <strong class="userinput"><code>return</code></strong>, the exception mechanism will
+            lose track of the call stack. If later code raises an exception,
+            your program will probably crash.</p></div><div class="variablelist"><dl><dt><span class="term"><code class="literal">localException</code></span></dt><dd><p><a id="IXT-1-291" class="indexterm"/>Defined in the handler with the value of the
+                exception that was raised to get there.</p></dd><dt><span class="term"><code class="literal">NSUncaughtExceptionHandler</code></span></dt><dd><p><a id="IXT-1-292" class="indexterm"/>A C <code class="literal">typedef</code>
+                for a function that takes an <code class="literal">NSException*</code> and returns <strong class="userinput"><code>void</code></strong>. The return or parameter type
+                for the following two functions:</p><div class="variablelist"><dl><dt><span class="term"><code class="literal">NSUncaughtExceptionHandler*
+                    NSGetUncaughtExceptionHandler( )</code><br/></span><span class="term"><span class="bold"><strong> <code class="literal">void</code> </strong></span> <code class="literal">NSSetUncaughtExceptionHandler
+                    (NSUncaughtExceptionHandler*)</code></span></dt><dd><p>Use these methods to retrieve or set the function
+                      the runtime calls for unhandled exceptions. The default
+                      function provided by the runtime writes an error message
+                      to <code class="literal">stderr</code> and exits
+                      the program.</p></dd></dl></div></dd></dl></div></div><div class="sect3" title="A Cocoa exception handling example"><div class="titlepage"><div><div><h3 class="title"><a id="objectcpr-CHP-1-SECT-8.2.2"/>A Cocoa exception handling example</h3></div></div></div><p>The following example illustrates raising and handling an
+          exception within the Cocoa framework. The example explicitly raises
+          an exception in order to demonstrate how that's done, but be aware
+          that the Objective-C runtime can also implicitly raise
+          exceptions.</p><a id="I_1_tt59"/><pre class="programlisting"> 1<strong class="userinput"><code>NS_DURING</code></strong>
+ 2   NSException* <em class="replaceable"><code>ex</code></em> = 
+ 3     [[NSException alloc]
+ 4      initWithName:@"<em class="replaceable"><code>ExceptionName</code></em>"
+ 5            reason:@"<em class="replaceable"><code>description</code></em>"
+ 6          userInfo:<strong class="userinput"><code>nil</code></strong>];
+ 7   [<em class="replaceable"><code>ex</code></em> raise];
+ 8 <strong class="userinput"><code>NS_HANDLER</code></strong>
+ 9   <strong class="userinput"><code>if</code></strong> ([[localException <em class="replaceable"><code>name</code></em>] 
+10       isEqualToString:@"<em class="replaceable"><code>ExceptionName</code></em>"])
+11    // Handle exception.
+12   <strong class="userinput"><code>else</code></strong>
+13     [localException raise];
+14 <strong class="userinput"><code>NS_ENDHANDLER</code></strong></pre><p>Line 1. Start the try block with the <strong class="userinput"><code>NS_DURING</code></strong> macro.</p><p>Line 2. Create an exception instance.</p><p>Line 4. Exceptions are distinguished—in code—by their names.
+          Cocoa defines 22 names stored in global variables such as <code class="literal">NSRangeException</code>. You can use one of these
+          or provide your own name.</p><p>Line 5. The reason can be any string. In contrast with the
+          name, it's meant to be read by people, so make it
+          descriptive.</p><p>Line 6. The user info is an instance of <code class="literal">NSDictionary</code> <a id="IXT-1-293" class="indexterm"/>—a class that provides a mapping between key-value
+          pairs. You can use this to provide detailed information about the
+          error.</p><p>Line 7. You raise an exception by calling its <code class="literal">raise</code> method.</p><p>Line 8. The <strong class="userinput"><code>NS_HANDLER</code></strong>
+          macro ends the try block and starts the handler.</p><p>Line 9. Inside the handler, the variable <code class="literal">localException</code> <a id="IXT-1-294" class="indexterm"/> is defined. Use its name to decide what to do about
+          it.</p><p>Line 11. This part is up to you.</p><p>Line 13. If you can't recover from the error, continue the
+          exception by raising it again. This is optional.</p><p>Line 14. The <strong class="userinput"><code>NS_ENDHANDLER</code></strong> macro <a id="IXTR3-587" class="indexterm"/>ends <a id="IXTR3-588" class="indexterm"/>the <a id="IXTR3-589" class="indexterm"/>handler section, and
+          the exception-aware section as <a id="IXTR3-590" class="indexterm"/> <a id="IXTR3-591" class="indexterm"/> <a id="IXTR3-592" class="indexterm"/> <a id="IXTR3-593" class="indexterm"/>a <a id="IXTR3-594" class="indexterm"/>whole.</p></div></div></div></body></html>

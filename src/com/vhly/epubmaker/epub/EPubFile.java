@@ -20,8 +20,9 @@ public class EPubFile extends ZipFile {
 
     /**
      * MIME Type
+     * Default type is application/epub+zip
      */
-    private String mimetype;
+    private String mimetype = "application/epub+zip";
 
     /**
      * Constructor with File path
