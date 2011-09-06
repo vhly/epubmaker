@@ -7,12 +7,28 @@ package com.vhly.epubmaker.epub;
  * Email: vhly@163.com
  */
 
+import net.dratek.browser.util.StreamUtil;
+import net.dratek.browser.xml.XMLUtil;
+import org.kxml2_orig.io.KXmlParser;
+import org.kxml2_orig.kdom.Document;
+import org.kxml2_orig.kdom.Element;
+
+import java.io.ByteArrayInputStream;
+
 /**
  * EPub File's Container define<br/>
  * Default file contain an oepbs-package+xml file
  */
-public class Container implements ZIPContent, ContentParser{
+public class Container implements ZIPContent, ContentParser {
     private OPF packageFile;
+
+    /**
+     * Get PackageFile (OPF instance)
+     * @return OPF
+     */
+    public OPF getPackageFile() {
+        return packageFile;
+    }
 
     //////// ZIPContent implements //////////
 
@@ -45,8 +61,41 @@ public class Container implements ZIPContent, ContentParser{
      */
     public boolean parse(byte[] buf) {
         boolean bret = false;
-        if(buf != null){
+        if (buf != null) {
+            KXmlParser parser = new KXmlParser();
+            ByteArrayInputStream bin = null;
+            Document dom = null;
+            try {
+                bin = new ByteArrayInputStream(buf);
+                parser.setInput(bin, null);
+                dom = new Document();
+                dom.parse(parser);
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                StreamUtil.close(bin);
+            }
 
+            if(dom != null){
+                Element root = dom.getRootElement();
+                if(root != null){
+                    Element[] rootfileses = XMLUtil.getElementsByName(root, "rootfiles");
+                    if(rootfileses != null && rootfileses.length > 0){
+                        Element rfs = rootfileses[0];
+                        Element[] rf = XMLUtil.getElementsByName(rfs, "rootfile");
+                        if(rf != null && rf.length > 0){
+                            Element erf = rf[0];
+                            String fullpath = erf.getAttributeValue(null, "full-path");
+                            String mediatype = erf.getAttributeValue(null, "media-type");
+                            if(mediatype != null && mediatype.equals("application/oebps-package+xml")){
+                                packageFile = new OPF();
+                                packageFile.setEntryName(fullpath);
+                            }
+                            bret = true;
+                        }
+                    }
+                }
+            }
         }
         return bret;
     }

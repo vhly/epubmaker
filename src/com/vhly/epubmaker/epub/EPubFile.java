@@ -97,21 +97,35 @@ public class EPubFile extends ZipFile {
         if (entries != null) {
             ZipEntry entry = null;
             String ename;
+
+            entry = getEntry("mimetype");
+            if (entry != null) {
+                String s = readMIMEType(entry);
+                if (s != null) {
+                    mimetype = s;
+                }
+            }
+
+            entry = getEntry("META-INF/container.xml");
+            if (entry != null) {
+                Container cc = readContainer(entry);
+                if (cc != null) {
+                    container = cc;
+                }
+            }
+
+            if(container != null){
+                OPF opf = container.getPackageFile();
+            }
+
             while (entries.hasMoreElements()) {
                 entry = entries.nextElement();
                 ename = entry.getName();
                 System.out.println("ename = " + ename);
                 if (ename.equals("mimetype")) {
-                    // load mimetype file content.
-                    String s = readMIMEType(entry);
-                    if (s != null) {
-                        mimetype = s;
-                    }
+
                 } else if (ename.equals("META-INF/container.xml")) {
-                    Container cc = readContainer(entry);
-                    if(cc != null){
-                        container = cc;
-                    }
+
                 }
             }
         }
