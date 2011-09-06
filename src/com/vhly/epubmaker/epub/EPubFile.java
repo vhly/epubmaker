@@ -104,11 +104,14 @@ public class EPubFile extends ZipFile {
                 if (ename.equals("mimetype")) {
                     // load mimetype file content.
                     String s = readMIMEType(entry);
-                    if(s != null){
+                    if (s != null) {
                         mimetype = s;
                     }
-                }else if(ename.equals("META-INF/container.xml")){
-                    readContainer(entry);
+                } else if (ename.equals("META-INF/container.xml")) {
+                    Container cc = readContainer(entry);
+                    if(cc != null){
+                        container = cc;
+                    }
                 }
             }
         }
@@ -117,11 +120,32 @@ public class EPubFile extends ZipFile {
 
     /**
      * Read container entry and return it.
+     *
      * @param entry ZipEntry in self
      * @return Container
      */
     private Container readContainer(ZipEntry entry) {
-        return null;
+        Container ret = null;
+        if (entry != null) {
+            InputStream inputStream = null;
+            try {
+                inputStream = getInputStream(entry);
+                byte[] buf = StreamUtil.readStream(inputStream);
+                if (buf != null && buf.length > 0) {
+                    // Parse buf
+                    Container c = new Container();
+                    c.setEntryName(entry.getName());
+                    if (c.parse(buf)) {
+                        ret = c;
+                    }
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                StreamUtil.close(inputStream);
+            }
+        }
+        return ret;
     }
 
     /**
@@ -137,8 +161,8 @@ public class EPubFile extends ZipFile {
             try {
                 inputStream = getInputStream(entry);
                 byte[] buf = StreamUtil.readStream(inputStream);
-                if(buf != null && buf.length > 0){
-                    ret = new String(buf,"UTF-8");
+                if (buf != null && buf.length > 0) {
+                    ret = new String(buf, "UTF-8");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
