@@ -114,8 +114,25 @@ public class EPubFile extends ZipFile {
                 }
             }
 
-            if(container != null){
+            if (container != null) {
                 OPF opf = container.getPackageFile();
+                String entryName = opf.getEntryName();
+                entry = getEntry(entryName);
+                if (entry != null) {
+                    InputStream in = null;
+                    byte[] buf = null;
+                    try {
+                        in = getInputStream(entry);
+                        buf = StreamUtil.readStream(in);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        StreamUtil.close(in);
+                    }
+                    if (buf != null && buf.length > 0) {
+                        opf.parse(buf);
+                    }
+                }
             }
 
             while (entries.hasMoreElements()) {
