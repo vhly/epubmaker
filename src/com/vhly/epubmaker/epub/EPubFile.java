@@ -119,18 +119,28 @@ public class EPubFile extends ZipFile {
                 String entryName = opf.getEntryName();
                 entry = getEntry(entryName);
                 if (entry != null) {
-                    InputStream in = null;
-                    byte[] buf = null;
-                    try {
-                        in = getInputStream(entry);
-                        buf = StreamUtil.readStream(in);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } finally {
-                        StreamUtil.close(in);
-                    }
+                    byte[] buf = readEntryData(entry);
                     if (buf != null && buf.length > 0) {
                         opf.parse(buf);
+                    }
+                }
+                String tocHref = opf.getTocHref();
+                if(tocHref != null){
+                    int index = entryName.lastIndexOf('/');
+                    if(index != -1){
+                        String s = entryName.substring(0,index+1);
+                        tocHref = s + tocHref;
+                    }
+                    ZipEntry en = getEntry(tocHref);
+                    if(en != null){
+                       byte[] buf = readEntryData(en);
+                        if(buf != null && buf.length > 0){
+                            NCX ncx = new NCX();
+                            ncx.setEntryName(tocHref);
+                            if(ncx.parse(buf)){
+                                opf.setToc(ncx);
+                            }
+                        }
                     }
                 }
             }
@@ -147,6 +157,20 @@ public class EPubFile extends ZipFile {
             }
         }
         return bret;
+    }
+
+    private byte[] readEntryData(ZipEntry entry) {
+        InputStream in = null;
+        byte[] buf = null;
+        try {
+            in = getInputStream(entry);
+            buf = StreamUtil.readStream(in);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            StreamUtil.close(in);
+        }
+        return buf;
     }
 
     /**
