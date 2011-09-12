@@ -9,6 +9,7 @@ package com.vhly.epubmaker.epub;
 
 import net.dratek.browser.util.StreamUtil;
 import net.dratek.browser.xml.XMLUtil;
+import net.dratek.browser.xml.XPathUtil;
 import org.kxml2_orig.io.KXmlParser;
 import org.kxml2_orig.kdom.Document;
 import org.kxml2_orig.kdom.Element;
@@ -24,6 +25,7 @@ public class Container implements ZIPContent, ContentParser {
 
     /**
      * Get PackageFile (OPF instance)
+     *
      * @return OPF
      */
     public OPF getPackageFile() {
@@ -76,25 +78,38 @@ public class Container implements ZIPContent, ContentParser {
                 StreamUtil.close(bin);
             }
 
-            if(dom != null){
-                Element root = dom.getRootElement();
-                if(root != null){
-                    Element[] rootfileses = XMLUtil.getElementsByName(root, "rootfiles");
-                    if(rootfileses != null && rootfileses.length > 0){
-                        Element rfs = rootfileses[0];
-                        Element[] rf = XMLUtil.getElementsByName(rfs, "rootfile");
-                        if(rf != null && rf.length > 0){
-                            Element erf = rf[0];
-                            String fullpath = erf.getAttributeValue(null, "full-path");
-                            String mediatype = erf.getAttributeValue(null, "media-type");
-                            if(mediatype != null && mediatype.equals("application/oebps-package+xml")){
-                                packageFile = new OPF();
-                                packageFile.setEntryName(fullpath);
-                            }
-                            bret = true;
-                        }
+            if (dom != null) {
+
+                Object node = XPathUtil.query(dom, "/container/rootfiles/rootfile");
+                if (node != null && node instanceof Element) {
+                    Element en = (Element) node;
+                    String fullpath = en.getAttributeValue(null, "full-path");
+                    String mediatype = en.getAttributeValue(null, "media-type");
+                    if (mediatype != null && mediatype.equals("application/oebps-package+xml")) {
+                        packageFile = new OPF();
+                        packageFile.setEntryName(fullpath);
                     }
+                    bret = true;
                 }
+
+//                Element root = dom.getRootElement();
+//                if (root != null) {
+//                    Element[] rootfileses = XMLUtil.getElementsByName(root, "rootfiles");
+//                    if (rootfileses != null && rootfileses.length > 0) {
+//                        Element rfs = rootfileses[0];
+//                        Element[] rf = XMLUtil.getElementsByName(rfs, "rootfile");
+//                        if (rf != null && rf.length > 0) {
+//                            Element erf = rf[0];
+//                            String fullpath = erf.getAttributeValue(null, "full-path");
+//                            String mediatype = erf.getAttributeValue(null, "media-type");
+//                            if (mediatype != null && mediatype.equals("application/oebps-package+xml")) {
+//                                packageFile = new OPF();
+//                                packageFile.setEntryName(fullpath);
+//                            }
+//                            bret = true;
+//                        }
+//                    }
+//                }
             }
         }
         return bret;
