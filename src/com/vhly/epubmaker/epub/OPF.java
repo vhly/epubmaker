@@ -2,6 +2,7 @@ package com.vhly.epubmaker.epub;
 
 import net.dratek.browser.util.StreamUtil;
 import net.dratek.browser.xml.XMLUtil;
+import net.dratek.browser.xml.XPathUtil;
 import org.kxml2_orig.io.KXmlParser;
 import org.kxml2_orig.kdom.Document;
 import org.kxml2_orig.kdom.Element;
@@ -17,6 +18,8 @@ import java.io.IOException;
  * Email: vhly@163.com
  */
 public class OPF implements ZIPContent, ContentParser {
+
+    private Metadata metadata;
 
     private String entryName = "OEBPS/content.opf";
 
@@ -66,13 +69,79 @@ public class OPF implements ZIPContent, ContentParser {
                 StreamUtil.close(bin);
             }
             if(dom != null){
-                Element root = dom.getRootElement();
-                Element[] metadatas = XMLUtil.getElementsByName(root, "metadata");
-                if(metadatas != null && metadatas.length > 0){
-                    Element metadata = metadatas[0];
-                    parseMetadata(metadata);
+//                Element root = dom.getRootElement();
+//                Element[] metadatas = XMLUtil.getElementsByName(root, "metadata");
+//                if(metadatas != null && metadatas.length > 0){
+//                    Element metadata = metadatas[0];
+//                    parseMetadata(metadata);
+//                }
+                metadata = new Metadata();
+
+                Object id = XPathUtil.query(dom, "/package/metadata/dc:identifier/#text");
+                if(id != null && id instanceof String){
+                    metadata.setIdentifier((String)id);
                 }
 
+                Object title = XPathUtil.query(dom, "/package/metadata/dc:title/#text");
+                System.out.println("title = " + title);
+                if(title != null && title instanceof String){
+                    metadata.setTitle((String) title);
+                }
+
+                Object rights = XPathUtil.query(dom, "/package/metadata/dc:rights/#text");
+                System.out.println("rights = " + rights);
+                if(rights != null && rights instanceof String){
+                    metadata.setRights((String) rights);
+                }
+
+                Object publisher = XPathUtil.query(dom, "/package/metadata/dc:publisher/#text");
+                System.out.println("publisher = " + publisher);
+                if(publisher != null && publisher instanceof String){
+                    metadata.setPublisher((String) publisher);
+                }
+
+                Object subject = XPathUtil.query(dom, "/package/metadata/dc:subject/#text");
+                System.out.println("subject = " + subject);
+                if(subject != null && subject instanceof String){
+                    metadata.setSubject((String) subject);
+                }
+
+                Object date = XPathUtil.query(dom, "/package/metadata/dc:date/#text");
+                System.out.println("date = " + date);
+                if(date != null && date instanceof String){
+                    metadata.setDate((String) date);
+                }
+
+                Object description = XPathUtil.query(dom, "/package/metadata/dc:description/#text");
+                System.out.println("description = " + description);
+                if(description != null && description instanceof String){
+                    metadata.setDescription((String) description);
+                }
+
+                Object creator = XPathUtil.query(dom, "/package/metadata/dc:creator/#text");
+                System.out.println("creator = " + creator);
+                if(creator != null && creator instanceof String){
+                    metadata.setCreator((String) creator);
+                }
+
+                Object language = XPathUtil.query(dom, "/package/metadata/dc:language/#text");
+                System.out.println("language = " + language);
+                if(language != null && language instanceof String){
+                    metadata.setLanguage((String) language);
+                }
+
+                Object meta = XPathUtil.query(dom, "/package/metadata/meta");
+                System.out.println("meta = " + meta);
+                if(meta != null && meta instanceof Element){
+                    Element emeta = (Element) meta;
+                    String name = emeta.getAttributeValue(null, "name");
+                    String content = emeta.getAttributeValue(null, "content");
+                    if(name != null){
+                        if(name.equals("cover")){
+                            metadata.setCover_image(content); // This field is not url, it's a ref
+                        }
+                    }
+                }
             }
         }
         return bret;

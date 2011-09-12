@@ -91,25 +91,6 @@ public class Container implements ZIPContent, ContentParser {
                     }
                     bret = true;
                 }
-
-//                Element root = dom.getRootElement();
-//                if (root != null) {
-//                    Element[] rootfileses = XMLUtil.getElementsByName(root, "rootfiles");
-//                    if (rootfileses != null && rootfileses.length > 0) {
-//                        Element rfs = rootfileses[0];
-//                        Element[] rf = XMLUtil.getElementsByName(rfs, "rootfile");
-//                        if (rf != null && rf.length > 0) {
-//                            Element erf = rf[0];
-//                            String fullpath = erf.getAttributeValue(null, "full-path");
-//                            String mediatype = erf.getAttributeValue(null, "media-type");
-//                            if (mediatype != null && mediatype.equals("application/oebps-package+xml")) {
-//                                packageFile = new OPF();
-//                                packageFile.setEntryName(fullpath);
-//                            }
-//                            bret = true;
-//                        }
-//                    }
-//                }
             }
         }
         return bret;
