@@ -22,6 +22,8 @@ public class Chapter implements Content{
      */
     private MediaType mediaType = MediaType.XHTML;
 
+    private String pageContent;
+
     // Content implements.
 
     /**
@@ -52,5 +54,21 @@ public class Chapter implements Content{
         if(data != null){
             content = data;
         }
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getPageContent() {
+        return pageContent;
+    }
+
+    public void setPageContent(String pageContent) {
+        this.pageContent = pageContent;
     }
 }
