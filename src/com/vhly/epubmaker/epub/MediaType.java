@@ -22,4 +22,10 @@ public enum MediaType {
     MediaType(String s) {
        type = s;
     }
+
+
+    @Override
+    public String toString() {
+        return type;
+    }
 }

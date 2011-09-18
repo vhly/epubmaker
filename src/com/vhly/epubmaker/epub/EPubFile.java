@@ -1,11 +1,13 @@
 package com.vhly.epubmaker.epub;
 
+import com.vhly.epubmaker.epub.content.Chapter;
 import net.dratek.browser.util.StreamUtil;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
+import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
@@ -33,6 +35,10 @@ public class EPubFile extends ZipFile {
      * Content container, all enter pointer defines in here.
      */
     private Container container;
+    /**
+     * Chapter store;
+     */
+    private Vector<Chapter> chapters;
 
     /**
      * Constructor with File path
@@ -42,6 +48,7 @@ public class EPubFile extends ZipFile {
      */
     public EPubFile(String name) throws IOException {
         super(name);
+        initFile();
     }
 
     /**
@@ -53,6 +60,7 @@ public class EPubFile extends ZipFile {
      */
     public EPubFile(File file, int mode) throws IOException {
         super(file, mode);
+        initFile();
     }
 
     /**
@@ -64,6 +72,11 @@ public class EPubFile extends ZipFile {
      */
     public EPubFile(File file) throws ZipException, IOException {
         super(file);
+        initFile();
+    }
+
+    private void initFile() {
+        chapters = new Vector<Chapter>();
     }
 
     /**
@@ -125,24 +138,65 @@ public class EPubFile extends ZipFile {
                     }
                 }
                 String tocHref = opf.getTocHref();
-                if(tocHref != null){
+                if (tocHref != null) {
                     int index = entryName.lastIndexOf('/');
-                    if(index != -1){
-                        String s = entryName.substring(0,index+1);
+                    if (index != -1) {
+                        String s = entryName.substring(0, index + 1);
                         tocHref = s + tocHref;
                     }
                     ZipEntry en = getEntry(tocHref);
-                    if(en != null){
-                       byte[] buf = readEntryData(en);
-                        if(buf != null && buf.length > 0){
+                    if (en != null) {
+                        byte[] buf = readEntryData(en);
+                        if (buf != null && buf.length > 0) {
                             NCX ncx = new NCX();
                             ncx.setEntryName(tocHref);
-                            if(ncx.parse(buf)){
+                            if (ncx.parse(buf)) {
                                 opf.setToc(ncx);
                             }
                         }
                     }
                 }
+
+                Spine spine = opf.getSpine();
+                Manifest manifest = opf.getManifest();
+                if (spine != null && manifest != null) {
+                    // TODO Load Spine itemrefs for EPub chapter load.
+                    ItemRef[] refs = spine.getAllItemRefs();
+                    if (refs != null) {
+                        int len = refs.length;
+                        int index = entryName.lastIndexOf('/');
+                        String parentPath = "";
+                        if (index != -1) {
+                            parentPath = entryName.substring(0, index + 1);
+                        }
+                        if (len > 0) {
+                            ItemRef ret;
+                            Item item;
+                            String ipath;
+                            for (int i = 0; i < len; i++) {
+                                ret = refs[i];
+                                String idref = ret.idref;
+                                item = manifest.getItem(idref);
+                                if (item != null) {
+                                    ipath = parentPath + item.href;
+                                    ZipEntry en = getEntry(ipath);
+                                    if (en == null) {
+                                        en = getEntry(item.href);
+                                    }
+                                    if (en != null) {
+                                        byte[] data = readEntryData(en);
+                                        if (data != null) {
+                                            Chapter chapter = new Chapter();
+                                            chapter.setContent(data);
+                                            chapters.add(chapter);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
 
             while (entries.hasMoreElements()) {

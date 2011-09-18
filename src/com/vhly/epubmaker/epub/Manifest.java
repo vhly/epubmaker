@@ -3,7 +3,10 @@ package com.vhly.epubmaker.epub;
 import net.dratek.browser.xml.XMLUtil;
 import org.kxml2_orig.kdom.Element;
 
+import java.util.Collection;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Vector;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,12 +15,20 @@ import java.util.Hashtable;
  * Email: vhly@163.com
  */
 public class Manifest {
+    /**
+     * All items store.
+     */
     private Hashtable<String, Item> items;
 
     public Manifest() {
         items = new Hashtable<String, Item>();
     }
 
+    /**
+     * Add a parsed Item object.
+     *
+     * @param item Item
+     */
     public void addItem(Item item) {
         if (item != null) {
             String id = item.id;
@@ -27,19 +38,34 @@ public class Manifest {
         }
     }
 
-    public Item getItem(String id){
+    /**
+     * Get Item by id<br/>
+     * id is parsed by parse method
+     *
+     * @param id Item's id.
+     * @return Item
+     */
+    public Item getItem(String id) {
         Item ret = null;
-        if(id != null){
-           ret = items.get(id);
+        if (id != null) {
+            ret = items.get(id);
         }
         return ret;
     }
 
+    /**
+     * Dealloc, release all resources.
+     */
     public void dealloc() {
         items.clear();
         items = null;
     }
 
+    /**
+     * Parse &lt;manifest&gt; element.
+     *
+     * @param emanifest Element
+     */
     public void parse(Element emanifest) {
         if (emanifest != null) {
             Element[] items = XMLUtil.getElementsByName(emanifest, "item");
@@ -55,5 +81,43 @@ public class Manifest {
                 }
             }
         }
+    }
+
+    /**
+     * Get Items count.
+     *
+     * @return int
+     */
+    public int size() {
+        return items.size();
+    }
+
+    /**
+     * Get Item s by MediaType
+     * @param type MediaType
+     * @return Item[]
+     */
+    public Item[] getItemsByMediaType(MediaType type) {
+        Item[] ret = null;
+        if (!items.isEmpty() && type != null) {
+            Vector<Item> v = new Vector<Item>();
+            Collection<Item> values = items.values();
+            Iterator<Item> iterator = values.iterator();
+            Item item;
+            String st = type.toString();
+            while (iterator.hasNext()) {
+                item = iterator.next();
+                if(st.equals(item.mediatype)){
+                    v.add(item);
+                }
+            }
+            if(!v.isEmpty()){
+                int len = v.size();
+                ret = new Item[len];
+                v.copyInto(ret);
+            }
+            v.clear();
+        }
+        return ret;
     }
 }

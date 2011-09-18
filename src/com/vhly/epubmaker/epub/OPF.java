@@ -18,15 +18,29 @@ import java.io.IOException;
  * Email: vhly@163.com
  */
 public class OPF implements ZIPContent, ContentParser {
-
+    /**
+     * metadata information.
+     */
     private Metadata metadata;
 
+    /**
+     * Manifest information
+     */
     private Manifest manifest;
 
+    /**
+     * Spine information
+     */
     private Spine spine;
 
+    /**
+     * Guide information
+     */
     private Guide guide;
 
+    /**
+     * TOC
+     */
     private NCX toc;
 
     private String entryName = "OEBPS/content.opf";
@@ -77,25 +91,50 @@ public class OPF implements ZIPContent, ContentParser {
                 StreamUtil.close(bin);
             }
             if (dom != null) {
-//                Element root = dom.getRootElement();
-//                Element[] metadatas = XMLUtil.getElementsByName(root, "metadata");
-//                if(metadatas != null && metadatas.length > 0){
-//                    Element metadata = metadatas[0];
-//                    parseMetadata(metadata);
-//                }
-
+                // parse metadata element
                 parseMetadata(dom);
 
+                // parse manifest element
                 parseManifest(dom);
 
+                // parse spine element
                 parseSpine(dom);
 
+                // parse guide element
                 parseGuide(dom);
             }
         }
         return bret;
     }
 
+    /**
+     * Return manifest information for epub load process.
+     * @return Manifest
+     */
+    public Manifest getManifest(){
+        return manifest;
+    }
+
+    /**
+     * Return spine information for epub chapter load.
+     * @return Spine
+     */
+    public Spine getSpine(){
+        return spine;
+    }
+
+    /**
+     * Get TOC information for epub file read.
+     * @return NCX
+     */
+    public NCX getToc(){
+        return toc;
+    }
+
+    /**
+     * Get spine's toc attribute for TOC href
+     * @return String, relative path base OPF file.
+     */
     public String getTocHref(){
         String ret = null;
         if(spine != null && manifest != null){
@@ -110,10 +149,19 @@ public class OPF implements ZIPContent, ContentParser {
         return ret;
     }
 
+    /**
+     * In EPub parse method, load zip toc content and parse, and set toc when ncx parsed.
+     * @param t NCX object.
+     */
     public void setToc(NCX t){
         toc = t;
     }
 
+    /**
+     * Parse guide element<br/>
+     * parse it with XPathUtil in BrowserCore library.
+     * @param dom Document
+     */
     private void parseGuide(Document dom) {
         Object or = XPathUtil.query(dom, "/package/guide/reference");
         if(or != null && or instanceof Element){

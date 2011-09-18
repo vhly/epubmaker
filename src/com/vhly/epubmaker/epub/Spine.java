@@ -12,26 +12,56 @@ import java.util.Vector;
  * Email: vhly@163.com
  */
 public class Spine {
+    /**
+     * toc href
+     */
     public String toc;
-
+    /**
+     * ItemRef store.
+     */
     private Vector<ItemRef> refs;
 
     public Spine() {
         refs = new Vector<ItemRef>();
     }
 
+    /**
+     * dealloc, release all resources.
+     */
     public void dealloc(){
         refs.clear();
         refs = null;
         toc = null;
     }
 
+    /**
+     * Add a ItemRef obj;
+     * @param ref ItemRef
+     */
     public void addRef(ItemRef ref){
         if(ref != null){
             refs.add(ref);
         }
     }
 
+    /**
+     * Get all ItemRef s for item load.
+     * @return ItemRef[]
+     */
+    public ItemRef[] getAllItemRefs(){
+        ItemRef[] ret = null;
+        if(!refs.isEmpty()){
+            int size = refs.size();
+            ret = new ItemRef[size];
+            refs.copyInto(ret);
+        }
+        return ret;
+    }
+
+    /**
+     * Parse &lt;spine&gt; element.
+     * @param espine Element
+     */
     public void parse(Element espine) {
         if(espine != null){
             toc = espine.getAttributeValue(null,"toc");
