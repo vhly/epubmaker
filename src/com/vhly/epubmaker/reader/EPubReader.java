@@ -90,7 +90,8 @@ public class EPubReader implements EPubContentHandler {
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
                     chapterList.removeAll();
-                    chapterList.setModel(new ChapterTreeModel(currentFile));
+                    ChapterTreeModel model = new ChapterTreeModel(currentFile);
+                    chapterList.setModel(model);
                     chapterList.updateUI();
                 }
             });
