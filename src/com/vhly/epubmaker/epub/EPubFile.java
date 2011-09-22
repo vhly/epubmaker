@@ -228,6 +228,22 @@ public class EPubFile extends ZipFile {
     }
 
     /**
+     * Get Chapters<br/>
+     * This method return chapters by manifest info, not NCX,<br/>
+     * if use ncx info, will show all list contents.
+     * @return Chapters
+     */
+    public Chapter[] getChapters(){
+        Chapter[] ret = null;
+        if(chapters != null && !chapters.isEmpty()){
+            int size = chapters.size();
+            ret = new Chapter[size];
+            chapters.copyInto(ret);
+        }
+        return ret;
+    }
+
+    /**
      * Read container entry and return it.
      *
      * @param entry ZipEntry in self
