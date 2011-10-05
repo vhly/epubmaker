@@ -193,6 +193,7 @@ public class EPubFile extends ZipFile {
                                     }
                                 }
                             }
+                            bret = true;
                         }
                     }
                 }
