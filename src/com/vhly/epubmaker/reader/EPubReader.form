@@ -34,12 +34,6 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="9b91f" class="javax.swing.JTree" binding="chapterList">
-            <constraints>
-              <splitpane position="left"/>
-            </constraints>
-            <properties/>
-          </component>
           <component id="48470" class="javax.swing.JEditorPane" binding="contentShower">
             <constraints>
               <splitpane position="right"/>
@@ -48,6 +42,19 @@
               <contentType value="text/html" noi18n="true"/>
             </properties>
           </component>
+          <scrollpane id="f0eef">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="9b91f" class="javax.swing.JTree" binding="chapterList">
+                <constraints/>
+                <properties/>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </splitpane>
     </children>

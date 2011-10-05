@@ -6,6 +6,7 @@ import com.vhly.epubmaker.epub.content.Chapter;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -89,7 +90,6 @@ public class EPubReader implements EPubContentHandler {
             currentFile = file;
             SwingUtilities.invokeLater(new Runnable() {
                 public void run() {
-                    chapterList.removeAll();
                     ChapterTreeModel model = new ChapterTreeModel(currentFile);
                     chapterList.setModel(model);
                     chapterList.updateUI();
