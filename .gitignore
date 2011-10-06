@@ -5,3 +5,5 @@ gen/
 bin/
 .DS_Store
 Thumb.db
+tmp/
+
