@@ -42,7 +42,9 @@ public class ChapterTreeModel extends DefaultTreeModel {
                         sb.append("Chapter ").append(index);
                         title = sb.toString();
                     }
-                    r.add(new DefaultMutableTreeNode(title));
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(ch);
+
+                    r.add(node);
                 }
             }
         }

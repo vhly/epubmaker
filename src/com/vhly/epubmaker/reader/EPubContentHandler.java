@@ -15,4 +15,10 @@ public interface EPubContentHandler {
      */
     public abstract void updateEPubFile(EPubFile file);
 
+    /**
+     * Notify host receive epub file contents temp store path
+     * @param path String, file system path,
+     */
+    public abstract void updateTempStorePath(String path);
+
 }

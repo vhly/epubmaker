@@ -4,9 +4,13 @@ import com.vhly.epubmaker.epub.EPubFile;
 import com.vhly.epubmaker.epub.content.Chapter;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.filechooser.FileFilter;
+import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeModel;
+import javax.swing.tree.TreePath;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -17,7 +21,7 @@ import java.io.File;
  * Date: 11-9-18
  * Email: vhly@163.com
  */
-public class EPubReader implements EPubContentHandler {
+public class EPubReader implements EPubContentHandler, TreeSelectionListener {
     private JButton openButton;
     private JTree chapterList;
     private JEditorPane contentShower;
@@ -31,7 +35,12 @@ public class EPubReader implements EPubContentHandler {
      */
     private EPubFile currentFile;
 
+    private String tempStorePath;
+
     public EPubReader() {
+
+        chapterList.addTreeSelectionListener(this);
+
         openButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent actionEvent) {
                 JFileChooser chooser = new JFileChooser("Open EPub");
@@ -95,6 +104,28 @@ public class EPubReader implements EPubContentHandler {
                     chapterList.updateUI();
                 }
             });
+        }
+    }
+
+    /**
+     * Notify host receive epub file contents temp store path
+     *
+     * @param path String, file system path,
+     */
+    public void updateTempStorePath(String path) {
+        tempStorePath = path;
+    }
+
+    public void valueChanged(TreeSelectionEvent treeSelectionEvent) {
+        TreePath path = chapterList.getSelectionPath();
+        Object o = path.getLastPathComponent();
+        if(o != null && o instanceof DefaultMutableTreeNode){
+            DefaultMutableTreeNode tn = (DefaultMutableTreeNode) o;
+            Object uo = tn.getUserObject();
+            if(uo != null && uo instanceof Chapter){
+                Chapter ch = (Chapter) uo;
+                contentShower.setText(ch.getPageContent());
+            }
         }
     }
 }

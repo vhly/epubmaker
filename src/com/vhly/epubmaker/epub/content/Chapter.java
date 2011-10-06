@@ -2,13 +2,15 @@ package com.vhly.epubmaker.epub.content;
 
 import com.vhly.epubmaker.epub.MediaType;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * Created by IntelliJ IDEA.
  * User: vhly[FR]
  * Date: 11-9-18
  * Email: vhly@163.com
  */
-public class Chapter implements Content{
+public class Chapter implements Content {
     /**
      * Chapter's title
      */
@@ -51,7 +53,7 @@ public class Chapter implements Content{
      * @param data byte[] data
      */
     public void setContent(byte[] data) {
-        if(data != null){
+        if (data != null) {
             content = data;
         }
     }
@@ -65,10 +67,22 @@ public class Chapter implements Content{
     }
 
     public String getPageContent() {
+        if (pageContent == null && content != null) {
+            try {
+                pageContent = new String(content,"UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                pageContent = new String(content);
+            }
+        }
         return pageContent;
     }
 
     public void setPageContent(String pageContent) {
         this.pageContent = pageContent;
+    }
+
+    @Override
+    public String toString() {
+        return title != null ? title : "Chapter untitled";
     }
 }

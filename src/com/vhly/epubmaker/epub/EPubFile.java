@@ -199,22 +199,16 @@ public class EPubFile extends ZipFile {
                 }
 
             }
-
-            while (entries.hasMoreElements()) {
-                entry = entries.nextElement();
-                ename = entry.getName();
-                System.out.println("ename = " + ename);
-                if (ename.equals("mimetype")) {
-
-                } else if (ename.equals("META-INF/container.xml")) {
-
-                }
-            }
         }
         return bret;
     }
 
-    private byte[] readEntryData(ZipEntry entry) {
+    /**
+     * read entry to byte[]
+     * @param entry ZipEntry
+     * @return byte[] entry's data
+     */
+    public byte[] readEntryData(ZipEntry entry) {
         InputStream in = null;
         byte[] buf = null;
         try {
