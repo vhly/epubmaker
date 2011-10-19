@@ -3,14 +3,13 @@ package com.vhly.epubmaker.epub;
 import com.vhly.epubmaker.epub.content.Chapter;
 import net.dratek.browser.util.StreamUtil;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
+import java.util.zip.ZipOutputStream;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,6 +23,10 @@ import java.util.zip.ZipFile;
  * EPub File, .epub file is a zip file actually.
  */
 public class EPubFile extends ZipFile {
+    /**
+     * Default book content folder.
+     */
+    private String defaultFolder = "OEBPS";
 
     /**
      * MIME Type
@@ -205,6 +208,7 @@ public class EPubFile extends ZipFile {
 
     /**
      * read entry to byte[]
+     *
      * @param entry ZipEntry
      * @return byte[] entry's data
      */
@@ -226,11 +230,12 @@ public class EPubFile extends ZipFile {
      * Get Chapters<br/>
      * This method return chapters by manifest info, not NCX,<br/>
      * if use ncx info, will show all list contents.
+     *
      * @return Chapters
      */
-    public Chapter[] getChapters(){
+    public Chapter[] getChapters() {
         Chapter[] ret = null;
-        if(chapters != null && !chapters.isEmpty()){
+        if (chapters != null && !chapters.isEmpty()) {
             int size = chapters.size();
             ret = new Chapter[size];
             chapters.copyInto(ret);
@@ -292,5 +297,46 @@ public class EPubFile extends ZipFile {
 
         }
         return ret;
+    }
+
+    /**
+     * @param path file to save
+     * @return boolean save ok?
+     */
+    public boolean save(String path) {
+        boolean bret = false;
+        if (path != null) {
+            File f = new File(path);
+            File pf = f.getParentFile();
+            boolean bok = true;
+            if (!pf.exists()) {
+                bok = pf.mkdirs();
+            }
+            if(bok){
+                // create parent ok or parent exists
+                FileOutputStream fout = null;
+                ZipOutputStream  zout = null;
+                DataOutputStream dout = null;
+                try {
+                    fout = new FileOutputStream(f);
+                    zout = new ZipOutputStream(fout);
+                    dout = new DataOutputStream(zout);
+                    zout.putNextEntry(new ZipEntry("mimetype"));
+                    dout.writeBytes(mimetype);
+                    zout.closeEntry();
+                    String en = container.getEntryName();
+                    zout.putNextEntry(new ZipEntry(en));
+                    container.save(dout);
+                    zout.closeEntry();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    StreamUtil.close(dout);
+                    StreamUtil.close(zout);
+                    StreamUtil.close(fout);
+                }
+            }
+        }
+        return bret;
     }
 }

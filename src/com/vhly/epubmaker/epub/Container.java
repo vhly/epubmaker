@@ -15,6 +15,7 @@ import org.kxml2_orig.kdom.Document;
 import org.kxml2_orig.kdom.Element;
 
 import java.io.ByteArrayInputStream;
+import java.io.DataOutputStream;
 
 /**
  * EPub File's Container define<br/>
@@ -94,5 +95,9 @@ public class Container implements ZIPContent, ContentParser {
             }
         }
         return bret;
+    }
+
+    public void save(DataOutputStream dout) {
+
     }
 }
