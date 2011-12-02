@@ -56,4 +56,10 @@ public class NavPoint {
             sb.append("</navPoint>");
         }
     }
+
+    public String updateOrder(String it) {
+        iplayOrder = Integer.parseInt(it);
+        int dit = iplayOrder + 1;
+        return Integer.toString(dit);
+    }
 }

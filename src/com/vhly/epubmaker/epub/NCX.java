@@ -164,7 +164,9 @@ public class NCX implements ZIPContent, ContentParser {
         sb.append("<docAuthor><text>").append(docAuthor).append("</text></docAuthor>");
 
         sb.append("<navMap>");
+        String sit = "1";
         for(NavPoint np : map){
+            sit = np.updateOrder(sit);
             sb.append(np.toXML());
         }
         sb.append("</navMap>");
