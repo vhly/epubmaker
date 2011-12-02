@@ -271,7 +271,7 @@ public class OPF implements ZIPContent, ContentParser {
     }
 
     public void save(DataOutputStream dout) throws IOException {
-        dout.writeUTF(toXML());
+        dout.writeBytes(toXML());
     }
 
     private String toXML() {
@@ -280,9 +280,13 @@ public class OPF implements ZIPContent, ContentParser {
         sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
         sb.append("<package xmlns=\"http://www.idpf.org/2007/opf\" version=\"2.0\" unique-identifier=\"uuid_id\">");
         sb.append(metadata.toXML());
+        sb.append('\n');
         sb.append(manifest.toXML());
+        sb.append('\n');
         sb.append(spine.toXML());
+        sb.append('\n');
         sb.append(guide.toXML());
+        sb.append('\n');
         sb.append("</package>");
         ret = sb.toString();
         return ret;

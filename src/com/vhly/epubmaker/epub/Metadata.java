@@ -7,6 +7,8 @@ package com.vhly.epubmaker.epub;
  * Email: vhly@163.com
  */
 
+import java.util.Date;
+
 /**
  * Metadata for opf file
  */
@@ -104,6 +106,18 @@ public class Metadata {
     }
 
     public String toXML() {
-        return "";
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<metadata xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:opf=\"http://www.idpf.org/2007/opf\"\nxmlns:dcterms=\"http://purl.org/dc/terms/\" xmlns:calibre=\"http://calibre.kovidgoyal.net/2009/metadata\"\nxmlns:dc=\"http://purl.org/dc/elements/1.1/\">");
+        sb.append("<dc:title>").append(title).append("</dc:title>");
+        sb.append("<dc:creator>").append(creator).append("</dc:creator>");
+        sb.append("<dc:description>").append(description).append("</dc:description>");
+        sb.append("<dc:date>").append(new Date()).append("</dc:date>");
+        sb.append("<dc:identifier>").append(identifier_BookID).append("</dc:identifier>");
+        sb.append("<dc:subject>").append(subject).append("</dc:subject>");
+        sb.append("<dc:publisher>").append(publisher).append("</dc:publisher>");
+        sb.append("</metadata>");
+        ret = sb.toString();
+        return ret;
     }
 }

@@ -102,7 +102,7 @@ public class Container implements ZIPContent, ContentParser {
     }
 
     public void save(DataOutputStream dout) throws IOException {
-        dout.writeUTF(toXML());
+        dout.writeBytes(toXML());
     }
 
     public String toXML() {
