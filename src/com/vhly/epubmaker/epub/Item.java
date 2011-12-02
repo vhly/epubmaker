@@ -13,6 +13,19 @@ public class Item {
     public String href;
     public String mediatype;
 
+    public Item() {
+    }
+
+    public Item(String id, String href) {
+        this(id,href,MediaType.XHTML.toString());
+    }
+
+    public Item(String id, String href, String mediatype) {
+        this.id = id;
+        this.href = href;
+        this.mediatype = mediatype;
+    }
+
     public void parse(Element el) {
         if (el != null) {
             id = el.getAttributeValue(null, "id");

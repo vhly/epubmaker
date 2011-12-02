@@ -110,6 +110,28 @@ public class EPubFile {
     }
 
     public void addChapter(Chapter ch) {
+        chapters.add(ch);
+        Item item = ch.getChapterItem();
+        if (item != null) {
+            addItem(item);
+            addItemRefByItem(item);
+        }
+    }
+
+    private void addItemRefByItem(Item item) {
+        if (item != null) {
+            if (item.id != null && item.href != null && item.mediatype != null) {
+                OPF opf = container.getPackageFile();
+                if (opf != null) {
+                    Spine spine = opf.getSpine();
+                    ItemRef ref = new ItemRef();
+                    ref.idref = item.id;
+                    spine.addRef(ref);
+                }
+            } else {
+                throw new RuntimeException("Item's information must set");
+            }
+        }
     }
 
     /**
@@ -366,6 +388,19 @@ public class EPubFile {
                     zout.putNextEntry(new ZipEntry(opf.getEntryName()));
                     opf.save(dout);
                     zout.closeEntry();
+
+                    NCX toc = opf.getToc();
+                    zout.putNextEntry(new ZipEntry(toc.getEntryName()));
+                    toc.save(dout);
+                    zout.closeEntry();
+
+                    for(Chapter ch : chapters){
+                        String entryName = ch.getEntryName();
+                        zout.putNextEntry(new ZipEntry(entryName));
+                        ch.save(dout);
+                        zout.closeEntry();
+                    }
+
                     zout.finish();
 
                 } catch (IOException e) {

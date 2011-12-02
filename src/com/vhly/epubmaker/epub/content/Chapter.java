@@ -2,7 +2,10 @@ package com.vhly.epubmaker.epub.content;
 
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.MediaType;
+import com.vhly.epubmaker.epub.ZIPContent;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -11,7 +14,7 @@ import java.io.UnsupportedEncodingException;
  * Date: 11-9-18
  * Email: vhly@163.com
  */
-public class Chapter implements Content {
+public class Chapter implements Content, ZIPContent {
 
     public static Chapter createChapter(String href, byte[] pageContent) {
         Chapter ret = null;
@@ -43,7 +46,31 @@ public class Chapter implements Content {
 
     private Item chapterItem;
 
+    private String entryName;
+
     // Content implements.
+
+
+    /**
+     * Set entry name for zip file.
+     *
+     * @param ename Entry name
+     */
+    public void setEntryName(String ename) {
+        if (!ename.startsWith("OEBPS/")) {
+            ename = "OEBPS/" + ename;
+        }
+        entryName = ename;
+    }
+
+    /**
+     * If model implement this method, return entry name in .epub file
+     *
+     * @return String entryname or null
+     */
+    public String getEntryName() {
+        return entryName;
+    }
 
     /**
      * Return content
@@ -109,5 +136,20 @@ public class Chapter implements Content {
     @Override
     public String toString() {
         return title != null ? title : "Chapter untitled";
+    }
+
+    public void save(DataOutputStream dout) throws IOException {
+        if(content == null || content.length == 0){
+            if(pageContent != null){
+                try {
+                    content = pageContent.getBytes("UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    content = pageContent.getBytes();
+                }
+            }
+        }
+        if(content != null && content.length > 0){
+            dout.write(content);
+        }
     }
 }

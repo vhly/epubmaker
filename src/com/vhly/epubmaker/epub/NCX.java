@@ -10,6 +10,7 @@ import org.kxml2_orig.kdom.Element;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Vector;
 
@@ -144,5 +145,19 @@ public class NCX implements ZIPContent, ContentParser {
                 }
             }
         }
+    }
+
+    public void save(DataOutputStream dout) throws IOException {
+        dout.writeBytes(toXML());
+    }
+
+    private String toXML() {
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<?xml version='1.0' encoding='utf-8'?>\n");
+        sb.append("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\">\n");
+        sb.append("</ncx>");
+        ret = sb.toString();
+        return ret;
     }
 }
