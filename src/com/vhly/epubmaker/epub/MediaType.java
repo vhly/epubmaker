@@ -14,13 +14,12 @@ public enum MediaType {
     FONT("font/opentype"),
     JPEG("image/jpeg"),
     GIF("image/gif"),
-    PNG("image/png"),
-    ;
+    PNG("image/png"),;
 
     private String type;
 
     MediaType(String s) {
-       type = s;
+        type = s;
     }
 
 

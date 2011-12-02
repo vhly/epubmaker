@@ -11,12 +11,14 @@ import com.vhly.epubmaker.epub.MediaType;
 public interface Content {
     /**
      * Return content
+     *
      * @return byte[]
      */
     public abstract byte[] getContent();
 
     /**
      * Return content media type
+     *
      * @return MediaType
      * @see MediaType
      */
@@ -24,6 +26,7 @@ public interface Content {
 
     /**
      * Set content data
+     *
      * @param data byte[] data
      */
     public abstract void setContent(byte[] data);

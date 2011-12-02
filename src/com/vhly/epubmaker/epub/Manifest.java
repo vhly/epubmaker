@@ -94,6 +94,7 @@ public class Manifest {
 
     /**
      * Get Item s by MediaType
+     *
      * @param type MediaType
      * @return Item[]
      */
@@ -107,11 +108,11 @@ public class Manifest {
             String st = type.toString();
             while (iterator.hasNext()) {
                 item = iterator.next();
-                if(st.equals(item.mediatype)){
+                if (st.equals(item.mediatype)) {
                     v.add(item);
                 }
             }
-            if(!v.isEmpty()){
+            if (!v.isEmpty()) {
                 int len = v.size();
                 ret = new Item[len];
                 v.copyInto(ret);
@@ -128,8 +129,8 @@ public class Manifest {
         Collection<Item> values = items.values();
         Iterator<Item> iterator = values.iterator();
         Item it;
-        while (iterator.hasNext()){
-           it = iterator.next();
+        while (iterator.hasNext()) {
+            it = iterator.next();
             sb.append(it.toXML());
         }
         sb.append("</manifest>");

@@ -13,6 +13,7 @@ package com.vhly.epubmaker.epub;
 public interface ContentParser {
     /**
      * Parse data
+     *
      * @param buf byte[]
      * @return parse ok?
      */

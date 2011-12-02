@@ -45,7 +45,7 @@ public class EPubFile {
 
     private ZipFile zipFile;
 
-    public EPubFile(){
+    public EPubFile() {
         initFile();
     }
 
@@ -109,24 +109,25 @@ public class EPubFile {
         this.mimetype = mimetype;
     }
 
-    public void addChapter(Chapter ch){
+    public void addChapter(Chapter ch) {
     }
 
     /**
      * Add Item adapter for epub file setting.
+     *
      * @param it Item
      */
-    private void addItem(Item it){
-        if(it != null){
-            if(it.id != null && it.href != null && it.mediatype != null){
+    private void addItem(Item it) {
+        if (it != null) {
+            if (it.id != null && it.href != null && it.mediatype != null) {
                 OPF opf = container.getPackageFile();
-                if(opf != null){
+                if (opf != null) {
                     Manifest manifest = opf.getManifest();
-                    if(manifest != null){
+                    if (manifest != null) {
                         manifest.addItem(it);
                     }
                 }
-            }else{
+            } else {
                 throw new RuntimeException("Item's information must set");
             }
         }
@@ -343,10 +344,10 @@ public class EPubFile {
             if (!pf.exists()) {
                 bok = pf.mkdirs();
             }
-            if(bok){
+            if (bok) {
                 // create parent ok or parent exists
                 FileOutputStream fout = null;
-                ZipOutputStream  zout = null;
+                ZipOutputStream zout = null;
                 DataOutputStream dout = null;
                 try {
                     fout = new FileOutputStream(f);

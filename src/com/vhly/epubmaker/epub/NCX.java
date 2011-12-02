@@ -97,10 +97,10 @@ public class NCX implements ZIPContent, ContentParser {
                 if (obj != null && obj instanceof Element) {
                     Element el = (Element) obj;
                     Element[] navPoints = XMLUtil.getElementsByName(el, "navPoint");
-                    if(navPoints != null){
+                    if (navPoints != null) {
                         int len = navPoints.length;
                         Element ee;
-                        for(int i = 0;i<len;i++){
+                        for (int i = 0; i < len; i++) {
                             ee = navPoints[i];
                             parseNavPoint(ee);
                         }
@@ -138,7 +138,7 @@ public class NCX implements ZIPContent, ContentParser {
             if (navPoints != null) {
                 Element ee;
                 int len = navPoints.length;
-                for(int i = 0;i<len;i++){
+                for (int i = 0; i < len; i++) {
                     ee = navPoints[i];
                     parseNavPoint(ee);
                 }

@@ -25,7 +25,7 @@ public class NavPoint {
 
     private Vector<NavPoint> subs;
 
-    public NavPoint(){
+    public NavPoint() {
 
     }
 

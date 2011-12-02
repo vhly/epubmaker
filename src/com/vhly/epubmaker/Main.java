@@ -17,7 +17,7 @@ public class Main {
         if (argc == 1) {
             String path = args[0];
             File file = new File(path);
-            if(file.exists() && file.canRead()){
+            if (file.exists() && file.canRead()) {
                 EPubFile epub = null;
                 try {
                     epub = new EPubFile(file);
