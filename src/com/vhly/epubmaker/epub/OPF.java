@@ -285,6 +285,16 @@ public class OPF implements ZIPContent, ContentParser {
     private String toXML() {
         String ret;
         StringBuffer sb = new StringBuffer();
+        if (toc != null) {
+
+            Item it = manifest.findByType("application/x-dtbncx+xml");
+            if (it != null) {
+                spine.toc = it.id;
+            } else {
+                Item item = new Item("ncx", "toc.ncx", MediaType.NCX.toString());
+                manifest.addItem(item);
+            }
+        }
         sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
         sb.append("<package xmlns=\"http://www.idpf.org/2007/opf\" version=\"2.0\" unique-identifier=\"uuid_id\">");
         sb.append(metadata.toXML());

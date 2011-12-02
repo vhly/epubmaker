@@ -397,7 +397,7 @@ public class EPubFile {
                     zout.setComment("EPubMaker");
                     zout.setLevel(ZipOutputStream.DEFLATED);
                     zout.putNextEntry(new ZipEntry("mimetype"));
-                    dout.writeBytes(mimetype);
+                    dout.write(mimetype.getBytes());
                     zout.closeEntry();
                     String en = container.getEntryName();
                     zout.putNextEntry(new ZipEntry(en));

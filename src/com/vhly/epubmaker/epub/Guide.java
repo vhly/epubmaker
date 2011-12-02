@@ -25,7 +25,7 @@ public class Guide {
         for (GReference ref : references) {
             sb.append(ref.toXML());
         }
-        sb.append("<guide>");
+        sb.append("</guide>");
         ret = sb.toString();
         return ret;
     }

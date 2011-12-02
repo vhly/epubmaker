@@ -137,4 +137,20 @@ public class Manifest {
         ret = sb.toString();
         return ret;
     }
+
+    public Item findByType(String type) {
+        Item ret = null;
+        if(type != null){
+            Collection<Item> values = items.values();
+            Iterator<Item> iterator = values.iterator();
+            while (iterator.hasNext()){
+                Item it = iterator.next();
+                if(type.equals(it.mediatype)){
+                    ret = it;
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
 }
