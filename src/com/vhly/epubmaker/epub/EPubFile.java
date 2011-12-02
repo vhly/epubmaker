@@ -433,4 +433,52 @@ public class EPubFile {
         }
         return bret;
     }
+
+    /**
+     * Set EPub File's title
+     * @param title String title
+     */
+    public void setTitle(String title) {
+        if (title != null) {
+            OPF opf = container.getPackageFile();
+            Metadata metadata = opf.getMetadata();
+            metadata.setTitle(title);
+            metadata.setSubject(title);
+            metadata.setDescription(title);
+
+            NCX toc = opf.getToc();
+            toc.setDocTitle(title);
+        }
+    }
+
+    /**
+     * Set EPub File's title
+     * @param desc String title
+     */
+    public void setDescript(String desc) {
+        if (desc != null) {
+            OPF opf = container.getPackageFile();
+            Metadata metadata = opf.getMetadata();
+            metadata.setDescription(desc);
+        }
+    }
+
+    public void setAuthor(String author) {
+        if(author != null){
+            OPF opf = container.getPackageFile();
+            Metadata metadata = opf.getMetadata();
+            metadata.setCreator(author);
+
+            NCX toc = opf.getToc();
+            toc.setDocAuthor(author);
+        }
+    }
+
+    public void setUUID(String uuid) {
+        if(uuid != null){
+            OPF opf = container.getPackageFile();
+            Metadata metadata = opf.getMetadata();
+            metadata.setIdentifier(uuid);
+        }
+    }
 }

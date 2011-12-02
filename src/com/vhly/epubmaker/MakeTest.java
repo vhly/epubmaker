@@ -13,6 +13,9 @@ import com.vhly.epubmaker.epub.content.Chapter;
 public class MakeTest {
     public static void main(String[] args) {
         EPubFile file = new EPubFile();
+        file.setTitle("Test");
+        file.setAuthor("vhly[FR]");
+        file.setUUID("998482814");
         Chapter ch = new Chapter();
         ch.setTitle("Chapter001");
         ch.setEntryName("chapter001.html");

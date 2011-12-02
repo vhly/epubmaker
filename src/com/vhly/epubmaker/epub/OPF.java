@@ -115,6 +115,10 @@ public class OPF implements ZIPContent, ContentParser {
         return bret;
     }
 
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
     /**
      * Return manifest information for epub load process.
      *

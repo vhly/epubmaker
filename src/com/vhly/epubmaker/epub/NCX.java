@@ -45,6 +45,25 @@ public class NCX implements ZIPContent, ContentParser {
         }
     }
 
+    //////// Getter/Setter //////////////////
+
+    public String getDocTitle() {
+        return docTitle;
+    }
+
+    public void setDocTitle(String docTitle) {
+        this.docTitle = docTitle;
+    }
+
+    public String getDocAuthor() {
+        return docAuthor;
+    }
+
+    public void setDocAuthor(String docAuthor) {
+        this.docAuthor = docAuthor;
+    }
+
+
     //////// ZIPContent implements //////////
 
     /**
