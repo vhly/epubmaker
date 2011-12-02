@@ -1,8 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
-    <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf"
-              xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata"
-              xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <metadata
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:opf="http://www.idpf.org/2007/opf"
+            xmlns:dcterms="http://purl.org/dc/terms/"
+            xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata"
+            xmlns:dc="http://purl.org/dc/elements/1.1/">
+
         <dc:title>小小骷髅也疯狂</dc:title>
         <dc:creator>小小骷髅也疯狂</dc:creator>
         <dc:description>小小骷髅也疯狂</dc:description>
@@ -12,6 +16,7 @@
         <dc:publisher>COAY.COM</dc:publisher>
         <dc:identifier id="uuid_id" opf:scheme="uuid">150743</dc:identifier>
         <dc:subject>小小骷髅也疯狂</dc:subject>
+
     </metadata>
     <manifest>
         <item href="article_150743_1.html" id="id150743_1" media-type="application/xhtml+xml"/>

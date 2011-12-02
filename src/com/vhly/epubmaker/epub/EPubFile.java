@@ -45,6 +45,12 @@ public class EPubFile {
     private Vector<Chapter> chapters;
 
     private ZipFile zipFile;
+    /**
+     * Book cover data<br/>
+     * All information for cover with default
+     */
+    private byte[] cover;
+    private String coverName;
 
     public EPubFile() {
         initFile();
@@ -261,10 +267,18 @@ public class EPubFile {
                                     if (en != null) {
                                         byte[] data = readEntryData(en);
                                         if (data != null) {
-                                            Chapter chapter = new Chapter();
-                                            chapter.setContent(data);
-                                            chapter.setChapterItem(item);
-                                            chapters.add(chapter);
+                                            if (item.mediatype.startsWith("image/")) {
+                                                // TODO Image
+                                                if (item.id.equals("cover")) {
+                                                    cover = data;
+                                                    coverName = item.href;
+                                                }
+                                            } else {
+                                                Chapter chapter = new Chapter();
+                                                chapter.setContent(data);
+                                                chapter.setChapterItem(item);
+                                                chapters.add(chapter);
+                                            }
                                         }
                                     }
                                 }
@@ -434,6 +448,14 @@ public class EPubFile {
                         zout.closeEntry();
                     }
 
+                    if (cover != null && cover.length > 0) {
+                        ze = new ZipEntry("OEBPS/" + coverName);
+                        ze.setTime(tt);
+                        zout.putNextEntry(ze);
+                        dout.write(cover);
+                        zout.closeEntry();
+                    }
+
                     zout.finish();
 
                 } catch (IOException e) {
@@ -450,6 +472,7 @@ public class EPubFile {
 
     /**
      * Set EPub File's title
+     *
      * @param title String title
      */
     public void setTitle(String title) {
@@ -467,6 +490,7 @@ public class EPubFile {
 
     /**
      * Set EPub File's title
+     *
      * @param desc String title
      */
     public void setDescript(String desc) {
@@ -478,7 +502,7 @@ public class EPubFile {
     }
 
     public void setAuthor(String author) {
-        if(author != null){
+        if (author != null) {
             OPF opf = container.getPackageFile();
             Metadata metadata = opf.getMetadata();
             metadata.setCreator(author);
@@ -489,10 +513,27 @@ public class EPubFile {
     }
 
     public void setUUID(String uuid) {
-        if(uuid != null){
+        if (uuid != null) {
             OPF opf = container.getPackageFile();
             Metadata metadata = opf.getMetadata();
             metadata.setIdentifier(uuid);
+        }
+    }
+
+    public void setCover(String name, byte[] data, String type) {
+        if (name != null && data != null && data.length > 0 && type != null) {
+            OPF opf = container.getPackageFile();
+            Manifest manifest = opf.getManifest();
+            Item ic = manifest.getItem("cover");
+            if (ic == null) {
+                ic = new Item();
+            }
+            ic.id = "cover";
+            ic.href = name;
+            ic.mediatype = type;
+            manifest.addItem(ic);
+            cover = data;
+            coverName = name;
         }
     }
 }

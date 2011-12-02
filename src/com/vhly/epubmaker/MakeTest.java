@@ -3,6 +3,11 @@ package com.vhly.epubmaker;
 import com.vhly.epubmaker.epub.EPubFile;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.content.Chapter;
+import net.dratek.browser.util.StreamUtil;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +22,19 @@ public class MakeTest {
         file.setAuthor("vhly[FR]");
         file.setUUID("998482814");
         file.setDescript("This is a Test");
+
+        File f = new File("./cover.jpg");
+        FileInputStream fin = null;
+        try {
+            fin = new FileInputStream(f);
+            byte[] bytes = StreamUtil.readStream(fin);
+            file.setCover("cover.jpg",bytes,"image/jpeg");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }finally {
+            StreamUtil.close(fin);
+        }
+
         Chapter ch = new Chapter();
         ch.setTitle("Chapter001");
         ch.setEntryName("chapter001.html");
