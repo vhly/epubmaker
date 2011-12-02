@@ -22,7 +22,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * EPub File, .epub file is a zip file actually.
  */
-public class EPubFile extends ZipFile {
+public class EPubFile {
     /**
      * Default book content folder.
      */
@@ -43,6 +43,12 @@ public class EPubFile extends ZipFile {
      */
     private Vector<Chapter> chapters;
 
+    private ZipFile zipFile;
+
+    public EPubFile(){
+        initFile();
+    }
+
     /**
      * Constructor with File path
      *
@@ -50,7 +56,7 @@ public class EPubFile extends ZipFile {
      * @throws IOException IOE
      */
     public EPubFile(String name) throws IOException {
-        super(name);
+        zipFile = new ZipFile(name);
         initFile();
     }
 
@@ -62,7 +68,7 @@ public class EPubFile extends ZipFile {
      * @throws IOException IOE
      */
     public EPubFile(File file, int mode) throws IOException {
-        super(file, mode);
+        zipFile = new ZipFile(file, mode);
         initFile();
     }
 
@@ -74,12 +80,13 @@ public class EPubFile extends ZipFile {
      * @throws IOException  IOE
      */
     public EPubFile(File file) throws ZipException, IOException {
-        super(file);
+        zipFile = new ZipFile(file);
         initFile();
     }
 
     private void initFile() {
         chapters = new Vector<Chapter>();
+        container = new Container();
     }
 
     /**
@@ -132,12 +139,12 @@ public class EPubFile extends ZipFile {
      */
     public boolean load() {
         boolean bret = false;
-        Enumeration<? extends ZipEntry> entries = entries();
+        Enumeration<? extends ZipEntry> entries = zipFile.entries();
         if (entries != null) {
             ZipEntry entry = null;
             String ename;
 
-            entry = getEntry("mimetype");
+            entry = zipFile.getEntry("mimetype");
             if (entry != null) {
                 String s = readMIMEType(entry);
                 if (s != null) {
@@ -145,7 +152,7 @@ public class EPubFile extends ZipFile {
                 }
             }
 
-            entry = getEntry("META-INF/container.xml");
+            entry = zipFile.getEntry("META-INF/container.xml");
             if (entry != null) {
                 Container cc = readContainer(entry);
                 if (cc != null) {
@@ -156,7 +163,7 @@ public class EPubFile extends ZipFile {
             if (container != null) {
                 OPF opf = container.getPackageFile();
                 String entryName = opf.getEntryName();
-                entry = getEntry(entryName);
+                entry = zipFile.getEntry(entryName);
                 if (entry != null) {
                     byte[] buf = readEntryData(entry);
                     if (buf != null && buf.length > 0) {
@@ -170,7 +177,7 @@ public class EPubFile extends ZipFile {
                         String s = entryName.substring(0, index + 1);
                         tocHref = s + tocHref;
                     }
-                    ZipEntry en = getEntry(tocHref);
+                    ZipEntry en = zipFile.getEntry(tocHref);
                     if (en != null) {
                         byte[] buf = readEntryData(en);
                         if (buf != null && buf.length > 0) {
@@ -205,9 +212,9 @@ public class EPubFile extends ZipFile {
                                 item = manifest.getItem(idref);
                                 if (item != null) {
                                     ipath = parentPath + item.href;
-                                    ZipEntry en = getEntry(ipath);
+                                    ZipEntry en = zipFile.getEntry(ipath);
                                     if (en == null) {
-                                        en = getEntry(item.href);
+                                        en = zipFile.getEntry(item.href);
                                     }
                                     if (en != null) {
                                         byte[] data = readEntryData(en);
@@ -240,7 +247,7 @@ public class EPubFile extends ZipFile {
         InputStream in = null;
         byte[] buf = null;
         try {
-            in = getInputStream(entry);
+            in = zipFile.getInputStream(entry);
             buf = StreamUtil.readStream(in);
         } catch (IOException e) {
             e.printStackTrace();
@@ -278,7 +285,7 @@ public class EPubFile extends ZipFile {
         if (entry != null) {
             InputStream inputStream = null;
             try {
-                inputStream = getInputStream(entry);
+                inputStream = zipFile.getInputStream(entry);
                 byte[] buf = StreamUtil.readStream(inputStream);
                 if (buf != null && buf.length > 0) {
                     // Parse buf
@@ -308,7 +315,7 @@ public class EPubFile extends ZipFile {
         if (entry != null) {
             InputStream inputStream = null;
             try {
-                inputStream = getInputStream(entry);
+                inputStream = zipFile.getInputStream(entry);
                 byte[] buf = StreamUtil.readStream(inputStream);
                 if (buf != null && buf.length > 0) {
                     ret = new String(buf, "UTF-8");
@@ -345,6 +352,8 @@ public class EPubFile extends ZipFile {
                     fout = new FileOutputStream(f);
                     zout = new ZipOutputStream(fout);
                     dout = new DataOutputStream(zout);
+                    zout.setComment("EPubMaker");
+                    zout.setLevel(ZipOutputStream.DEFLATED);
                     zout.putNextEntry(new ZipEntry("mimetype"));
                     dout.writeBytes(mimetype);
                     zout.closeEntry();
@@ -356,6 +365,7 @@ public class EPubFile extends ZipFile {
                     zout.putNextEntry(new ZipEntry(opf.getEntryName()));
                     opf.save(dout);
                     zout.closeEntry();
+                    zout.finish();
 
                 } catch (IOException e) {
                     e.printStackTrace();

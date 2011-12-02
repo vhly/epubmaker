@@ -46,6 +46,13 @@ public class OPF implements ZIPContent, ContentParser {
 
     private String entryName = "OEBPS/content.opf";
 
+    public OPF() {
+        metadata = new Metadata();
+        manifest = new Manifest();
+        spine = new Spine();
+        guide = new Guide();
+    }
+
     //////// ZIPContent implements //////////
 
     /**

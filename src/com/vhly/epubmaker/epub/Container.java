@@ -24,6 +24,10 @@ import java.io.IOException;
 public class Container implements ZIPContent, ContentParser {
     private OPF packageFile;
 
+    public Container() {
+        packageFile = new OPF();
+    }
+
     /**
      * Get PackageFile (OPF instance)
      *
