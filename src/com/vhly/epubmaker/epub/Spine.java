@@ -28,7 +28,7 @@ public class Spine {
     /**
      * dealloc, release all resources.
      */
-    public void dealloc(){
+    public void dealloc() {
         refs.clear();
         refs = null;
         toc = null;
@@ -36,21 +36,23 @@ public class Spine {
 
     /**
      * Add a ItemRef obj;
+     *
      * @param ref ItemRef
      */
-    public void addRef(ItemRef ref){
-        if(ref != null){
+    public void addRef(ItemRef ref) {
+        if (ref != null) {
             refs.add(ref);
         }
     }
 
     /**
      * Get all ItemRef s for item load.
+     *
      * @return ItemRef[]
      */
-    public ItemRef[] getAllItemRefs(){
+    public ItemRef[] getAllItemRefs() {
         ItemRef[] ret = null;
-        if(!refs.isEmpty()){
+        if (!refs.isEmpty()) {
             int size = refs.size();
             ret = new ItemRef[size];
             refs.copyInto(ret);
@@ -60,11 +62,12 @@ public class Spine {
 
     /**
      * Parse &lt;spine&gt; element.
+     *
      * @param espine Element
      */
     public void parse(Element espine) {
-        if(espine != null){
-            toc = espine.getAttributeValue(null,"toc");
+        if (espine != null) {
+            toc = espine.getAttributeValue(null, "toc");
             Element[] items = XMLUtil.getElementsByName(espine, "itemref");
             if (items != null) {
                 int len = items.length;
@@ -81,6 +84,14 @@ public class Spine {
     }
 
     public String toXML() {
-        return "";
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<spine toc=\"ncx\">");
+        for (ItemRef ref : refs) {
+            sb.append(ref.toXML());
+        }
+        sb.append("</spine>");
+        ret = sb.toString();
+        return ret;
     }
 }

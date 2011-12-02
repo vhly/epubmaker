@@ -13,9 +13,9 @@ import java.io.UnsupportedEncodingException;
  */
 public class Chapter implements Content {
 
-    public static Chapter createChapter(String href, byte[] pageContent){
+    public static Chapter createChapter(String href, byte[] pageContent) {
         Chapter ret = null;
-        if(href != null && pageContent != null && pageContent.length > 0){
+        if (href != null && pageContent != null && pageContent.length > 0) {
             ret = new Chapter();
             ret.content = pageContent;
             ret.chapterItem = new Item();
@@ -94,7 +94,7 @@ public class Chapter implements Content {
     public String getPageContent() {
         if (pageContent == null && content != null) {
             try {
-                pageContent = new String(content,"UTF-8");
+                pageContent = new String(content, "UTF-8");
             } catch (UnsupportedEncodingException e) {
                 pageContent = new String(content);
             }

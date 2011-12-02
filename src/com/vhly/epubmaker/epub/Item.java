@@ -14,10 +14,10 @@ public class Item {
     public String mediatype;
 
     public void parse(Element el) {
-        if(el != null){
-            id = el.getAttributeValue(null,"id");
-            href = el.getAttributeValue(null,"href");
-            mediatype = el.getAttributeValue(null,"media-type");
+        if (el != null) {
+            id = el.getAttributeValue(null, "id");
+            href = el.getAttributeValue(null, "href");
+            mediatype = el.getAttributeValue(null, "media-type");
         }
     }
 

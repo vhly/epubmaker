@@ -13,12 +13,26 @@ public class ItemRef {
     public boolean linear;
 
     public void parse(Element el) {
-        if(el != null){
-            idref = el.getAttributeValue(null,"idref");
+        if (el != null) {
+            idref = el.getAttributeValue(null, "idref");
             String l = el.getAttributeValue(null, "linear");
-            if(l != null){
+            if (l != null) {
                 linear = l.equals("yes");
             }
         }
+    }
+
+    public String toXML() {
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<itemref idref=\"");
+        sb.append(idref);
+        sb.append("\" ");
+        if (linear) {
+            sb.append("linear=\"yes\" ");
+        }
+        sb.append("/>");
+        ret = sb.toString();
+        return ret;
     }
 }

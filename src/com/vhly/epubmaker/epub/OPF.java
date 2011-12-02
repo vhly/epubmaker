@@ -1,7 +1,6 @@
 package com.vhly.epubmaker.epub;
 
 import net.dratek.browser.util.StreamUtil;
-import net.dratek.browser.xml.XMLUtil;
 import net.dratek.browser.xml.XPathUtil;
 import org.kxml2_orig.io.KXmlParser;
 import org.kxml2_orig.kdom.Document;
@@ -117,39 +116,43 @@ public class OPF implements ZIPContent, ContentParser {
 
     /**
      * Return manifest information for epub load process.
+     *
      * @return Manifest
      */
-    public Manifest getManifest(){
+    public Manifest getManifest() {
         return manifest;
     }
 
     /**
      * Return spine information for epub chapter load.
+     *
      * @return Spine
      */
-    public Spine getSpine(){
+    public Spine getSpine() {
         return spine;
     }
 
     /**
      * Get TOC information for epub file read.
+     *
      * @return NCX
      */
-    public NCX getToc(){
+    public NCX getToc() {
         return toc;
     }
 
     /**
      * Get spine's toc attribute for TOC href
+     *
      * @return String, relative path base OPF file.
      */
-    public String getTocHref(){
+    public String getTocHref() {
         String ret = null;
-        if(spine != null && manifest != null){
+        if (spine != null && manifest != null) {
             String id = spine.toc;
-            if(id != null){
+            if (id != null) {
                 Item item = manifest.getItem(id);
-                if(item != null){
+                if (item != null) {
                     ret = item.href;
                 }
             }
@@ -159,31 +162,31 @@ public class OPF implements ZIPContent, ContentParser {
 
     /**
      * In EPub parse method, load zip toc content and parse, and set toc when ncx parsed.
+     *
      * @param t NCX object.
      */
-    public void setToc(NCX t){
+    public void setToc(NCX t) {
         toc = t;
     }
 
     /**
      * Parse guide element<br/>
      * parse it with XPathUtil in BrowserCore library.
+     *
      * @param dom Document
      */
     private void parseGuide(Document dom) {
-        Object or = XPathUtil.query(dom, "/package/guide/reference");
-        if(or != null && or instanceof Element){
+        Object or = XPathUtil.query(dom, "/package/guide");
+        if (or != null && or instanceof Element) {
             guide = new Guide();
             Element eor = (Element) or;
-            guide.title = eor.getAttributeValue(null,"title");
-            guide.href = eor.getAttributeValue(null,"href");
-            guide.type = eor.getAttributeValue(null,"type");
+            guide.parse(eor);
         }
     }
 
     private void parseSpine(Document dom) {
         Object ospine = XPathUtil.query(dom, "/package/spine");
-        if(ospine != null && ospine instanceof Element){
+        if (ospine != null && ospine instanceof Element) {
             Element espine = (Element) ospine;
             spine = new Spine();
             spine.parse(espine);
