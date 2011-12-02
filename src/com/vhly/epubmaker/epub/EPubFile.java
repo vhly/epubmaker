@@ -223,7 +223,7 @@ public class EPubFile {
                     if (en != null) {
                         byte[] buf = readEntryData(en);
                         if (buf != null && buf.length > 0) {
-                            NCX ncx = new NCX();
+                            NCX ncx = new NCX(opf);
                             ncx.setEntryName(tocHref);
                             if (ncx.parse(buf)) {
                                 opf.setToc(ncx);

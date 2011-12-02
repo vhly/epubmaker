@@ -50,7 +50,7 @@ public class OPF implements ZIPContent, ContentParser {
         manifest = new Manifest();
         spine = new Spine();
         guide = new Guide();
-        toc = new NCX();
+        toc = new NCX(this);
     }
 
     //////// ZIPContent implements //////////

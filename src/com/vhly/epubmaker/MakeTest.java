@@ -16,6 +16,7 @@ public class MakeTest {
         file.setTitle("Test");
         file.setAuthor("vhly[FR]");
         file.setUUID("998482814");
+        file.setDescript("This is a Test");
         Chapter ch = new Chapter();
         ch.setTitle("Chapter001");
         ch.setEntryName("chapter001.html");

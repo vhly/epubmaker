@@ -115,6 +115,7 @@ public class Metadata {
         sb.append("<dc:date>").append(new Date()).append("</dc:date>");
         sb.append("<dc:identifier>").append(identifier_BookID).append("</dc:identifier>");
         sb.append("<dc:subject>").append(subject).append("</dc:subject>");
+        sb.append("<dc:contributor>").append(creator).append("</dc:contributor>");
         sb.append("<dc:publisher>").append(publisher).append("</dc:publisher>");
         sb.append("</metadata>");
         ret = sb.toString();

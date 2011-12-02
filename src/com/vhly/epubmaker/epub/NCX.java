@@ -29,8 +29,11 @@ public class NCX implements ZIPContent, ContentParser {
 
     private String entryName = "OEBPS/toc.ncx";
 
-    public NCX() {
+    private OPF opf;
+
+    public NCX(OPF opf) {
         map = new Vector<NavPoint>();
+        this.opf = opf;
     }
 
     public void dealloc() {
@@ -177,14 +180,21 @@ public class NCX implements ZIPContent, ContentParser {
         sb.append("<?xml version='1.0' encoding='utf-8'?>\n");
         sb.append("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\">\n");
 
-        sb.append("<head><meta content=\"2\" name=\"dtb:depth\"/><meta content=\"0\" name=\"dtb:totalPageCount\"/><meta content=\"0\" name=\"dtb:maxPageNumber\"/></head>");
+        sb.append("<head><meta content=\"2\" name=\"dtb:depth\"/><meta content=\"0\" name=\"dtb:totalPageCount\"/><meta content=\"0\" name=\"dtb:maxPageNumber\"/>");
+        if (opf != null) {
+            Metadata metadata = opf.getMetadata();
+            if (metadata != null) {
+                sb.append("<meta content=\"").append(metadata.getIdentifier()).append("\" name=\"dtb:uid\"/>");
+            }
+        }
+        sb.append("</head>");
 
         sb.append("<docTitle><text>").append(docTitle).append("</text></docTitle>");
         sb.append("<docAuthor><text>").append(docAuthor).append("</text></docAuthor>");
 
         sb.append("<navMap>");
         String sit = "1";
-        for(NavPoint np : map){
+        for (NavPoint np : map) {
             sit = np.updateOrder(sit);
             sb.append(np.toXML());
         }
