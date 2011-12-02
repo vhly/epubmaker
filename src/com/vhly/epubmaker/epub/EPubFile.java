@@ -394,28 +394,42 @@ public class EPubFile {
                     fout = new FileOutputStream(f);
                     zout = new ZipOutputStream(fout);
                     dout = new DataOutputStream(zout);
+                    zout.setMethod(ZipOutputStream.DEFLATED);
                     zout.setComment("EPubMaker");
                     zout.setLevel(ZipOutputStream.DEFLATED);
-                    zout.putNextEntry(new ZipEntry("mimetype"));
+                    ZipEntry ze = new ZipEntry("mimetype");
+                    long tt = System.currentTimeMillis();
+                    ze.setTime(tt);
+                    zout.putNextEntry(ze);
                     dout.write(mimetype.getBytes());
                     zout.closeEntry();
                     String en = container.getEntryName();
-                    zout.putNextEntry(new ZipEntry(en));
+                    ze = new ZipEntry(en);
+                    ze.setTime(tt);
+                    zout.putNextEntry(ze);
                     container.save(dout);
                     zout.closeEntry();
                     OPF opf = container.getPackageFile();
-                    zout.putNextEntry(new ZipEntry(opf.getEntryName()));
+                    en = opf.getEntryName();
+                    ze = new ZipEntry(en);
+                    ze.setTime(tt);
+                    zout.putNextEntry(ze);
                     opf.save(dout);
                     zout.closeEntry();
 
                     NCX toc = opf.getToc();
-                    zout.putNextEntry(new ZipEntry(toc.getEntryName()));
+                    en = toc.getEntryName();
+                    ze = new ZipEntry(en);
+                    ze.setTime(tt);
+                    zout.putNextEntry(ze);
                     toc.save(dout);
                     zout.closeEntry();
 
                     for (Chapter ch : chapters) {
                         String entryName = ch.getEntryName();
-                        zout.putNextEntry(new ZipEntry(entryName));
+                        ze = new ZipEntry(entryName);
+                        ze.setTime(tt);
+                        zout.putNextEntry(ze);
                         ch.save(dout);
                         zout.closeEntry();
                     }
