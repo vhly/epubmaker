@@ -123,7 +123,7 @@ public class Metadata {
         String ff = format.format(currentDate);
         sb.append("<dc:date opf:event=\"creation\">").append(ff).append("</dc:date>");
 
-        sb.append("<dc:identifier>").append(identifier_BookID).append("</dc:identifier>");
+        sb.append("<dc:identifier id=\"uuid_id\" opf:scheme=\"uuid\">").append(identifier_BookID).append("</dc:identifier>");
 
         sb.append("<dc:subject>").append(subject).append("</dc:subject>");
 

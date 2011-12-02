@@ -20,7 +20,7 @@ public class MakeTest {
         Chapter ch = new Chapter();
         ch.setTitle("Chapter001");
         ch.setEntryName("chapter001.html");
-        ch.setPageContent("<html><body>Hello world</body></html>");
+        ch.setPageContent("<html xmlns=\"http://www.w3.org/1999/xhtml\"><body>Hello world</body></html>");
         Item chapterItem = new Item("chapter001.html","chapter001.html");
         ch.setChapterItem(chapterItem);
         file.addChapter(ch);
