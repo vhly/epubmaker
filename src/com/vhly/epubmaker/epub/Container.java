@@ -8,7 +8,6 @@ package com.vhly.epubmaker.epub;
  */
 
 import net.dratek.browser.util.StreamUtil;
-import net.dratek.browser.xml.XMLUtil;
 import net.dratek.browser.xml.XPathUtil;
 import org.kxml2_orig.io.KXmlParser;
 import org.kxml2_orig.kdom.Document;
@@ -16,6 +15,7 @@ import org.kxml2_orig.kdom.Element;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
  * EPub File's Container define<br/>
@@ -97,7 +97,20 @@ public class Container implements ZIPContent, ContentParser {
         return bret;
     }
 
-    public void save(DataOutputStream dout) {
+    public void save(DataOutputStream dout) throws IOException {
+        dout.writeUTF(toXML());
+    }
 
+    public String toXML() {
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<?xml version=\"1.0\"?>\n");
+        sb.append("<container version=\"1.0\" xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\">");
+        sb.append("<rootfiles><rootfile full-path=\"");
+        sb.append(packageFile.getEntryName());
+        sb.append("\" media-type=\"application/oebps-package+xml\"/></rootfiles>");
+        sb.append("</container>");
+        ret = sb.toString();
+        return ret;
     }
 }

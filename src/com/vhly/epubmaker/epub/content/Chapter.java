@@ -12,6 +12,20 @@ import java.io.UnsupportedEncodingException;
  * Email: vhly@163.com
  */
 public class Chapter implements Content {
+
+    public static Chapter createChapter(String href, byte[] pageContent){
+        Chapter ret = null;
+        if(href != null && pageContent != null && pageContent.length > 0){
+            ret = new Chapter();
+            ret.content = pageContent;
+            ret.chapterItem = new Item();
+            ret.chapterItem.href = href;
+            ret.chapterItem.mediatype = MediaType.XHTML.toString();
+            ret.chapterItem.id = href;
+        }
+        return ret;
+    }
+
     /**
      * Chapter's title
      */
