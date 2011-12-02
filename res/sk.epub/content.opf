@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  	<dc:title>小小骷髅也疯狂</dc:title>
+	<dc:creator>小小骷髅也疯狂</dc:creator>
+    <dc:description>小小骷髅也疯狂</dc:description>
+    <dc:language>zh-cn</dc:language>
+    <dc:date></dc:date>
+    <dc:contributor>COAY.COM [http://www.coay.com]</dc:contributor>
+	<dc:publisher>COAY.COM</dc:publisher>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">150743</dc:identifier>
+    <dc:subject>小小骷髅也疯狂</dc:subject>
+  </metadata>
+  <manifest>
+    <item href="article_150743_1.html" id="id150743_1" media-type="application/xhtml+xml"/>
+<item href="article_150743_2.html" id="id150743_2" media-type="application/xhtml+xml"/>
+<item href="article_150743_3.html" id="id150743_3" media-type="application/xhtml+xml"/>
+<item href="article_150743_4.html" id="id150743_4" media-type="application/xhtml+xml"/>
+<item href="article_150743_5.html" id="id150743_5" media-type="application/xhtml+xml"/>
+<item href="article_150743_6.html" id="id150743_6" media-type="application/xhtml+xml"/>
+<item href="article_150743_7.html" id="id150743_7" media-type="application/xhtml+xml"/>
+<item href="article_150743_8.html" id="id150743_8" media-type="application/xhtml+xml"/>
+<item href="article_150743_9.html" id="id150743_9" media-type="application/xhtml+xml"/>
+<item href="article_150743_10.html" id="id150743_10" media-type="application/xhtml+xml"/>
+<item href="article_150743_11.html" id="id150743_11" media-type="application/xhtml+xml"/>
+<item href="article_150743_12.html" id="id150743_12" media-type="application/xhtml+xml"/>
+<item href="article_150743_13.html" id="id150743_13" media-type="application/xhtml+xml"/>
+
+	<item href="catalog.html" id="catalog" media-type="application/xhtml+xml"/>
+    <item href="cover.jpg" id="cover" media-type="image/jpeg"/>
+	<item href="coay.jpg" id="ad" media-type="image/jpeg"/>
+    <item href="stylesheet.css" id="css" media-type="text/css"/>
+    <item href="titlepage.xhtml" id="titlepage" media-type="application/xhtml+xml"/>
+	<item href="page.xhtml" id="page" media-type="application/xhtml+xml"/>
+    <item href="toc.ncx" media-type="application/x-dtbncx+xml" id="ncx"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+	<itemref idref="page"/>
+	<itemref idref="catalog"/>
+    <itemref idref="id150743_1"/><itemref idref="id150743_2"/><itemref idref="id150743_3"/><itemref idref="id150743_4"/><itemref idref="id150743_5"/><itemref idref="id150743_6"/><itemref idref="id150743_7"/><itemref idref="id150743_8"/><itemref idref="id150743_9"/><itemref idref="id150743_10"/><itemref idref="id150743_11"/><itemref idref="id150743_12"/><itemref idref="id150743_13"/>
+	<itemref idref="page"/>
+  </spine>
+  <guide>
+  	<reference href="titlepage.xhtml" type="cover" title="封面"/>
+    <reference href="catalog.html" type="toc" title="目录"/>
+  </guide>
+</package>

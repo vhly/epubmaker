@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+    <head>
+        <meta content="coay_150743" name="dtb:uid"/>
+        <meta content="2" name="dtb:depth"/>
+        <meta content="COAY.COM [http://www.coay.com]" name="dtb:generator"/>
+        <meta content="0" name="dtb:totalPageCount"/>
+        <meta content="0" name="dtb:maxPageNumber"/>
+    </head>
+    <docTitle>
+        <text>小小骷髅也疯狂</text>
+    </docTitle>
+    <docAuthor>
+        <text>小小骷髅也疯狂</text>
+    </docAuthor>
+    <navMap>
+        <navPoint class="chapter" id="article_150743_1" playOrder="1">
+            <navLabel>
+                <text>Chapter_1</text>
+            </navLabel>
+            <content src="article_150743_1.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_2" playOrder="2">
+            <navLabel>
+                <text>Chapter_2</text>
+            </navLabel>
+            <content src="article_150743_2.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_3" playOrder="3">
+            <navLabel>
+                <text>Chapter_3</text>
+            </navLabel>
+            <content src="article_150743_3.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_4" playOrder="4">
+            <navLabel>
+                <text>Chapter_4</text>
+            </navLabel>
+            <content src="article_150743_4.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_5" playOrder="5">
+            <navLabel>
+                <text>Chapter_5</text>
+            </navLabel>
+            <content src="article_150743_5.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_6" playOrder="6">
+            <navLabel>
+                <text>Chapter_6</text>
+            </navLabel>
+            <content src="article_150743_6.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_7" playOrder="7">
+            <navLabel>
+                <text>Chapter_7</text>
+            </navLabel>
+            <content src="article_150743_7.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_8" playOrder="8">
+            <navLabel>
+                <text>Chapter_8</text>
+            </navLabel>
+            <content src="article_150743_8.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_9" playOrder="9">
+            <navLabel>
+                <text>Chapter_9</text>
+            </navLabel>
+            <content src="article_150743_9.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_10" playOrder="10">
+            <navLabel>
+                <text>Chapter_10</text>
+            </navLabel>
+            <content src="article_150743_10.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_11" playOrder="11">
+            <navLabel>
+                <text>Chapter_11</text>
+            </navLabel>
+            <content src="article_150743_11.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_12" playOrder="12">
+            <navLabel>
+                <text>Chapter_12</text>
+            </navLabel>
+            <content src="article_150743_12.html"/>
+        </navPoint>
+        <navPoint class="chapter" id="article_150743_13" playOrder="13">
+            <navLabel>
+                <text>Chapter_13</text>
+            </navLabel>
+            <content src="article_150743_13.html"/>
+        </navPoint>
+    </navMap>
+</ncx>

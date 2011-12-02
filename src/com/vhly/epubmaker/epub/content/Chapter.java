@@ -1,5 +1,6 @@
 package com.vhly.epubmaker.epub.content;
 
+import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.MediaType;
 
 import java.io.UnsupportedEncodingException;
@@ -25,6 +26,8 @@ public class Chapter implements Content {
     private MediaType mediaType = MediaType.XHTML;
 
     private String pageContent;
+
+    private Item chapterItem;
 
     // Content implements.
 
@@ -64,6 +67,14 @@ public class Chapter implements Content {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Item getChapterItem() {
+        return chapterItem;
+    }
+
+    public void setChapterItem(Item chapterItem) {
+        this.chapterItem = chapterItem;
     }
 
     public String getPageContent() {

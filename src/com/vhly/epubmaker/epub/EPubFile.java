@@ -102,6 +102,29 @@ public class EPubFile extends ZipFile {
         this.mimetype = mimetype;
     }
 
+    public void addChapter(Chapter ch){
+    }
+
+    /**
+     * Add Item adapter for epub file setting.
+     * @param it Item
+     */
+    private void addItem(Item it){
+        if(it != null){
+            if(it.id != null && it.href != null && it.mediatype != null){
+                OPF opf = container.getPackageFile();
+                if(opf != null){
+                    Manifest manifest = opf.getManifest();
+                    if(manifest != null){
+                        manifest.addItem(it);
+                    }
+                }
+            }else{
+                throw new RuntimeException("Item's information must set");
+            }
+        }
+    }
+
     /**
      * Load all content from self zip entries
      *
@@ -191,6 +214,7 @@ public class EPubFile extends ZipFile {
                                         if (data != null) {
                                             Chapter chapter = new Chapter();
                                             chapter.setContent(data);
+                                            chapter.setChapterItem(item);
                                             chapters.add(chapter);
                                         }
                                     }
