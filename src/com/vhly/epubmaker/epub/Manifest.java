@@ -122,6 +122,18 @@ public class Manifest {
     }
 
     public String toXML() {
-        return "";
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<manifest>");
+        Collection<Item> values = items.values();
+        Iterator<Item> iterator = values.iterator();
+        Item it;
+        while (iterator.hasNext()){
+           it = iterator.next();
+            sb.append(it.toXML());
+        }
+        sb.append("</manifest>");
+        ret = sb.toString();
+        return ret;
     }
 }

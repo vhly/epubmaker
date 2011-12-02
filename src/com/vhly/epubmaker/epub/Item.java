@@ -20,4 +20,18 @@ public class Item {
             mediatype = el.getAttributeValue(null,"media-type");
         }
     }
+
+    public String toXML() {
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<item href=\"");
+        sb.append(href);
+        sb.append("\" id=\"");
+        sb.append(id);
+        sb.append("\" media-type=\"");
+        sb.append(mediatype);
+        sb.append("\"/>\n");
+        ret = sb.toString();
+        return ret;
+    }
 }
