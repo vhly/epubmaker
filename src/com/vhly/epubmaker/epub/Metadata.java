@@ -102,4 +102,8 @@ public class Metadata {
     public void setCover_image(String cover_image) {
         this.cover_image = cover_image;
     }
+
+    public String toXML() {
+        return "";
+    }
 }

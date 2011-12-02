@@ -352,6 +352,11 @@ public class EPubFile extends ZipFile {
                     zout.putNextEntry(new ZipEntry(en));
                     container.save(dout);
                     zout.closeEntry();
+                    OPF opf = container.getPackageFile();
+                    zout.putNextEntry(new ZipEntry(opf.getEntryName()));
+                    opf.save(dout);
+                    zout.closeEntry();
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {

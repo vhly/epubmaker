@@ -9,6 +9,7 @@ import org.kxml2_orig.kdom.Element;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 
 /**
@@ -260,5 +261,23 @@ public class OPF implements ZIPContent, ContentParser {
                 }
             }
         }
+    }
+
+    public void save(DataOutputStream dout) throws IOException {
+        dout.writeUTF(toXML());
+    }
+
+    private String toXML() {
+        String ret;
+        StringBuffer sb = new StringBuffer();
+        sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
+        sb.append("<package xmlns=\"http://www.idpf.org/2007/opf\" version=\"2.0\" unique-identifier=\"uuid_id\">");
+        sb.append(metadata.toXML());
+        sb.append(manifest.toXML());
+        sb.append(spine.toXML());
+        sb.append(guide.toXML());
+        sb.append("</package>");
+        ret = sb.toString();
+        return ret;
     }
 }

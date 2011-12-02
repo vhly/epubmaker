@@ -79,4 +79,8 @@ public class Spine {
             }
         }
     }
+
+    public String toXML() {
+        return "";
+    }
 }

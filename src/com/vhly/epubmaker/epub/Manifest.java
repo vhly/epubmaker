@@ -120,4 +120,8 @@ public class Manifest {
         }
         return ret;
     }
+
+    public String toXML() {
+        return "";
+    }
 }

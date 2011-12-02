@@ -10,4 +10,8 @@ public class Guide {
     public String title;
     public String href;
     public String type;
+
+    public String toXML() {
+        return "";
+    }
 }
