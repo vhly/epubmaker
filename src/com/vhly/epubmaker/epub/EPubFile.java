@@ -1,6 +1,7 @@
 package com.vhly.epubmaker.epub;
 
 import com.vhly.epubmaker.epub.content.Chapter;
+import com.vhly.epubmaker.epub.toc.NavPoint;
 import net.dratek.browser.util.StreamUtil;
 
 import java.io.*;
@@ -115,6 +116,24 @@ public class EPubFile {
         if (item != null) {
             addItem(item);
             addItemRefByItem(item);
+            addNavPointForChapter(ch);
+        }
+    }
+
+    private void addNavPointForChapter(Chapter ch) {
+        if (ch != null) {
+            Item item = ch.getChapterItem();
+            if (item != null) {
+                OPF opf = container.getPackageFile();
+                NCX ncx = opf.getToc();
+
+                NavPoint np = new NavPoint();
+                np.id = item.id;
+                np.label = ch.getTitle();
+                np.content = item.href;
+
+                ncx.addNavPoint(np);
+            }
         }
     }
 
@@ -394,7 +413,7 @@ public class EPubFile {
                     toc.save(dout);
                     zout.closeEntry();
 
-                    for(Chapter ch : chapters){
+                    for (Chapter ch : chapters) {
                         String entryName = ch.getEntryName();
                         zout.putNextEntry(new ZipEntry(entryName));
                         ch.save(dout);

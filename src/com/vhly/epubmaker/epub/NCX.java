@@ -23,6 +23,7 @@ import java.util.Vector;
 public class NCX implements ZIPContent, ContentParser {
 
     private String docTitle;
+    private String docAuthor;
 
     private Vector<NavPoint> map;
 
@@ -156,6 +157,18 @@ public class NCX implements ZIPContent, ContentParser {
         StringBuffer sb = new StringBuffer();
         sb.append("<?xml version='1.0' encoding='utf-8'?>\n");
         sb.append("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\">\n");
+
+        sb.append("<head><meta content=\"2\" name=\"dtb:depth\"/><meta content=\"0\" name=\"dtb:totalPageCount\"/><meta content=\"0\" name=\"dtb:maxPageNumber\"/></head>");
+
+        sb.append("<docTitle><text>").append(docTitle).append("</text></docTitle>");
+        sb.append("<docAuthor><text>").append(docAuthor).append("</text></docAuthor>");
+
+        sb.append("<navMap>");
+        for(NavPoint np : map){
+            sb.append(np.toXML());
+        }
+        sb.append("</navMap>");
+
         sb.append("</ncx>");
         ret = sb.toString();
         return ret;

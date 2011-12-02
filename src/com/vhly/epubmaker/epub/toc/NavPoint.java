@@ -26,7 +26,7 @@ public class NavPoint {
     private Vector<NavPoint> subs;
 
     public NavPoint() {
-
+        subs = new Vector<NavPoint>();
     }
 
     public NavPoint(String id, String label, String content, int iplayOrder) {
