@@ -35,7 +35,7 @@ public class MakeTest {
             StreamUtil.close(fin);
         }
         // TODO In this implements, title must setting with ascii char, not support other char now.
-        Chapter ch = loadChapter("Chapter001", "c001.xhtml", "./res/book1/c001.xhtml");
+        Chapter ch = loadChapter("测试", "c001.xhtml", "./res/book1/c001.xhtml");
         if (ch != null) {
             file.addChapter(ch);
         }

@@ -171,13 +171,16 @@ public class NCX implements ZIPContent, ContentParser {
     }
 
     public void save(DataOutputStream dout) throws IOException {
-        dout.writeBytes(toXML());
+        String xml = toXML();
+        byte[] buf = null;
+        buf = xml.getBytes("UTF-8");
+        dout.write(buf);
     }
 
     private String toXML() {
         String ret;
         StringBuffer sb = new StringBuffer();
-        sb.append("<?xml version='1.0' encoding='utf-8'?>\n");
+        sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
         sb.append("<ncx xmlns=\"http://www.daisy.org/z3986/2005/ncx/\" version=\"2005-1\">\n");
 
         sb.append("<head><meta content=\"2\" name=\"dtb:depth\"/><meta content=\"0\" name=\"dtb:totalPageCount\"/><meta content=\"0\" name=\"dtb:maxPageNumber\"/>");
