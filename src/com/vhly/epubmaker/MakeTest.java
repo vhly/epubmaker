@@ -44,6 +44,11 @@ public class MakeTest {
         if (ch != null) {
             file.addChapter(ch);
         }
+
+        ch = loadChapter("概率的乘法法则", "c003.xhtml", "./res/book1/c003.xhtml");
+        if (ch != null) {
+            file.addChapter(ch);
+        }
         file.save("./MakeTest.epub");
     }
 
