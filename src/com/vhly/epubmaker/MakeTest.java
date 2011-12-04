@@ -28,20 +28,53 @@ public class MakeTest {
         try {
             fin = new FileInputStream(f);
             byte[] bytes = StreamUtil.readStream(fin);
-            file.setCover("cover.jpg",bytes,"image/jpeg");
+            file.setCover("cover.jpg", bytes, "image/jpeg");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             StreamUtil.close(fin);
         }
-
-        Chapter ch = new Chapter();
-        ch.setTitle("Chapter001");
-        ch.setEntryName("chapter001.html");
-        ch.setPageContent("<html xmlns=\"http://www.w3.org/1999/xhtml\"><body>Hello world</body></html>");
-        Item chapterItem = new Item("chapter001.html","chapter001.html");
-        ch.setChapterItem(chapterItem);
-        file.addChapter(ch);
+        // TODO In this implements, title must setting with ascii char, not support other char now.
+        Chapter ch = loadChapter("Chapter001", "c001.xhtml", "./res/book1/c001.xhtml");
+        if (ch != null) {
+            file.addChapter(ch);
+        }
         file.save("./MakeTest.epub");
+    }
+
+    /**
+     * load file from file sytem and set chapter
+     *
+     * @param title Chpater title
+     * @param ename ename for epub zip entry
+     * @param fPath real path
+     * @return Chapter will create
+     */
+    private static Chapter loadChapter(String title, String ename, String fPath) {
+        Chapter ret = null;
+        if (title != null && ename != null && fPath != null) {
+            File f = new File(fPath);
+            if (f.exists() && f.canRead()) {
+                FileInputStream fin = null;
+                byte[] content = null;
+                try {
+                    fin = new FileInputStream(f);
+                    content = StreamUtil.readStream(fin);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } finally {
+                    StreamUtil.close(fin);
+                }
+                if (content != null && content.length > 0) {
+                    ret = new Chapter();
+                    ret.setTitle(title);
+                    ret.setEntryName(ename);
+                    ret.setContent(content);
+                    Item chapterItem = new Item(ename, ename);
+                    ret.setChapterItem(chapterItem);
+                }
+            }
+        }
+        return ret;
     }
 }

@@ -1,8 +1,15 @@
+# IntelliJ IDEA project settings
 *.iml
 .idea/
 out/
 gen/
 bin/
+*.ipr
+
+# test file
+MakeTest.epub
+
+# OS autogen
 .DS_Store
 Thumb.db
 tmp/
