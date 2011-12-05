@@ -49,6 +49,16 @@ public class MakeTest {
         if (ch != null) {
             file.addChapter(ch);
         }
+
+        ch = loadChapter("重要练习", "c004.xhtml", "./res/book1/c004.xhtml");
+        if (ch != null) {
+            file.addChapter(ch);
+        }
+
+        ch = loadChapter("随机变量", "c005.xhtml", "./res/book1/c005.xhtml");
+        if (ch != null) {
+            file.addChapter(ch);
+        }
         file.save("./MakeTest.epub");
     }
 
