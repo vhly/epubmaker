@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>重要练习</title>
+</head>
+<body>
+<p>
+    全概率公式和逆概率<br/>
+</p>
+<ol>
+    <li>全概率公式：P(B) = ∑n(i=1) P(Ai)P(B/Ai)</li>
+    <li>逆概率公式：P(Aj/B) = (P(Aj)P(B/Aj))/(∑n(i=1) P(Ai)P(B/Ai))</li>
+</ol>
+<p>
+    <b>练习1.6 - 3</b>某螺钉厂共有甲、乙、丙三个车间，每个车间的产量分别占该厂产量的
+    25％,35％,40％。各车间的次品率分别为5％，4％，2％，今从该厂总产品中任取一件，解下列问题：<br/>
+</p>
+<ol>
+    <li>求取得一件次品的概率</li>
+    <li>若取得的是次品，求正好是甲车间产品的概率</li>
+</ol>
+<p>
+    解：记 A1 = "取得的产品属于甲厂产品"<b/>
+    A2 = "取得的产品属于乙厂产品"<b/>
+    A3 = "取得的产品属于丙厂产品"<b/>
+    B = "取得1件次品"<b/>
+    显然A1, A2, A3是完备事件组<br/>
+    P(A1) = 25%, P(B/A1) = P(A1B)/P(A1) = 5%<br/>
+    P(A2) = 35%, P(B/A2) = P(A2B)/P(A2) = 4%<br/>
+    P(A3) = 40%, P(B/A3) = P(A3B)/P(A3) = 2%<br/>
+    问题1是求 P(B)，而问题2是求 P(A1/B)<br/>
+    P(B) = P(A1)P(B/A1) + P(A2)P(B/A2) + P(A3)P(B/A3) = 25%*5% + 35%*4% + 40%*2%<br/>
+    = 0.25*0.05 + 0.35*0.04 + 0.4*0.02 = 0.0345<br/>
+    P(A1/B) = (P(A1)P(B/A1)) / P(B) = (0.25 * 0.05) / 0.0345 = 0.3623
+</p>
+
+</body>
+</html>
