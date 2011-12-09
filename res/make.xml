@@ -1,0 +1,17 @@
+<epubmake>
+    <title>软件工程导论复习</title>
+    <author>张霄鹤</author>
+    <uuid>83920479479234789</uuid>
+    <description>This is a test for you</description>
+    <cover href="./cover.jpg" type="image/jpeg"/>
+    <chapter>
+        <title>第一章 软件工程学概述</title>
+        <ename>c001.xhtml</ename>
+        <path>./res/book2/c001.xhtml</path>
+    </chapter>
+    <chapter>
+        <title>第二章 可行性研究</title>
+        <ename>c002.xhtml</ename>
+        <path>./res/book2/c002.xhtml</path>
+    </chapter>
+</epubmake>

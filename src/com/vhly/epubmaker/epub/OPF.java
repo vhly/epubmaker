@@ -279,7 +279,8 @@ public class OPF implements ZIPContent, ContentParser {
     }
 
     public void save(DataOutputStream dout) throws IOException {
-        dout.writeBytes(toXML());
+        String xml = toXML();
+        dout.write(xml.getBytes("UTF-8"));
     }
 
     private String toXML() {
