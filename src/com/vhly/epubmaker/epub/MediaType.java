@@ -27,4 +27,5 @@ public enum MediaType {
     public String toString() {
         return type;
     }
+
 }

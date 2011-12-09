@@ -34,6 +34,18 @@ public class MakeTest {
         } finally {
             StreamUtil.close(fin);
         }
+
+        // add other resource
+        try {
+            f = new File("TODO");
+            fin = new FileInputStream(f);
+            byte[] bytes = StreamUtil.readStream(fin);
+            file.addResource("todo", "text/plain", "TODO", bytes);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            StreamUtil.close(fin);
+        }
         // TODO In this implements, title must setting with ascii char, not support other char now.
         Chapter ch = loadChapter("第一章", "c001.xhtml", "./res/book1/c001.xhtml");
         if (ch != null) {
@@ -59,6 +71,7 @@ public class MakeTest {
         if (ch != null) {
             file.addChapter(ch);
         }
+
         file.save("./MakeTest.epub");
     }
 

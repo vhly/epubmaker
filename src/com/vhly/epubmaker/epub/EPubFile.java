@@ -1,6 +1,7 @@
 package com.vhly.epubmaker.epub;
 
 import com.vhly.epubmaker.epub.content.Chapter;
+import com.vhly.epubmaker.epub.content.Resource;
 import com.vhly.epubmaker.epub.toc.NavPoint;
 import net.dratek.browser.util.StreamUtil;
 
@@ -45,12 +46,11 @@ public class EPubFile {
     private Vector<Chapter> chapters;
 
     private ZipFile zipFile;
+
     /**
-     * Book cover data<br/>
-     * All information for cover with default
+     * Save other resources except chapters.
      */
-    private byte[] cover;
-    private String coverName;
+    private Vector<Resource> resources;
 
     public EPubFile() {
         initFile();
@@ -94,6 +94,7 @@ public class EPubFile {
     private void initFile() {
         chapters = new Vector<Chapter>();
         container = new Container();
+        resources = new Vector<Resource>();
     }
 
     /**
@@ -267,17 +268,18 @@ public class EPubFile {
                                     if (en != null) {
                                         byte[] data = readEntryData(en);
                                         if (data != null) {
-                                            if (item.mediatype.startsWith("image/")) {
-                                                // TODO Image
-                                                if (item.id.equals("cover")) {
-                                                    cover = data;
-                                                    coverName = item.href;
-                                                }
-                                            } else {
+                                            if (item.mediatype.startsWith("application/xhtml+xml")) {
                                                 Chapter chapter = new Chapter();
                                                 chapter.setContent(data);
                                                 chapter.setChapterItem(item);
                                                 chapters.add(chapter);
+                                            } else if (item.mediatype.startsWith("application/x-dtbncx+xml")) {
+                                                // TODO NCX support.
+                                            } else {
+                                                // TODO other resources
+                                                Resource res = new Resource(item);
+                                                res.setContent(data);
+                                                resources.add(res);
                                             }
                                         }
                                     }
@@ -448,11 +450,11 @@ public class EPubFile {
                         zout.closeEntry();
                     }
 
-                    if (cover != null && cover.length > 0) {
-                        ze = new ZipEntry("OEBPS/" + coverName);
+                    for (Resource res : resources) {
+                        ze = new ZipEntry(res.getEntryName());
                         ze.setTime(tt);
                         zout.putNextEntry(ze);
-                        dout.write(cover);
+                        dout.write(res.getContent());
                         zout.closeEntry();
                     }
 
@@ -532,8 +534,41 @@ public class EPubFile {
             ic.href = name;
             ic.mediatype = type;
             manifest.addItem(ic);
-            cover = data;
-            coverName = name;
+            Resource res = new Resource(ic);
+            res.setContent(data);
+            resources.add(res);
+        }
+    }
+
+    /**
+     * Add resource to epub files
+     *
+     * @param id   resource id, if no set, this method will not add a item ref to manifest
+     * @param type resource mime type
+     * @param name resource href relative content
+     * @param buf  resource data
+     */
+    public void addResource(String id, String type, String name, byte[] buf) {
+        if (name != null && buf != null && buf.length > 0 && type != null) {
+            Resource res = null;
+            if (id != null) {
+                OPF opf = container.getPackageFile();
+                Manifest manifest = opf.getManifest();
+                Item ic = manifest.getItem(id);
+                if (ic == null) {
+                    ic = new Item();
+                }
+                ic.id = id;
+                ic.href = name;
+                ic.mediatype = type;
+                manifest.addItem(ic);
+                res = new Resource(ic);
+            }else{
+                res = new Resource(type, name);
+            }
+
+            res.setContent(buf);
+            resources.add(res);
         }
     }
 }
