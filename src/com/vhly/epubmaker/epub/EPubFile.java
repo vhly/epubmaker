@@ -140,6 +140,12 @@ public class EPubFile {
                 np.content = item.href;
 
                 ncx.addNavPoint(np);
+                NavPoint[] subNPS = ch.getSubNPS();
+                if(subNPS != null && subNPS.length > 0){
+                    for(NavPoint snp : subNPS){
+                        np.appendSub(snp);
+                    }
+                }
             }
         }
     }

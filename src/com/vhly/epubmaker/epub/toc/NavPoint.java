@@ -18,7 +18,7 @@ import java.util.Vector;
  */
 public class NavPoint {
     public String id;
-    public String playOrder;
+    public String maxOrder;
     public String label;
     public String content;
     public int iplayOrder;
@@ -47,13 +47,31 @@ public class NavPoint {
 
     private void toXML(StringBuffer sb) {
         if (sb != null) {
-            sb.append("<navPoint class=\"chapter\" id=\"").append(id).append("\" playOrder=\"").append(iplayOrder).append("\">");
+            sb.append("<navPoint class=\"chapter\" ");
+            if (id != null) {
+                sb.append(" id=\"").append(id).append("\" ");
+            }
+            sb.append("playOrder=\"").append(iplayOrder).append("\">");
             sb.append("<navLabel><text>").append(label).append("</text></navLabel>");
             sb.append("<content src=\"").append(content).append("\"/>");
-            for (NavPoint np : subs) {
-                sb.append(np.toXML());
+            if (subs != null && !subs.isEmpty()) {
+                String sit = Integer.toString(iplayOrder + 1);
+                for (NavPoint np : subs) {
+                    sit = np.updateOrder(sit);
+                    sb.append(np.toXML());
+                    sit = np.maxOrder;
+                }
+                maxOrder = sit;
+            } else {
+                maxOrder = Integer.toString(iplayOrder + 1);
             }
             sb.append("</navPoint>");
+        }
+    }
+
+    public void appendSub(NavPoint np) {
+        if (np != null && subs != null) {
+            subs.add(np);
         }
     }
 

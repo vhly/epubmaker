@@ -8,10 +8,60 @@
         <title>第一章 软件工程学概述</title>
         <ename>c001.xhtml</ename>
         <path>./res/book2/c001.xhtml</path>
+        <nvp>
+            <label>软件危机的介绍</label>
+            <href>c001.xhtml#anchor_01</href>
+        </nvp>
+        <nvp>
+            <label>1.2软件工程</label>
+            <href>c001.xhtml#anchor_02</href>
+        </nvp>
+        <nvp>
+            <label>软件工程的基本原理</label>
+            <href>c001.xhtml#anchor_03</href>
+        </nvp>
+        <nvp>
+            <label>1.2.3软件工程方法学</label>
+            <href>c001.xhtml#anchor_04</href>
+        </nvp>
+        <nvp>
+            <label>传统方法学</label>
+            <href>c001.xhtml#anchor_05</href>
+        </nvp>
+        <nvp>
+            <label>面向对象方法学</label>
+            <href>c001.xhtml#anchor_06</href>
+        </nvp>
+        <nvp>
+            <label>软件生命周期</label>
+            <href>c001.xhtml#anchor_07</href>
+        </nvp>
     </chapter>
     <chapter>
         <title>第二章 可行性研究</title>
         <ename>c002.xhtml</ename>
         <path>./res/book2/c002.xhtml</path>
+        <nvp>
+            <label>可行性研究的任务</label>
+            <href>c002.xhtml#anchor_01</href>
+        </nvp>
+        <nvp>
+            <label>数据流图</label>
+            <href>c002.xhtml#anchor_02</href>
+        </nvp>
+        <nvp>
+            <label>数据字典</label>
+            <href>c002.xhtml#anchor_03</href>
+        </nvp>
+    </chapter>
+    <chapter>
+        <title>第三章 需求分析</title>
+        <ename>c003.xhtml</ename>
+        <path>./res/book2/c003.xhtml</path>
+    </chapter>
+    <chapter>
+        <title>第四章 总体设计</title>
+        <ename>c004.xhtml</ename>
+        <path>./res/book2/c004.xhtml</path>
     </chapter>
 </epubmake>

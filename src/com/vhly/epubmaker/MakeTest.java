@@ -3,6 +3,7 @@ package com.vhly.epubmaker;
 import com.vhly.epubmaker.epub.EPubFile;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.content.Chapter;
+import com.vhly.epubmaker.epub.toc.NavPoint;
 import net.dratek.browser.util.StreamUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -17,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Vector;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,7 +33,7 @@ public class MakeTest {
         if (argc == 0) {
             // TODO Show usage
             System.out.println("Usage: MakeTest <confxml path> <epub gen path>");
-        } else if(argc == 2){
+        } else if (argc == 2) {
             String confPath = args[0];
             File f = new File(confPath);
             if (f.exists() && f.canRead()) {
@@ -117,7 +119,11 @@ public class MakeTest {
                                     }
 
                                     if (path != null && ename != null) {
-                                        addChapter(file, ctitle, ename, path);
+                                        Vector<NavPoint> nvps = new Vector<NavPoint>();
+
+                                        parseNVP(el, nvps);
+
+                                        addChapter(file, ctitle, ename, path, nvps);
                                     }
 
                                 }
@@ -136,6 +142,35 @@ public class MakeTest {
         }
     }
 
+    private static void parseNVP(Element el, Vector<NavPoint> nvps) {
+        NodeList lst2;
+        lst2 = el.getElementsByTagName("nvp");
+        if (lst2 != null && lst2.getLength() > 0) {
+            int len = lst2.getLength();
+            String nl = null, nu = null;
+            Element ne;
+            for (int j = 0; j < len; j++) {
+                Node ni = lst2.item(j);
+                ne = (Element) ni;
+                NodeList lst3 = ne.getElementsByTagName("label");
+                if (lst3 != null && lst3.getLength() > 0) {
+                    nl = lst3.item(0).getTextContent();
+                }
+
+                lst3 = ne.getElementsByTagName("href");
+                if (lst3 != null && lst3.getLength() > 0) {
+                    nu = lst3.item(0).getTextContent();
+                }
+                if (nl != null && nu != null) {
+                    NavPoint np = new NavPoint();
+                    np.label = nl;
+                    np.content = nu;
+                    nvps.add(np);
+                }
+            }
+        }
+    }
+
     private static void oldBookGen() {
         EPubFile file = new EPubFile();
         file.setTitle("Test");
@@ -147,23 +182,26 @@ public class MakeTest {
 
         addResource(file);
 
-        addChapter(file, "第一章", "c001.xhtml", "./res/book1/c001.xhtml");
+        addChapter(file, "第一章", "c001.xhtml", "./res/book1/c001.xhtml", null);
 
-        addChapter(file, "考试要点-多个概率进行计算", "c002.xhtml", "./res/book1/c002.xhtml");
+        addChapter(file, "考试要点-多个概率进行计算", "c002.xhtml", "./res/book1/c002.xhtml", null);
 
-        addChapter(file, "概率的乘法法则", "c003.xhtml", "./res/book1/c003.xhtml");
+        addChapter(file, "概率的乘法法则", "c003.xhtml", "./res/book1/c003.xhtml", null);
 
-        addChapter(file, "重要练习", "c004.xhtml", "./res/book1/c004.xhtml");
+        addChapter(file, "重要练习", "c004.xhtml", "./res/book1/c004.xhtml", null);
 
-        addChapter(file, "随机变量", "c005.xhtml", "./res/book1/c005.xhtml");
+        addChapter(file, "随机变量", "c005.xhtml", "./res/book1/c005.xhtml", null);
 
         file.save("./MakeTest.epub");
     }
 
-    private static void addChapter(EPubFile file, String title, String ename, String fpath) {
+    private static void addChapter(EPubFile file, String title, String ename, String fpath, Vector<NavPoint> nvps) {
         // TODO In this implements, title must setting with ascii char, not support other char now.
         Chapter chb = loadChapter(title, ename, fpath);
         if (chb != null) {
+            if(nvps != null && nvps.size() > 0){
+                chb.appendNVPS(nvps);
+            }
             file.addChapter(chb);
         }
     }

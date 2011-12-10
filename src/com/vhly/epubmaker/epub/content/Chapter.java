@@ -3,10 +3,12 @@ package com.vhly.epubmaker.epub.content;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.MediaType;
 import com.vhly.epubmaker.epub.ZIPContent;
+import com.vhly.epubmaker.epub.toc.NavPoint;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Vector;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,6 +18,12 @@ import java.io.UnsupportedEncodingException;
  */
 public class Chapter implements Content, ZIPContent {
 
+    /**
+     * Create a Chapter with href and cotent
+     * @param href url
+     * @param pageContent byte[] data for Chapter
+     * @return Chapter
+     */
     public static Chapter createChapter(String href, byte[] pageContent) {
         Chapter ret = null;
         if (href != null && pageContent != null && pageContent.length > 0) {
@@ -48,8 +56,14 @@ public class Chapter implements Content, ZIPContent {
 
     private String entryName;
 
+    private Vector<NavPoint> nvps;
+
     // Content implements.
 
+
+    public Chapter() {
+        nvps = new Vector<NavPoint>();
+    }
 
     /**
      * Set entry name for zip file.
@@ -151,5 +165,23 @@ public class Chapter implements Content, ZIPContent {
         if(content != null && content.length > 0){
             dout.write(content);
         }
+    }
+
+    public void appendNVPS(Vector<NavPoint> nps){
+        if(nps != null){
+            if(!nps.isEmpty()){
+                nvps.addAll(nps);
+            }
+        }
+    }
+
+    public NavPoint[] getSubNPS(){
+        NavPoint[] ret = null;
+        if(nvps != null && !nvps.isEmpty()){
+            int size = nvps.size();
+            ret = new NavPoint[size];
+            nvps.copyInto(ret);
+        }
+        return ret;
     }
 }

@@ -142,7 +142,7 @@ public class NCX implements ZIPContent, ContentParser {
             String id = el.getAttributeValue(null, "id");
             String playOrder = el.getAttributeValue(null, "playOrder");
             np.id = id;
-            np.playOrder = playOrder;
+            np.iplayOrder = Integer.parseInt(playOrder);
             Element navLabel = XMLUtil.getElementByName(el, "navLabel");
             if (navLabel != null) {
                 Element text = XMLUtil.getElementByName(navLabel, "text");
@@ -200,6 +200,7 @@ public class NCX implements ZIPContent, ContentParser {
         for (NavPoint np : map) {
             sit = np.updateOrder(sit);
             sb.append(np.toXML());
+            sit = np.maxOrder;
         }
         sb.append("</navMap>");
 
