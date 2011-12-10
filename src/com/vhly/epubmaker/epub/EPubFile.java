@@ -141,8 +141,8 @@ public class EPubFile {
 
                 ncx.addNavPoint(np);
                 NavPoint[] subNPS = ch.getSubNPS();
-                if(subNPS != null && subNPS.length > 0){
-                    for(NavPoint snp : subNPS){
+                if (subNPS != null && subNPS.length > 0) {
+                    for (NavPoint snp : subNPS) {
                         np.appendSub(snp);
                     }
                 }
@@ -528,6 +528,14 @@ public class EPubFile {
         }
     }
 
+    public void setPublisher(String publisher) {
+        if (publisher != null) {
+            OPF opf = container.getPackageFile();
+            Metadata metadata = opf.getMetadata();
+            metadata.setPublisher(publisher);
+        }
+    }
+
     public void setCover(String name, byte[] data, String type) {
         if (name != null && data != null && data.length > 0 && type != null) {
             OPF opf = container.getPackageFile();
@@ -569,7 +577,7 @@ public class EPubFile {
                 ic.mediatype = type;
                 manifest.addItem(ic);
                 res = new Resource(ic);
-            }else{
+            } else {
                 res = new Resource(type, name);
             }
 

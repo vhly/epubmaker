@@ -88,6 +88,7 @@ public class MakeTest {
                             file.setAuthor(author);
                             file.setUUID(uuid);
                             file.setDescript(description);
+                            file.setPublisher("vhly [EPubMaker]");
                             if (coverPath != null && coverType != null) {
                                 setCover(file, coverPath, coverType);
                             }
