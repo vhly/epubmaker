@@ -58,10 +58,22 @@
         <title>第三章 需求分析</title>
         <ename>c003.xhtml</ename>
         <path>./res/book2/c003.xhtml</path>
+        <nvp>
+            <label>需求分析的任务</label>
+            <href>c003.xhtml#anchor_01</href>
+        </nvp>
+        <nvp>
+            <label>分析系统的数据要求</label>
+            <href>c003.xhtml#anchor_02</href>
+        </nvp>
     </chapter>
     <chapter>
         <title>第四章 总体设计</title>
         <ename>c004.xhtml</ename>
         <path>./res/book2/c004.xhtml</path>
+        <nvp>
+            <label>设计过程</label>
+            <href>c004.xhtml#anchor_01</href>
+        </nvp>
     </chapter>
 </epubmake>
