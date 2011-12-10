@@ -129,6 +129,26 @@ public class MakeTest {
 
                                 }
                             }
+
+                            list = root.getElementsByTagName("resource");
+                            if (list != null && list.getLength() > 0) {
+                                int size = list.getLength();
+                                Node nd;
+                                Element el;
+                                String path, href, type, id;
+                                for (int i = 0; i < size; i++) {
+                                    nd = list.item(i);
+                                    el = (Element) nd;
+                                    id = el.getAttribute("id");
+                                    path = el.getAttribute("path");
+                                    href = el.getAttribute("href");
+                                    type = el.getAttribute("type");
+                                    if(path != null && href != null && type != null){
+                                        addResource(file,id, path, href, type);
+                                    }
+                                }
+                            }
+
                             file.save(args[1]);
                         }
                     }
@@ -181,7 +201,7 @@ public class MakeTest {
 
         setCover(file, "./cover.jpg", "image/jpeg");
 
-        addResource(file);
+        addResource(file, "todo", "./TODO", "TODO", "text/plain");
 
         addChapter(file, "第一章", "c001.xhtml", "./res/book1/c001.xhtml", null);
 
@@ -200,23 +220,23 @@ public class MakeTest {
         // TODO In this implements, title must setting with ascii char, not support other char now.
         Chapter chb = loadChapter(title, ename, fpath);
         if (chb != null) {
-            if(nvps != null && nvps.size() > 0){
+            if (nvps != null && nvps.size() > 0) {
                 chb.appendNVPS(nvps);
             }
             file.addChapter(chb);
         }
     }
 
-    private static void addResource(EPubFile file) {
+    private static void addResource(EPubFile file, String id, String path, String href, String type) {
         FileInputStream fin = null;
         File f;
 
         // add other resource
         try {
-            f = new File("TODO");
+            f = new File(path);
             fin = new FileInputStream(f);
             byte[] bytes = StreamUtil.readStream(fin);
-            file.addResource("todo", "text/plain", "TODO", bytes);
+            file.addResource(id, type, href, bytes);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } finally {
