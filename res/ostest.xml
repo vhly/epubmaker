@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epubmake>
+    <title>操作系统复习</title>
+    <author>张霄鹤</author>
+    <uuid>83920479479234790</uuid>
+    <description>This is a test for you</description>
+    <cover href="./cover.jpg" type="image/jpeg"/>
+
+    <!-- id="noid" -->
+    <!--<resource id="pad01" path="./res/book2/pad01.png" href="pad01.png" type="image/png"/>-->
+
+    <chapter>
+        <title>第一章</title>
+        <ename>c001.xhtml</ename>
+        <path>./res/book3/c001.xhtml</path>
+        <!--<nvp>-->
+            <!--<label>软件危机的介绍</label>-->
+            <!--<href>c001.xhtml#anchor_01</href>-->
+        <!--</nvp>-->
+    </chapter>
+    <chapter>
+        <title>第二章 进程与作业</title>
+        <ename>c002.xhtml</ename>
+        <path>./res/book3/c002.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第三章 进程并发</title>
+        <ename>c003.xhtml</ename>
+        <path>./res/book3/c003.xhtml</path>
+    </chapter>
+</epubmake>
