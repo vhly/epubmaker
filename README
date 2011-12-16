@@ -1,3 +1,59 @@
 EPubMaker
 
 It can load exist .epub file to edit or create .epub file for author.
+
+Usage
+==============
+
+1. Load/Read epub file
+java.io.File file = new java.io.File("path.epub");
+EPubFile epub = new EPubFile(file);
+epub.load();
+
+2. Write/Create epub file
+EPubFile file = new EPubFile();
+file.setTitle("title");
+file.setAuthor("author");
+file.setUUID("uuid");
+file.setDescript("description");
+file.setPublisher("vhly [EPubMaker]");
+
+Chapter ch = loadChapter("chapter01","c001.xhtml", "./res/book1/c001.xhtml");
+
+file.addChapter(ch);
+
+/**
+  * load file from file sytem and set chapter
+  *
+  * @param title Chpater title
+  * @param ename ename for epub zip entry
+  * @param fPath real path
+  * @return Chapter will create
+  */
+ private static Chapter loadChapter(String title, String ename, String fPath) {
+    Chapter ret = null;
+    if (title != null && ename != null && fPath != null) {
+       File f = new File(fPath);
+       if (f.exists() && f.canRead()) {
+          FileInputStream fin = null;
+          byte[] content = null;
+          try {
+             fin = new FileInputStream(f);
+             content = StreamUtil.readStream(fin);
+          } catch (FileNotFoundException e) {
+             e.printStackTrace();
+          } finally {
+             StreamUtil.close(fin);
+          }
+          if (content != null && content.length > 0) {
+              ret = new Chapter();
+              ret.setTitle(title);
+              ret.setEntryName(ename);
+              ret.setContent(content);
+              Item chapterItem = new Item(ename, ename);
+              ret.setChapterItem(chapterItem);
+          }
+       }
+    }
+    return ret;
+ }
