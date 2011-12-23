@@ -1,0 +1,28 @@
+<epubmake>
+    <title>网络多媒体复习</title>
+    <author>张霄鹤</author>
+    <uuid>8392047947923470a</uuid>
+    <description>This is a test for you</description>
+    <cover href="./cover.jpg" type="image/jpeg"/>
+
+    <!-- id="noid" -->
+    <resource id="pad01" path="./res/book4/internet_html_213753bb.png" href="internet_html_213753bb.png" type="image/png"/>
+    <resource id="pad02" path="./res/book4/media_html_1861d096.png" href="media_html_1861d096.png" type="image/png"/>
+    <resource id="pad03" path="./res/book4/media_html_6710db96.png" href="media_html_6710db96.png" type="image/png"/>
+    <resource id="pad04" path="./res/book4/media_html_m12e3ebed.png" href="media_html_m12e3ebed.png" type="image/png"/>
+    <resource id="pad05" path="./res/book4/media_html_m18dd1ae0.png" href="media_html_m18dd1ae0.png" type="image/png"/>
+    <resource id="pad06" path="./res/book4/media_html_m3c15ad8e.png" href="media_html_m3c15ad8e.png" type="image/png"/>
+    <resource id="pad07" path="./res/book4/media_html_m43db26db.png" href="media_html_m43db26db.png" type="image/png"/>
+    <resource id="pad08" path="./res/book4/media_html_m4dd3293.png" href="media_html_m4dd3293.png" type="image/png"/>
+
+    <chapter>
+        <title>网络复习资料</title>
+        <ename>internet.xhtml</ename>
+        <path>./res/book4/internet.xhtml</path>
+    </chapter>
+    <chapter>
+        <title>多媒体复习资料</title>
+        <ename>media.xhtml</ename>
+        <path>./res/book4/media.xhtml</path>
+    </chapter>
+</epubmake>
