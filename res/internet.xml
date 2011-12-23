@@ -1,3 +1,4 @@
+
 <epubmake>
     <title>网络多媒体复习</title>
     <author>张霄鹤</author>
@@ -19,6 +20,94 @@
         <title>网络复习资料</title>
         <ename>internet.xhtml</ename>
         <path>./res/book4/internet.xhtml</path>
+        <nvp>
+            <label>1网络定义及功能</label>
+            <href>internet.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>2网络协议三部分组成</label>
+            <href>internet.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>3通讯子网定义</label>
+            <href>internet.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>4 P2P技术原理</label>
+            <href>internet.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>5 交换寻址与路由寻址区别</label>
+            <href>internet.xhtml#anchor005</href>
+        </nvp>
+        <nvp>
+            <label>6 OSI 7层</label>
+            <href>internet.xhtml#anchor006</href>
+        </nvp>
+        <nvp>
+            <label>7 TCP/IP 5层</label>
+            <href>internet.xhtml#anchor007</href>
+        </nvp>
+        <nvp>
+            <label>8 物理层3种介质</label>
+            <href>internet.xhtml#anchor008</href>
+        </nvp>
+        <nvp>
+            <label>9 数据链路层的信道两种</label>
+            <href>internet.xhtml#anchor009</href>
+        </nvp>
+        <nvp>
+            <label>10 数据链路层采用的校验方法 CRC</label>
+            <href>internet.xhtml#anchor010</href>
+        </nvp>
+        <nvp>
+            <label>11 以太网帧的最大长度</label>
+            <href>internet.xhtml#anchor011</href>
+        </nvp>
+        <nvp>
+            <label>12 CSMA/CD工作原理</label>
+            <href>internet.xhtml#anchor012</href>
+        </nvp>
+        <nvp>
+            <label>13 ARP/RARP协议的作用</label>
+            <href>internet.xhtml#anchor013</href>
+        </nvp>
+        <nvp>
+            <label>14 常见动态路由协议三个</label>
+            <href>internet.xhtml#anchor014</href>
+        </nvp>
+        <nvp>
+            <label>15 面向连接的TCP</label>
+            <href>internet.xhtml#anchor015</href>
+        </nvp>
+        <nvp>
+            <label>16 UDP协议头4部分</label>
+            <href>internet.xhtml#anchor016</href>
+        </nvp>
+        <nvp>
+            <label>17 什么是端到端什么是点到点传输</label>
+            <href>internet.xhtml#anchor017</href>
+        </nvp>
+        <nvp>
+            <label>18 TCP协议实现可靠传输使用了什么</label>
+            <href>internet.xhtml#anchor018</href>
+        </nvp>
+        <nvp>
+            <label>19 协议三次握手过程？四次挥手过程？</label>
+            <href>internet.xhtml#anchor019</href>
+        </nvp>
+        <nvp>
+            <label>20 客户端/服务器模式</label>
+            <href>internet.xhtml#anchor020</href>
+        </nvp>
+        <nvp>
+            <label>21 局域网中常见的软件和硬件</label>
+            <href>internet.xhtml#anchor021</href>
+        </nvp>
+        <nvp>
+            <label>22 交换机交换模式三种</label>
+            <href>internet.xhtml#anchor022</href>
+        </nvp>
     </chapter>
     <chapter>
         <title>多媒体复习资料</title>

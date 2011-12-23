@@ -1,0 +1,23 @@
+<!DOCTYPE epubmake [
+        <!ELEMENT epubmake (title|author|uuid|description|cover|resource|chapter)*>
+        <!ELEMENT title (#PCDATA)>
+        <!ELEMENT author (#PCDATA)>
+        <!ELEMENT uuid (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT cover (#PCDATA)>
+        <!ATTLIST cover
+                href CDATA #REQUIRED
+                type CDATA #REQUIRED>
+        <!ELEMENT resource (#PCDATA)>
+        <!ATTLIST resource
+                href CDATA #REQUIRED
+                id CDATA #REQUIRED
+                path CDATA #REQUIRED
+                type CDATA #REQUIRED>
+        <!ELEMENT chapter (title|ename|path|nvp)*>
+        <!ELEMENT ename (#PCDATA)>
+        <!ELEMENT path (#PCDATA)>
+        <!ELEMENT nvp (label|href)*>
+        <!ELEMENT label (#PCDATA)>
+        <!ELEMENT href (#PCDATA)>
+        ]>

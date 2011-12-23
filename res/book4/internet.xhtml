@@ -3,525 +3,1946 @@
         PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8"/>
-    <title>计算机网络复习</title>
-    <meta name="GENERATOR" content="OpenOffice.org 3.2  (Unix)"/>
-    <meta name="AUTHOR" content="liudong"/>
-    <meta name="CREATED" content="20111203;21440000"/>
-    <meta name="CHANGEDBY" content="lds"/>
-    <meta name="CHANGED" content="20111218;19490000"/>
-    <meta name="CLASSIFICATION" content="计算机网络复习"/>
-    <meta name="KEYWORDS" content="Internet, Exam"/>
-    <meta name="KSOProductBuildVer" content="2052-6.6.0.2671"/>
-    <style type="text/css">
-        <!--
-          @page { margin-right: 1.14cm; margin-top: 1.06cm; margin-bottom: 1.23cm }
-          P { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 0; orphans: 0 }
-          P.western { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: en-US }
-          P.cjk { font-family: "宋体"; font-size: 10pt; so-language: zh-CN }
-          P.ctl { font-family: "Calibri", sans-serif; font-size: 11pt; so-language: ar-SA }
-          A:link { color: #0000ff; text-decoration: none }
-      -->
-    </style>
-</head>
-<body lang="zh-CN" text="#000000" link="#0000ff" dir="ltr">
-<p class="cjk" align="center" style="margin-bottom: 0cm"><font size="3"><b>计
-    算 机 网 络 课 程 复 习</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（一）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font size="3"><b>网络定义及功能？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">定义：是指把若干台地理位置不同，且具有独立功能的计算机，由通信设备和线路相互连接起来，通过通信协议实现数据传输和资源共享。
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">功能：资源共享与数据通信</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font size="3"><b>网络协议三部分组成？
-</b></font><font size="3">语义、语法、时序</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>IP</b></font></span></font><font size="3"><b>地址两部分组成？
-</b></font><font size="3">前缀和后缀（地址前缀是网络地址，地址后缀是主机地址）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font size="3"><b>常用端口号？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">FTP
- 21</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">TELNET
- 23</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">SMTP
- 25</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">DNS
- 53</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">DHCP
- 67</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">TFTP
- 69</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">HTTP
- 80</span></font></font><font size="3">；</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">SNMP
- 161</span></font></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑤<font size="3"><b>通信子网定义？资源子网定义？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">
-    <font size="3">通信子网定义：是指网络中实现网络通信功能的设备及其</font>
-    <a href="http://baike.baidu.com/view/37.htm"><span style="background: #ffffff"><font
-            size="3">软件</font></span></a><font
-        size="3">的集合</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">,</font></span></font><font
-        size="3">通信设备、</font><a href="http://baike.baidu.com/view/245513.htm"><span style="background: #ffffff"><font
-        size="3">网络通信协议</font></span></a><font
-        size="3">、通信控制软件等属于通信子网，是网络的内层，负责信息的传输。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">资源子网定义：是指网络主机、终端及其附属设备等，构成了网络的基本资源</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">,</font></span></font><font
-        size="3">主要负责数据处理任务。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font color="#ff0000">⑥<font face="Calibri, sans-serif">P2P</font>
-</font><font color="#ff0000">技术传输原理？基本原理？</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        color="#ff0000">***</font></span></font><font color="#ff0000">仅供参考</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font color="#ff0000">***</font></span></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">对等连接</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">(peer-to-peer</span></font></font><font size="3">，即</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">P2P)</span></font></font><font size="3">是指两个主机在通信时并不区分哪一个是服务请求方还是服务提供方。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">原理：只要两个主机都运行了对等连接软件（</font><font
-        face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">P2P
-</span></font></font><font size="3">软件），它们就可以进行平等的、对等连接通信。双方都可以下载对方已经存储在硬盘中的共享文档。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑦<font size="3"><span lang="zh-CN"><b>交换寻址与路由寻址区别？</b></span></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><span lang="zh-CN">交换寻址：使用</span></font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3"><span
-        lang="en-US">ARP</span></font></span></font><font
-        size="3"><span lang="zh-CN">协议在本地子网内，主机和主机、主机和交换机、交换机和交换设备之间的寻址</span></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">路由寻址：本地主机和其他网络子网主机之间通过路由设备交换路由信息寻找目的主机网络</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（二、三）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>OSI</b></span></font></font><font size="3"><b>七层名称按顺序及功能？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">物理层：最底层是提供网内两系统间的物理接口，利用传输介质为数据链路层提供物理连接，实现比特流的传输。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">数据链路层：把物理层提供的数据打包成帧，并负责帧在计算机之间的无差错传递。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">网络层：路由选择、拥塞控制和网络互连等。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">传输层：为主机间提供端到端的传输服务，透明的传送报文。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">会话层：维护节点之间两个进程间的通信，并对数据传输进行管理。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">表示层：主要为应用进程之间传送的信息提供表示方式的服务，包括数据格式变换、数据加密与解密等。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">应用层：直接面向用户，负责两个应用进程之间的通信，提供网络应用服务。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>TCP/IP</b></span></font></font><font size="3"><b>五层名称按顺序及与</b></font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US"><b>OSI</b></span></font></font><font
-        size="3"><b>七层对应关系？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">
-    <img src="internet_html_213753bb.png" name="graphics1" align="left" width="550"
-         height="527" border="0" alt="layer"/>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font size="3"><b>物理层常见三种传输介质？
-</b></font><font size="3">同轴电缆、双绞线、光纤</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font size="3"><b>数据链路层的信道有哪两种？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">点对点信道：使用一对一的点对点通信方式。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">广播信道：使用一对多的广播通信方式。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑤<font size="3"><b>数据链路层透明传输的概念及使用的两种方法？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">概念：为了防止数据中的信息被误认为是控制信息，在不是控制信息的特定字符前加转义符。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">两种方法：字节填充、字符填充</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑥<font size="3"><b>数据链路层采用的校验方法？
-</b></font><font size="3">循环冗余检验</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">CRC</font></span></font><font size="3">的检错技术</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑦<font size="3"><b>以太网帧的最大长度？
-</b></font><font size="3">有效的</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">MAC</font></span></font><font size="3">帧长度为</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font
-        size="3">64
-    ~ 1518</font></span></font><font size="3">字节之间，小于</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">64</font></span></font><font
-        size="3">或大于</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">1518</font></span></font><font
-        size="3">均丢弃处理。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑧<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>CSMA/CD</b></span></font></font><font size="3"><b>工作原理？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">CSMA/CD</span></font></font><font size="3">即：多点接入下的载波侦听与冲突检测</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">原理：某站点想要发送数据，必须首先侦听信道；如信道空闲，立即发送数据并进行冲突检测；如信道忙，继续侦听信道直到变为空闲，才继续发送数据并进行冲突检测。如站点发送数据过程中检测到冲突，将立即停止发送数据并等待一个随机长的时间，并重复以上过程。
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑨<font size="3"><b>什么是冲突域？什么是广播域？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">冲突域：所有直接连接在一起的，而且必须竞争以太网总线资源的节点都可以认为是处在同一个冲突域中，即一次只有一个设备发送信息，其他的只能等待的一个区域。
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">广播域：是一个逻辑上的计算机组，该组内的所有计算机都会收到同样的广播信息。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（四）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>ARP</b></span></font></font><font size="3"><b>与</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US"><b>RARP</b></span></font></font><font size="3"><b>协议的作用？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">ARP</span></font></font><font size="3">（地址解析协议）：将</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">IP</span></font></font><font size="3">地址转换成</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">MAC</span></font></font><font size="3">硬件地址</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">RARP</span></font></font><font size="3">（反向地址解析协议）：将</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">MAC</span></font></font><font size="3">硬件地址转换成</font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US">IP</span></font></font><font size="3">地址</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>ICMP</b></span></font>
-</font><font size="3"><b>协议</b></font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US"><b>ping
-</b></span></font></font><font size="3"><b>、</b></font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>trace
-    rt</b></span></font></font><font size="3"><b>？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">ICMP</span></font></font><font size="3">（控制报文协议）应用：</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">PING
-</span></font></font><font size="3">用来测试两个主机之间的连通性；</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">TRACERT
-</span></font></font><font size="3">路由跟踪实用程序，用于确定</font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">IP</span></font></font><font
-        size="3">数据报访问目标所采取的路径。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font size="3"><b>常见动态路由协议三个？特点？适合那种环境应用？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">RIP</span></font></font><font size="3">（路由信息协议），特点：实现简单，开销较小，限制了网络的规模，它能使用的最大距离为</font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US">15</span></font></font><font
-        size="3">即只能包含</font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US">15</span></font></font><font
-        size="3">个路由器（</font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US">16</span></font></font><font
-        size="3">表示目的不可达）。只适用于小型互联网。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">OSPF</span></font></font><font
-        size="3">（最短路径优先），特点：链路状态数据库能较快地进行更新，且更新过程收敛快。数据报很短并可减少路由信息的通信量。适用于互联网规模很大时及</font><font
-        face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">AS</span></font></font><font size="3">内部。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">BGP</span></font></font><font size="3">（边界网关协议），特点：</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">BGP</span></font></font><font size="3">的邻站是交换整个的</font><font
-        face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">BGP</span></font></font><font
-        size="3">路由表，以后只需要在发生变化时更新有变化的部分，可节省网络带宽和减少路由器的处理开销。适用于不同</font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">AS</span></font></font><font size="3">之间的边界路由信息获取。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（五）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font size="3"><b>传输层</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US"><b>TCP</b></span></font></font><font size="3"><b>、</b></font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US"><b>UDP</b></span></font></font><font
-        size="3"><b>、</b></font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>IP</b></span></font></font><font size="3"><b>那个是面向连接可靠传输？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">TCP</span></font></font><font size="3">是面向连接的可靠数据传输（面向字节流）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">UDP</span></font></font><font size="3">是面向无连接的不可靠数据传输（面向报文）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">IP</span></font></font><font size="3">是面向无连接的不可靠数据传输</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>UDP</b></font></span></font><font size="3"><b>协议头部信息那四部分？
-</b></font><font size="3">源端口、目的端口、长度、检验和</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>TCP</b></span></font></font><font size="3"><b>协议什么是端到端什么是点到点传输？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">每一条 </font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">TCP
-</span></font></font><font size="3">连接只能有两个端点，每一条
-</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">TCP
-</span></font></font><font size="3">连接只能是点对点的（一对一）。
-</font>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">端口到端口是端到端传输，</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">IP</span></font></font><font size="3">到</font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">IP</span></font></font><font size="3">是点到点传输</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>TCP</b></span></font></font><font size="3"><b>协议实现可靠传输使用了什么？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">两个协议：停止等待协议、滑动窗口协议；一个方法：拥塞控制方法</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font color="#ff0000">⑤<font face="Calibri, sans-serif"><span
-        lang="en-US">TCP</span></font>协议三次握手过程？四次挥手过程？</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font color="#ff0000">（自行描述）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（六）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font size="3"><b>什么是客户</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US"><b>/</b></span></font></font><font size="3"><b>服务器模式？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">客户服务器方式所描述的是进程之间服务和被服务的关系。客户是服务请求方，服务器是服务提供方。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>DNS</b></font></span></font><font size="3"><b>服务是什么服务？用什么端口？
-</b></font><font size="3">域名解析服务，</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">53</font></span></font><font size="3">端口。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>FTP</b></font></span></font><font size="3"><b>协议端口号</b></font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3"><b>20</b></font></span></font><font size="3"><b>用于什么？</b></font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3"><b>21</b></font></span></font><font size="3"><b>用于什么？
-</b></font><font size="3">端口</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">21</font></span></font><font size="3">用作控制连接，而端口</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font
-        size="3">20</font></span></font><font size="3">用于数据连接。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font size="3"><b>电子邮件</b></font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3"><b>POP3</b></font></span></font><font size="3"><b>、</b></font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3"><b>SMTP</b></font></span></font><font size="3"><b>使用的端口是？
-</b></font><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">POP3</font></span></font><font
-        size="3">使用</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">110</font></span></font><font
-        size="3">端口，</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">SMTP</font></span></font><font
-        size="3">使用</font><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">25</font></span></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑤<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>SNMP</b></span></font>
-</font><font size="3"><b>三部分构成？</b></font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>SNMP</b></span></font></font><font size="3"><b>是那层的协议？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">SNMP
-</span></font></font><font size="3">本身、管理信息结构
-</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">SMI</span></font></font><font
-        size="3">、管理信息库
-</font><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">MIB</span></font></font><font
-        size="3">；应用层协议</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（七）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font size="3"><b>局域网中常见的软件和硬件？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">硬件组成：主机（用户计算机，服务器）、交换机、路由器、线路（双绞线，光纤，无线）、其他网络设备（防火墙，磁盘阵列等）
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">软件组成：网络操作系统（</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">WINDOWS,
-LINUX</span></font></font><font size="3">）、用户计算机的操作系统、网络通信协议、各种应用软件、安全软件、网络管理软件、计费系统</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font size="3"><b>交换机交换模式三种？
-</b></font><font size="3">直接交换方式</font><font size="3">、</font><font size="3">存储转发方式、改进的直接交换方式</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font size="3"><b>什么是虚拟局域网服务</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US"><b>VLAN</b></span></font></font><font size="3"><b>？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">建立在局域网交换机之上，它以软件的方式实现逻辑工作组的划分和管理，逻辑工作组的节点组成不受物理位置的限制。</font>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font size="3"><b>三层交换机与路由器区别？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>三层交换机</b></font><font
-        size="3">就是具有部分路由器功能的交换机，三层交换机的最重要目的是加快大型局域网内部的数据交换，所具有的路由功能也是为这目的服务的，能够做到一次路由，多次转发。对于数据包转发等规律性的过程由硬件高速实现，而象路由信息更新、路由表维护、路由计算、路由确定等功能，由软件实现。</font>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>路由器</b></font><font
-        size="3">是用于连接多个逻辑上分开的网络，根据信道的情况自动选择和设定路由的网络设备。一般具有多个网络接口。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑤<font size="3"><b>一般网络的分层三个？
-</b></font><font size="3">核心层、汇聚层、接入层；接入层直连到用户</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（八）</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>BSSIP</b></span></font>
-</font><font size="3"><b>、</b></font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>ESSIP</b></span></font></font><font
-        size="3"><b>德含义？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">BSSID</font>
-</span></font><font size="3">：基本服务集标识。接入点的</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">MAC</font></span></font><font size="3">地址，不可修改</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">ESSID</font>
-</span></font><font size="3">：扩展服务集标识。即通常所说的</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">SSID</font></span></font><font size="3">，可修改。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>CSMA/CA</b></span></font></font><font size="3"><b>与</b></font><font
-        face="Calibri, sans-serif"><font size="3"><span lang="en-US"><b>CSMA/CD</b></span></font></font><font
-        size="3"><b>比较增加了哪些功能及协议？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">增加一个碰撞避免功能，还增加使用停止等待协议。而且考虑可能有其他高优先级的帧要发送，避让高优先级帧先发送。
-</font>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>802.11</b></span></font></font><font size="3"><b>数据帧地址与普通数据帧地址区别？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">多个地址</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">4</span></font></font><font size="3">（用于自组网络）和</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">AP</span></font></font><font size="3">地址</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">802.11</span></font>
-</font><font size="3">由</font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">4</span></font></font><font
-        size="3">部分组成：源地址、目的地址、</font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US">AP</span></font></font><font size="3">地址、自组网地址，还可分为主机到</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">AP</span></font></font><font size="3">或</font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US">AP</span></font></font><font size="3">到主机</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">普通只有</font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US">2</span></font></font><font size="3">部分：源地址、目的地址</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>IPV6</b></span></font>
-</font><font size="3"><b>地址表示方法及缩略表示方法？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">同一个地址不同表示法的例子：</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">0001:0123:0000:0000:0000:ABCD:0000:0001/96</span></font>
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">1:123:0:0:0:ABCD:0:1/96</span></font>
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><font size="3"><span lang="en-US">1:123::ABCD:0:1/96</span></font>
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">128</font>
-</span></font><font size="3">位长：用冒号将</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">128</font></span></font><font size="3">比特分割成</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3">8</font></span></font><font size="3">个</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3">2</font></span></font><font size="3">字节的部分，每个部分包括</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">4</font></span></font><font size="3">位的</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">16</font></span></font><font size="3">进制数字</font>
-</p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3"><b>（九）只有</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span
-        lang="en-US"><b>4</b></span></font></font><font size="3"><b>分不考简答</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">①<font size="3"><b>完全威胁四种？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">(1)
-</font></span></font><font size="3">截获——从网络上窃听他人的通信内容。</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">(2)
-</font></span></font><font size="3">中断——有意中断他人在网络上的通信。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">(3)
-</font></span></font><font size="3">篡改——故意篡改网络上传送的报文。
-</font><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">(4)
-</font></span></font><font size="3">伪造——伪造信息在网络上传送。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">②<font size="3"><b>木马程序的两个组成部分？
-</b></font><font size="3">服务器程序和控制器程序</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">③<font size="3"><b>什么是</b></font><font face="Calibri, sans-serif"><font
-        size="3"><span lang="en-US"><b>DOS</b></span></font></font><font size="3"><b>攻击？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">的目的是使计算机或网络无法提供正常的服务。即使用极大的通信量冲击网络系统，使得所有可用网络资源都被消耗殆尽，最后导致网络系统无法向合法的用户提供服务。
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">④<font size="3"><b>常见对</b></font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3"><b>DNS</b></font></span></font><font size="3"><b>服务器的攻击方法？
-</b></font><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">DoS</font></span></font><font
-        size="3">攻击、</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">DNS</font></span></font><font
-        size="3">欺骗、病毒干扰；最常用的方式：</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">DNS</font></span></font><font size="3">欺骗</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑤<font size="3"><b>什么是非对称加密体制或什么是公钥加密体制？（</b></font><font
-        size="3">非对称加密</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">=</font></span></font><font
-        size="3">公钥加密体制</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">=</font></span></font><font
-        size="3">分传统加密）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">公钥密码体制：使用不同的加密密钥与解密密钥，是一种“由已知加密密钥推导出解密密钥在计算上是不可行的”密码体制。特点：凡由公钥加密的信息，只能由私钥进行解密；凡由私钥加密的信息，只能由公钥进行解密。
-</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑥<font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>IPSec</b></font>
-</span></font><font size="3"><b>有那三个协议组成？
-</b></font><font size="3">两个安全协议</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3"><b>AH</b></font></span></font><font size="3">和</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3"><b>ESP</b></font></span></font><font size="3">及密钥管理协议</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3"><b>IKE</b></font></span></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑦<font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>IPSec</b></span></font>
-</font><font size="3"><b>网络层协议，</b></font><font face="Calibri, sans-serif"><font size="3"><span
-        lang="en-US"><b>SSL</b></span></font></font><font size="3"><b>应用层协议</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">IPSEC</font>
-</span></font><font size="3">（因特网安全协议），是一个第三层</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">VPN</font></span></font><font size="3">协议标准</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font
-        size="3">,
-</font></span></font><font size="3">它支持信息通过</font><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">IP
-</font></span></font><font size="3">公网的安全传输。兼容设备在</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">OSI
-</font></span></font><font size="3">模型的第三层</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">(</font></span></font><font size="3">网络层</font><font face="Calibri, sans-serif"><span
-        lang="en-US"><font
-        size="3">)
-</font></span></font><font size="3">提供加密、验证、授权、管理</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">,</font></span></font><font
-        size="3">对于用户来说是透明的。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font face="Calibri, sans-serif"><span lang="en-US"><font size="3">SSL</font>
-</span></font><font size="3">（安全套接字层）协议，</font><font face="Calibri, sans-serif"><span lang="en-US"><font
-        size="3">SSL</font></span></font><font size="3">是使用公钥和对称密钥技术的安全网络通讯协议。</font><font
-        face="Calibri, sans-serif"><span
-        lang="en-US"><font size="3">SSL</font></span></font><font size="3">指定了一种在应用层协议（如</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3"><b>HTTP</b></font></span></font><font
-        size="3">、</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">Telnet</font></span></font><font
-        size="3">、</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">NNTP</font></span></font><font
-        size="3">和</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">FTP</font></span></font><font
-        size="3">等）和</font><font
-        face="Calibri, sans-serif"><span lang="en-US"><font size="3">TCP</font></span></font><font
-        size="3">协议之间提供数据安全性分层的机制。</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm">⑧<font size="3"><b>防火墙的两个基本设置策略？</b></font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">除非明确不准许，否则准许某种服务（默认全部通过）</font></p>
-
-<p class="cjk" style="margin-bottom: 0cm"><font size="3">除非明确准许，否则将禁止某种服务（默认全部不许通过）</font></p>
-</body>
+    <head>
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8"/>
+        <title>计算机网络复习</title>
+        <meta name="GENERATOR" content="OpenOffice.org 3.2  (Unix)"/>
+        <meta name="AUTHOR" content="liudong"/>
+        <meta name="CREATED" content="20111203;21440000"/>
+        <meta name="CHANGEDBY" content="lds"/>
+        <meta name="CHANGED" content="20111218;19490000"/>
+        <meta name="CLASSIFICATION" content="计算机网络复习"/>
+        <meta name="KEYWORDS" content="Internet, Exam"/>
+        <meta name="KSOProductBuildVer" content="2052-6.6.0.2671"/>
+        <style type="text/css">
+            <!--
+                @page { margin-right: 1.14cm; margin-top: 1.06cm; margin-bottom: 1.23cm }
+                P { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: justify; widows: 0; orphans: 0 }
+                P.western { font-family: "Calibri", sans-serif; font-size: 10pt; so-language: en-US }
+                P.cjk { font-family: "宋体"; font-size: 10pt; so-language: zh-CN }
+                P.ctl { font-family: "Calibri", sans-serif; font-size: 11pt; so-language: ar-SA }
+                A:link { color: #0000ff; text-decoration: none }
+            -->
+        </style>
+    </head>
+    <body lang="zh-CN" text="#000000" link="#0000ff" dir="ltr">
+        <p class="cjk" align="center" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>计算机网络课程复习</b>
+            </font>
+        </p>
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（一）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor001">
+            ①
+            <font size="3">
+                <b>网络定义及功能？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                定义：是指把若干台地理位置不同，且具有独立功能的计算机，由通信设备和线路相互连接起来，通过通信协议实现数据传输和资源共享。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">功能：资源共享与数据通信</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor002">
+            ②
+            <font size="3">
+                <b>网络协议三部分组成？</b>
+            </font>
+            <font size="3">语义、语法、时序</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">③
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>IP</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>地址两部分组成？
+                </b>
+            </font>
+            <font size="3">前缀和后缀（地址前缀是网络地址，地址后缀是主机地址）</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">④
+            <font size="3">
+                <b>常用端口号？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">FTP
+                        21
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">TELNET
+                        23
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">SMTP
+                        25
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">DNS
+                        53
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">DHCP
+                        67
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">TFTP
+                        69
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">HTTP
+                        80
+                    </span>
+                </font>
+            </font>
+            <font size="3">；</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">SNMP
+                        161
+                    </span>
+                </font>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor003">⑤
+            <font size="3">
+                <b>通信子网定义？资源子网定义？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">通信子网定义：是指网络中实现网络通信功能的设备及其</font>
+            <a href="http://baike.baidu.com/view/37.htm">
+                <span style="background: #ffffff">
+                    <font
+                            size="3">软件
+                    </font>
+                </span>
+            </a>
+            <font
+                    size="3">的集合
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">,
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">通信设备、
+            </font>
+            <a href="http://baike.baidu.com/view/245513.htm">
+                <span style="background: #ffffff">
+                    <font
+                            size="3">网络通信协议
+                    </font>
+                </span>
+            </a>
+            <font
+                    size="3">、通信控制软件等属于通信子网，是网络的内层，负责信息的传输。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">资源子网定义：是指网络主机、终端及其附属设备等，构成了网络的基本资源</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">,</font>
+                </span>
+            </font>
+            <font
+                    size="3">主要负责数据处理任务。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor004">
+            <font color="#ff0000">⑥
+                <font face="Calibri, sans-serif">P2P</font>
+            </font>
+            <font color="#ff0000">技术传输原理？基本原理？</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            color="#ff0000">***
+                    </font>
+                </span>
+            </font>
+            <font color="#ff0000">仅供参考</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font color="#ff0000">***</font>
+                </span>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">对等连接</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">(peer-to-peer
+                    </span>
+                </font>
+            </font>
+            <font size="3">，即</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">P2P)</span>
+                </font>
+            </font>
+            <font size="3">是指两个主机在通信时并不区分哪一个是服务请求方还是服务提供方。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">原理：只要两个主机都运行了对等连接软件（</font>
+            <font
+                    face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">P2P
+                    </span>
+                </font>
+            </font>
+            <font size="3">软件），它们就可以进行平等的、对等连接通信。双方都可以下载对方已经存储在硬盘中的共享文档。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor005">⑦
+            <font size="3">
+                <span lang="zh-CN">
+                    <b>交换寻址与路由寻址区别？</b>
+                </span>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <span lang="zh-CN">交换寻址：使用</span>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">
+                        <span
+                                lang="en-US">ARP
+                        </span>
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">
+                <span lang="zh-CN">协议在本地子网内，主机和主机、主机和交换机、交换机和交换设备之间的寻址</span>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">路由寻址：本地主机和其他网络子网主机之间通过路由设备交换路由信息寻找目的主机网络</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（二、三）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor006">①
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>OSI</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>七层名称按顺序及功能？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">物理层：最底层是提供网内两系统间的物理接口，利用传输介质为数据链路层提供物理连接，实现比特流的传输。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">数据链路层：把物理层提供的数据打包成帧，并负责帧在计算机之间的无差错传递。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">网络层：路由选择、拥塞控制和网络互连等。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">传输层：为主机间提供端到端的传输服务，透明的传送报文。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">会话层：维护节点之间两个进程间的通信，并对数据传输进行管理。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">表示层：主要为应用进程之间传送的信息提供表示方式的服务，包括数据格式变换、数据加密与解密等。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">应用层：直接面向用户，负责两个应用进程之间的通信，提供网络应用服务。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor007">②
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>TCP/IP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>五层名称按顺序及与</b>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">
+                        <b>OSI</b>
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">
+                <b>七层对应关系？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <img src="internet_html_213753bb.png" name="graphics1" align="left" width="550"
+                 height="527" border="0" alt="layer"/>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor008">③
+            <font size="3">
+                <b>物理层常见三种传输介质？
+                </b>
+            </font>
+            <font size="3">同轴电缆、双绞线、光纤</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor009">④
+            <font size="3">
+                <b>数据链路层的信道有哪两种？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">点对点信道：使用一对一的点对点通信方式。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">广播信道：使用一对多的广播通信方式。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑤
+            <font size="3">
+                <b>数据链路层透明传输的概念及使用的两种方法？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">概念：为了防止数据中的信息被误认为是控制信息，在不是控制信息的特定字符前加转义符。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">两种方法：字节填充、字符填充</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor010">⑥
+            <font size="3">
+                <b>数据链路层采用的校验方法？
+                </b>
+            </font>
+            <font size="3">循环冗余检验</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">CRC
+                    </font>
+                </span>
+            </font>
+            <font size="3">的检错技术</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor011">⑦
+            <font size="3">
+                <b>以太网帧的最大长度？
+                </b>
+            </font>
+            <font size="3">有效的</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">MAC
+                    </font>
+                </span>
+            </font>
+            <font size="3">帧长度为</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font
+                            size="3">64
+                        ~ 1518
+                    </font>
+                </span>
+            </font>
+            <font size="3">字节之间，小于</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">64
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">或大于
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">1518
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">均丢弃处理。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor012">⑧
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>CSMA/CD</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>工作原理？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">CSMA/CD
+                    </span>
+                </font>
+            </font>
+            <font size="3">即：多点接入下的载波侦听与冲突检测</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                原理：某站点想要发送数据，必须首先侦听信道；如信道空闲，立即发送数据并进行冲突检测；如信道忙，继续侦听信道直到变为空闲，才继续发送数据并进行冲突检测。如站点发送数据过程中检测到冲突，将立即停止发送数据并等待一个随机长的时间，并重复以上过程。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑨
+            <font size="3">
+                <b>什么是冲突域？什么是广播域？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">冲突域：所有直接连接在一起的，而且必须竞争以太网总线资源的节点都可以认为是处在同一个冲突域中，即一次只有一个设备发送信息，其他的只能等待的一个区域。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">广播域：是一个逻辑上的计算机组，该组内的所有计算机都会收到同样的广播信息。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（四）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor013">①
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>ARP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>与</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">
+                        <b>RARP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>协议的作用？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">ARP
+                    </span>
+                </font>
+            </font>
+            <font size="3">（地址解析协议）：将</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">IP
+                    </span>
+                </font>
+            </font>
+            <font size="3">地址转换成</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">MAC
+                    </span>
+                </font>
+            </font>
+            <font size="3">硬件地址</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">RARP
+                    </span>
+                </font>
+            </font>
+            <font size="3">（反向地址解析协议）：将</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">MAC</span>
+                </font>
+            </font>
+            <font size="3">硬件地址转换成</font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">IP</span>
+                </font>
+            </font>
+            <font size="3">地址</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">②
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>ICMP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>协议</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">
+                        <b>ping
+                        </b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>、</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>tracert
+                        </b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">ICMP
+                    </span>
+                </font>
+            </font>
+            <font size="3">（控制报文协议）应用：</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">PING
+                    </span>
+                </font>
+            </font>
+            <font size="3">用来测试两个主机之间的连通性；</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">TRACERT
+                    </span>
+                </font>
+            </font>
+            <font size="3">路由跟踪实用程序，用于确定</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">IP
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">数据报访问目标所采取的路径。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor014">③
+            <font size="3">
+                <b>常见动态路由协议三个？特点？适合那种环境应用？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">RIP
+                    </span>
+                </font>
+            </font>
+            <font size="3">（路由信息协议），特点：实现简单，开销较小，限制了网络的规模，它能使用的最大距离为</font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">15</span>
+                </font>
+            </font>
+            <font
+                    size="3">即只能包含
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">15</span>
+                </font>
+            </font>
+            <font
+                    size="3">个路由器（
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">16</span>
+                </font>
+            </font>
+            <font
+                    size="3">表示目的不可达）。只适用于小型互联网。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">OSPF
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">（最短路径优先），特点：链路状态数据库能较快地进行更新，且更新过程收敛快。数据报很短并可减少路由信息的通信量。适用于互联网规模很大时及
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">AS</span>
+                </font>
+            </font>
+            <font size="3">内部。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">BGP
+                    </span>
+                </font>
+            </font>
+            <font size="3">（边界网关协议），特点：</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">BGP</span>
+                </font>
+            </font>
+            <font size="3">的邻站是交换整个的</font>
+            <font
+                    face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">BGP</span>
+                </font>
+            </font>
+            <font
+                    size="3">路由表，以后只需要在发生变化时更新有变化的部分，可节省网络带宽和减少路由器的处理开销。适用于不同
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">AS
+                    </span>
+                </font>
+            </font>
+            <font size="3">之间的边界路由信息获取。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor015">
+            <font size="3">
+                <b>（五）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">①
+            <font size="3">
+                <b>传输层</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">
+                        <b>TCP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>、</b>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">
+                        <b>UDP</b>
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">
+                <b>、</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>IP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>那个是面向连接可靠传输？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">TCP
+                    </span>
+                </font>
+            </font>
+            <font size="3">是面向连接的可靠数据传输（面向字节流）</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">UDP
+                    </span>
+                </font>
+            </font>
+            <font size="3">是面向无连接的不可靠数据传输（面向报文）</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">IP
+                    </span>
+                </font>
+            </font>
+            <font size="3">是面向无连接的不可靠数据传输</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor016">②
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>UDP</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>协议头部信息那四部分？
+                </b>
+            </font>
+            <font size="3">源端口、目的端口、长度、检验和</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor017">③
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>TCP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>协议什么是端到端什么是点到点传输？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">每一条</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">TCP
+                    </span>
+                </font>
+            </font>
+            <font size="3">连接只能有两个端点，每一条
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">TCP
+                    </span>
+                </font>
+            </font>
+            <font size="3">连接只能是点对点的（一对一）。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">端口到端口是端到端传输，</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">IP
+                    </span>
+                </font>
+            </font>
+            <font size="3">到</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">IP
+                    </span>
+                </font>
+            </font>
+            <font size="3">是点到点传输</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor018">④
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>TCP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>协议实现可靠传输使用了什么？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">两个协议：停止等待协议、滑动窗口协议；一个方法：拥塞控制方法</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor019">
+            <font color="#ff0000">⑤
+                <font face="Calibri, sans-serif">
+                    <span
+                            lang="en-US">TCP
+                    </span>
+                </font>
+                协议三次握手过程？四次挥手过程？
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font color="#ff0000">（自行描述）</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（六）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor020">①
+            <font size="3">
+                <b>什么是客户</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">
+                        <b>/</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>服务器模式？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">客户服务器方式所描述的是进程之间服务和被服务的关系。客户是服务请求方，服务器是服务提供方。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">②
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>DNS</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>服务是什么服务？用什么端口？
+                </b>
+            </font>
+            <font size="3">域名解析服务，</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">53
+                    </font>
+                </span>
+            </font>
+            <font size="3">端口。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">③
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>FTP</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>协议端口号</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">
+                        <b>20</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>用于什么？</b>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">
+                        <b>21</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>用于什么？
+                </b>
+            </font>
+            <font size="3">端口</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">21
+                    </font>
+                </span>
+            </font>
+            <font size="3">用作控制连接，而端口</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font
+                            size="3">20
+                    </font>
+                </span>
+            </font>
+            <font size="3">用于数据连接。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">④
+            <font size="3">
+                <b>电子邮件</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">
+                        <b>POP3</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>、</b>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">
+                        <b>SMTP</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>使用的端口是？
+                </b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">POP3</font>
+                </span>
+            </font>
+            <font
+                    size="3">使用
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">110
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">端口，
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">SMTP
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">使用
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">25</font>
+                </span>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑤
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>SNMP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>三部分构成？</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>SNMP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>是那层的协议？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">SNMP
+                    </span>
+                </font>
+            </font>
+            <font size="3">本身、管理信息结构
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">SMI</span>
+                </font>
+            </font>
+            <font
+                    size="3">、管理信息库
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">MIB</span>
+                </font>
+            </font>
+            <font
+                    size="3">；应用层协议
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor021">
+            <font size="3">
+                <b>（七）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">①
+            <font size="3">
+                <b>局域网中常见的软件和硬件？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">硬件组成：主机（用户计算机，服务器）、交换机、路由器、线路（双绞线，光纤，无线）、其他网络设备（防火墙，磁盘阵列等）
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">软件组成：网络操作系统（</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">WINDOWS,
+                        LINUX
+                    </span>
+                </font>
+            </font>
+            <font size="3">）、用户计算机的操作系统、网络通信协议、各种应用软件、安全软件、网络管理软件、计费系统</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm" id="anchor022">②
+            <font size="3">
+                <b>交换机交换模式三种？
+                </b>
+            </font>
+            <font size="3">直接交换方式</font>
+            <font size="3">、</font>
+            <font size="3">存储转发方式、改进的直接交换方式</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">③
+            <font size="3">
+                <b>什么是虚拟局域网服务</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">
+                        <b>VLAN</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">建立在局域网交换机之上，它以软件的方式实现逻辑工作组的划分和管理，逻辑工作组的节点组成不受物理位置的限制。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">④
+            <font size="3">
+                <b>三层交换机与路由器区别？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>三层交换机</b>
+            </font>
+            <font
+                    size="3">
+                就是具有部分路由器功能的交换机，三层交换机的最重要目的是加快大型局域网内部的数据交换，所具有的路由功能也是为这目的服务的，能够做到一次路由，多次转发。对于数据包转发等规律性的过程由硬件高速实现，而象路由信息更新、路由表维护、路由计算、路由确定等功能，由软件实现。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>路由器</b>
+            </font>
+            <font
+                    size="3">是用于连接多个逻辑上分开的网络，根据信道的情况自动选择和设定路由的网络设备。一般具有多个网络接口。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑤
+            <font size="3">
+                <b>一般网络的分层三个？
+                </b>
+            </font>
+            <font size="3">核心层、汇聚层、接入层；接入层直连到用户</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（八）</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">①
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>BSSIP</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>、</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>ESSIP</b>
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">
+                <b>德含义？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">BSSID
+                    </font>
+                </span>
+            </font>
+            <font size="3">：基本服务集标识。接入点的</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">MAC
+                    </font>
+                </span>
+            </font>
+            <font size="3">地址，不可修改</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">ESSID
+                    </font>
+                </span>
+            </font>
+            <font size="3">：扩展服务集标识。即通常所说的</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">SSID
+                    </font>
+                </span>
+            </font>
+            <font size="3">，可修改。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">②
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>CSMA/CA</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>与</b>
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">
+                        <b>CSMA/CD</b>
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">
+                <b>比较增加了哪些功能及协议？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">增加一个碰撞避免功能，还增加使用停止等待协议。而且考虑可能有其他高优先级的帧要发送，避让高优先级帧先发送。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">③
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>802.11</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>数据帧地址与普通数据帧地址区别？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">多个地址</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">4
+                    </span>
+                </font>
+            </font>
+            <font size="3">（用于自组网络）和</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">AP</span>
+                </font>
+            </font>
+            <font size="3">地址</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">802.11
+                    </span>
+                </font>
+            </font>
+            <font size="3">由</font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">4
+                    </span>
+                </font>
+            </font>
+            <font
+                    size="3">部分组成：源地址、目的地址、
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">AP
+                    </span>
+                </font>
+            </font>
+            <font size="3">地址、自组网地址，还可分为主机到</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">AP</span>
+                </font>
+            </font>
+            <font size="3">或</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">AP</span>
+                </font>
+            </font>
+            <font size="3">到主机</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">普通只有</font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">2
+                    </span>
+                </font>
+            </font>
+            <font size="3">部分：源地址、目的地址</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">④
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>IPV6</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>地址表示方法及缩略表示方法？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">同一个地址不同表示法的例子：</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">0001:0123:0000:0000:0000:ABCD:0000:0001/96</span>
+                </font>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">1:123:0:0:0:ABCD:0:1/96</span>
+                </font>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span lang="en-US">1:123::ABCD:0:1/96</span>
+                </font>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">128</font>
+                </span>
+            </font>
+            <font size="3">位长：用冒号将</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">128
+                    </font>
+                </span>
+            </font>
+            <font size="3">比特分割成</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">8</font>
+                </span>
+            </font>
+            <font size="3">个</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">2</font>
+                </span>
+            </font>
+            <font size="3">字节的部分，每个部分包括</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">4</font>
+                </span>
+            </font>
+            <font size="3">位的</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">16</font>
+                </span>
+            </font>
+            <font size="3">进制数字</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                <b>（九）只有</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span
+                            lang="en-US">
+                        <b>4</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>分不考简答</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">①
+            <font size="3">
+                <b>完全威胁四种？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">(1)
+                    </font>
+                </span>
+            </font>
+            <font size="3">截获——从网络上窃听他人的通信内容。</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">(2)
+                    </font>
+                </span>
+            </font>
+            <font size="3">中断——有意中断他人在网络上的通信。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">(3)
+                    </font>
+                </span>
+            </font>
+            <font size="3">篡改——故意篡改网络上传送的报文。
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">(4)
+                    </font>
+                </span>
+            </font>
+            <font size="3">伪造——伪造信息在网络上传送。</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">②
+            <font size="3">
+                <b>木马程序的两个组成部分？
+                </b>
+            </font>
+            <font size="3">服务器程序和控制器程序</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">③
+            <font size="3">
+                <b>什么是</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font
+                        size="3">
+                    <span lang="en-US">
+                        <b>DOS</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>攻击？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">的目的是使计算机或网络无法提供正常的服务。即使用极大的通信量冲击网络系统，使得所有可用网络资源都被消耗殆尽，最后导致网络系统无法向合法的用户提供服务。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">④
+            <font size="3">
+                <b>常见对</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">
+                        <b>DNS</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>服务器的攻击方法？
+                </b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">DoS</font>
+                </span>
+            </font>
+            <font
+                    size="3">攻击、
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">DNS
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">欺骗、病毒干扰；最常用的方式：
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">DNS
+                    </font>
+                </span>
+            </font>
+            <font size="3">欺骗</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑤
+            <font size="3">
+                <b>什么是非对称加密体制或什么是公钥加密体制？（</b>
+            </font>
+            <font
+                    size="3">非对称加密
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">=
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">公钥加密体制
+            </font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">=
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">分传统加密）
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">
+                公钥密码体制：使用不同的加密密钥与解密密钥，是一种“由已知加密密钥推导出解密密钥在计算上是不可行的”密码体制。特点：凡由公钥加密的信息，只能由私钥进行解密；凡由私钥加密的信息，只能由公钥进行解密。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑥
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>IPSec</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">
+                <b>有那三个协议组成？
+                </b>
+            </font>
+            <font size="3">两个安全协议</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">
+                        <b>AH</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">和</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">
+                        <b>ESP</b>
+                    </font>
+                </span>
+            </font>
+            <font size="3">及密钥管理协议</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">
+                        <b>IKE</b>
+                    </font>
+                </span>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑦
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>IPSec</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>网络层协议，</b>
+            </font>
+            <font face="Calibri, sans-serif">
+                <font size="3">
+                    <span
+                            lang="en-US">
+                        <b>SSL</b>
+                    </span>
+                </font>
+            </font>
+            <font size="3">
+                <b>应用层协议</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">IPSEC
+                    </font>
+                </span>
+            </font>
+            <font size="3">（因特网安全协议），是一个第三层</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">VPN
+                    </font>
+                </span>
+            </font>
+            <font size="3">协议标准</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font
+                            size="3">,
+                    </font>
+                </span>
+            </font>
+            <font size="3">它支持信息通过</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">IP
+                    </font>
+                </span>
+            </font>
+            <font size="3">公网的安全传输。兼容设备在</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">OSI
+                    </font>
+                </span>
+            </font>
+            <font size="3">模型的第三层</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">(
+                    </font>
+                </span>
+            </font>
+            <font size="3">网络层</font>
+            <font face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font
+                            size="3">)
+                    </font>
+                </span>
+            </font>
+            <font size="3">提供加密、验证、授权、管理</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">,
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">对于用户来说是透明的。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">SSL</font>
+                </span>
+            </font>
+            <font size="3">（安全套接字层）协议，</font>
+            <font face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font
+                            size="3">SSL
+                    </font>
+                </span>
+            </font>
+            <font size="3">是使用公钥和对称密钥技术的安全网络通讯协议。</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span
+                        lang="en-US">
+                    <font size="3">SSL</font>
+                </span>
+            </font>
+            <font size="3">指定了一种在应用层协议（如</font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">
+                        <b>HTTP</b>
+                    </font>
+                </span>
+            </font>
+            <font
+                    size="3">、
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">Telnet</font>
+                </span>
+            </font>
+            <font
+                    size="3">、
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">NNTP</font>
+                </span>
+            </font>
+            <font
+                    size="3">和
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">FTP</font>
+                </span>
+            </font>
+            <font
+                    size="3">等）和
+            </font>
+            <font
+                    face="Calibri, sans-serif">
+                <span lang="en-US">
+                    <font size="3">TCP</font>
+                </span>
+            </font>
+            <font
+                    size="3">协议之间提供数据安全性分层的机制。
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">⑧
+            <font size="3">
+                <b>防火墙的两个基本设置策略？</b>
+            </font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">除非明确不准许，否则准许某种服务（默认全部通过）</font>
+        </p>
+
+        <p class="cjk" style="margin-bottom: 0cm">
+            <font size="3">除非明确准许，否则将禁止某种服务（默认全部不许通过）</font>
+        </p>
+    </body>
 </html>
