@@ -117,5 +117,162 @@
         <title>多媒体复习资料</title>
         <ename>media.xhtml</ename>
         <path>./res/book4/media.xhtml</path>
+        <nvp>
+            <label>1 多媒体的概念</label>
+            <href>media.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>2 多媒体的分类</label>
+            <href>media.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>3 多媒体技术包括</label>
+            <href>media.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>4 CDROM工作原理</label>
+            <href>media.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>5 VCD</label>
+            <href>media.xhtml#anchor005</href>
+        </nvp>
+        <nvp>
+            <label>6 DVD</label>
+            <href>media.xhtml#anchor006</href>
+        </nvp>
+        <nvp>
+            <label>7 显卡的作用</label>
+            <href>media.xhtml#anchor007</href>
+        </nvp>
+        <nvp>
+            <label>8 多媒体的概念</label>
+            <href>media.xhtml#anchor008</href>
+        </nvp>
+        <nvp>
+            <label>9 CRT阴极射线管</label>
+            <href>media.xhtml#anchor009</href>
+        </nvp>
+        <nvp>
+            <label>10 声卡的作用</label>
+            <href>media.xhtml#anchor0010</href>
+        </nvp>
+        <nvp>
+            <label>11 触摸屏原理</label>
+            <href>media.xhtml#anchor011</href>
+        </nvp>
+        <nvp>
+            <label>12 扫描仪分类</label>
+            <href>media.xhtml#anchor012</href>
+        </nvp>
+        <nvp>
+            <label>13 数码相机的工作原理</label>
+            <href>media.xhtml#anchor013</href>
+        </nvp>
+        <nvp>
+            <label>14 色彩的来源</label>
+            <href>media.xhtml#anchor014</href>
+        </nvp>
+        <nvp>
+            <label>15 三元色</label>
+            <href>media.xhtml#anchor015</href>
+        </nvp>
+        <nvp>
+            <label>16 色彩的三要素</label>
+            <href>media.xhtml#anchor016</href>
+        </nvp>
+        <nvp>
+            <label>17 色彩空间</label>
+            <href>media.xhtml#anchor017</href>
+        </nvp>
+        <nvp>
+            <label>18 数字图像 矢量、位图</label>
+            <href>media.xhtml#anchor018</href>
+        </nvp>
+        <nvp>
+            <label>19 图像深度和色彩类型</label>
+            <href>media.xhtml#anchor019</href>
+        </nvp>
+        <nvp>
+            <label>20 直接色 调配色</label>
+            <href>media.xhtml#anchor020</href>
+        </nvp>
+        <nvp>
+            <label>21 抖动方法</label>
+            <href>media.xhtml#anchor021</href>
+        </nvp>
+        <nvp>
+            <label>22 图像的直方图</label>
+            <href>media.xhtml#anchor022</href>
+        </nvp>
+        <nvp>
+            <label>23 图像数据的数据亮度计算</label>
+            <href>media.xhtml#anchor023</href>
+        </nvp>
+        <nvp>
+            <label>24 图像数据量</label>
+            <href>media.xhtml#anchor024</href>
+        </nvp>
+        <nvp>
+            <label>25 动画的概念</label>
+            <href>media.xhtml#anchor025</href>
+        </nvp>
+        <nvp>
+            <label>26 视觉残留原理</label>
+            <href>media.xhtml#anchor026</href>
+        </nvp>
+        <nvp>
+            <label>27 计算机动画的概念</label>
+            <href>media.xhtml#anchor027</href>
+        </nvp>
+        <nvp>
+            <label>28 音频的概念</label>
+            <href>media.xhtml#anchor028</href>
+        </nvp>
+        <nvp>
+            <label>29 声音的三要素</label>
+            <href>media.xhtml#anchor029</href>
+        </nvp>
+        <nvp>
+            <label>30 音频带宽</label>
+            <href>media.xhtml#anchor030</href>
+        </nvp>
+        <nvp>
+            <label>31 模拟信号数字化的方法</label>
+            <href>media.xhtml#anchor031</href>
+        </nvp>
+        <nvp>
+            <label>32 采样定理</label>
+            <href>media.xhtml#anchor032</href>
+        </nvp>
+        <nvp>
+            <label>33 音频数据率与数据量的计算</label>
+            <href>media.xhtml#anchor033</href>
+        </nvp>
+        <nvp>
+            <label>34 MIDI原理</label>
+            <href>media.xhtml#anchor034</href>
+        </nvp>
+        <nvp>
+            <label>35 MIDI音乐合成的两种方法</label>
+            <href>media.xhtml#anchor035</href>
+        </nvp>
+        <nvp>
+            <label>36 容量计算 重要</label>
+            <href>media.xhtml#anchor036</href>
+        </nvp>
+        <nvp>
+            <label>37 常见的冗余类别</label>
+            <href>media.xhtml#anchor037</href>
+        </nvp>
+        <nvp>
+            <label>38 压缩的分类</label>
+            <href>media.xhtml#anchor038</href>
+        </nvp>
+        <nvp>
+            <label>39 常见的压缩编码算法</label>
+            <href>media.xhtml#anchor039</href>
+        </nvp>
+
     </chapter>
 </epubmake>
