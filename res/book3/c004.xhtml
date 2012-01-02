@@ -60,11 +60,25 @@ w = (逻辑地址/页的大小)<sub>取余</sub> ＝ (4000 - 1024x3) = 928。<br
 <h3>先进先出淘汰算法(FIFO)</h3><br/>
 当淘汰一页时，选择在主存驻留时间最长的那一页。操作系统维护一张当前页表。<br/>
 <table border="1">
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-</table>
+    <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>4</td><td>4</td><td>2</td><td>3</td><td>3</td></tr>
+    <tr><td> </td><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>1</td><td>1</td><td>4</td><td>2</td><td>2</td></tr>
+    <tr><td> </td><td> </td><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>0</td><td>0</td><td>1</td><td>4</td><td>4</td></tr>
+    <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>S</td><td>S</td><td>F</td><td>F</td><td>S</td></tr>
+</table><br/>
+<h3>最近最少使用的页面淘汰算法(LRU)</h3><br/>
+淘汰那些在最近一段时间里最少使用的一页。它是根据程序执行时所具有的局部性原理考虑的。指在一段时间内，进程集中
+在一组子程序或循环中执行，导致所有的存储器访问局限于进程地址空间的一个固定子集。<br/>
+LRU算法选择上次访问时间距当前最远的页淘汰。<br/>
+利用堆栈记录页的使用情况。每当一个页被引用时，该页总放在栈顶。<br/>
+<table border="1">
+    <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+    <tr><td> </td><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+    <tr><td> </td><td> </td><td>0</td><td>1</td><td>2</td><td>3</td><td>0</td><td>1</td><td>4</td><td>0</td><td>1</td><td>2</td></tr>
+    <tr><td> </td><td> </td><td> </td><td>0</td><td>1</td><td>2</td><td>3</td><td>3</td><td>3</td><td>4</td><td>0</td><td>1</td></tr>
+    <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>S</td><td>F</td><td>S</td><td>S</td><td>F</td><td>F</td><td>F</td></tr>
+</table><br/>
+
 </body>
 </html>
