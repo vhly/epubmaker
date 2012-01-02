@@ -29,4 +29,23 @@
         <ename>c003.xhtml</ename>
         <path>./res/book3/c003.xhtml</path>
     </chapter>
+
+    <chapter>
+        <title>第四章 存储器管理</title>
+        <ename>c004.xhtml</ename>
+        <path>./res/book3/c004.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第五章 文件系统</title>
+        <ename>c005.xhtml</ename>
+        <path>./res/book3/c005.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第六章 设备管理</title>
+        <ename>c006.xhtml</ename>
+        <path>./res/book3/c006.xhtml</path>
+    </chapter>
+
 </epubmake>
