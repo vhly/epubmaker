@@ -13,39 +13,190 @@
         <title>第一章</title>
         <ename>c001.xhtml</ename>
         <path>./res/book3/c001.xhtml</path>
-        <!--<nvp>-->
-            <!--<label>软件危机的介绍</label>-->
-            <!--<href>c001.xhtml#anchor_01</href>-->
-        <!--</nvp>-->
+        <nvp>
+            <label>操作系统的定义</label>
+            <href>c001.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>操作系统的设计目标</label>
+            <href>c001.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>系统调用</label>
+            <href>c001.xhtml#anchor003</href>
+        </nvp>
     </chapter>
     <chapter>
         <title>第二章 进程与作业</title>
         <ename>c002.xhtml</ename>
         <path>./res/book3/c002.xhtml</path>
+        <nvp>
+            <label>进程的概念</label>
+            <href>c002.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>进程与程序的联系和区别</label>
+            <href>c002.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>进程的状态</label>
+            <href>c002.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>作业管理</label>
+            <href>c002.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>作业调度练习题</label>
+            <href>c002.xhtml#anchor005</href>
+        </nvp>
     </chapter>
 
     <chapter>
         <title>第三章 进程并发</title>
         <ename>c003.xhtml</ename>
         <path>./res/book3/c003.xhtml</path>
+        <nvp>
+            <label>进程之间的同步</label>
+            <href>c003.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>进程间的互斥</label>
+            <href>c003.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>信号量和P,V操作</label>
+            <href>c003.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>利用信号量实现进程之间的互斥</label>
+            <href>c003.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>生产者和消费者问题</label>
+            <href>c003.xhtml#anchor005</href>
+        </nvp>
+        <nvp>
+            <label>死锁</label>
+            <href>c003.xhtml#anchor006</href>
+        </nvp>
+        <nvp>
+            <label>死锁的定义和死锁产生的必要条件</label>
+            <href>c003.xhtml#anchor007</href>
+        </nvp>
+        <nvp>
+            <label>死锁产生的必要条件</label>
+            <href>c003.xhtml#anchor008</href>
+        </nvp>
+        <nvp>
+            <label>死锁产生的原因</label>
+            <href>c003.xhtml#anchor009</href>
+        </nvp>
+        <nvp>
+            <label>解决死锁的方法</label>
+            <href>c003.xhtml#anchor010</href>
+        </nvp>
+        <nvp>
+            <label>银行家算法</label>
+            <href>c003.xhtml#anchor011</href>
+        </nvp>
+
     </chapter>
 
     <chapter>
         <title>第四章 存储器管理</title>
         <ename>c004.xhtml</ename>
         <path>./res/book3/c004.xhtml</path>
+        <nvp>
+            <label>固定式分区</label>
+            <href>c004.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>可变式分区</label>
+            <href>c004.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>可变式分区和固定式分区的比较</label>
+            <href>c004.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>虚拟存储器的概念</label>
+            <href>c004.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>页式存储器管理</label>
+            <href>c004.xhtml#anchor005</href>
+        </nvp>
+        <nvp>
+            <label>页式动态地址变换</label>
+            <href>c004.xhtml#anchor006</href>
+        </nvp>
+        <nvp>
+            <label>覆盖与交换技术</label>
+            <href>c004.xhtml#anchor007</href>
+        </nvp>
+        <nvp>
+            <label>交换</label>
+            <href>c004.xhtml#anchor008</href>
+        </nvp>
+        <nvp>
+            <label>页面淘汰算法</label>
+            <href>c004.xhtml#anchor009</href>
+        </nvp>
+        <nvp>
+            <label>先进先出淘汰算法</label>
+            <href>c004.xhtml#anchor010</href>
+        </nvp>
+        <nvp>
+            <label>最近最少使用的页面淘汰算法</label>
+            <href>c004.xhtml#anchor011</href>
+        </nvp>
+
     </chapter>
 
     <chapter>
         <title>第五章 文件系统</title>
         <ename>c005.xhtml</ename>
         <path>./res/book3/c005.xhtml</path>
+        <nvp>
+            <label>文件的逻辑结构</label>
+            <href>c005.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>文件的物理结构</label>
+            <href>c005.xhtml#anchor002</href>
+        </nvp>
+
     </chapter>
 
     <chapter>
         <title>第六章 设备管理</title>
         <ename>c006.xhtml</ename>
         <path>./res/book3/c006.xhtml</path>
+        <nvp>
+            <label>IO设备分类</label>
+            <href>c006.xhtml#anchor001</href>
+        </nvp>
+        <nvp>
+            <label>IO数据传输的控制方式</label>
+            <href>c006.xhtml#anchor002</href>
+        </nvp>
+        <nvp>
+            <label>磁盘上的数据访问时间由哪些部分组成</label>
+            <href>c006.xhtml#anchor003</href>
+        </nvp>
+        <nvp>
+            <label>DMA</label>
+            <href>c006.xhtml#anchor004</href>
+        </nvp>
+        <nvp>
+            <label>通道方式</label>
+            <href>c006.xhtml#anchor005</href>
+        </nvp>
+        <nvp>
+            <label>DMA与通道的区别</label>
+            <href>c006.xhtml#anchor006</href>
+        </nvp>
     </chapter>
 
 </epubmake>
