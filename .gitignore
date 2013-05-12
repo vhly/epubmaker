@@ -7,7 +7,7 @@ bin/
 *.ipr
 
 # test file
-MakeTest.epub
+*.epub
 
 # OS autogen
 .DS_Store
