@@ -27,7 +27,7 @@ public class NCX implements ZIPContent, ContentParser {
 
     private Vector<NavPoint> map;
 
-    private String entryName = "OEBPS/toc.ncx";
+    private String entryName = Constants.defaultFolder + "/" + "toc.ncx";
 
     private OPF opf;
 

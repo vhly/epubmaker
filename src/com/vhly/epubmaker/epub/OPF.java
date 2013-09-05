@@ -43,7 +43,7 @@ public class OPF implements ZIPContent, ContentParser {
      */
     private NCX toc;
 
-    private String entryName = "OEBPS/content.opf";
+    private String entryName = Constants.defaultFolder + "/" + "content.opf";
 
     public OPF() {
         metadata = new Metadata();

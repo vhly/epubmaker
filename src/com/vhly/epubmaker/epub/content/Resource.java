@@ -1,5 +1,6 @@
 package com.vhly.epubmaker.epub.content;
 
+import com.vhly.epubmaker.epub.Constants;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.MediaType;
 import com.vhly.epubmaker.epub.ZIPContent;
@@ -102,7 +103,7 @@ public class Resource implements Content, ZIPContent {
      */
     public String getEntryName() {
         if (en == null) {
-            en = "OEBPS/" + resItem.href;
+            en = Constants.defaultFolder + "/" + resItem.href;
         }
         return en;
     }

@@ -1,5 +1,6 @@
 package com.vhly.epubmaker.epub.content;
 
+import com.vhly.epubmaker.epub.Constants;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.MediaType;
 import com.vhly.epubmaker.epub.ZIPContent;
@@ -20,7 +21,8 @@ public class Chapter implements Content, ZIPContent {
 
     /**
      * Create a Chapter with href and cotent
-     * @param href url
+     *
+     * @param href        url
      * @param pageContent byte[] data for Chapter
      * @return Chapter
      */
@@ -71,8 +73,8 @@ public class Chapter implements Content, ZIPContent {
      * @param ename Entry name
      */
     public void setEntryName(String ename) {
-        if (!ename.startsWith("OEBPS/")) {
-            ename = "OEBPS/" + ename;
+        if (!ename.startsWith(Constants.defaultFolder + "/")) {
+            ename = Constants.defaultFolder + "/" + ename;
         }
         entryName = ename;
     }
@@ -153,8 +155,8 @@ public class Chapter implements Content, ZIPContent {
     }
 
     public void save(DataOutputStream dout) throws IOException {
-        if(content == null || content.length == 0){
-            if(pageContent != null){
+        if (content == null || content.length == 0) {
+            if (pageContent != null) {
                 try {
                     content = pageContent.getBytes("UTF-8");
                 } catch (UnsupportedEncodingException e) {
@@ -162,22 +164,22 @@ public class Chapter implements Content, ZIPContent {
                 }
             }
         }
-        if(content != null && content.length > 0){
+        if (content != null && content.length > 0) {
             dout.write(content);
         }
     }
 
-    public void appendNVPS(Vector<NavPoint> nps){
-        if(nps != null){
-            if(!nps.isEmpty()){
+    public void appendNVPS(Vector<NavPoint> nps) {
+        if (nps != null) {
+            if (!nps.isEmpty()) {
                 nvps.addAll(nps);
             }
         }
     }
 
-    public NavPoint[] getSubNPS(){
+    public NavPoint[] getSubNPS() {
         NavPoint[] ret = null;
-        if(nvps != null && !nvps.isEmpty()){
+        if (nvps != null && !nvps.isEmpty()) {
             int size = nvps.size();
             ret = new NavPoint[size];
             nvps.copyInto(ret);

@@ -25,10 +25,6 @@ import java.util.zip.ZipOutputStream;
  * EPub File, .epub file is a zip file actually.
  */
 public class EPubFile {
-    /**
-     * Default book content folder.
-     */
-    private String defaultFolder = "OEBPS";
 
     /**
      * MIME Type
