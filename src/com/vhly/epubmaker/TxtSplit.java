@@ -117,7 +117,7 @@ public class TxtSplit {
                                         printHead(pw, title);
 
                                     } else {
-                                        sb.append('\n').append(line).append("<br/>");
+                                        sb.append("\n<p>").append(line).append("</p>");
                                     }
                                 }
                             }
@@ -155,14 +155,18 @@ public class TxtSplit {
         if (pw != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
-            sb.append("<html><head>");
+            sb.append("<!DOCTYPE html\n" +
+                    "        PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\n" +
+                    "        \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
+                    "<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+            sb.append("<head>");
             if (title != null) {
                 sb.append("<title>").append(title).append("</title>");
             }
             sb.append("<meta name=\"author\" content=\"ePubMaker(vhly)\"/>");
             sb.append("</head>");
             sb.append("<body>\n");
-            sb.append("<h2>").append(title).append("</h2><br/>");
+            sb.append("<h2>").append(title).append("</h2>");
             pw.print(sb.toString());
             sb = null;
         }
