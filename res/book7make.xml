@@ -1,0 +1,5617 @@
+<epubmake>
+    <title>暗黑之骷髅王</title>
+    <author>红莲公爵</author>
+    <uuid>5ade7cebf3284818985fb15826f6319a</uuid>
+    <description>穿越到《暗黑破坏神》的世界里，可是陈锋身为死灵法师，却只有召唤骷髅一个技能。
+        不过，陈锋的技能可以变异。
+        召唤变异骷髅，召唤精英骷髅！
+        召唤首领骷髅，召唤领主骷髅！
+        如果等级够了，我连巨龙天使的骷髅都能召唤出来！
+    </description>
+    <cover href="./AnheiKulouwang.jpg" type="image/jpeg"/>
+
+    <chapter>
+        <title>第1章 希望就在脚下</title>
+        <ename>00001.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00001.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第2章 召唤骷髅</title>
+        <ename>00002.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00002.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第3章 拉卡尼丘</title>
+        <ename>00003.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00003.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第4章 肉汤诱惑</title>
+        <ename>00004.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00004.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第5章 比哈洛加斯还要远的东方</title>
+        <ename>00005.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00005.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第6章 暗金神器――毒液牢房</title>
+        <ename>00006.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00006.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第7章 暗金强队</title>
+        <ename>00007.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00007.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第8章 萝格之城（上）</title>
+        <ename>00008.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00008.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第9章 萝格营地（下）</title>
+        <ename>00009.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00009.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第10章 2级了！</title>
+        <ename>00010.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00010.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第11章 精英僵尸</title>
+        <ename>00011.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00011.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第12章 烈火的沉沦魔法师</title>
+        <ename>00012.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00012.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第13章 回到萝格</title>
+        <ename>00013.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00013.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第14章 基德拍卖行</title>
+        <ename>00014.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00014.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第15章 天价布甲</title>
+        <ename>00015.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00015.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第16章 偷偷离开</title>
+        <ename>00016.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00016.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第17章 邪恶洞穴</title>
+        <ename>00017.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00017.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第18章 精英硬毛老鼠的逆袭</title>
+        <ename>00018.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00018.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第19章 野蛮人奎托斯</title>
+        <ename>00019.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00019.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第20章 阿尔布莱仕柯王子</title>
+        <ename>00020.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00020.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第21章 4级和矮人骷髅</title>
+        <ename>00021.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00021.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第22章 尸体发火的变异</title>
+        <ename>00022.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00022.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第23章 会火墙的沉沦魔法师</title>
+        <ename>00023.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00023.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第24章 恐怖的精英数量</title>
+        <ename>00024.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00024.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第25章 特别的“礼物”</title>
+        <ename>00025.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00025.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第26章 最终战役－尸体发火篇</title>
+        <ename>00026.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00026.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第27章 朱利安小队到来</title>
+        <ename>00027.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00027.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第28章 当面的警告</title>
+        <ename>00028.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00028.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第29章 尖锐惨叫</title>
+        <ename>00029.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00029.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第30章 维娜丽斯的惨死</title>
+        <ename>00030.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00030.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第31章 沉痛的回归</title>
+        <ename>00031.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00031.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第32章 从未见过的徽章</title>
+        <ename>00032.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00032.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第33章 无限技能点</title>
+        <ename>00033.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00033.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第34章 技能三书与最强勋章</title>
+        <ename>00034.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00034.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第35章 黑暗猎人</title>
+        <ename>00035.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00035.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第36章 堕落魔踪</title>
+        <ename>00036.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00036.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第37章 神器－天堂之心</title>
+        <ename>00037.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00037.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第38章 超级毕须博须军团</title>
+        <ename>00038.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00038.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第39章 骷髅法师？</title>
+        <ename>00039.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00039.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第40章 法师的烈焰风暴</title>
+        <ename>00040.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00040.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第41章 未知的瓶子</title>
+        <ename>00041.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00041.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第42章 塔玛・拉特</title>
+        <ename>00042.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00042.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第43章 未知怪物，请去登记</title>
+        <ename>00043.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00043.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第44章 卡珊娜</title>
+        <ename>00044.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00044.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第45章 不认识的暗金弓箭</title>
+        <ename>00045.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00045.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第46章 杀的还没复活的快</title>
+        <ename>00046.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00046.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第47章 问玫瑰小队去</title>
+        <ename>00047.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00047.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第48章 波路・耶奇</title>
+        <ename>00048.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00048.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第49章 决斗与最强赌注</title>
+        <ename>00049.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00049.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第50章 决斗开始！</title>
+        <ename>00050.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00050.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第51章 决斗开始</title>
+        <ename>00051.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00051.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第52章 钢铁石魔</title>
+        <ename>00052.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00052.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第53章 强大的骷髅弓箭手</title>
+        <ename>00053.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00053.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第54章 奇怪的老者</title>
+        <ename>00054.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00054.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第55章 冥河之水</title>
+        <ename>00055.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00055.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第56章 尼古拉斯</title>
+        <ename>00056.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00056.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第57章 巨大的剑齿兽</title>
+        <ename>00057.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00057.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第58章 依雷撒的袖口</title>
+        <ename>00058.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00058.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第59章 跑的比它快</title>
+        <ename>00059.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00059.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第60章 爆发的2件绿装</title>
+        <ename>00060.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00060.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第61章 进入遗忘之塔</title>
+        <ename>00061.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00061.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第62章 作呕的第五层</title>
+        <ename>00062.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00062.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第63章 高塔地牢的战斗（上）</title>
+        <ename>00063.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00063.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第64章 高塔地牢的战斗（下）</title>
+        <ename>00064.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00064.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第65章 召唤骷髅,LV10</title>
+        <ename>00065.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00065.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第66章 帝王骷髅</title>
+        <ename>00066.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00066.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第67章 巨兽来袭</title>
+        <ename>00067.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00067.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第68章 骨灰</title>
+        <ename>00068.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00068.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第69章 安达利尔出没</title>
+        <ename>00069.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00069.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第70章 恶魔武器</title>
+        <ename>00070.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00070.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第71章 强悍腰带</title>
+        <ename>00071.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00071.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第72章 凯恩的高收费</title>
+        <ename>00072.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00072.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第73章 真正的海量装备</title>
+        <ename>00073.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00073.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第74章 6岁的妹妹</title>
+        <ename>00074.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00074.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第75章 狄维娜归来</title>
+        <ename>00075.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00075.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第76章 新任务，崔斯特瑞姆</title>
+        <ename>00076.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00076.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第77章 铁壁骷髅</title>
+        <ename>00077.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00077.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第78章 强者，陈锋</title>
+        <ename>00078.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00078.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第79章 卡夏的计划</title>
+        <ename>00079.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00079.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第80章 最强新手神器</title>
+        <ename>00080.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00080.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第81章 最强西岗套</title>
+        <ename>00081.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00081.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第82章 出发</title>
+        <ename>00082.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00082.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第83章 复活的拉卡尼丘</title>
+        <ename>00083.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00083.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第84章 卷轴，符文，大门</title>
+        <ename>00084.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00084.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第85章 大门开启</title>
+        <ename>00085.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00085.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第86章 流氓骷髅？</title>
+        <ename>00086.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00086.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第87章 败家骷髅</title>
+        <ename>00087.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00087.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第88章 恐怖的自爆</title>
+        <ename>00088.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00088.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第89章 自爆的毛蛋</title>
+        <ename>00089.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00089.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第90章 格里斯华尔德</title>
+        <ename>00090.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00090.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第91章 它出来了？</title>
+        <ename>00091.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00091.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第92章 升级了</title>
+        <ename>00092.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00092.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第93章 骷髅王－李奥瑞克王</title>
+        <ename>00093.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00093.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第94章 这是一个阴谋</title>
+        <ename>00094.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00094.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第95章 逃出去了</title>
+        <ename>00095.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00095.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第96章 这就是天赐装备</title>
+        <ename>00096.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00096.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第97章 让你住就住，你还得瑟了！</title>
+        <ename>00097.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00097.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第98章 装备的分类</title>
+        <ename>00098.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00098.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第99章 骷髅轿子</title>
+        <ename>00099.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00099.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第100章 又见女伯爵</title>
+        <ename>00100.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00100.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第101章 发财了</title>
+        <ename>00101.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00101.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第102章 呕吐的狄维娜</title>
+        <ename>00102.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00102.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第103章 寒冰爬行者</title>
+        <ename>00103.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00103.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第104章 超级败家子啊！</title>
+        <ename>00104.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00104.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第105章 外侧回廊内的地下洞穴</title>
+        <ename>00105.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00105.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第106章 迷路的刺客</title>
+        <ename>00106.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00106.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第107章 石化蜥蜴</title>
+        <ename>00107.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00107.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第108章 闪电蘑菇</title>
+        <ename>00108.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00108.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第109章 靡.靡.之.音</title>
+        <ename>00109.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00109.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第110章 恐怖的蜘蛛巢穴</title>
+        <ename>00110.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00110.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第111章 菲奥娜离开</title>
+        <ename>00111.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00111.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第112章 美腿蜘蛛女皇</title>
+        <ename>00112.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00112.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第113章 蜘蛛亲卫</title>
+        <ename>00113.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00113.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第114章 神秘男子！</title>
+        <ename>00114.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00114.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第115章 美丽的蜘蛛女皇</title>
+        <ename>00115.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00115.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第116章 最强死灵法师的武器</title>
+        <ename>00116.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00116.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第117章 历史</title>
+        <ename>00117.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00117.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第118章 赫拉迪克・马勒斯</title>
+        <ename>00118.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00118.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第119章 死亡之书</title>
+        <ename>00119.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00119.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第120章 武僧，帝！</title>
+        <ename>00120.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00120.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第121章 识字吧，少年</title>
+        <ename>00121.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00121.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第122章 恶魔猎手</title>
+        <ename>00122.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00122.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第123章 凯恩的女儿？</title>
+        <ename>00123.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00123.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第124章 河道清理</title>
+        <ename>00124.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00124.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第125章 噩梦降临（一）</title>
+        <ename>00125.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00125.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第126章 噩梦降临（二）</title>
+        <ename>00126.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00126.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第127章 噩梦降临（三）</title>
+        <ename>00127.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00127.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第128章 买下尸体发火？</title>
+        <ename>00128.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00128.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第129章 尸体发火的心脏</title>
+        <ename>00129.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00129.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第130章 艾利屈之眼</title>
+        <ename>00130.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00130.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第131章 收割者</title>
+        <ename>00131.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00131.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第132章 剧毒螳螂骷髅</title>
+        <ename>00132.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00132.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第133章 绝对防御的骷髅</title>
+        <ename>00133.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00133.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第134章 这就是差距啊</title>
+        <ename>00134.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00134.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第135章 新手村</title>
+        <ename>00135.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00135.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第136章 鲁・高因小队</title>
+        <ename>00136.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00136.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第137章 卡琳娜</title>
+        <ename>00137.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00137.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第138章 陈锋先生，您冒烟了！</title>
+        <ename>00138.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00138.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第139章 噩梦降临（四）</title>
+        <ename>00139.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00139.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第140章 新任务</title>
+        <ename>00140.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00140.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第141章 结界</title>
+        <ename>00141.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00141.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第142章 灾厄骑士</title>
+        <ename>00142.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00142.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第143章 天使的力量</title>
+        <ename>00143.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00143.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第144章 回城</title>
+        <ename>00144.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00144.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第145章 隐形药水</title>
+        <ename>00145.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00145.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第146章 阿卡拉是强者？</title>
+        <ename>00146.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00146.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第147章 当一个传说</title>
+        <ename>00147.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00147.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第148章 武僧们的战斗</title>
+        <ename>00148.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00148.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第149章 树头木拳的砍脚行动</title>
+        <ename>00149.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00149.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第150章 新骷髅，地狱幼犬</title>
+        <ename>00150.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00150.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第151章 天使之矛</title>
+        <ename>00151.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00151.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第152章 勘察任务</title>
+        <ename>00152.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00152.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第153章 崔斯特瑞姆的新怪物</title>
+        <ename>00153.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00153.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第154章 被删除的刺魔</title>
+        <ename>00154.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00154.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第155章 沉思</title>
+        <ename>00155.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00155.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第156章 第二只攻城突击兽</title>
+        <ename>00156.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00156.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第157章 低级的崔斯特瑞姆</title>
+        <ename>00157.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00157.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第158章 堕落者来临</title>
+        <ename>00158.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00158.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第159章 开挂的李奥瑞克王</title>
+        <ename>00159.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00159.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第160章 自杀法杖</title>
+        <ename>00160.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00160.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第161章 赫拉迪克炼金师</title>
+        <ename>00161.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00161.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第162章 月光守护石</title>
+        <ename>00162.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00162.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第163章 战场战斗</title>
+        <ename>00163.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00163.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第164章 大战攻城突击兽</title>
+        <ename>00164.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00164.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第165章 命悬一线</title>
+        <ename>00165.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00165.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第166章 阿卡拉的战神赐福</title>
+        <ename>00166.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00166.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第167章 喝奶的攻城突击兽</title>
+        <ename>00167.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00167.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第168章 死灵之心</title>
+        <ename>00168.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00168.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第169章 折磨女王――安达利尔</title>
+        <ename>00169.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00169.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第170章 这是我的战斗</title>
+        <ename>00170.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00170.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第171章 故技重施</title>
+        <ename>00171.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00171.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第172章 绝对防线</title>
+        <ename>00172.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00172.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第173章 燃烧之不死的安达利尔</title>
+        <ename>00173.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00173.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第174章 地狱冠军骑士长</title>
+        <ename>00174.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00174.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第175章 单挑击杀！</title>
+        <ename>00175.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00175.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第176章 昏迷的陈锋</title>
+        <ename>00176.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00176.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第177章 你要抛弃我？</title>
+        <ename>00177.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00177.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第178章 狄维娜的诡计</title>
+        <ename>00178.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00178.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第179章 赫拉迪克合成机</title>
+        <ename>00179.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00179.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第180章 无奈的幽灵一击</title>
+        <ename>00180.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00180.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第181章 卡夏是美女</title>
+        <ename>00181.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00181.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第182章 他是狗熊</title>
+        <ename>00182.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00182.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第183章 初吻给了萝莉</title>
+        <ename>00183.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00183.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第184章 噩梦结束后，平淡的一天</title>
+        <ename>00184.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00184.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第185章 祭祀庆典</title>
+        <ename>00185.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00185.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第186章 转职仪式！</title>
+        <ename>00186.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00186.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第187章 陈锋的小徒弟</title>
+        <ename>00187.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00187.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第188章 徒弟变成干儿子</title>
+        <ename>00188.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00188.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第189章 死灵法师三流派</title>
+        <ename>00189.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00189.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第190章 又得一枚，日光守护石</title>
+        <ename>00190.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00190.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第191章 小鱼儿与花无缺</title>
+        <ename>00191.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00191.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第192章 我也去鲁・高因</title>
+        <ename>00192.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00192.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第193章 朱利安，辉煌公主</title>
+        <ename>00193.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00193.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第194章 沙虫天下</title>
+        <ename>00194.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00194.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第195章 冰霜法师骷髅</title>
+        <ename>00195.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00195.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第196章 秃鹫的突袭</title>
+        <ename>00196.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00196.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第197章 最强远程？</title>
+        <ename>00197.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00197.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第198章 堕落</title>
+        <ename>00198.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00198.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第199章 赶路</title>
+        <ename>00199.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00199.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第200章 进入第三层</title>
+        <ename>00200.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00200.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第201章 疯狂血腥女巫</title>
+        <ename>00201.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00201.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第202章 请塔拉・马特吃饭！</title>
+        <ename>00202.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00202.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第203章 10级，赫拉迪克方块，小</title>
+        <ename>00203.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00203.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第204章 败家方块与未来</title>
+        <ename>00204.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00204.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第205章 格雷兹</title>
+        <ename>00205.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00205.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第206章 鲁・高因三禁忌</title>
+        <ename>00206.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00206.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第207章 下水道1层</title>
+        <ename>00207.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00207.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第208章 最恶心的水肥战士</title>
+        <ename>00208.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00208.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第209章 罗达门特，投影了</title>
+        <ename>00209.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00209.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第210章 波拉图的实验―银骨尸骸</title>
+        <ename>00210.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00210.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第211章 人品大爆发，再得能力徽章</title>
+        <ename>00211.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00211.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第212章 女人啊</title>
+        <ename>00212.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00212.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第213章 心灵转变，陈锋降临</title>
+        <ename>00213.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00213.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第214章 手感不错，肉少了点</title>
+        <ename>00214.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00214.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第215章 舞会上的消息</title>
+        <ename>00215.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00215.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第216章 寻找奥术的女孩！</title>
+        <ename>00216.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00216.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第217章 蛆虫巢穴</title>
+        <ename>00217.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00217.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第218章 20级的骷髅和血虫</title>
+        <ename>00218.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00218.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第219章 再遇水肥战士</title>
+        <ename>00219.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00219.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第220章 波拉图给陈锋挖洞</title>
+        <ename>00220.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00220.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第221章 麻烦了，敌人的神圣冰冻</title>
+        <ename>00221.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00221.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第222章 一只一万的经验小怪</title>
+        <ename>00222.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00222.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第223章 11级，100只骷髅？</title>
+        <ename>00223.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00223.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第224章 领主骷髅是叫定了！</title>
+        <ename>00224.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00224.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第225章 空中霸主，尸鹫骷髅登场！</title>
+        <ename>00225.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00225.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第226章 雄鹰入空！</title>
+        <ename>00226.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00226.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第227章 归来</title>
+        <ename>00227.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00227.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第228章 和狄维娜的小暧昧</title>
+        <ename>00228.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00228.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第229章 准备开练</title>
+        <ename>00229.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00229.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第230章 练级，飞一样的感觉</title>
+        <ename>00230.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00230.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第231章 利爪蝮蛇神殿</title>
+        <ename>00231.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00231.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第232章 连杀2个堕落者</title>
+        <ename>00232.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00232.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第233章 白与黑的战斗</title>
+        <ename>00233.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00233.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第234章 回家的怒火</title>
+        <ename>00234.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00234.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第235章 谢谢你</title>
+        <ename>00235.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00235.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第236章 斗酒比赛（上）</title>
+        <ename>00236.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00236.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第237章 斗酒（下），艾米丽的鲜红葡萄！</title>
+        <ename>00237.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00237.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第238章 狄维娜的……初吻！</title>
+        <ename>00238.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00238.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第239章 永不分离的宏远</title>
+        <ename>00239.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00239.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第240章 恐怖风暴</title>
+        <ename>00240.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00240.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第241章 海上危机</title>
+        <ename>00241.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00241.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第242章 恐怖怪物叫做……</title>
+        <ename>00242.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00242.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第243章 吓死人的海量装备</title>
+        <ename>00243.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00243.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第244章 更换装备咯！</title>
+        <ename>00244.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00244.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第245章 女眷住所</title>
+        <ename>00245.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00245.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第246章 奥术的神奇</title>
+        <ename>00246.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00246.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第247章 连锁闪电</title>
+        <ename>00247.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00247.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第248章 侮辱之言章 魔法师</title>
+        <ename>00248.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00248.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第249章 彪悍的陈锋</title>
+        <ename>00249.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00249.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第250章 安琪儿的力量</title>
+        <ename>00250.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00250.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第251章 千里之行始于足下</title>
+        <ename>00251.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00251.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第252章 赫拉森还没死？</title>
+        <ename>00252.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00252.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第253章 蓝色小胖龙，传说中的奥术精灵？</title>
+        <ename>00253.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00253.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第254章 小胖龙诱拐记</title>
+        <ename>00254.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00254.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第255章 赫拉森出没</title>
+        <ename>00255.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00255.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第256章 恶魔真身</title>
+        <ename>00256.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00256.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第257章 群强云集</title>
+        <ename>00257.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00257.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第258章 原来是卧底</title>
+        <ename>00258.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00258.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第259章 全部死路？</title>
+        <ename>00259.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00259.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第260章 督瑞尔</title>
+        <ename>00260.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00260.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第261章 大战督瑞尔</title>
+        <ename>00261.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00261.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第262章 再开聚灵之术</title>
+        <ename>00262.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00262.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第263章 地狱冠军骑士长和它的小弟</title>
+        <ename>00263.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00263.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第264章 醒来，卡夏，反省！</title>
+        <ename>00264.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00264.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第265章 史上最强神器</title>
+        <ename>00265.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00265.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第266章 众女离开</title>
+        <ename>00266.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00266.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第267章 战斗机变客机</title>
+        <ename>00267.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00267.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第268章 疯狂加速</title>
+        <ename>00268.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00268.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第269章 海上险情</title>
+        <ename>00269.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00269.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第270章 新的升级宝地！</title>
+        <ename>00270.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00270.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第271章 新的灾难？</title>
+        <ename>00271.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00271.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第272章 感动和敬佩！</title>
+        <ename>00272.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00272.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第273章 大海的反击之巴吉度海王鲸篇！</title>
+        <ename>00273.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00273.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第274章 大海的悲鸣！</title>
+        <ename>00274.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00274.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第275章 天使降临！</title>
+        <ename>00275.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00275.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第276章 谎言之王―贝利亚！</title>
+        <ename>00276.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00276.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第277章 不相信！</title>
+        <ename>00277.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00277.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第278章 历史性的一刻</title>
+        <ename>00278.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00278.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第279章 冰神―希尔顿</title>
+        <ename>00279.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00279.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第280章 不屈之意！</title>
+        <ename>00280.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00280.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第281章 伤到内脏了！</title>
+        <ename>00281.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00281.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第282章 借势！</title>
+        <ename>00282.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00282.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第283章 决心！</title>
+        <ename>00283.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00283.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第284章 你就是一个连屁都不如的废物！</title>
+        <ename>00284.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00284.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第285章 卡夏的特别任务！</title>
+        <ename>00285.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00285.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第286章 双刀骷髅</title>
+        <ename>00286.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00286.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第287章 冰天雪地下的世界！</title>
+        <ename>00287.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00287.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第288章 比手榴弹还牛的爆炸石头！</title>
+        <ename>00288.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00288.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第289章 建立根据地！</title>
+        <ename>00289.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00289.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第290章 连击技能</title>
+        <ename>00290.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00290.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第291章 岩洞攻略</title>
+        <ename>00291.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00291.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第292章 火炼炎蛇王</title>
+        <ename>00292.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00292.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第293章 被飞虫追了20公里</title>
+        <ename>00293.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00293.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第294章 巫医慕尼黑</title>
+        <ename>00294.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00294.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第295章 慕尼黑的实力！</title>
+        <ename>00295.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00295.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第296章 巫医专属的祭祀匕首</title>
+        <ename>00296.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00296.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第297章 富一代花钱买等级！</title>
+        <ename>00297.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00297.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第298章 玫瑰小队战略部署！</title>
+        <ename>00298.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00298.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第299章 初探墓地和神一样的狗屎运！</title>
+        <ename>00299.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00299.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第300章 四大护法，登场！</title>
+        <ename>00300.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00300.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第301章 遇见女孩子！</title>
+        <ename>00301.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00301.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第302章 悲剧的传送！</title>
+        <ename>00302.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00302.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第303章 十分钟的战斗！</title>
+        <ename>00303.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00303.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第304章 朱利安的消息</title>
+        <ename>00304.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00304.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第305章 疯狂的练级！</title>
+        <ename>00305.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00305.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第306章 3个月后，25级的陈锋，41级的技能</title>
+        <ename>00306.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00306.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第307章 混入敌军！</title>
+        <ename>00307.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00307.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第308章 搅和搅和</title>
+        <ename>00308.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00308.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第309章 霸气宣言，我欲成魔！</title>
+        <ename>00309.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00309.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第310章 人再多，也没我的骷髅多！</title>
+        <ename>00310.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00310.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第311章 有人要倒霉了</title>
+        <ename>00311.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00311.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第312章 精神刺激药水，入手！</title>
+        <ename>00312.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00312.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第313章 打扰朱利安者，死！</title>
+        <ename>00313.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00313.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第314章 朱利安复苏！</title>
+        <ename>00314.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00314.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第315章 迪亚波罗的心眼！</title>
+        <ename>00315.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00315.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第316章 推到朱利安！</title>
+        <ename>00316.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00316.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第317章 玫瑰小队再聚！</title>
+        <ename>00317.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00317.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第318章 减少需求后的神器？</title>
+        <ename>00318.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00318.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第319章 蜘蛛群里头的练胆！</title>
+        <ename>00319.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00319.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第320章 蜘蛛巢穴！</title>
+        <ename>00320.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00320.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第321章 再遇波拉图</title>
+        <ename>00321.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00321.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第322章 磨合战斗！</title>
+        <ename>00322.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00322.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第323章 乔丹之石！</title>
+        <ename>00323.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00323.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第324章 惊天的错误观点！</title>
+        <ename>00324.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00324.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第325章 我是赫拉迪克的族人！</title>
+        <ename>00325.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00325.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第326章 最强法杖！</title>
+        <ename>00326.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00326.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第327章 我要把你们烤熟！</title>
+        <ename>00327.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00327.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第328章 无趣的杀人</title>
+        <ename>00328.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00328.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第329章 血翼噩梦！</title>
+        <ename>00329.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00329.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第330章 变异秃鹫的逆袭</title>
+        <ename>00330.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00330.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第331章 暗黑火枪骷髅王</title>
+        <ename>00331.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00331.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第332章 丰收</title>
+        <ename>00332.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00332.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第333章 吉得宾</title>
+        <ename>00333.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00333.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第334章 突如其来的噩梦之月</title>
+        <ename>00334.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00334.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第335章 不识庐山真面目</title>
+        <ename>00335.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00335.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第336章 技能变异必须摆上台面了！</title>
+        <ename>00336.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00336.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第337章 霸气小白</title>
+        <ename>00337.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00337.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第338章 狼王对狼王，白与红之间的大战（上）</title>
+        <ename>00338.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00338.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第339章 狼王对狼王，白与红之间的大战（下）</title>
+        <ename>00339.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00339.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第340章 变异后的产物，骷髅王？</title>
+        <ename>00340.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00340.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第341章 死亡之神，马萨伊尔！</title>
+        <ename>00341.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00341.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第342章 那这个是不是吉得宾？</title>
+        <ename>00342.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00342.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第343章 要吉得宾？拿东西来租吧！</title>
+        <ename>00343.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00343.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第344章 暗黑3的道具出现，雕纹！</title>
+        <ename>00344.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00344.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第345章 巨怪来袭！</title>
+        <ename>00345.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00345.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第346章 地狱火来袭！</title>
+        <ename>00346.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00346.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第347章 前往曼陀罗家族！</title>
+        <ename>00347.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00347.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第348章 比箩格城还大的曼陀罗城！</title>
+        <ename>00348.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00348.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第349章 三角眼女欺上门！</title>
+        <ename>00349.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00349.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第350章 尼古拉斯的第二次试探</title>
+        <ename>00350.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00350.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第351章 地狱火的进攻（上）</title>
+        <ename>00351.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00351.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第352章 地狱火的进攻（下）</title>
+        <ename>00352.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00352.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第353章 野外偷情</title>
+        <ename>00353.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00353.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第354章 重磅炸弹！</title>
+        <ename>00354.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00354.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第355章 2个美娇娘入手了！</title>
+        <ename>00355.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00355.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第356章 双――飞！</title>
+        <ename>00356.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00356.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第357章 回到库拉斯特</title>
+        <ename>00357.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00357.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第358章 分配的任务！</title>
+        <ename>00358.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00358.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第359章 火枪王，必死一击！</title>
+        <ename>00359.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00359.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第360章 比暗金怪物巢穴更好的练级点！</title>
+        <ename>00360.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00360.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第361章 达到27就！</title>
+        <ename>00361.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00361.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第362章 地上最强，岩石强森！</title>
+        <ename>00362.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00362.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第363章 绝对一拳！</title>
+        <ename>00363.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00363.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第364章 波拉图暴露了！</title>
+        <ename>00364.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00364.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第365章 波拉图的实力！</title>
+        <ename>00365.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00365.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第366章 最后的荣光！</title>
+        <ename>00366.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00366.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第367章 疯狂的嗜血变身！</title>
+        <ename>00367.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00367.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第368章 波拉图最后的馈赠！</title>
+        <ename>00368.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00368.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第369章 朱利安的赐福进化</title>
+        <ename>00369.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00369.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第370章 毒后艾米丽！</title>
+        <ename>00370.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00370.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第371章 全部进化！</title>
+        <ename>00371.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00371.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第372章 好恐怖的骷髅！</title>
+        <ename>00372.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00372.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第373章 堕落者的计划！</title>
+        <ename>00373.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00373.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第374章 将计就计！</title>
+        <ename>00374.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00374.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第375章 29级咯！</title>
+        <ename>00375.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00375.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第376章 火焰黑熊</title>
+        <ename>00376.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00376.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第377章 矮人勇士之死！</title>
+        <ename>00377.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00377.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第378章 变身，鲜血石魔！</title>
+        <ename>00378.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00378.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第379章 集体升级！</title>
+        <ename>00379.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00379.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第380章 诡异的龙龟和亡灵竞技场！</title>
+        <ename>00380.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00380.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第381章 终于有资格了！</title>
+        <ename>00381.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00381.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第382章 封印恶魔之陈锋的意见！</title>
+        <ename>00382.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00382.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第383章 陈锋的赐福进化（上）</title>
+        <ename>00383.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00383.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第384章 陈锋的赐福进化（下）之拉斯马的传人</title>
+        <ename>00384.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00384.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第385章 骷髅王的真正身份！</title>
+        <ename>00385.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00385.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第386章 真正的进化属性，是经验！</title>
+        <ename>00386.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00386.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第387章 出发前往冰天雪地</title>
+        <ename>00387.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00387.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第388章 地下洞穴</title>
+        <ename>00388.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00388.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第389章 奥术龙的双胞胎兄弟？</title>
+        <ename>00389.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00389.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第390章 惊天爆率！</title>
+        <ename>00390.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00390.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第391章 门徒套装</title>
+        <ename>00391.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00391.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第392章 职业者终极套装和庞大的梦想！</title>
+        <ename>00392.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00392.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第393章 小公主，安吉拉！</title>
+        <ename>00393.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00393.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第394章 解脱</title>
+        <ename>00394.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00394.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第395章 自找麻烦的暴风之树！</title>
+        <ename>00395.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00395.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第396章 认真的朱利安！</title>
+        <ename>00396.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00396.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第397章 萨卡兰姆法师</title>
+        <ename>00397.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00397.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第398章 蓝・依森之书</title>
+        <ename>00398.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00398.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第399章 萨卡兰姆狂战士大军？</title>
+        <ename>00399.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00399.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第400章 救援！</title>
+        <ename>00400.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00400.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第401章 剧毒亚龙</title>
+        <ename>00401.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00401.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第402章 翠绿色的亚龙</title>
+        <ename>00402.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00402.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第403章 天使都瞎了？</title>
+        <ename>00403.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00403.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第404章 巫医之间的战斗！</title>
+        <ename>00404.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00404.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第405章 无形之地和再次恶化的情势！</title>
+        <ename>00405.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00405.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第406章 你们必须得去！</title>
+        <ename>00406.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00406.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第407章 述说疑点！</title>
+        <ename>00407.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00407.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第408章 想自杀？你想的开心！</title>
+        <ename>00408.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00408.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第409章 菊花残</title>
+        <ename>00409.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00409.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第410章 最强召唤兽，卡夏！</title>
+        <ename>00410.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00410.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第411章 卡夏到来</title>
+        <ename>00411.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00411.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第412章 墨菲斯托！</title>
+        <ename>00412.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00412.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第413章 众人居然不敌！</title>
+        <ename>00413.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00413.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第414章 你害怕了吗？</title>
+        <ename>00414.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00414.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第415章 我欲灭天，我为骷髅王！</title>
+        <ename>00415.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00415.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第416章 骷髅王的诞生！</title>
+        <ename>00416.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00416.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第417章 黄金・死亡元帅骷髅</title>
+        <ename>00417.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00417.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第418章 召唤反噬</title>
+        <ename>00418.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00418.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第419章 怨念=经验，难怪难怪！</title>
+        <ename>00419.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00419.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第420章 小胖龙们的奇迹</title>
+        <ename>00420.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00420.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第421章 生死契约！</title>
+        <ename>00421.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00421.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第422章 发誓！</title>
+        <ename>00422.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00422.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第423章 塔・拉夏的守护，真品！</title>
+        <ename>00423.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00423.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第424章 塞翁得马，焉知非祸？</title>
+        <ename>00424.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00424.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第425章 以一敌万？是敌十万！</title>
+        <ename>00425.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00425.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第426章 准备救人！</title>
+        <ename>00426.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00426.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第427章 无耻手段！</title>
+        <ename>00427.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00427.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第428章 救人完毕！</title>
+        <ename>00428.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00428.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第429章 回城！</title>
+        <ename>00429.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00429.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第430章 得到“黑色骷髅王”！</title>
+        <ename>00430.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00430.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第431章 塔格奥之鳞，兑换符文！</title>
+        <ename>00431.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00431.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第432章 赫拉铁力！</title>
+        <ename>00432.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00432.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第433章 准备就绪！</title>
+        <ename>00433.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00433.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第434章 要败，就败个彻底，败家骷髅语录！</title>
+        <ename>00434.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00434.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第435章 大战开始（一）</title>
+        <ename>00435.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00435.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第436章 大战开始（二）</title>
+        <ename>00436.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00436.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第437章 大战开始（三）</title>
+        <ename>00437.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00437.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第438章 大战开始（四）天上掉金币！</title>
+        <ename>00438.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00438.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第439章 大战开始（五）</title>
+        <ename>00439.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00439.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第440章 强大的白银骷髅？</title>
+        <ename>00440.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00440.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第441章 铁桦树骷髅！</title>
+        <ename>00441.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00441.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第442章 召唤骷髅，87级！</title>
+        <ename>00442.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00442.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第443章 挑战苍铁大树！</title>
+        <ename>00443.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00443.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第444章 终于降服！</title>
+        <ename>00444.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00444.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第445章 补充营养！</title>
+        <ename>00445.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00445.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第446章 恶魔也是有家庭的！</title>
+        <ename>00446.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00446.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第447章 装备鉴定大会中的咆哮！</title>
+        <ename>00447.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00447.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第448章 超级项链！</title>
+        <ename>00448.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00448.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第449章 佣兵首领的集体拒绝！</title>
+        <ename>00449.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00449.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第450章 被污染的世界之石！</title>
+        <ename>00450.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00450.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第451章 沉沦魔大军的恐怖实力！</title>
+        <ename>00451.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00451.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第452章 戏弄！</title>
+        <ename>00452.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00452.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第453章 卡夏的背包比陈锋的大！</title>
+        <ename>00453.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00453.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第454章 苍铁大树发威！</title>
+        <ename>00454.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00454.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第455章 愚昧的老头！</title>
+        <ename>00455.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00455.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第456章 2尊大神！</title>
+        <ename>00456.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00456.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第457章 事情结束！</title>
+        <ename>00457.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00457.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第458章 血鹰来袭？</title>
+        <ename>00458.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00458.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第459章 给血鹰一个下马威！</title>
+        <ename>00459.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00459.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第460章 神级出手！</title>
+        <ename>00460.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00460.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第461章 法师强大的原因！</title>
+        <ename>00461.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00461.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第462章 血鹰之巢！</title>
+        <ename>00462.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00462.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第463章 一招三四亿，这才是神级的攻击！</title>
+        <ename>00463.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00463.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第464章 血色开膛手！</title>
+        <ename>00464.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00464.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第465章 无解！</title>
+        <ename>00465.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00465.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第466章 不守反攻！</title>
+        <ename>00466.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00466.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第467章 进入血鹰之巢！</title>
+        <ename>00467.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00467.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第468章 飞猪骷髅！</title>
+        <ename>00468.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00468.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第469章 陈锋死了？</title>
+        <ename>00469.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00469.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第470章 血色骷髅王现身！</title>
+        <ename>00470.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00470.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第471章 骷髅王实体化！</title>
+        <ename>00471.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00471.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第472章 破壳而出</title>
+        <ename>00472.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00472.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第473章 飞猪骷髅的饱食度属性！</title>
+        <ename>00473.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00473.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第474章 黑色骷髅王召唤！</title>
+        <ename>00474.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00474.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第475章 寒冰骷髅王！</title>
+        <ename>00475.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00475.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第476章 墓地大门？</title>
+        <ename>00476.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00476.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第477章 清理尸体的办法！</title>
+        <ename>00477.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00477.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第478章 敲诈老爷子！</title>
+        <ename>00478.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00478.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第479章 飞猪骷髅吃尸体！</title>
+        <ename>00479.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00479.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第480章 沉沦魔法师大军出现！</title>
+        <ename>00480.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00480.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第481章 朱利安的梦想，误打误撞！</title>
+        <ename>00481.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00481.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第482章 狄维娜49了！</title>
+        <ename>00482.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00482.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第483章 时间之水！</title>
+        <ename>00483.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00483.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第484章 怒骂和单挑！</title>
+        <ename>00484.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00484.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第485章 赌博开盘！</title>
+        <ename>00485.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00485.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第486章 中计</title>
+        <ename>00486.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00486.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第487章 一个废物，也敢放肆？</title>
+        <ename>00487.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00487.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第488章 这才是单挑！</title>
+        <ename>00488.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00488.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第489章 血肉圣餐就是凌迟！</title>
+        <ename>00489.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00489.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第490章 击杀血色开膛手！</title>
+        <ename>00490.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00490.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第491章 恐怖的一脚丫子！</title>
+        <ename>00491.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00491.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第492章 召唤骷髅王虚影！</title>
+        <ename>00492.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00492.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第493章 传说中不存在人界的27号符文！</title>
+        <ename>00493.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00493.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第494章 进入天坑！</title>
+        <ename>00494.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00494.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第495章 地下世界！</title>
+        <ename>00495.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00495.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第496章 地底老鼠王！</title>
+        <ename>00496.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00496.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第497章 史上最变态骷髅王！</title>
+        <ename>00497.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00497.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第498章 大军暂退！</title>
+        <ename>00498.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00498.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第499章 多给一桶酒会死啊？</title>
+        <ename>00499.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00499.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第500章 是进化，还是退步？</title>
+        <ename>00500.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00500.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第501章 大战再次开始！</title>
+        <ename>00501.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00501.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第502章 秃鹫异象！</title>
+        <ename>00502.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00502.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第503章 恐怖的小虫子！</title>
+        <ename>00503.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00503.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第504章 信念结界！</title>
+        <ename>00504.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00504.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第505章 果然是秃鹫的诡计！</title>
+        <ename>00505.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00505.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第506章 黄金沉沦魔心脏！</title>
+        <ename>00506.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00506.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第507章 秃鹫来袭！</title>
+        <ename>00507.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00507.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第508章 金色秃鹫来袭</title>
+        <ename>00508.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00508.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第509章 虐杀金色秃鹫！</title>
+        <ename>00509.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00509.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第510章 针对虫子的办法！</title>
+        <ename>00510.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00510.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第511章 朱利安怀孕了？</title>
+        <ename>00511.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00511.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第512章 陈锋的孩子！</title>
+        <ename>00512.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00512.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第513章 沉重的责任，燃烧的斗志！</title>
+        <ename>00513.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00513.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第514章 爆发的升级！</title>
+        <ename>00514.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00514.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第515章 我要去地狱！</title>
+        <ename>00515.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00515.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第516章 确定出发！</title>
+        <ename>00516.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00516.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第517章 进入地狱！</title>
+        <ename>00517.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00517.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第518章 超级地图！</title>
+        <ename>00518.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00518.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第519章 谢谢！</title>
+        <ename>00519.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00519.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第520章 反刍怪的任务！</title>
+        <ename>00520.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00520.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第521章 接任务，出发！</title>
+        <ename>00521.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00521.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第522章 101级召唤骷髅！</title>
+        <ename>00522.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00522.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第523章 四大护法再次发威！</title>
+        <ename>00523.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00523.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第524章 地狱里头的大雪崩！</title>
+        <ename>00524.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00524.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第525章 大战的堕落王！</title>
+        <ename>00525.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00525.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第526章 冥河之怒！</title>
+        <ename>00526.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00526.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第527章 怪群！</title>
+        <ename>00527.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00527.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第528章 追逐怪群的天使！</title>
+        <ename>00528.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00528.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第529章 惊变，新血色骷髅王！</title>
+        <ename>00529.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00529.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第530章 血色之链！</title>
+        <ename>00530.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00530.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第531章 安娜，法天使！</title>
+        <ename>00531.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00531.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第532章 送陈锋一个大便宜！</title>
+        <ename>00532.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00532.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第533章 第二封大礼！</title>
+        <ename>00533.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00533.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第534章 比塔・拉夏还牛的陈锋！</title>
+        <ename>00534.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00534.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第535章 陈锋被吃了！</title>
+        <ename>00535.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00535.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第536章 擦，动弹不得！</title>
+        <ename>00536.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00536.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第537章 熔岩魔王</title>
+        <ename>00537.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00537.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第538章 开辟洞府！</title>
+        <ename>00538.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00538.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第539章 青绿色！</title>
+        <ename>00539.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00539.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第540章 熔岩魔王，吞咽了！</title>
+        <ename>00540.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00540.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第541章 冤死的恶魔，2000W荣誉点！</title>
+        <ename>00541.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00541.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第542章 三日逍遥散！</title>
+        <ename>00542.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00542.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第543章 记得下辈子多看西游记！</title>
+        <ename>00543.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00543.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第544章 胃啊，破吧！</title>
+        <ename>00544.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00544.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第545章 扎利达的金色闪光！</title>
+        <ename>00545.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00545.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第546章 抢怪的贼人，我要杀了你！！！</title>
+        <ename>00546.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00546.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第547章 悲剧啊！</title>
+        <ename>00547.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00547.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第548章 不生气！</title>
+        <ename>00548.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00548.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第549章 尸体给你！</title>
+        <ename>00549.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00549.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第550章 没有融化的雪山！</title>
+        <ename>00550.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00550.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第551章 雪山再遇堕落王！</title>
+        <ename>00551.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00551.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第552章 又跑？</title>
+        <ename>00552.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00552.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第553章 堕落王进化！</title>
+        <ename>00553.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00553.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第554章 魔吼兽！</title>
+        <ename>00554.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00554.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第555章 再遇寒冰爬行者！</title>
+        <ename>00555.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00555.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第556章 双刀骷髅，疯狂进化！</title>
+        <ename>00556.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00556.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第557章 这丫的就是变态！</title>
+        <ename>00557.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00557.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第558章 50亿的阿修罗骷髅！</title>
+        <ename>00558.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00558.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第559章 鬼斩！</title>
+        <ename>00559.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00559.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第560章 强大的爆炸石头！</title>
+        <ename>00560.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00560.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第561章 镰刀虫魔！</title>
+        <ename>00561.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00561.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第562章 来自地狱的恶魔大军！</title>
+        <ename>00562.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00562.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第563章 鬼爪王VS八臂鬼斩！</title>
+        <ename>00563.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00563.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第564章 冰墙拦路！</title>
+        <ename>00564.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00564.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第565章 混战吧，镰刀虫魔大战寒冰爬行者！</title>
+        <ename>00565.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00565.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第566章 2级巅峰，蓝冰巨人，骷髅王部件发现！</title>
+        <ename>00566.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00566.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第567章 原来如此！</title>
+        <ename>00567.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00567.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第568章 2个骷髅王部件！</title>
+        <ename>00568.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00568.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第569章 被追杀的堕落者！</title>
+        <ename>00569.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00569.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第570章 捡便宜的小青年！</title>
+        <ename>00570.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00570.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第571章 农夫与蛇，回城！</title>
+        <ename>00571.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00571.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第572章 扎利达出手！</title>
+        <ename>00572.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00572.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第573章 好小子！</title>
+        <ename>00573.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00573.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第574章 战斗再次开始！</title>
+        <ename>00574.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00574.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第575章 还有一个部件？</title>
+        <ename>00575.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00575.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第576章 融合开始</title>
+        <ename>00576.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00576.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第577章 蓝冰巨人，给我！</title>
+        <ename>00577.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00577.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第578章 完虐蓝冰巨人！</title>
+        <ename>00578.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00578.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第579章 见利忘义</title>
+        <ename>00579.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00579.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第580章 不是不报，时候未到</title>
+        <ename>00580.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00580.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第581章 洞中洞？</title>
+        <ename>00581.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00581.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第582章 融合完成！</title>
+        <ename>00582.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00582.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第583章 冰刺脊魔！</title>
+        <ename>00583.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00583.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第584章 给你零下1900的“高温”！</title>
+        <ename>00584.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00584.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第585章 地下巨城！</title>
+        <ename>00585.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00585.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第586章 开个春楼！</title>
+        <ename>00586.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00586.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第587章 惨败！</title>
+        <ename>00587.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00587.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第588章 神经剧毒！</title>
+        <ename>00588.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00588.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第589章 悲催的熔岩魔王！</title>
+        <ename>00589.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00589.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第590章 陈锋在行动！</title>
+        <ename>00590.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00590.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第591章 地道战，嘿，地道战！</title>
+        <ename>00591.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00591.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第592章 堕落天使・流光！</title>
+        <ename>00592.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00592.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第593章 迷乱之语！</title>
+        <ename>00593.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00593.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第594章 危机！！</title>
+        <ename>00594.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00594.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第595章 2000亿的九尾灵狐！</title>
+        <ename>00595.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00595.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第596章 灵狐是有老公的！</title>
+        <ename>00596.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00596.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第597章 人生只为情难死！</title>
+        <ename>00597.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00597.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第598章 你的心，还是光明的！</title>
+        <ename>00598.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00598.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第599章 全面战争！</title>
+        <ename>00599.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00599.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第600章 那盛开在天际的血花！</title>
+        <ename>00600.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00600.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第601章 天翼魔王击杀战</title>
+        <ename>00601.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00601.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第602章 寻找扎利达！</title>
+        <ename>00602.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00602.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第603章 熔岩魔王！</title>
+        <ename>00603.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00603.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第604章 再杀熔岩魔王！</title>
+        <ename>00604.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00604.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第605章 拯救扎利达！</title>
+        <ename>00605.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00605.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第606章 九尾妖狐！</title>
+        <ename>00606.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00606.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第607章 最后一击，冰之矛，去！</title>
+        <ename>00607.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00607.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第608章 迪亚波罗的阴谋！</title>
+        <ename>00608.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00608.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第609章 群魔堡垒的百货商城！</title>
+        <ename>00609.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00609.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第610章 购买经验药剂！</title>
+        <ename>00610.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00610.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第611章 我他妈不活了，神器啊！</title>
+        <ename>00611.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00611.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第612章 超神器，恐怖白骨的灵魂！</title>
+        <ename>00612.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00612.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第612章 疯狂的交易（上）</title>
+        <ename>00613.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00613.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第614章 疯狂的交易（中）</title>
+        <ename>00614.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00614.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第615章 疯狂的交易（下）</title>
+        <ename>00615.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00615.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第616章 增幅药剂（上）</title>
+        <ename>00616.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00616.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第617章 增幅药剂（下）</title>
+        <ename>00617.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00617.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第618章 朱利安的危机？</title>
+        <ename>00618.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00618.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第619章 克劳克・科里克！</title>
+        <ename>00619.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00619.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第620章 哈洛加斯的奇怪</title>
+        <ename>00620.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00620.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第621章 挑衅？</title>
+        <ename>00621.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00621.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第622章 谁他妈说我死了？</title>
+        <ename>00622.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00622.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第623章 谁家的狗？</title>
+        <ename>00623.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00623.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第624章 温柔乡</title>
+        <ename>00624.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00624.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第625章 艾米丽迷药抢亲大作战！</title>
+        <ename>00625.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00625.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第626章 艾米丽的柔情！</title>
+        <ename>00626.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00626.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第627章 朱利安的打算！</title>
+        <ename>00627.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00627.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第628章 惊变（上）</title>
+        <ename>00628.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00628.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第629章 惊变（下）</title>
+        <ename>00629.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00629.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第630章 1.8W只骷髅！</title>
+        <ename>00630.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00630.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第631章 再次盛开的血花！</title>
+        <ename>00631.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00631.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第632章 地狱三头犬</title>
+        <ename>00632.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00632.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第633章 目标，地狱犬的蛋蛋</title>
+        <ename>00633.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00633.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第634章 悲剧的地狱三头犬！</title>
+        <ename>00634.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00634.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第635章 我去找灵魂之石！</title>
+        <ename>00635.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00635.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第636章 安利达尔的故事！</title>
+        <ename>00636.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00636.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第637章 地下墓穴（上）</title>
+        <ename>00637.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00637.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第638章 地下墓穴（中）</title>
+        <ename>00638.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00638.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第639章 地下墓穴（下）</title>
+        <ename>00639.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00639.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第640章 蔚蓝骷髅王！</title>
+        <ename>00640.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00640.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第641章 他死定了！</title>
+        <ename>00641.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00641.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第642章 背后是迪亚波罗？</title>
+        <ename>00642.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00642.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第643章 骸骨安达利尔！</title>
+        <ename>00643.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00643.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第644章 黄金龙狼</title>
+        <ename>00644.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00644.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第645章 龙狼大战安达利尔</title>
+        <ename>00645.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00645.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第646章 该死，你是恶魔！</title>
+        <ename>00646.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00646.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第647章 验证真身！</title>
+        <ename>00647.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00647.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第648章 陈锋的担心！</title>
+        <ename>00648.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00648.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第649章 重弩</title>
+        <ename>00649.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00649.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第650章 第二次技能变异！</title>
+        <ename>00650.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00650.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第651章 第二次赐福进化</title>
+        <ename>00651.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00651.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第652章 震撼，拉斯马出手！</title>
+        <ename>00652.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00652.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第653章 创世神的黄金装备！</title>
+        <ename>00653.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00653.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第654章 一个月的休息和未来的计划！</title>
+        <ename>00654.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00654.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第655章 海格再叙！</title>
+        <ename>00655.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00655.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第656章 神器套装？白银徽章！</title>
+        <ename>00656.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00656.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第657章 冰之泪和攻城突击兽骷髅！</title>
+        <ename>00657.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00657.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第658章 原子弹战术！</title>
+        <ename>00658.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00658.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第659章 自找死路！</title>
+        <ename>00659.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00659.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第660章 被抓！</title>
+        <ename>00660.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00660.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第661章 被打了一巴掌！</title>
+        <ename>00661.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00661.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第662章 不看火影的好少年！</title>
+        <ename>00662.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00662.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第663章 击杀沉沦魔先知！</title>
+        <ename>00663.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00663.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第664章 围观你妹纸！</title>
+        <ename>00664.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00664.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第665章 强大的海龙！</title>
+        <ename>00665.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00665.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第666章 黑云闪电！</title>
+        <ename>00666.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00666.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第667章 下一个目标章 阿罗城！</title>
+        <ename>00667.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00667.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第668章 不打没把握的战！</title>
+        <ename>00668.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00668.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第669章 躲在狗肚子里！</title>
+        <ename>00669.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00669.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第670章 群狗大闹阿罗城！</title>
+        <ename>00670.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00670.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第671章 神圣之泉的用处！</title>
+        <ename>00671.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00671.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第672章 陈锋的诡计！</title>
+        <ename>00672.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00672.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第673章 5大1级巅峰！</title>
+        <ename>00673.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00673.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第674章 阿罗城之战（一）</title>
+        <ename>00674.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00674.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第675章 阿罗城之战（二）</title>
+        <ename>00675.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00675.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第676章 阿罗城之战（三）</title>
+        <ename>00676.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00676.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第677章 阿罗城之战（四）</title>
+        <ename>00677.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00677.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第678章 阿罗城之战（五）</title>
+        <ename>00678.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00678.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第679章 阿罗城最后的战役！</title>
+        <ename>00679.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00679.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第680章 群魔堡垒里头的木乃伊！</title>
+        <ename>00680.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00680.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第681章 300吨的陈锋！</title>
+        <ename>00681.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00681.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第682章 毒雾下的惊人收益！</title>
+        <ename>00682.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00682.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第683章 偷鸡不成！</title>
+        <ename>00683.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00683.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第684章 打碎牙齿往肚里咽！</title>
+        <ename>00684.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00684.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第685章 恐怖白骨！</title>
+        <ename>00685.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00685.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第686章 神器入手！</title>
+        <ename>00686.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00686.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第687章 墓地内的战争！</title>
+        <ename>00687.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00687.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第688章 红莲嚎牛！</title>
+        <ename>00688.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00688.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第689章 鲁・高因惊变！</title>
+        <ename>00689.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00689.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第690章 插一脚！</title>
+        <ename>00690.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00690.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第691章 再遇冰神！</title>
+        <ename>00691.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00691.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第692章 一个新任务！</title>
+        <ename>00692.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00692.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第693章 冰冠堡垒！</title>
+        <ename>00693.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00693.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第694章 进入城市！</title>
+        <ename>00694.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00694.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第695章 抓好多好多的真身教徒！</title>
+        <ename>00695.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00695.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第696章 一丝不对劲！</title>
+        <ename>00696.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00696.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第697章 反戈一击！</title>
+        <ename>00697.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00697.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第698章 两军对峙！</title>
+        <ename>00698.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00698.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第699章 恶魔召唤术？</title>
+        <ename>00699.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00699.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第700章 残虐！</title>
+        <ename>00700.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00700.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第701章 超大惊喜！</title>
+        <ename>00701.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00701.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第702章 螳臂当车？</title>
+        <ename>00702.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00702.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第703章 战况瞬间颠倒！</title>
+        <ename>00703.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00703.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第704章 神龙幻术！</title>
+        <ename>00704.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00704.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第705章 真正的目的！</title>
+        <ename>00705.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00705.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第706章 神级来援！</title>
+        <ename>00706.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00706.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第707章 卡迪安！</title>
+        <ename>00707.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00707.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第708章 我反对！</title>
+        <ename>00708.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00708.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第709章 贝利亚真正的底牌！</title>
+        <ename>00709.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00709.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第710章 新任务！</title>
+        <ename>00710.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00710.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第711章 卡迪安城外</title>
+        <ename>00711.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00711.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第712章 陈锋的大部队！</title>
+        <ename>00712.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00712.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第713章 水煮恶魔！</title>
+        <ename>00713.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00713.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第714章 惊恐，一万胖子恶魔！</title>
+        <ename>00714.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00714.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第715章 霸道伊姆帕里斯</title>
+        <ename>00715.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00715.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第716章 阿修罗，爆发！</title>
+        <ename>00716.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00716.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第717章 攻击天使的世界之石！</title>
+        <ename>00717.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00717.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第718章 督瑞尔逃走！</title>
+        <ename>00718.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00718.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第719章 陈锋的背后势力！</title>
+        <ename>00719.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00719.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第720章 奖励和探险！</title>
+        <ename>00720.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00720.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第721章 宝珠？</title>
+        <ename>00721.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00721.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第722章 寒冰宝珠！</title>
+        <ename>00722.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00722.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第723章 陈锋的凶名！</title>
+        <ename>00723.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00723.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第724章 杀鸡儆猴！</title>
+        <ename>00724.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00724.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第725章 阿修罗，魔神鬼斩！</title>
+        <ename>00725.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00725.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第726章 恶魔攻城！</title>
+        <ename>00726.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00726.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第727章 女妖大军</title>
+        <ename>00727.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00727.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第728章 在干女妖！！</title>
+        <ename>00728.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00728.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第729章 好声音叫要唱十八摸啊！</title>
+        <ename>00729.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00729.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第730章 瞬间控制！</title>
+        <ename>00730.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00730.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第731章 脆弱的魔王！</title>
+        <ename>00731.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00731.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第732章 大军攻击！</title>
+        <ename>00732.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00732.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第733章 地狱攻城兽！</title>
+        <ename>00733.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00733.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第734章 悲催的地狱攻城兽！</title>
+        <ename>00734.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00734.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第735章 塔格奥三件套！</title>
+        <ename>00735.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00735.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第736章 真正的逆天神器！</title>
+        <ename>00736.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00736.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第737章 送上来踩脸？</title>
+        <ename>00737.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00737.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第738章 迪亚波罗的谎言？</title>
+        <ename>00738.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00738.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第739章 佐敦库勒！</title>
+        <ename>00739.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00739.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第740章 再上战场！</title>
+        <ename>00740.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00740.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第741章 迪亚波罗和督瑞尔！</title>
+        <ename>00741.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00741.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第742章 末日骑兽！</title>
+        <ename>00742.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00742.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第743章 坏消息！</title>
+        <ename>00743.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00743.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第744章 箭塔，金光</title>
+        <ename>00744.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00744.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第745章 光明大力兽！</title>
+        <ename>00745.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00745.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第746章 金光攻击！</title>
+        <ename>00746.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00746.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第747章 猴子拆家！</title>
+        <ename>00747.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00747.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第748章 突然袭击！</title>
+        <ename>00748.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00748.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第749章 恶魔手中的疾风骷髅王！</title>
+        <ename>00749.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00749.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第750章 十三骷髅王！</title>
+        <ename>00750.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00750.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第751章 惊天秘密和巨大蛋糕！</title>
+        <ename>00751.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00751.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第752章 骷髅王召唤（上）！</title>
+        <ename>00752.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00752.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第753章 骷髅王召唤（下）！</title>
+        <ename>00753.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00753.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第754章 叛徒出现！</title>
+        <ename>00754.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00754.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第755章 陈锋的新损招！</title>
+        <ename>00755.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00755.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第756章 陈锋的新目标！</title>
+        <ename>00756.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00756.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第757章 贪食之王，冈姆！</title>
+        <ename>00757.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00757.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第758章 剧毒临城！</title>
+        <ename>00758.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00758.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第759章 大地宝珠？</title>
+        <ename>00759.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00759.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第760章 奇葩的地狱熔炉！</title>
+        <ename>00760.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00760.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第761章 你自杀吧！</title>
+        <ename>00761.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00761.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第762章 错误的原罪，恐怖之王，迪亚波罗！</title>
+        <ename>00762.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00762.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第763章 陨石天降！</title>
+        <ename>00763.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00763.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第764章 战斗！</title>
+        <ename>00764.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00764.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第765章 憋出毛病来了！</title>
+        <ename>00765.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00765.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第766章 驱虫剂！</title>
+        <ename>00766.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00766.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第767章 骑士进化！</title>
+        <ename>00767.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00767.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第768章 结界破损！</title>
+        <ename>00768.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00768.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第769章 骑士超进化！</title>
+        <ename>00769.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00769.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第770章 黄金红莲龙骑士</title>
+        <ename>00770.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00770.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第771章 黑暗吞噬！</title>
+        <ename>00771.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00771.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第772章 羊水破了！</title>
+        <ename>00772.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00772.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第773章 陈锋的专属武器，誓死保护朱利安！</title>
+        <ename>00773.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00773.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第774章 紧急！</title>
+        <ename>00774.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00774.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第775章 等级分解！</title>
+        <ename>00775.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00775.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第776章 龙凤胎！</title>
+        <ename>00776.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00776.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第777章 拉斯马大战迪亚波罗！</title>
+        <ename>00777.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00777.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第778章 谎言本源！</title>
+        <ename>00778.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00778.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第779章 拉斯马・陈和泰瑞尔・陈</title>
+        <ename>00779.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00779.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第780章 强大的格里斯华尔德！</title>
+        <ename>00780.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00780.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第781章 新崔斯特瑞姆惊变！</title>
+        <ename>00781.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00781.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第782章 当年的盛况！</title>
+        <ename>00782.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00782.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第783章 2个月！</title>
+        <ename>00783.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00783.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第784章 无尽的思念！</title>
+        <ename>00784.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00784.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第785章 超级恶魔的真正身份！</title>
+        <ename>00785.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00785.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第786章 世界格局（上）！</title>
+        <ename>00786.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00786.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第787章 世界格局（下）！</title>
+        <ename>00787.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00787.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第788章 奇怪的恶魔！</title>
+        <ename>00788.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00788.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第789章 悲剧的误入贼窝！</title>
+        <ename>00789.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00789.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第790章 拉扎鲁斯，暗黑1历史！</title>
+        <ename>00790.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00790.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第791章 联合李奥瑞克？</title>
+        <ename>00791.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00791.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第792章 破坏光柱！</title>
+        <ename>00792.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00792.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第793章 调戏群魔！</title>
+        <ename>00793.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00793.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第794章 击杀次等恶魔！</title>
+        <ename>00794.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00794.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第795章 拉扎鲁斯的诡计！</title>
+        <ename>00795.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00795.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第796章 超级暗黑破坏神！</title>
+        <ename>00796.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00796.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第797章 炼狱装置！</title>
+        <ename>00797.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00797.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第798章 黑暗本源！</title>
+        <ename>00798.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00798.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第799章 李奥瑞克进入崔斯特瑞姆！</title>
+        <ename>00799.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00799.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第800章 先祖墓穴！</title>
+        <ename>00800.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00800.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第801章 耐法兰先祖守墓人！</title>
+        <ename>00801.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00801.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第802章 野蛮人骷髅的战吼！</title>
+        <ename>00802.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00802.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第803章 被虐，恐怖的战斗技巧！</title>
+        <ename>00803.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00803.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第804章 被遗忘的逆天技能！</title>
+        <ename>00804.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00804.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第805章 收复四个守墓者！</title>
+        <ename>00805.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00805.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第806章 黑暗宝珠！</title>
+        <ename>00806.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00806.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第807章 没见过世面的傻逼！</title>
+        <ename>00807.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00807.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第808章 找到圣剑！</title>
+        <ename>00808.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00808.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第809章 李奥瑞克又疯了！</title>
+        <ename>00809.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00809.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第810章 莉亚是李奥瑞克的孙女儿？</title>
+        <ename>00810.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00810.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第811章 鲁鲁修！</title>
+        <ename>00811.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00811.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第812章 墓地是BOSS聚集地？</title>
+        <ename>00812.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00812.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第813章 艰难战斗（一）</title>
+        <ename>00813.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00813.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第814章 艰难战斗（二）</title>
+        <ename>00814.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00814.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第815章 艰难战斗（三）</title>
+        <ename>00815.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00815.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第816章 艰难战斗（四）</title>
+        <ename>00816.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00816.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第817章 艰苦战斗（五）</title>
+        <ename>00817.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00817.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第818章 十八层地狱！</title>
+        <ename>00818.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00818.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第819章 凯恩还活着，泰瑞尔还活着！</title>
+        <ename>00819.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00819.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第820章 回到地狱！</title>
+        <ename>00820.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00820.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第821章 安达利尔的死亡凝视！</title>
+        <ename>00821.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00821.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第822章 守城！</title>
+        <ename>00822.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00822.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第823章 世界末日惊变！</title>
+        <ename>00823.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00823.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第824章 二十万人的保姆！</title>
+        <ename>00824.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00824.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第825章 艰苦跋涉！</title>
+        <ename>00825.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00825.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第826章 准备出海！</title>
+        <ename>00826.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00826.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第827章 海上英雄，塔・利斯再临！</title>
+        <ename>00827.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00827.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第828章 库拉斯特海港！</title>
+        <ename>00828.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00828.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第829章 墨菲斯托危机！</title>
+        <ename>00829.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00829.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第830章 食物中毒？</title>
+        <ename>00830.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00830.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第831章 惊天剧痛，惊变，暗黑3的属性面板？</title>
+        <ename>00831.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00831.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第832章 新属性和身体的变化！</title>
+        <ename>00832.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00832.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第833章 堕落雷天使，雷米尔！</title>
+        <ename>00833.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00833.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第834章 新属性！</title>
+        <ename>00834.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00834.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第835章 天使最关键的援手！</title>
+        <ename>00835.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00835.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第836章 雨之天使，马特里尔！</title>
+        <ename>00836.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00836.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第837章 鱼池大作战！</title>
+        <ename>00837.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00837.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第838章 倒霉的恶魔们！</title>
+        <ename>00838.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00838.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第839章 献祭，督瑞尔分身！</title>
+        <ename>00839.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00839.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第840章 破坏传送！</title>
+        <ename>00840.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00840.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第841章 拉文克劳城市！</title>
+        <ename>00841.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00841.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第842章 尼玛，这才是远程大军！</title>
+        <ename>00842.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00842.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第843章 干掉敌人的远程大军！</title>
+        <ename>00843.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00843.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第844章 黑洞防御</title>
+        <ename>00844.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00844.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第845章 七倍实力的三头魔蛇！</title>
+        <ename>00845.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00845.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第846章 新装备的惊人困难！</title>
+        <ename>00846.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00846.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第847章 祸水东引！</title>
+        <ename>00847.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00847.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第848章 生命骷髅王！！！！</title>
+        <ename>00848.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00848.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第849章 最强骷髅，布尔凯索！</title>
+        <ename>00849.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00849.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第850章 惊天一招，雷霆旋风，呕吐吧，少年！</title>
+        <ename>00850.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00850.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第851章 归来，被海格坑了！</title>
+        <ename>00851.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00851.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第852章 孩子出生，生命赐福！</title>
+        <ename>00852.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00852.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第853章 新任务，前往地狱熔炉！</title>
+        <ename>00853.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00853.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第854章 抓住俩俘虏！</title>
+        <ename>00854.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00854.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第855章 魔神陈锋！</title>
+        <ename>00855.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00855.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第856章 米高城！</title>
+        <ename>00856.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00856.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第857章 玩的愉快！</title>
+        <ename>00857.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00857.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第858章 对不起，用错技能了！</title>
+        <ename>00858.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00858.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第859章 卑鄙的陈锋！</title>
+        <ename>00859.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00859.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第860章 海格的打算！</title>
+        <ename>00860.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00860.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第861章 谢谢你的大礼！</title>
+        <ename>00861.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00861.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第862章 终成―生命骷髅王卡巴拉，诞生！</title>
+        <ename>00862.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00862.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第863章 生命涅盘！</title>
+        <ename>00863.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00863.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第864章 阿兹莫丹逃走！</title>
+        <ename>00864.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00864.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第865章 花仙子，麻醉督瑞尔！</title>
+        <ename>00865.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00865.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第866章 封印督瑞尔，地狱熔炉之锤！</title>
+        <ename>00866.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00866.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第867章 墨菲斯托的毁灭，新纪元诞生！</title>
+        <ename>00867.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00867.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第868章 狂欢！！</title>
+        <ename>00868.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00868.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第869章 被陈锋吓破胆的督瑞尔！</title>
+        <ename>00869.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00869.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第870章 威胁阿兹莫丹！</title>
+        <ename>00870.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00870.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第871章 世界之石里的对话！</title>
+        <ename>00871.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00871.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第872章 三大军团长降临！</title>
+        <ename>00872.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00872.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第873章 比蒙暴力！</title>
+        <ename>00873.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00873.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第874章 融合火焰宝珠的阿兹莫丹！</title>
+        <ename>00874.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00874.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第875章 祸兮福所倚！</title>
+        <ename>00875.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00875.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第876章 建学校？</title>
+        <ename>00876.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00876.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第877章 全世界的讨论！</title>
+        <ename>00877.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00877.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第878章 最快的建筑速度，校园建立！</title>
+        <ename>00878.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00878.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第879章 陈锋的愤怒！</title>
+        <ename>00879.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00879.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第880章 学院斗殴事件！</title>
+        <ename>00880.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00880.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第881章 一群废物！</title>
+        <ename>00881.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00881.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第882章 陈锋的计划！</title>
+        <ename>00882.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00882.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第883章 世界之石里又有对话了！</title>
+        <ename>00883.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00883.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第884章 残酷训练（上）</title>
+        <ename>00884.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00884.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第885章 残酷训练（下）</title>
+        <ename>00885.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00885.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第886章 训练后的惊喜！</title>
+        <ename>00886.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00886.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第887章 阿兹莫丹的挑衅！</title>
+        <ename>00887.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00887.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第888章 大军攻城！</title>
+        <ename>00888.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00888.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第889章 疾风魔鹰的死敌！</title>
+        <ename>00889.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00889.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第890章 阿兹莫丹的诡计！</title>
+        <ename>00890.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00890.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第891章 识破，两大原罪的融合！</title>
+        <ename>00891.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00891.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第892章 计划！</title>
+        <ename>00892.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00892.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第893章 惨胜！</title>
+        <ename>00893.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00893.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第894章 半年后！</title>
+        <ename>00894.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00894.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第895章 龙族降临！</title>
+        <ename>00895.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00895.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第896章 龙族来历！</title>
+        <ename>00896.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00896.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第897章 找到阿兹莫丹！</title>
+        <ename>00897.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00897.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第898章 阴谋成功！</title>
+        <ename>00898.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00898.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第899章 最后的虚无山脉！</title>
+        <ename>00899.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00899.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第900章 惊人的恶魔变异基地</title>
+        <ename>00900.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00900.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第901章 恶魔的基地！</title>
+        <ename>00901.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00901.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第902章 佐敦库勒消息！</title>
+        <ename>00902.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00902.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第903章 莉亚跟随！</title>
+        <ename>00903.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00903.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第904章 最牛死灵三件套！</title>
+        <ename>00904.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00904.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第905章 地宫</title>
+        <ename>00905.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00905.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第906章 迪亚波罗的残魂？</title>
+        <ename>00906.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00906.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第907章 佐敦库勒复活，迪亚波罗再现！</title>
+        <ename>00907.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00907.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第908章 莉亚化身迪亚波罗！</title>
+        <ename>00908.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00908.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第909章 迪亚波罗的阴谋！</title>
+        <ename>00909.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00909.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第910章 大战迪亚波罗（一）</title>
+        <ename>00910.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00910.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第911章 大战迪亚波罗（二）宇宙战争！</title>
+        <ename>00911.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00911.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第912章 大战迪亚波罗（三）黑暗灵魂石出世！</title>
+        <ename>00912.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00912.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第913章 大战迪亚波罗（四）一切都结束了</title>
+        <ename>00913.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00913.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第914章 陈锋死了！</title>
+        <ename>00914.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00914.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第915章 众女之战！</title>
+        <ename>00915.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00915.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第916章 寝室？</title>
+        <ename>00916.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00916.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第917章 地球老家炕头里的骷髅王！</title>
+        <ename>00917.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00917.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第918章 海格参战！</title>
+        <ename>00918.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00918.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第919章 同归于尽吧！</title>
+        <ename>00919.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00919.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第920章 先祖降临，宇宙最强的海格！</title>
+        <ename>00920.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00920.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第921章 空间骷髅王！</title>
+        <ename>00921.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00921.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第922章 对招！</title>
+        <ename>00922.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00922.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第923章 复活泰瑞尔，怎么样？</title>
+        <ename>00923.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00923.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第924章 复活泰瑞尔！</title>
+        <ename>00924.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00924.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第924章 群魔堡垒被毁！</title>
+        <ename>00925.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00925.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第925章 到底是谁？</title>
+        <ename>00926.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00926.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第927章 离开地狱！</title>
+        <ename>00927.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00927.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第928章 陈锋儿女的职业！</title>
+        <ename>00928.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00928.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第929章 马萨伊尔！</title>
+        <ename>00929.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00929.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第930章 最终决战序幕！</title>
+        <ename>00930.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00930.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第931章 最终战役（上）</title>
+        <ename>00931.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00931.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第932章 最终战役（中）</title>
+        <ename>00932.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00932.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第933章 最终战役（下）</title>
+        <ename>00933.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00933.xhtml</path>
+    </chapter>
+
+    <chapter>
+        <title>第934章 结束了，回家！（大结局）</title>
+        <ename>00934.xhtml</ename>
+        <path>./res/book7/splits/anheikulouwang/00934.xhtml</path>
+    </chapter>
+
+</epubmake>
