@@ -2,9 +2,8 @@
 *.iml
 .idea/
 out/
-gen/
-bin/
 *.ipr
+*.iws
 
 # test file
 *.epub
@@ -13,4 +12,17 @@ bin/
 .DS_Store
 Thumb.db
 tmp/
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# Temp file
+*.bak
+*.tmp
+*.temp
+*.vpp~*
+*.*~
+~*.*
 
