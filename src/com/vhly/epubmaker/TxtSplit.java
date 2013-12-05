@@ -61,6 +61,9 @@ public class TxtSplit {
                                             pw.print(sb.toString());
                                             sb.setLength(0);
                                             printFoot(pw);
+                                            pw.close();
+                                            ow.close();
+                                            fout.close();
                                         }
                                     }
                                     break;
