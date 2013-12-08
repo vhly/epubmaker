@@ -60,8 +60,10 @@ public class Uploader {
                 try {
                     fr = new FileReader(file);
                     br = new BufferedReader(fr);
-                    Pattern pattern = Pattern.compile("^第.*章\\s+.*\\S");
+                    Pattern pattern = Pattern.compile("第.*章.*\\S");
                     Matcher matcher = pattern.matcher("abc");
+                    Pattern pattern2 = Pattern.compile("千章.*\\S");
+                    Matcher matcher2 = pattern2.matcher("abc");
                     int titleCount = 0;
 
                     String title = "Untitled";
@@ -82,7 +84,6 @@ public class Uploader {
                         if (line.length() > 0) {
                             matcher.reset(line);
                             if (matcher.find()) {
-
                                 if (sb.length() > 0) {
                                     String content = sb.toString();
                                     createNewChapter(client, bid, title, titleCount, content);
@@ -94,8 +95,21 @@ public class Uploader {
                                 title = line.substring(start, end);
                                 sb.append(title).append('\n');
                             } else {
-//                                sb.append("\n<p>").append(line).append("</p>");
-                                sb.append(line).append('\n');
+                                matcher2.reset(line);
+                                if (matcher2.find()) {
+                                    if (sb.length() > 0) {
+                                        String content = sb.toString();
+                                        createNewChapter(client, bid, title, titleCount, content);
+                                        sb.setLength(0);
+                                    }
+                                    titleCount++;
+                                    int start = matcher2.start();
+                                    int end = matcher2.end();
+                                    title = line.substring(start, end);
+                                    sb.append(title).append('\n');
+                                } else {
+                                    sb.append(line).append('\n');
+                                }
                             }
                         }
                     }
