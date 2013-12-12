@@ -1,7 +1,9 @@
 package com.vhly.epubmaker;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,6 +12,86 @@ import java.util.Scanner;
  * Email: vhly@163.com
  */
 public class TextEncodingConvert {
+
+    private static HashMap<String, String> rechars;
+
+    static {
+        rechars = new HashMap<String, String>();
+        rechars.put("sao", "骚");
+        rechars.put("sāo", "骚");
+        rechars.put("se", "色");
+        rechars.put("sè", "色");
+        rechars.put("nai", "奶");
+        rechars.put("yan", "艳");
+        rechars.put("bang", "棒");
+        rechars.put("bāng", "棒");
+        rechars.put("tian", "舔");
+        rechars.put("netbsp;", "");
+        rechars.put("xùe", "穴");
+        rechars.put("féi", "肥");
+        rechars.put("fù", "妇");
+        rechars.put("you", "诱");
+        rechars.put("yòu", "诱");
+        rechars.put("比门g", "比蒙");
+        rechars.put("zou光", "走光");
+        rechars.put("rǔ", "乳");
+        rechars.put("yīn", "阴");
+        rechars.put("máo", "毛");
+        rechars.put("chōu", "抽");
+        rechars.put("shè", "射");
+        rechars.put("bī", "逼");
+        rechars.put("�", "");
+        rechars.put("xiǎo", "小");
+        rechars.put("www.WenXueMi.CoM", "");
+        rechars.put("Qisuu．ｃｏｍ", "");
+        rechars.put("ｗＷｗ．Qisuu．ｃｏＭ", "");
+        rechars.put("☆奇书网のWww.Qisuu.Com★", "");
+        rechars.put("cào", "操");
+        rechars.put("cao", "操");
+        rechars.put("chuáng", "床");
+        rechars.put("nv", "女");
+        rechars.put("</div>", "");
+        rechars.put("<div>", "");
+        rechars.put("<hr/>", "");
+        rechars.put("dàng", "荡");
+        rechars.put("xiōng", "胸");
+        rechars.put("mō", "摸");
+        rechars.put("1ù", "露");
+        rechars.put("xìng", "性");
+        rechars.put("jīng", "精");
+        rechars.put("nòng", "弄");
+        rechars.put("méng", "蒙");
+        rechars.put("hún", "混");
+        rechars.put("mén", "门");
+        rechars.put("tǐng", "挺");
+        rechars.put("huā", "花");
+        rechars.put("shì", "士");
+        rechars.put("tuǐ", "腿");
+        rechars.put("太zi", "太子");
+        rechars.put("yin", "阴");
+        rechars.put("jiān", "奸");
+        rechars.put("sī", "私");
+        rechars.put("jiāo", "交");
+        rechars.put("luàn", "乱");
+        rechars.put("jī", "激");
+        rechars.put("kù", "裤");
+        rechars.put("mí", "迷");
+        rechars.put("&quot;", "");
+        rechars.put("rou", "肉");
+        rechars.put("chūn", "春");
+        rechars.put("fen", "粉");
+        rechars.put("luo", "裸");
+        rechars.put("yu", "欲");
+        rechars.put("quan家", "全家");
+        rechars.put("缠mian", "缠绵");
+        rechars.put("han", "含");
+        rechars.put("dao", "倒");
+        rechars.put("guang", "光");
+        rechars.put("小荷作文网www.zww.cn", "");
+        rechars.put("暧mei", "暧昧");
+        rechars.put("shen", "身");
+    }
+
     public static void main(String[] args) {
         String inputFolder = null;
         String outputFolder = null;
@@ -107,12 +189,15 @@ public class TextEncodingConvert {
                 if (files != null) {
                     for (File file : files) {
                         if (file.isFile()) {
-                            String[] parameters = new String[4];
-                            parameters[0] = file.getAbsolutePath();
-                            parameters[1] = inEncoding;
-                            parameters[2] = outEncoding;
-                            parameters[3] = outputFolder;
-                            convertEncoding(parameters);
+                            String name = file.getName();
+                            if (name.endsWith(".txt")) {
+                                String[] parameters = new String[4];
+                                parameters[0] = file.getAbsolutePath();
+                                parameters[1] = inEncoding;
+                                parameters[2] = outEncoding;
+                                parameters[3] = outputFolder;
+                                convertEncoding(parameters);
+                            }
                         }
                     }
                 }
@@ -220,15 +305,42 @@ public class TextEncodingConvert {
                             pw = new PrintWriter(ow);
 
                             String line = null;
+                            int count = 0;
                             while (true) {
+                                bok = true;
                                 line = br.readLine();
                                 if (line == null) {
                                     break;
                                 }
                                 line = line.trim();
                                 if (line.length() > 0) {
-                                    pw.print(line);
-                                    pw.print("\n");
+                                    count++;
+                                    if (count < 10) {
+                                        if (line.startsWith("声明:本书")) {
+                                            bok = false;
+                                        }
+                                    }
+                                    if (bok) {
+                                        if (line.contains("[W")) {
+                                            int index = line.indexOf("[W");
+                                            int i2 = line.indexOf("]", index);
+                                            String s1 = line.substring(0, index);
+                                            line = s1 + line.substring(i2 + 1);
+                                        } else if (line.contains("[奇书网")) {
+                                            int index = line.indexOf("[奇书网");
+                                            int i2 = line.indexOf("]", index);
+                                            String s1 = line.substring(0, index);
+                                            line = s1 + line.substring(i2 + 1);
+                                        } else if (line.contains("[Q")) {
+                                            int index = line.indexOf("[Q");
+                                            int i2 = line.indexOf("]", index);
+                                            String s1 = line.substring(0, index);
+                                            line = s1 + line.substring(i2 + 1);
+                                        }
+                                        line = replaceWith(line);
+                                        pw.print(line);
+                                        pw.print("\n");
+                                    }
                                 }
                             }
                         } catch (IOException e) {
@@ -257,5 +369,16 @@ public class TextEncodingConvert {
         } else {
             System.out.println("Usage: TextEncodingConvert <txtfile> <encoding> <target encoding> <target folder>");
         }
+    }
+
+    private static String replaceWith(String line) {
+        if (line != null) {
+            Set<String> keys = rechars.keySet();
+            for (String key : keys) {
+                String value = rechars.get(key);
+                line = line.replaceAll(key, value);
+            }
+        }
+        return line;
     }
 }

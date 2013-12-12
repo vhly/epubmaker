@@ -62,7 +62,7 @@ public class Uploader {
                     br = new BufferedReader(fr);
                     Pattern pattern = Pattern.compile("第.*章.*\\S");
                     Matcher matcher = pattern.matcher("abc");
-                    Pattern pattern2 = Pattern.compile("千章.*\\S");
+                    Pattern pattern2 = Pattern.compile("千.*章.*\\S");
                     Matcher matcher2 = pattern2.matcher("abc");
                     int titleCount = 0;
 
