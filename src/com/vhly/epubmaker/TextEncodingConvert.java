@@ -92,6 +92,9 @@ public class TextEncodingConvert {
         rechars.put("shen", "身");
         rechars.put("guang", "光");
         rechars.put("qing", "情");
+        rechars.put("róu", "揉");
+        rechars.put("tún", "臀");
+        rechars.put("wěn", "吻");
     }
 
     public static void main(String[] args) {
