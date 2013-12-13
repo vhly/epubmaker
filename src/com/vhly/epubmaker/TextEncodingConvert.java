@@ -90,6 +90,8 @@ public class TextEncodingConvert {
         rechars.put("小荷作文网www.zww.cn", "");
         rechars.put("暧mei", "暧昧");
         rechars.put("shen", "身");
+        rechars.put("guang", "光");
+        rechars.put("qing", "情");
     }
 
     public static void main(String[] args) {
