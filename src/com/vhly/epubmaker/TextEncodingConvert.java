@@ -22,6 +22,7 @@ public class TextEncodingConvert {
         rechars.put("se", "色");
         rechars.put("sè", "色");
         rechars.put("nai", "奶");
+        rechars.put("nǎi", "奶");
         rechars.put("yan", "艳");
         rechars.put("bang", "棒");
         rechars.put("bāng", "棒");
@@ -95,6 +96,15 @@ public class TextEncodingConvert {
         rechars.put("róu", "揉");
         rechars.put("tún", "臀");
         rechars.put("wěn", "吻");
+        rechars.put("bō", "波");
+        rechars.put("bo", "波");
+        rechars.put("lù", "露");
+        rechars.put("cháo", "潮");
+        rechars.put("chéng", "成");
+        rechars.put("chā", "插");
+        rechars.put("dòng", "洞");
+        rechars.put("làng", "浪");
+        rechars.put("shǔn", "吮");
     }
 
     public static void main(String[] args) {
