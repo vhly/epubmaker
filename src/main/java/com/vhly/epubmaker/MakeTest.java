@@ -4,7 +4,7 @@ import com.vhly.epubmaker.epub.EPubFile;
 import com.vhly.epubmaker.epub.Item;
 import com.vhly.epubmaker.epub.content.Chapter;
 import com.vhly.epubmaker.epub.toc.NavPoint;
-import net.dratek.browser.util.StreamUtil;
+import com.vhly.browser.util.StreamUtil;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

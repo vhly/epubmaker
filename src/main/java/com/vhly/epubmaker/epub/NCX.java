@@ -1,12 +1,12 @@
 package com.vhly.epubmaker.epub;
 
 import com.vhly.epubmaker.epub.toc.NavPoint;
-import net.dratek.browser.util.StreamUtil;
-import net.dratek.browser.xml.XMLUtil;
-import net.dratek.browser.xml.XPathUtil;
-import org.kxml2_orig.io.KXmlParser;
-import org.kxml2_orig.kdom.Document;
-import org.kxml2_orig.kdom.Element;
+import com.vhly.browser.util.StreamUtil;
+import com.vhly.browser.xml.XMLUtil;
+import com.vhly.browser.xml.XPathUtil;
+import org.kxml2.io.KXmlParser;
+import org.kxml2.kdom.Document;
+import org.kxml2.kdom.Element;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;

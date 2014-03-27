@@ -1,7 +1,7 @@
 package com.vhly.epubmaker.epub;
 
-import net.dratek.browser.xml.XMLUtil;
-import org.kxml2_orig.kdom.Element;
+import com.vhly.browser.xml.XMLUtil;
+import org.kxml2.kdom.Element;
 
 import java.util.Collection;
 import java.util.Hashtable;

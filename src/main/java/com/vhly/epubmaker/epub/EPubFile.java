@@ -3,7 +3,7 @@ package com.vhly.epubmaker.epub;
 import com.vhly.epubmaker.epub.content.Chapter;
 import com.vhly.epubmaker.epub.content.Resource;
 import com.vhly.epubmaker.epub.toc.NavPoint;
-import net.dratek.browser.util.StreamUtil;
+import com.vhly.browser.util.StreamUtil;
 
 import java.io.*;
 import java.util.Enumeration;

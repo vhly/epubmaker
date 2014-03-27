@@ -7,11 +7,11 @@ package com.vhly.epubmaker.epub;
  * Email: vhly@163.com
  */
 
-import net.dratek.browser.util.StreamUtil;
-import net.dratek.browser.xml.XPathUtil;
-import org.kxml2_orig.io.KXmlParser;
-import org.kxml2_orig.kdom.Document;
-import org.kxml2_orig.kdom.Element;
+import com.vhly.browser.util.StreamUtil;
+import com.vhly.browser.xml.XPathUtil;
+import org.kxml2.io.KXmlParser;
+import org.kxml2.kdom.Document;
+import org.kxml2.kdom.Element;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataOutputStream;
