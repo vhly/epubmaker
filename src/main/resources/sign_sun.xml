@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+    <SignedInfo>
+        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+        <Reference URI="">
+            <Transforms>
+                <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+            </Transforms>
+            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+            <DigestValue>See+3QNnBQ6tomYExibRAu1Lg8M=</DigestValue>
+        </Reference>
+    </SignedInfo>
+    <SignatureValue>R86ck7fcDhjAal/LfXiKGe5bohdYKNl9d+CDcmAl7THmznAnKBS/3sJlgoXO13m8c4E846V0lmvh
+        XYUjbG28Nmo6+Rqa4lntQFCQtbf/HwXDJlI6Le3fhFSlLmNwt6Om56psVCITXp1OBrzHkuUQe+aG
+        GkHMh8StMCwMMYip+gs=
+    </SignatureValue>
+    <KeyInfo>
+        <KeyValue>
+            <RSAKeyValue>
+                <Modulus>vx3eFFyAGe20Z08IQDtAo+FSXYoSTKxT8ceT8/8dFJeqlt+Exjw1lb6yEV1VYk//VDbVkURAEjOE
+                    ijdq5wtAAW8vcGxhWdtNzw43Pt6rTJVwdEZSwenfe0tNzULsfSAHmdt4cZtk5sVhaNsi6Y2s8pCo
+                    GeOAu+MftLgXjT51c3s=
+                </Modulus>
+                <Exponent>AQAB</Exponent>
+            </RSAKeyValue>
+        </KeyValue>
+    </KeyInfo>
+</Signature>
